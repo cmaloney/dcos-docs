@@ -43,6 +43,10 @@ These instructions explain how to set up an SSH connection to your DCOS cluster 
             
                 $ dcos node ssh --master-proxy --leader
                 
+            **Tip:** The default user is `core`. If you are using CentOS, enter:
+            
+                $ dcos node ssh --master-proxy --leader --user=centos
+                
     
     *   **To SSH to an agent node:**
         
