@@ -14,10 +14,7 @@ You can get a detailed view of which nodes in your cluster are running which ser
 
 [tutorial-prereq]
 
-1.  SSH into your [master node][1]. For example, if you are using CoreOS enter this command:
-    
-          $ dcos node ssh --master --leader
-        
+1.  SSH into your [master node][1]. 
 
 2.  Run this command from your master node to view the node details:
     
