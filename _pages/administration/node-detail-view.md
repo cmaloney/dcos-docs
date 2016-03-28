@@ -7,7 +7,7 @@ published: true
 menu_order: 0
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: false
+hide_from_navigation: true
 hide_from_related: true
 ---
 You can easily get a detailed view of the services that are running on each node in your DCOS cluster.
