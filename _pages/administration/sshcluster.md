@@ -41,7 +41,7 @@ These instructions explain how to set up an SSH connection to your DCOS cluster 
         
         1.  From the DCOS CLI, enter the following command:
             
-                $ dcos node ssh --master-proxy --master
+                $ dcos node ssh --master-proxy --leader
                 
     
     *   **To SSH to an agent node:**
