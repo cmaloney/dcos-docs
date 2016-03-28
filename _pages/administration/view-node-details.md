@@ -1,24 +1,31 @@
 ---
-  post_title: Viewing the node details
-  layout: page
-  published: true
-  ---
-  
-  You can easily get a detailed view of the services that are running on each node in your DCOS cluster. 
-  
-  [tutorial-prereq]
-  
-  
-  1.  SSH into your master node. 
-  
+UID: 56f9a5595fa87
+post_title: Viewing DCOS Registered Apps
+post_excerpt: ""
+layout: page
+published: true
+menu_order: 0
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: true
+hide_from_related: true
+---
+You can get a detailed view of which nodes in your cluster are running which service.
+
+[tutorial-prereq]
+
+1.  SSH into your master node.
+    
           $ dcos node ssh --master --leader
-  
-  2.  Run this command from your master node to view the node details:
-  
+        
+
+2.  Run this command from your master node to view the node details:
+    
           $ curl http://master.mesos:8123/v1/enumerate
-          
-      In this example Kafka and Chronos are installed: 
-      
+        
+    
+    In this example Kafka and Chronos are installed:
+    
           $ curl http://master.mesos:8123/v1/enumerate
           {
             "frameworks": [
@@ -118,7 +125,3 @@
               "name": "marathon"
              }
             ]
-      
-          
-      
-          
