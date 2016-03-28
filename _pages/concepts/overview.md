@@ -7,7 +7,7 @@ published: true
 menu_order: 1
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: false
+hide_from_navigation: true
 hide_from_related: false
 ---
 The Mesosphere Datacenter Operating System (DCOS) spans all of the machines in your datacenter or cloud and treats them as a single, shared set of resources. DCOS provides a highly elastic and highly scalable way to build, deploy and manage modern applications using containers, microservices and big data systems.
