@@ -1,6 +1,6 @@
 ---
 UID: 56f98445387d2
-post_title: 'Protected: Assigning a Virtual IP Addresses'
+post_title: Assigning a Virtual IP Addresses
 post_excerpt: ""
 layout: page
 published: true
@@ -8,7 +8,7 @@ menu_order: 100
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: true
-hide_from_related: false
+hide_from_related: true
 ---
 DCOS can map traffic from a single Virtual IP (VIP) to multiple IP addresses and ports.
 
