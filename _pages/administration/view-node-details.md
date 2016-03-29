@@ -1,6 +1,6 @@
 ---
 UID: 56f9a5595fa87
-post_title: Viewing DCOS Registered Appss
+post_title: Viewing DCOS Registered Apps
 post_excerpt: ""
 layout: page
 published: true
@@ -14,7 +14,7 @@ You can get a detailed view of which nodes in your cluster are running which ser
 
 [tutorial-prereq]
 
-1.  SSH into your [master node][1]. 
+1.  SSH into your [master node][1].
 
 2.  Run this command from your master node to view the node details:
     
