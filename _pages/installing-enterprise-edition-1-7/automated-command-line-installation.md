@@ -20,9 +20,15 @@ To use the automated command-line installation method:
 *   Cluster nodes must have SSH enabled and ports open from the bootstrap node
 *   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH 
 
-<a name="hardware"></a> [installing-enterprise-edition-hardware]
+<a name="hardware"></a>
 
-<a name="software"> </a>[installing-enterprise-edition-software-ssh] [installing-enterprise-edition-ip-detect]
+[installing-enterprise-edition-hardware]
+
+<a name="software"></a>
+
+[installing-enterprise-edition-software-ssh]
+
+[installing-enterprise-edition-ip-detect]
 
 # Step 2: Configure and Install DCOS
 
