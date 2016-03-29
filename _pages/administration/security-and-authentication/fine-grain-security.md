@@ -1,7 +1,7 @@
 ---
 post_title: Fine grain security
 layout: page
-published: false
+published: true
 hide_from_navigation: true
 hide_from_related: true
 ---
