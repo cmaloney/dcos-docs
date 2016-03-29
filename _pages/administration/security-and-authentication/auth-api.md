@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 You can make external calls to HTTP API endpoints in your DCOS cluster.
 
-You must first obtain an authorization token and then include the authorization token in your HTTP request.
+You must first obtain an authorization token and then include the authorization token in your HTTP request. 
 
 # Generate the authentication token
 
