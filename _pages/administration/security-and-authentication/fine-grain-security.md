@@ -1,23 +1,20 @@
 ---
-post_title: Fine grain security
+post_title: Administering advanced ACLs
 layout: page
 published: true
 hide_from_navigation: true
 hide_from_related: true
 ---
 
-You can define fine-grained access to applications that are running in DCOS by defining advanced ACL groups. Fine-grained access provides multi-tenancy by isolating application teams and individual users. You can also control customized access to applications, for example read-only access. This access is administered on the backend by Admin Router and the native Marathon instance. 
+You can define fine-grained access to applications that are running in DCOS by defining advanced ACL groups. Advanced ACL groups can provide multi-tenancy by isolating application teams, and individual users. You can also control customized access to applications, for example read-only access. This access is administered on the backend by Admin Router and the native Marathon instance. 
 
-Authorization is not secure, but provides user isolation. Anything running inside the cluster, and anyone SSH’d into it, has access to everything. In Mesos, for instance, you can see the logs and status of the apps.
+Authorization is not secure, but provides user isolation. Anything running inside the cluster, and anyone SSH’d into it, has access to everything.
 
-When you add a service, you create an entry in the ACL.
-- services/ = root access to everything
-- services/production = a group
-- services/production/prod1 = subgroup
+By default, when you install a DCOS service, an entry is created in the ACL for that particular service. For example, when you install Kafka, this ACL entry is created:
 
-Resource ID naming convention: https://mesosphere.atlassian.net/wiki/pages/viewpage.action?pageId=22544611
-  
-(dcos:service:marathon:user-marathon:services/dev-agility, full)
+	dcos:adminrouter:service:kafka
+	
+You can create advanced ACL groups for each role in your organization. 
 
 To create an advanced ACL group:
 
@@ -54,39 +51,32 @@ To create an advanced ACL group:
 
 
 
-Examples:
-dcos:service:marathon:marathon:services/
-Service Type: Marathon
-Service Name: Marathon
-Namespace: services 
-Object ID: /
-dcos:service:marathon:user-marathon:services/production
-Service Type: Marathon
-Service Name : user-marathon
-Namespace: services
-Object ID: /production
-dcos:service:marathon:user-marathon:services/production/product1
-Service Type: Marathon
-Service Name: user-marathon
-Namespace: services
-Object ID: /production/product1
-dcos:service:marathon:user-marathon:services/development
-Service Type:Marathon
-Service Name: user-marathon
-Namespace: services
-Object ID: /development
-dcos:service:marathon:user-marathon:admin/leader
-Service Type: Marathon
-Service Name: user-marathon
-Namespace: admin
-Object ID: leader
 
-This resource id for superuser is this. When present, the identity is allowed to do everything.
-dcos:superuser
-Service Type: superuser
-Service Name: superuser
-Namespace: superuser
-Object ID: superuser
+In this example, a group is created that has access to all Marathon services in DCOS: `dcos:service:marathon:marathon:services/`.
+Service Type: `marathon`
+Service Name: `marathon`
+Namespace: `services` 
+Object ID: `/`
+
+In this example, a group is created that has access to the `user-marathon` instance `production` subgroup: 
+`dcos:service:marathon:user-marathon:services/production`
+Service Type: `marathon`
+Service Name : `user-marathon`
+Namespace: `services`
+Object ID: `/production`
+
+In this example, a group is created that has access to the `user-marathon` instance `production/product1` subgroup:
+`dcos:service:marathon:user-marathon:services/production/product1`
+Service Type: `marathon`
+Service Name: `user-marathon`
+Namespace: `services`
+Object ID: `/production/product1`
+
+In this example, a superuser group is created that has access to evertyhing in DCOS. This group is created by default: `dcos:superuser`
+Service Type: `superuser`
+Service Name: `superuser`
+Namespace: `superuser`
+Object ID: `superuser`
   
   
   

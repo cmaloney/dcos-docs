@@ -120,6 +120,7 @@ To manage groups:
     
     1.  From the **Users** tab, select the user name and click **Actions -> Add to Group**. <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-add-user-group.gif" rel="attachment wp-att-3499"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-add-user-group-800x509.gif" alt="auth-enable-add-user-group" width="800" height="509" class="alignnone size-large wp-image-3499" /></a>
     2.  Choose the group and click **Add**. 
+    
     ### Delete users from group
     
     1.  From the **Users** tab, select the user name and click **Actions -> Delete from Group**.
