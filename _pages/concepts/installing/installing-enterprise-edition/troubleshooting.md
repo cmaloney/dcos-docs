@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 During DCOS installation, each of the components will converge from a failing state to a running state in the logs.
 
-Here is the sequence in which DCOS components come online. <!-- Add example of clusters converging and show logs with ignorable errors; clean logs. Examples of common failures are harder to show, because this would be a bug. -->
+The DCOS components come online in this sequence. <!-- Add example of clusters converging and show logs with ignorable errors; clean logs. Examples of common failures are harder to show, because this would be a bug. -->
 
 # ZooKeeper and Exhibitor
 
