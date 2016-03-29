@@ -38,7 +38,7 @@ ZooKeeper is a high-performance coordination service that manages the DCOS servi
 
 ### Admin router
 
-The [admin router][2] is an open source Nginx configuration created by Mesosphere that provides central authentication and proxy to DCOS services within the cluster.
+The [admin router](https://github.com/mesosphere/adminrouter-public) is an open source Nginx configuration created by Mesosphere that provides central authentication and proxy to DCOS services within the cluster.
 
 # DCOS agent nodes
 
