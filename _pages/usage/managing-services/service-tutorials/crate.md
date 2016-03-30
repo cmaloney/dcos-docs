@@ -27,11 +27,7 @@ Prerequisite
 
 To install Crate using the DCOS CLI:
 
-1.  Change the DCOS package repository source to [Multiverse][5].
-    
-    [add-multiverse]
-
-2.  Install Crate with this command:
+1.  Install Crate with this command:
     
         $ dcos package install crate
         

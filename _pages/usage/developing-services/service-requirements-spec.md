@@ -20,7 +20,7 @@ By completing the requirements below, you can integrate with DCOS and have your 
 
 ## Terminology
 
-[term-universe][term-multiverse][term-dcos-service][term-framework][term-dcos-marathon][term-state-abstraction]
+[term-universe][term-dcos-service][term-framework][term-dcos-marathon][term-state-abstraction]
 
 # Service Framework
 

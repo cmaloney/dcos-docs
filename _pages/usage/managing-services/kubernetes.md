@@ -22,11 +22,7 @@ The current Kubernetes alpha <a href="https://github.com/mesosphere/kubernetes/r
 
 *   The DCOS CLI must be [installed][3].
 
-1.  Add the Multiverse package repository source.
-    
-    [add-multiverse]
-
-2.  Install the [etcd-mesos][4] service, which provides failover for etcd. By default, the Kubernetes DCOS service installs a single-node etcd cluster.
+1.  Install the [etcd-mesos][4] service, which provides failover for etcd. By default, the Kubernetes DCOS service installs a single-node etcd cluster.
     
         $ dcos package install etcd
         

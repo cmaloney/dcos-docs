@@ -21,10 +21,6 @@ To demonstrate marathon-lb, you can boot a DCOS cluster on AWS to run an interna
 
 1.  Install marathon-lb.
     
-    [add-multiverse]
-    
-    Now, install `marathon-lb`
-    
         $ dcos package install marathon-lb        
         
     
@@ -32,7 +28,7 @@ To demonstrate marathon-lb, you can boot a DCOS cluster on AWS to run an interna
     
     <img src="https://mesosphere.com/wp-content/uploads/2015/12/lb2.jpg" alt="lb2" width="628" height="440" class="aligncenter size-full wp-image-3821" />
 
-2.  Set up your internal load balancer. To do this, we must first specify some configuration options for the marathon-lb multiverse package. Create a file called `options.json` with the following contents:
+2.  Set up your internal load balancer. To do this, we must first specify some configuration options for the marathon-lb package. Create a file called `options.json` with the following contents:
     
         { "marathon-lb":{ "name":"marathon-lb-internal", "haproxy-group":"internal", "bind-http-https":false, "role":"" } }
         
