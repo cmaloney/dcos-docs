@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 You can make external calls to HTTP API endpoints in your DCOS cluster.
 
-You must first obtain an authorization token and then include the authorization token in your HTTP request. 
+You must first obtain an authentication token and then include it in your HTTP request. 
 
 # Generate the authentication token
 
@@ -42,11 +42,11 @@ The response provides an authentication token that you can provide in the HTTP A
 
 To authenticate an HTTP request against a DCOS component, specify the `<authtoken>` in the request header.
 
-For example, to access the Marathon UI:
+For example, to access the Marathon API:
 
     $ curl --header "Authorization: token=<authtoken>" http://<master-host-name>/service/marathon/v2/apps
     
 
-For example, to access the Mesos UI:
+For example, to access the Mesos API:
 
     $ curl --header "Authorization: token=<authtoken>" http://<master-host-name>/mesos/master/state.json
