@@ -14,15 +14,11 @@ DCOS services are Mesosphere-certified applications that are packaged and availa
 
 DCOS services can be created by the community and by Mesosphere. The Mesosphere-certified services are [Cassandra][2], [Chronos][3], [HDFS][4], [Kafka][5], [Kubernetes][6], [Marathon][7], and [Spark][8].
 
-You can install DCOS services on your cluster with a single command `dcos package install` after [installing the DCOS Command-Line Interface][9]. DCOS offers the Universe and Multiverse package repositories.
+You can install DCOS services on your cluster with a single command `dcos package install` after [installing the DCOS Command-Line Interface][9]. 
 
 # Universe
 
 DCOS Universe contains all services that have been certified by Mesosphere. For more information on DCOS Universe, see the [GitHub Universe repository][1].
-
-# Multiverse
-
-DCOS Multiverse contains experimental services that are still being tested and are not guaranteed to work properly with DCOS. Multiverse services are not recommended for production clusters. For more information on DCOS Multiverse, see the [GitHub Multiverse repository][10].
 
 For more information on installing services, see [Managing DCOS services][11].
 

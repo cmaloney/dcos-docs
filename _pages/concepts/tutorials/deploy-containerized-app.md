@@ -49,9 +49,7 @@ In this step you install the Marathon load balancer. The Marathon load balancer 
 
 **Important:** Do not install Marathon Load Balancer until the Cassandra DCOS service is installed and shows status of Healthy in the DCOS web interface.
 
-1.  [add-multiverse]
-
-2.  Install the marathon-lb package:
+1.  Install the marathon-lb package:
     
         $ dcos package install marathon-lb
         

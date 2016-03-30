@@ -24,11 +24,7 @@ All of these services are deployed by Marathon and must be packaged and added to
 
 # <a name="universe"></a>Package Repositories
 
-DCOS offers the Universe and Multiverse package repositories.
-
-**Universe** DCOS Universe contains all services that have been certified by Mesosphere to be GA. For more information on DCOS Universe, see the [GitHub Universe repository][1].
-
-**Multiverse** DCOS Multiverse contains experimental services that are still being tested and are not guaranteed to work properly with DCOS. Multiverse services are not recommended for production clusters. For more information on DCOS Multiverse, see the [GitHub Multiverse repository][2].
+The DCOS Universe contains all services that are installable DCOS. For more information on DCOS Universe, see the [GitHub Universe repository][1].
 
 All services in the package repositories are required to meet a certain standard as defined by Mesosphere. For details on submitting a DCOS service, see [Contributing a package][3].
 
