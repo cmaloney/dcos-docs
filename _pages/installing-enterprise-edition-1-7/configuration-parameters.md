@@ -20,7 +20,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
 
 ### [config-yaml-cluster-name]
 
-#### exhibitor_storage_backend
+#### **exhibitor_storage_backend**
 This parameter specifies the type of storage backend to use for Exhibitor. You can use internal DCOS storage (<code>static</code>) or specify an external storage system (<code>zookeeper</code>, <code>aws_s3</code>, and <code>shared_filesystem</code>) for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DCOS installation. 
 
 *   [config-yaml-zk-static]
