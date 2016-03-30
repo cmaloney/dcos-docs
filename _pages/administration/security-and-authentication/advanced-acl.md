@@ -37,10 +37,10 @@ To create an advanced ACL group:
     
     *   **dcos**: The required prefix.
     *   **service-type**: The service type can be: 
-        *   `service` - resources defined by a service/framework such as Marathon 
-        *   `adminrouter` - resources defined by Admin Router, such as locations 
-        *   `acs` - resources defined by the access control service 
-        *   `superuser` - superusers are allowed to do everything 
+        *   `service` - resources defined by a DCOS service such as Cassandra.
+        *   `adminrouter` - resources defined by Admin Router, such as locations.
+        *   `acs` - resources defined by the access control service.
+        *   `superuser` - superusers are allowed to do everything.
     *   **service-name** An [RFC 3986 (URI)][1] compliant name. For example, `dcos:service:kafka`. 
     *   **namespace** The namespace can be: 
         *   `services` - Marathon ACLs. 
