@@ -34,13 +34,13 @@ For information about how Mesos DNS is implemented for the Cassandra DCOS servic
     
     For example, to view several system tables in the Cassandra servers, from any node in your cluster, run the following command. Because this example downloads a Docker file, it may take a while.
     
-        $ docker run -i -t --net=host 
-            --entrypoint=/usr/bin/cqlsh 
-            spotify/cassandra -e "
-               SELECT * FROM system.schema_keyspaces ;
-               SELECT * FROM system.schema_columns ;
-               SELECT * FROM system.schema_columnfamilies ;" 
-            cassandra-dcos-node.cassandra.dcos.mesos 9160
+        $ docker run -i -t --net=host \
+              --entrypoint=/usr/bin/cqlsh \
+              spotify/cassandra -e " \
+              SELECT * FROM system.schema_keyspaces ; \
+              SELECT * FROM system.schema_columns ; \
+              SELECT * FROM system.schema_columnfamilies ;" \
+              cassandra-dcos-node.cassandra.dcos.mesos 9160
         
 
 # <a name="uninstall"></a>Uninstalling Cassandra
