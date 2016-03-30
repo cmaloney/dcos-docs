@@ -54,6 +54,8 @@ To create an advanced ACL group:
     *   `read` - Read-only access to an application. 
     *   `update` - Update an application.
 
+# Examples
+
 In this example, a group is created that has access to all Marathon services in DCOS: `dcos:service:marathon:marathon:services/`. Service Type: `marathon` Service Name: `marathon` Namespace: `services` Object ID: `/`
 
 In this example, a group is created that has access to the `user-marathon` instance `production` subgroup: `dcos:service:marathon:user-marathon:services/production` Service Type: `marathon` Service Name : `user-marathon` Namespace: `services` Object ID: `/production`
