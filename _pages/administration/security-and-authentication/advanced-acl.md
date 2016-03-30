@@ -60,10 +60,16 @@ In this example, a group is created that has access to all Marathon services in 
 
     dcos:service:marathon:marathon:services/
 
-In this example, a group is created that has access to the `user-marathon` instance `production` subgroup: `dcos:service:marathon:user-marathon:services/production` Service Type: `marathon` Service Name : `user-marathon` Namespace: `services` Object ID: `/production`
+In this example, a group is created that has access to the `user-marathon` instance `production` subgroup, where `<service-type>` is `marathon`, `<service-name>` is `user-marathon`, `<namespace>` is `services`, and `<object-id>` is `/production`.
 
-In this example, a group is created that has access to the `user-marathon` instance `production/product1` subgroup: `dcos:service:marathon:user-marathon:services/production/product1` Service Type: `marathon` Service Name: `user-marathon` Namespace: `services` Object ID: `/production/product1`
+    dcos:service:marathon:user-marathon:services/production
 
-In this example, a superuser group is created that has access to evertyhing in DCOS. This group is created by default: `dcos:superuser` Service Type: `superuser` Service Name: `superuser` Namespace: `superuser` Object ID: `superuser`
+In this example, a group is created that has access to the `user-marathon` instance `production/product1` subgroup, where `<service-type>` is `marathon`, `<service-name>` is `user-marathon`, `<namespace>` is `services`, and `<object-id>` is `/production/product1`.
+
+    dcos:service:marathon:user-marathon:services/production/product1
+
+In this example, a superuser group is created that has access to evertyhing in DCOS, where `<service-type>` is `superuser`, `<service-name>` is `superuser`, `<namespace>` is `superuser`, and `<object-id>` is `superuser`. This group is created by default.
+
+    dcos:superuser
 
  [1]: https://www.ietf.org/rfc/rfc3986.txt
