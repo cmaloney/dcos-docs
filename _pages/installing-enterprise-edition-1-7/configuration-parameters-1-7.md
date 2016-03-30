@@ -39,6 +39,8 @@ These configuration parameters are specified in [YAML][1] format in your config.
     *   [config-yaml-keepalived-virtual-ipaddress]
     *   [config-yaml-num-masters]
 
+### [config-yaml-rexray-config-method]
+
 # Security and Authentication
 
 ### [config-yaml-auth-cookie-secure-flag]
