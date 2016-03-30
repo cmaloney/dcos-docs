@@ -1,6 +1,6 @@
 ---
 UID: 56f984452f28e
-post_title: Configuration parameters (1.7)
+post_title: Configuration parameters
 post_excerpt: ""
 layout: page
 published: true
