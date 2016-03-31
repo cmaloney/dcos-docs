@@ -155,8 +155,12 @@ To install DCOS:
         ├── dcos-genconf.c9722490f11019b692-cb6b6ea66f696912b0.tar
         ├── dcos_generate_config.ee.sh
         ├── genconf
+        │   ├── cluster_packages.json
         │   ├── config.yaml
-        │   ├── ip-detect     
+        │   ├── ip-detect    
+        │   ├── serve
+        │   ├── ssh_key
+        │   ├── state 
         
 
 2.  <a name="two"></a>Install the cluster prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For a full list of cluster prerequisites, see this [documentation][3].
