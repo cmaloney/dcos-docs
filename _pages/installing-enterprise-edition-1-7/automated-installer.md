@@ -1,34 +1,20 @@
 ---
-UID: 56f984451f3ca
-post_title: Automated GUI installation
-post_excerpt: ""
+post_title: Automated Installer
 layout: page
 published: true
-menu_order: 1
-page_options_require_authentication: false
-page_options_show_link_unauthenticated: false
-hide_from_navigation: false
-hide_from_related: true
 ---
-The automated GUI installation method provides a simple graphical interface that guides you through the installation of DCOS Enterprise Edition.
 
-This installation method uses a bootstrap node to administer the DCOS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DCOS installation.
+The automated installer provides a simple graphical interface that guides you through the installation of DCOS. The automated installer provides a basic installation that is suitable for demonstrations and POCs. This is the fastest way to get started with DCOS.
 
-**Important:** This installation method supports a minimal DCOS configuration set that includes ZooKeeper for shared storage and a static master list, and publicly accessible master IP addresses.
+The automated installer uses a bootstrap node to administer the DCOS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DCOS installation.
 
-To use the automated GUI installation method:
+The automated installer requires:
 
-*   Cluster nodes must be network accessible from the bootstrap node 
-*   Cluster nodes must have SSH enabled and ports open from the bootstrap node
-*   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH
+- Cluster nodes must be network accessible from the bootstrap node.
+- Cluster nodes must have SSH enabled and ports open from the bootstrap node.
 
-[installing-enterprise-edition-hardware]
+The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH.
 
-# Software Prerequisites
-
-## All Nodes
-
-[docker-prereq] [bootstrap-prereq-ssh-gui]
 
 # Install DCOS
 

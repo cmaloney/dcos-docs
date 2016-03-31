@@ -10,17 +10,6 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-<!-- ### <a name="integration"></a>DCOS Integration Points -->
-
-<!-- 
-There are a number of ways to extend the capabilities of the DCOS all of which center around datacenter services.  DCOS defines 2 types of services:
-
-* **Native** - An Apache Mesos framework which requires registration with the `mesos-master`.
-* **Non-Native** - A standard process that provides value to the cluster without an integration with Mesos. This seems like a standard user application deployed the distinction is this is an infrastructure service.
-
-All of these services are deployed by Marathon and must be packaged and added to the DCOS package repository for deployment.  For Native applications, it is also possible to extend the CLI and web interface.  Non-Native service integration support is coming soon.  For the rest of this topic a native service is assumed.  All of these services require packaging and a service catalog.
-
- -->
 
 # <a name="universe"></a>Package Repositories
 
