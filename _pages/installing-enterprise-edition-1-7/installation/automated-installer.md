@@ -73,19 +73,11 @@ The bootstrap node must have an unencrypted SSH key that can be used to authenti
     ### DCOS Environment Settings
     
     **Username**
-    :   Specify the administrator username. This username is required for using DCOS.
+    :   Specify the administrator username. This username is required for using DCOS. This feature is only available in Enterprise Edition.
     
     **Password**
-    :   Specify the administrator password. This password is required for using DCOS.
+    :   Specify the administrator password. This password is required for using DCOS. This feature is only available in Enterprise Edition.
     
-    **ZooKeeper for Exhibitor Private IP**
-    
-    :   Specify a comma-separated list of one or more ZooKeeper host IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this ZooKeeper cluster to orchestrate its configuration.
-        
-        **Important:** Multiple ZooKeeper instances are recommended for failover in production environments.
-    
-    **ZooKeeper for Exhibitor Port**
-    :   Specify the ZooKeeper port. For example, `2181`.
     
     **Upstream DNS Servers**
     
