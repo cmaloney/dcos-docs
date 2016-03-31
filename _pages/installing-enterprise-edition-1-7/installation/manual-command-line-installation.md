@@ -1,6 +1,6 @@
 ---
 UID: 56f98445082e6
-post_title: Manual installer
+post_title: Manual Installer
 post_excerpt: ""
 layout: page
 published: true
