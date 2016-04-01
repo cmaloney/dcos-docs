@@ -10,7 +10,6 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The automated installer provides a simple graphical interface that guides you through the installation of DCOS. The automated installer provides a basic installation that is suitable for demonstrations and POCs. This is the fastest way to get started with DCOS.
 
 The automated installer uses a bootstrap node to administer the DCOS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DCOS installation.
 
@@ -25,7 +24,7 @@ The bootstrap node must have an unencrypted SSH key that can be used to authenti
 
 **Important:** Encrypted SSH keys are not supported.
 
-1.  From your terminal, start the DCOS installer with this command.
+1.  From your terminal, start the DCOS GUI installer with this command.
     
         $ sudo bash dcos_generate_config.ee.sh --web
         
@@ -93,12 +92,12 @@ The bootstrap node must have an unencrypted SSH key that can be used to authenti
 
 5.  Click **Run Pre-Flight**. The preflight script installs the cluster [prerequisites][2] and validates that your cluster is installable. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
-    **Important:** If you exit your GUI installation before launching DCOS, you must do this before reinstalling:
-    
-    *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
-    *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
-    
     <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" rel="attachment wp-att-3197"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" alt="ui-installer-pre-flight1" width="626" height="405" class="alignnone size-full wp-image-3197" /></a>
+    
+    **Important:** If you exit your GUI installation before launching DCOS, you must do this before reinstalling:
+        
+        *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
+        *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
 
 6.  Click **Deploy** to install DCOS on your cluster. If errors any errors are found, fix and then click **Retry**.
     
