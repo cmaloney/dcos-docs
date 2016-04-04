@@ -1,4 +1,5 @@
 ---
+UID: 5702ddf288e4b
 post_title: Install DCOS
 post_excerpt: ""
 layout: page
@@ -9,9 +10,6 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-
-
-
 **Important:** Encrypted SSH keys are not supported.
 
 1.  From your terminal, start the DCOS GUI installer with this command.
@@ -67,7 +65,6 @@ hide_from_related: false
     **Password**
     :   Specify the administrator password. This password is required for using DCOS. This feature is only available in Enterprise Edition.
     
-    
     **Upstream DNS Servers**
     
     :   Specify a comma-separated list of DNS resolvers for your DCOS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`).
@@ -85,9 +82,10 @@ hide_from_related: false
     <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" rel="attachment wp-att-3197"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" alt="ui-installer-pre-flight1" width="626" height="405" class="alignnone size-full wp-image-3197" /></a>
     
     **Important:** If you exit your GUI installation before launching DCOS, you must do this before reinstalling:
-        
+    
         *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
         *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
+        
 
 6.  Click **Deploy** to install DCOS on your cluster. If errors any errors are found, fix and then click **Retry**.
     
