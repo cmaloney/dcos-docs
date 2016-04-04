@@ -1,7 +1,14 @@
 ---
+UID: 5702efb68c5ff
 post_title: System Requirements
+post_excerpt: ""
 layout: page
 published: true
+menu_order: 0
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
 # Hardware Prerequisites
 
@@ -12,8 +19,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
 1 node with 2 Cores, 16 GB RAM, 60 GB HDD. This is the node where DCOS installation is run. This bootstrap node must also have:
 
 *   Python, pip, and virtualenv must be installed for the DCOS [CLI][1]. pip must be configured to pull packages from PyPI or your private PyPI, if applicable.
-*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. </ul> 
-    </li> </ul>
+*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. </ul> </li> </ul>
     
     ## Cluster nodes
     
@@ -93,8 +99,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
     *   Each node has Network Time Protocol (NTP) for clock synchronization enabled.
     *   Each node has ICMP enabled.
     *   Each node has TCP and UDP enabled port 53 for DNS.
-    *   All hostnames (FQDN and short hostnames) must be resolvable in DNS, both forward and reverse lookups must succeed. </ul> 
-        These ports must be open for communication from the master nodes to the agent nodes:</li> </ul>
+    *   All hostnames (FQDN and short hostnames) must be resolvable in DNS, both forward and reverse lookups must succeed. </ul> These ports must be open for communication from the master nodes to the agent nodes:</li> </ul>
         
         <table class="table">
           <tr>
@@ -307,12 +312,6 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
         
         On each of your cluster nodes, use the following command to:
         
-        
-        
-        
-        
-        
-        
         </p> 
         
         *   Disable SELinux or set it to permissive mode.
@@ -328,5 +327,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
                 
             
             **Tip:** It may take a few minutes for your node to come back online after reboot.
+        
+        </li> </ul></li> </ul>
 
  [1]: https://docs.mesosphere.com/administration/cli/
