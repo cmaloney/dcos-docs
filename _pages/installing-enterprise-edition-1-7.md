@@ -16,11 +16,15 @@ DCOS is installed in your environment by using a dynamically generated setup fil
 The DCOS installation creates these folders:
 
 -  `/opt/mesosphere`
-    :  Contains all the DCOS binaries, libraries, cluster configuration. Do not modify.
+    
+    Contains all the DCOS binaries, libraries, cluster configuration. Do not modify.
 -  `/etc/systemd/system/dcos.target.wants`
-    :  Contains the systemd services which start the things that make up systemd. These files must be located outside of `/opt/mesosphere` because of systemd limitations.
+    
+    Contains the systemd services which start the things that make up systemd. These files must be located outside of `/opt/mesosphere` because of systemd limitations.
+    
 -  `/etc/systemd/system`
-    :  Copies of the units in `/etc/systemd/system/dcos.target.wants` must also be located in `/etc/systemd/system` due to a known systemd search path limitation. These units are prefixed with `dcos`.
+    
+    Copies of the units in `/etc/systemd/system/dcos.target.wants` must also be located in `/etc/systemd/system` due to a known systemd search path limitation. These units are prefixed with `dcos`.
 
 The DCOS installation process requires a cluster of nodes to install DCOS onto and a single node to run the DCOS installation from.
 
