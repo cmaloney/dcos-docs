@@ -221,79 +221,63 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
           </tr>
         </table>
         
-        </ul>
+# Software Prerequisites
+
+## All Nodes
+
+### Docker
+
+Your bootstrap and cluster nodes must have Docker version 1.9 or greater installed. You must run Docker commands as the root user (`sudo`). For more information, see <a href="http://docs.docker.com/engine/installation/" target="_blank">Docker installation</a>. Install Docker by using these commands for your Linux distribution.
+
+*   **CoreOS** Includes Docker natively.
+
+*   **RHEL** Install Docker by using a subscription channel. For more information, see <a href="https://access.redhat.com/articles/881893" target="_blank">Docker Formatted Container Images on Red Hat Systems</a>. <!-- $ curl -sSL https://get.docker.com | sudo sh -->
+
+*   **CentOS** CentOS Install Docker with OverlayFS.
+    
+    1.  Add the Docker yum repo to your node:
         
-        <
-        
-        h1>Software Prerequisites
-        
-        ## All Nodes
-        
-        ### Docker
-        
-        Your bootstrap and cluster nodes must have Docker version 1.9 or greater installed. You must run Docker commands as the root user (`sudo`). For more information, see <a href="http://docs.docker.com/engine/installation/" target="_blank">Docker installation</a>. Install Docker by using these commands for your Linux distribution.
-        
-        *   **CoreOS** Includes Docker natively.
-        
-        *   **RHEL** Install Docker by using a subscription channel. For more information, see <a href="https://access.redhat.com/articles/881893" target="_blank">Docker Formatted Container Images on Red Hat Systems</a>. <!-- $ curl -sSL https://get.docker.com | sudo sh -->
-        
-        *   **CentOS** CentOS Install Docker with OverlayFS.
+            $ sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
+            [dockerrepo]
+            name=Docker Repository
+            baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+            enabled=1
+            gpgcheck=1
+            gpgkey=https://yum.dockerproject.org/gpg
+            EOF
             
-            1.  Add the Docker yum repo to your node:
-                
-                    $ sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
-                    [dockerrepo]
-                    name=Docker Repository
-                    baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
-                    enabled=1
-                    gpgcheck=1
-                    gpgkey=https://yum.dockerproject.org/gpg
-                    EOF
-                    
+    
+    2.  Create Docker systemd drop-in files:
+        
+            $ sudo mkdir -p /etc/systemd/system/docker.service.d && sudo tee /etc/systemd/system/docker.service.d/override.conf <<- EOF 
+            [Service] 
+            ExecStart= 
+            ExecStart=/usr/bin/docker daemon --storage-driver=overlay -H fd:// 
+            EOF
             
-            2.  Create Docker systemd drop-in files:
-                
-                    $ sudo mkdir -p /etc/systemd/system/docker.service.d && sudo tee /etc/systemd/system/docker.service.d/override.conf <<- EOF 
-                    [Service] 
-                    ExecStart= 
-                    ExecStart=/usr/bin/docker daemon --storage-driver=overlay -H fd:// 
-                    EOF
-                    
+    
+    3.  Install the Docker engine, daemon, and service:
+        
+            $ sudo yum install -y docker-engine &&
+             sudo systemctl start docker &&
+              sudo systemctl enable docker
             
-            3.  Install the Docker engine, daemon, and service:
-                
-                    $ sudo yum install -y docker-engine &&
-                     sudo systemctl start docker &&
-                      sudo systemctl enable docker
-                    
-                
-                This can take a few minutes. This is what the end of the process should look like: Complete! Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
-            
-            You can test that your Docker build is properly installed with this command:
-            
-                $ sudo docker ps
-                
-            
-            Do not use use Docker `devicemapper` storage driver for loopback. For more information, see <a href="https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/" target="_blank">Docker and the Device Mapper storage driver</a>.
         
-        ## Bootstrap node
+        This can take a few minutes. This is what the end of the process should look like: Complete! Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+    
+    You can test that your Docker build is properly installed with this command:
+    
+        $ sudo docker ps
         
-        The bootstrap node is a permanent part of your cluster and is required for DCOS recovery. The leader state and leader election of your Mesos masters is maintained in Exhibitor ZooKeeper. Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
-        
-        ### DCOS setup file
-        
-        Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or <sales@mesosphere.com> to obtain the DCOS setup file.
-        
-        ## Bootstrap node
-        
-        Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
-        
-        ### DCOS setup file
-        
-        Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or sales@mesosphere.com to obtain the DCOS setup file.
-        
-        </li> </ul></li> </ul>
-        
-        </li> </ul></li> </ul>
+    
+    Do not use use Docker `devicemapper` storage driver for loopback. For more information, see <a href="https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/" target="_blank">Docker and the Device Mapper storage driver</a>.
+
+## Bootstrap node
+
+Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
+
+### DCOS setup file
+
+Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or <a href="mailto:sales@mesosphere.com">sales@mesosphere.com</a> to obtain the DCOS setup file.
 
  [1]: https://docs.mesosphere.com/administration/cli/
