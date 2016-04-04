@@ -1,15 +1,9 @@
 ---
-UID: 56fdaade336ba
 post_title: System Requirements
-post_excerpt: ""
 layout: page
 published: true
-menu_order: 0
-page_options_require_authentication: false
-page_options_show_link_unauthenticated: false
-hide_from_navigation: false
-hide_from_related: false
 ---
+
 # Hardware Prerequisites
 
 You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes.
