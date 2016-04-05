@@ -283,5 +283,9 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
         Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or <sales@mesosphere.com> to obtain the DCOS setup file.
         
         </li> </ul></li> </ul>
+        
+# Next step
+
+[Install DCOS](/install-dcos/)
 
  [1]: https://docs.mesosphere.com/administration/cli/
