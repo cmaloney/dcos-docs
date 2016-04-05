@@ -1,10 +1,15 @@
 ---
+UID: 5703eac67f213
 post_title: System Requirements
+post_excerpt: ""
 layout: page
-menu_order: 1
 published: true
+menu_order: 1
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 # Hardware Prerequisites
 
 You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes.
@@ -312,5 +317,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
                 
             
             **Tip:** It may take a few minutes for your node to come back online after reboot.
+        
+        </li> </ul></li> </ul>
 
  [1]: https://docs.mesosphere.com/administration/cli/

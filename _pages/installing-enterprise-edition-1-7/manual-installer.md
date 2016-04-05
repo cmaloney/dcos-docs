@@ -1,10 +1,15 @@
 ---
+UID: 5703eac617d56
 post_title: Manual Installer
+post_excerpt: ""
 layout: page
-menu_order: 2
 published: true
+menu_order: 2
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 With the manual installer, you package the DCOS distribution yourself and connect to every node manually to run the DCOS installation commands. This installation method is recommended if you want to integrate with an existing system or if you don’t have SSH access to your cluster.
 
 The manual installer requires:
