@@ -1,10 +1,15 @@
 ---
+UID: 5703e93a6fd2b
 post_title: Automated Installer
+post_excerpt: ""
 layout: page
-menu_order: 1
 published: true
+menu_order: 1
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 The automated installer provides a simple graphical interface that guides you through the installation of DCOS. The automated installer provides a basic installation that is suitable for demonstrations and POCs. This is the fastest way to get started with DCOS.
 
 The automated installer uses a bootstrap node to administer the DCOS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DCOS installation.
