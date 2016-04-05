@@ -5,12 +5,12 @@ an optimized engine that supports general computation graphs for data
 analysis. It also supports a rich set of higher-level tools including
 Spark SQL for SQL and DataFrames, MLlib for machine learning, GraphX
 for graph processing, and Spark Streaming for stream processing. For
-more information, see the [Apache Spark documentation][docs].
+more information, see the [Apache Spark documentation](docs).
 
 DCOS Spark includes:
 
-- [Mesos Cluster Dispatcher][Mesos Cluster Mode]  
-- [Spark History Server][Spark History Server]
+- [Mesos Cluster Dispatcher](Mesos Cluster Mode)  
+- [Spark History Server](Spark History Server)
 - DCOS Spark CLI
 
 ## Benefits
@@ -36,9 +36,9 @@ DCOS Spark includes:
 
 ## Related Services
 
-[HDFS][DCOS HDFS]  
-[Kafka][DCOS Kafka]  
-[Zeppelin][DCOS Zeppelin]
+[HDFS](DCOS HDFS)  
+[Kafka](DCOS Kafka)  
+[Zeppelin]9DCOS Zeppelin)
 
 # Quick Start
 
@@ -170,7 +170,7 @@ Spark components when accessing Kerberos-secured HDFS clusters.
 #### HDFS Configuration
 
 Once you've set up a Kerberos-enabled HDFS cluster, configure Spark to
-connect to it. See instructions [here][#Custom HDFS].
+connect to it. See instructions [here](#Custom HDFS).
 
 It is assumed that the HDFS namenodes are configured in the
 core-site.xml of Hadoop in this way:
@@ -230,7 +230,7 @@ Kerberos in Spark:
 
 ### History Server
 
-DCOS Spark includes the [Spark history server][Spark History Server].
+DCOS Spark includes the [Spark history server](Spark History Server).
 Because the history server requires HDFS, you must explicitly enable
 it.
 
@@ -283,7 +283,7 @@ and run:
    ```
 
 6. Visit your job in the dispatcher at
-`http://<dcos_url>/service/spark/Dispatcher/`.  It will include a link
+`http://<dcos_url>/service/spark/Dispatcher/`. It will include a link
 to the history server entry for that job.
 
 
@@ -403,15 +403,15 @@ information, [see here][Spark Submitting Applications].
    http://external.website/mysparkapp.jar 30`
    ```
 
-	`dcos spark run` is a thin wrapper around the standard Spark
-	`spark-submit` script. You can submit arbitrary pass-through
-	options to this script via the `--submit-args` options.
+   `dcos spark run` is a thin wrapper around the standard Spark
+   `spark-submit` script. You can submit arbitrary pass-through
+   options to this script via the `--submit-args` options.
 
-	The first time you run a job, the CLI must download the Spark
-	distribution to your local machine. This may take a while.
+   The first time you run a job, the CLI must download the Spark
+   distribution to your local machine. This may take a while.
 
-	If your job runs successfully, you will get a message with the
-	job’s submission ID:
+   If your job runs successfully, you will get a message with the
+   job’s submission ID:
 
    ```
    Run job succeeded. Submission id: driver-20160126183319-0001
@@ -427,14 +427,14 @@ dispatcher at `http://<dcos-url>/service/spark/`
 ## Setting Spark properties
  
 Spark job settings are controlled by configuring [Spark
-properties][Spark Properties].  You can set Spark properties during
+properties](Spark Properties). You can set Spark properties during
 submission, or you can create a configuration file.
 
 ### Submission
  
 All properties are submitted through the `--submit-args` option to
 `dcos spark run`. These are ultimately passed to the [`spark-submit`
-script][Spark Submitting Applications].
+script](Spark Submitting Applications).
 
 Certain common properties have their own special names.  You can view
 these through `dcos spark run --help`. Here is an example of using
