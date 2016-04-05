@@ -1,10 +1,15 @@
 ---
+UID: 5703dc9a3adba
 post_title: Configure and install DCOS
+post_excerpt: ""
 layout: page
-menu_order: 3
 published: true
+menu_order: 3
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 The DCOS installation creates these folders:
 
 *   `/opt/mesosphere`

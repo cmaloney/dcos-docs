@@ -1,10 +1,15 @@
 ---
+UID: 5703dc9a81a4a
 post_title: System Requirements
+post_excerpt: ""
 layout: page
-menu_order: 1
 published: true
+menu_order: 1
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 # Hardware Prerequisites
 
 You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes.
@@ -14,7 +19,8 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
 1 node with 2 Cores, 16 GB RAM, 60 GB HDD. This is the node where DCOS installation is run. This bootstrap node must also have:
 
 *   Python, pip, and virtualenv must be installed for the DCOS [CLI][1]. pip must be configured to pull packages from PyPI or your private PyPI, if applicable.
-*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. </ul> </li> </ul>
+*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. </ul> 
+    </li> </ul>
     
     ## Cluster nodes
     
@@ -94,7 +100,8 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
     *   Each node has Network Time Protocol (NTP) for clock synchronization enabled.
     *   Each node has ICMP enabled.
     *   Each node has TCP and UDP enabled port 53 for DNS.
-    *   All hostnames (FQDN and short hostnames) must be resolvable in DNS, both forward and reverse lookups must succeed. </ul> These ports must be open for communication from the master nodes to the agent nodes:</li> </ul>
+    *   All hostnames (FQDN and short hostnames) must be resolvable in DNS, both forward and reverse lookups must succeed. </ul> 
+        These ports must be open for communication from the master nodes to the agent nodes:
         
         <table class="table">
           <tr>
@@ -212,11 +219,9 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
           </tr>
         </table>
         
-        </ul>
+        </li> </ul></li> </ul>
         
-        <
-        
-        h1>Software Prerequisites
+        # Software Prerequisites
         
         ## All Nodes
         
@@ -269,18 +274,50 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
         
         ## Bootstrap node
         
-        The bootstrap node is a permanent part of your cluster and is required for DCOS recovery. The leader state and leader election of your Mesos masters is maintained in Exhibitor ZooKeeper. Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
-        
-        ### DCOS setup file
-        
-        Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or <sales@mesosphere.com> to obtain the DCOS setup file.
-        
-        ## Bootstrap node
-        
         Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
         
         ### DCOS setup file
         
         Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or sales@mesosphere.com to obtain the DCOS setup file.
+        
+        ### Docker Nginx
+        
+        Install the Docker Nginx image:
+        
+            $ sudo docker pull nginx
+            
+        
+        ## Cluster nodes
+        
+        Before installing DCOS, you must ensure that all of your cluster nodes have the following prerequisites. The cluster nodes are designated Mesos masters and agents during installation.
+        
+        ## Data compression
+        
+        You must have the <a href="http://www.info-zip.org/UnZip.html" target="_blank">UnZip</a>, <a href="https://www.gnu.org/software/tar/" target="_blank">GNU tar</a>, and <a href="http://tukaani.org/xz/" target="_blank">XZ Utils</a> data compression utilities installed on your cluster nodes.
+        
+        To install these utilities on CentOS7 and RHEL7:
+        
+            $ sudo yum install -y tar xz unzip curl
+            
+        
+        ## Cluster permissions
+        
+        On each of your cluster nodes, use the following command to:
+        
+        *   Disable SELinux or set it to permissive mode.
+        *   Add nogroup to each of your Mesos masters and agents.</li> 
+        *   Disable IPV6. For more information see <a href="https://wiki.centos.org/FAQ/CentOS7#head-8984faf811faccca74c7bcdd74de7467f2fcd8ee" target="_blank">How do I disable IPv6</a>.</li> 
+        *   Reboot your cluster for the changes to take affect</p> 
+            
+                $ sudo sed -i s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config &&
+                 sudo groupadd nogroup &&
+                 sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 &&
+                 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 &&
+                 sudo reboot
+                
+            
+            **Tip:** It may take a few minutes for your node to come back online after reboot.
+        
+        </li> </ul></li> </ul>
 
  [1]: https://docs.mesosphere.com/administration/cli/

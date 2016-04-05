@@ -1,10 +1,15 @@
 ---
+UID: 5703dc998377c
 post_title: Install DCOS
+post_excerpt: ""
 layout: page
-menu_order: 2
 published: true
+menu_order: 2
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 **Important:** Encrypted SSH keys are not supported.
 
 1.  From your terminal, start the DCOS GUI installer with this command.
