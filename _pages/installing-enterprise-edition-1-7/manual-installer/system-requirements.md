@@ -318,6 +318,8 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
             
             **Tip:** It may take a few minutes for your node to come back online after reboot.
         
-        </li> </ul></li> </ul>
+# Next step
+
+[Create A Script for IP Address Discovery](/create-a-script-for-ip-address-discovery/)
 
  [1]: https://docs.mesosphere.com/administration/cli/
