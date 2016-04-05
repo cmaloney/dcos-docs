@@ -1,3 +1,5 @@
+<!-- note the "source of truth" for this page is https://github.com/mesosphere/spark-build/blob/master/docs/user-docs.md -->
+
 # Overview
 Spark is a fast and general-purpose cluster computing system for big
 data. It provides high-level APIs in Scala, Java, Python, and R, and
