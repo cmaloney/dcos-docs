@@ -66,6 +66,10 @@ To create an advanced ACL group:
     
     *   `full` - Full CRUD access. This is the only available option for the `dcos:<service-type>:<service-name>:admin` namespace. 
     
+    
+Available resources:
+
+
 
 # Examples
 
