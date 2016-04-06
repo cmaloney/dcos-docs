@@ -55,5 +55,5 @@ In this tutorial a Spark job is run by using DCOS.
 
 7.  To set any Spark properties (e.g. coarse grain mode or fine grain mode), you can also provide a custom `spark.properties` file and set the environment variable `SPARK_CONF_DIR` to that directory.
 
- [1]: /overview/installing/
+ [1]: /administration/installing/
  [2]: /administration/cli/install-cli/

@@ -514,8 +514,8 @@ Now you can [assign user roles][6].
 
  [1]: #ssh
  [2]: #manual
- [3]: /overview/installing/installing-enterprise-edition/configuration-parameters/
+ [3]: /administration/installing/installing-enterprise-edition/configuration-parameters/
  [4]: http://ipset.netfilter.org/
  [5]: http://mesos.apache.org/documentation/latest/containerizer/
  [6]: /administration/security-and-authentication/managing-authorization/
- [7]: /overview/installing/installing-enterprise-edition/dcos-cleanup-script/
+ [7]: /administration/installing/installing-enterprise-edition/dcos-cleanup-script/

@@ -146,6 +146,6 @@ To install these programs, download the Windows installer <a href="http://www.ch
  [1]: /administration/cli/command-reference/
  [2]: #unix
  [3]: #windows
- [4]: /overview/installing/awscluster/#create
+ [4]: /administration/installing/awscluster/#create
  
 

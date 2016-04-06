@@ -138,7 +138,7 @@ Crate is <a href="https://crate.io/docs/support/" target="_blank">supported</a> 
  [7]: #shutdown
  [8]: #multiple
  [9]: /administration/sshcluster/
- [10]: /overview/installing/awscluster#launchdcos
+ [10]: /administration/installing/awscluster#launchdcos
  [11]: https://github.com/crate/crate-mesos-framework#persistent-data-paths
  [12]: https://github.com/crate/crate-mesos-framework/blob/master/README.rst
  [13]: https://crate.io/docs

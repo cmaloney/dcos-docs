@@ -36,5 +36,5 @@ To install a DCOS service:
     *   From the Mesos web interface at `<hostname>/mesos`, verify that the service has registered and is starting tasks.
 
  [1]: /administration/package-repo-overview/
- [2]: /overview/installing/
+ [2]: /administration/installing/
  [3]: /administration/cli/install-cli/

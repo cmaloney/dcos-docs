@@ -75,5 +75,5 @@ For more information:
 
  [1]: /administration/cli/install-cli/
  [2]: /tutorials/marathon-add-user/
- [3]: /overview/installing/awscluster#launchdcos
+ [3]: /administration/installing/awscluster#launchdcos
  [4]: /tutorials/deploywebapp/

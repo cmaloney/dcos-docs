@@ -81,5 +81,5 @@ Common options: -h, --help - Show this message
 **Note:** You can also run autoscale.rb from the command line of your master node if you have Ruby installed.
 
  [1]: https://github.com/mesosphere/marathon-lb-autoscale
- [2]: /overview/installing/awscluster/
+ [2]: /administration/installing/awscluster/
  [3]: /administration/cli/install-cli/

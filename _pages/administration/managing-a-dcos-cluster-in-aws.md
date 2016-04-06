@@ -58,4 +58,4 @@ To upgrade a DCOS cluster:
 3.  Shutdown your existing DCOS cluster.
 
  [1]: /administration/dcosarchitecture/security/#scrollNav-3
- [2]: /overview/installing/installing-community-edition/awscluster/
+ [2]: /administration/installing/installing-community-edition/awscluster/
