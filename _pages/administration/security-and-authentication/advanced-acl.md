@@ -187,7 +187,7 @@ In this example, a user named Ted is granted access to install services from the
 
     1.  From the **Advanced ACLs** tab, enter Resource `dcos:adminrouter:package`, Permission `full`, and click **Add Rule**.
 
-            ![alt text](/assets/auth-enable-ex-package-user2.gif)
+        ![alt text](/assets/auth-enable-ex-package-user2.gif)
             
     1.  From the **Members** tab, select Ted from the dropdown menu.
     
