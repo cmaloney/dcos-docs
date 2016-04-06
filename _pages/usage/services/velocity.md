@@ -88,4 +88,4 @@ From the DCOS CLI, uninstall Velocity by running the following command:
  [7]: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch-nfs.html
  [8]: https://help.ubuntu.com/14.04/serverguide/network-file-system.html
  [9]: https://coreos.com/os/docs/latest/mounting-storage.html#mounting-nfs-exports
- [10]: /usage/managing-services/velocity/configuration-reference
+ [10]: /usage/services/velocity/configuration-reference

@@ -117,4 +117,4 @@ That’s it! While this tutorial is meant to show the simplest workflow possible
 *   <https://jenkinsci.github.io/job-dsl-plugin/>
 *   <https://github.com/jenkinsci/job-dsl-plugin/wiki/Real-World-Examples>
 
- [1]: /usage/managing-services/velocity/
+ [1]: /usage/services/velocity/

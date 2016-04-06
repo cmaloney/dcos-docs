@@ -139,7 +139,7 @@ Commit the new post to git. Shortly after the new commit lands on the master bra
 <a href="/wp-content/uploads/2016/03/dcos-jekyll-updated.png" rel="attachment wp-att-4071"><img src="/wp-content/uploads/2016/03/dcos-jekyll-updated-800x389.png" alt="dcos-jekyll-updated" width="800" height="389" class="aligncenter size-large wp-image-4071" /></a>
 
  [1]: https://mesosphere.github.io/marathon/
- [2]: /usage/managing-services/velocity/
+ [2]: /usage/services/velocity/
  [3]: https://mesosphere.github.io/marathon/docs/application-basics.html
  [4]: https://github.com/mesosphere/cd-demo
  [5]: https://mesosphere.github.io/marathon/docs/native-docker.html

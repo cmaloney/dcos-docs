@@ -180,7 +180,7 @@ In this step you can see the load balancer in action by removing or adding nodes
 
  [1]: /overview/concepts/
  [2]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
- [3]: /usage/managing-services/cassandra/
+ [3]: /usage/services/cassandra/
  [4]: https://github.com/mesosphere/marathon-lb
  [5]: https://github.com/mesosphere/oinker
  [6]: /administration/sshcluster/

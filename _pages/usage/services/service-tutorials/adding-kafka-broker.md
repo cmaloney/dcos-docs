@@ -39,4 +39,4 @@ In this example, a Kafka broker is added by using the Kafka CLI.
     
         $ dcos kafka broker list
 
- [1]: /usage/managing-services/kafka/#kafkainstall
+ [1]: /usage/services/kafka/#kafkainstall

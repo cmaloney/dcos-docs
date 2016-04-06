@@ -27,14 +27,14 @@ For more information on installing services, see [Managing DCOS services][11].
 See the [installing a DCOS service][12] tutorial.
 
  [1]: https://github.com/mesosphere/universe
- [2]: /usage/managing-services/cassandra/
- [3]: /usage/managing-services/chronos/
- [4]: /usage/managing-services/hdfs/
- [5]: /usage/managing-services/kafka/
- [6]: /usage/managing-services/kubernetes/
- [7]: /usage/managing-services/marathon/
- [8]: /usage/managing-services/spark/
+ [2]: /usage/services/cassandra/
+ [3]: /usage/services/chronos/
+ [4]: /usage/services/hdfs/
+ [5]: /usage/services/kafka/
+ [6]: /usage/services/kubernetes/
+ [7]: /usage/services/marathon/
+ [8]: /usage/services/spark/
  [9]: /usage/cli/install-cli/
  [10]: https://github.com/mesosphere/multiverse
- [11]: /usage/managing-services/
+ [11]: /usage/services/
  [12]: /administration/admin-tutorials/install-service/
