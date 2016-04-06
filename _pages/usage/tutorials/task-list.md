@@ -1,6 +1,6 @@
 ---
 UID: 5705936c00b4a
-post_title: Listing DCOS Tasks
+post_title: Listing Tasks
 post_excerpt: ""
 layout: page
 published: true

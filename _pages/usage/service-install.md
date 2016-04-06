@@ -1,6 +1,6 @@
 ---
 UID: 56f9844a6d586
-post_title: Installing a DCOS service
+post_title: Installing Services
 post_excerpt: ""
 layout: page
 published: true

@@ -1,6 +1,6 @@
 ---
 UID: 56f98447c920b
-post_title: Managing DCOS Clusters in AWS
+post_title: Managing AWS Clusters
 post_excerpt: ""
 layout: page
 published: true

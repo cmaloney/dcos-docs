@@ -1,6 +1,6 @@
 ---
 UID: 56f98449546cf
-post_title: SSHing to a DCOS Cluster
+post_title: SSHing into Nodes
 post_excerpt: ""
 layout: page
 published: true

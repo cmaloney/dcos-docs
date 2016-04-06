@@ -1,6 +1,6 @@
 ---
 UID: 56f98447e21bc
-post_title: Configure DCOS Services
+post_title: Configuring Services
 post_excerpt: ""
 layout: page
 published: true

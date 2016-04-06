@@ -1,6 +1,6 @@
 ---
 UID: 56f98447f1528
-post_title: List Installed DCOS Services
+post_title: Listing Installed Services
 post_excerpt: ""
 layout: page
 published: true

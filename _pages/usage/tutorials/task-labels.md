@@ -1,6 +1,6 @@
 ---
 UID: 56f9844782d70
-post_title: Labeling DCOS Tasks
+post_title: Labeling Tasks
 post_excerpt: ""
 layout: page
 published: true
