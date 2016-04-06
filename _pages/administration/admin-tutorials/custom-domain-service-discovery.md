@@ -241,4 +241,4 @@ DCOS uses Mesos-DNS for internal service discovery. While the .mesos domain can 
 
 Here is a datacenter with DCOS clusters in development and production environments:
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/tutorial-cust-domain.png" rel="attachment wp-att-3898"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/tutorial-cust-domain-800x330.png" alt="tutorial-cust-domain" width="800" height="330" class="alignnone size-large wp-image-3898" /></a>
+<a href="/wp-content/uploads/2016/03/tutorial-cust-domain.png" rel="attachment wp-att-3898"><img src="/wp-content/uploads/2016/03/tutorial-cust-domain-800x330.png" alt="tutorial-cust-domain" width="800" height="330" class="alignnone size-large wp-image-3898" /></a>

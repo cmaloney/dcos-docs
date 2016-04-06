@@ -38,13 +38,13 @@ Kafka is a distributed, partitioned, replicated commit log service. It provides 
     
     1.  Click on the **Explorer** tab and navigate to the `kafka-mesos` folder.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkkafka.png" rel="attachment wp-att-1395"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkkafka-600x456.png" alt="zkkafka" width="300" height="228" class="alignnone size-medium wp-image-1395" /></a>
+        <a href="/wp-content/uploads/2015/12/zkkafka.png" rel="attachment wp-att-1395"><img src="/wp-content/uploads/2015/12/zkkafka-600x456.png" alt="zkkafka" width="300" height="228" class="alignnone size-medium wp-image-1395" /></a>
     
     2.  Click the **Modify** button on the lower-left side of browser.
     
     3.  Choose Type **Delete**, enter the required **Username**, **Ticket/Code**, and **Reason** fields, and click **Next**.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkkafkadelete.png" rel="attachment wp-att-1393"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkkafkadelete-600x331.png" alt="zkkafkadelete" width="300" height="166" class="alignnone size-medium wp-image-1393" /></a>
+        <a href="/wp-content/uploads/2015/12/zkkafkadelete.png" rel="attachment wp-att-1393"><img src="/wp-content/uploads/2015/12/zkkafkadelete-600x331.png" alt="zkkafkadelete" width="300" height="166" class="alignnone size-medium wp-image-1393" /></a>
     
     4.  Click **OK** to confirm your deletion.
     
@@ -61,6 +61,6 @@ For more information:
 *   <a href="https://github.com/mesosphere/kafka/blob/master/README.md" target="_blank">Kafka Mesos Framework</a>
 *   <a href="http://kafka.apache.org/documentation.html" target="_blank">Apache Kafka Documentation</a>
 
- [1]: /install/cli/
- [2]: /install/awscluster#launchdcos
+ [1]: /administration/cli/install-cli/
+ [2]: /concepts/installing/awscluster#launchdcos
  [3]: /sshcluster/

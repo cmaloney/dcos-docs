@@ -27,7 +27,7 @@ In this tutorial a Spark job is run by using DCOS.
 
 2.  Verify that Spark is running:
     
-    *   From the DCOS web interface, go to the Services tab and confirm that Spark is running. Click the **spark** row item to view the Spark web interface. <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/sparktask.png" rel="attachment wp-att-1236"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/sparktask.png" alt="sparktask" width="717" height="41" class="alignnone size-full wp-image-1236" /></a>
+    *   From the DCOS web interface, go to the Services tab and confirm that Spark is running. Click the **spark** row item to view the Spark web interface. <a href="/wp-content/uploads/2015/12/sparktask.png" rel="attachment wp-att-1236"><img src="/wp-content/uploads/2015/12/sparktask.png" alt="sparktask" width="717" height="41" class="alignnone size-full wp-image-1236" /></a>
     *   From the DCOS CLI: `dcos package list`
     *   From the Mesos web interface at `http://<hostname>/mesos`, verify that the Spark framework has registered and is starting tasks. There should be several journalnodes, namenodes, and datanodes running as tasks. Wait for all of these to show the RUNNING state.
 
@@ -55,5 +55,5 @@ In this tutorial a Spark job is run by using DCOS.
 
 7.  To set any Spark properties (e.g. coarse grain mode or fine grain mode), you can also provide a custom `spark.properties` file and set the environment variable `SPARK_CONF_DIR` to that directory.
 
- [1]: ../install/awscluster/
- [2]: ../install/cli/
+ [1]: /concepts/installing/
+ [2]: /administration/cli/install-cli/

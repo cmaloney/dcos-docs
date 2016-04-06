@@ -15,7 +15,7 @@ Learn how to use the many DCOS services with these tutorials.
 <div class="container-pod container-pod-short-top flush-bottom">
   <div class="row flex-box flex-box-fit-height flex-box-wrap row-grid">
     <article id="post-580" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/marathon-add-user/"> Adding a Marathon User Instance </a>
+      <a href="/managing-services/service-tutorials/marathon-add-user/"> Adding a Marathon User Instance </a>
     </h4>
     
     <p class="flush-bottom">
@@ -23,7 +23,7 @@ Learn how to use the many DCOS services with these tutorials.
     </p></article> <article id="post-570" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
     
     <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/crate/"> Deploying Crate as a DCOS Service </a>
+      <a href="/managing-services/service-tutorials/crate/"> Deploying Crate as a DCOS Service </a>
     </h4>
     
     <p class="flush-bottom">
@@ -31,7 +31,7 @@ Learn how to use the many DCOS services with these tutorials.
     </p></article> <article id="post-1231" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
     
     <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/running-a-spark-job/"> Running a Spark Job </a>
+      <a href="/managing-services/service-tutorials/running-a-spark-job/"> Running a Spark Job </a>
     </h4>
     
     <p class="flush-bottom">
@@ -39,7 +39,7 @@ Learn how to use the many DCOS services with these tutorials.
     </p></article> <article id="post-1279" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
     
     <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/running-more-than-one-instance-of-cassandra/"> Running multiple Cassandra instances </a>
+      <a href="/managing-services/service-tutorials/running-more-than-one-instance-of-cassandra/"> Running multiple Cassandra instances </a>
     </h4>
     
     <p class="flush-bottom">
@@ -47,7 +47,7 @@ Learn how to use the many DCOS services with these tutorials.
     </p></article> <article id="post-1304" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
     
     <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/creating-a-chronos-job/"> Creating a Chronos job </a>
+      <a href="/managing-services/service-tutorials/creating-a-chronos-job/"> Creating a Chronos job </a>
     </h4>
     
     <p class="flush-bottom">
@@ -55,7 +55,7 @@ Learn how to use the many DCOS services with these tutorials.
     </p></article> <article id="post-1316" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
     
     <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/adding-kafka-broker/"> Adding a Kafka broker </a>
+      <a href="/managing-services/service-tutorials/adding-kafka-broker/"> Adding a Kafka broker </a>
     </h4>
     
     <p class="flush-bottom">
@@ -63,7 +63,7 @@ Learn how to use the many DCOS services with these tutorials.
     </p></article> <article id="post-1698" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
     
     <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/show-active-services/"> Show Active Services </a>
+      <a href="/managing-services/service-tutorials/show-active-services/"> Show Active Services </a>
     </h4>
     
     <p class="flush-bottom">
@@ -71,7 +71,7 @@ Learn how to use the many DCOS services with these tutorials.
     </p></article> <article id="post-1702" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
     
     <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/using-spark/"> Customizing Your Spark Installation </a>
+      <a href="/managing-services/service-tutorials/using-spark/"> Customizing Your Spark Installation </a>
     </h4>
     
     <p class="flush-bottom">
@@ -79,7 +79,7 @@ Learn how to use the many DCOS services with these tutorials.
     </p></article> <article id="post-1709" class="cf column-small-6 post-topic" role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
     
     <h4 class="flush-top">
-      <a href="/manage-service/service-tutorials/install-service-with-a-custom-options-file/"> Customizing a DCOS Service </a>
+      <a href="/managing-services/service-tutorials/install-service-with-a-custom-options-file/"> Customizing a DCOS Service </a>
     </h4>
     
     <p class="flush-bottom">

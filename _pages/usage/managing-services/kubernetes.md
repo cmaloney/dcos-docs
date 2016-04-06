@@ -59,11 +59,11 @@ The current Kubernetes alpha <a href="https://github.com/mesosphere/kubernetes/r
     
     *   From the DCOS web interface, go to the Services tab and confirm that Kubernetes is running at <hostname>/#/services/.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/kubernetestask.png" rel="attachment wp-att-1401"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/kubernetestask.png" alt="kubernetestask" width="721" height="48" class="alignnone size-full wp-image-1401" /></a>
+        <a href="/wp-content/uploads/2015/12/kubernetestask.png" rel="attachment wp-att-1401"><img src="/wp-content/uploads/2015/12/kubernetestask.png" alt="kubernetestask" width="721" height="48" class="alignnone size-full wp-image-1401" /></a>
     
     *   Open a browser and navigate to the Kubernetes web interface at `<hostname>/service/kubernetes/`.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/kubernetes-interface.png" rel="attachment wp-att-1404"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/kubernetes-interface.png" alt="kubernetes-interface" width="674" height="614" class="alignnone size-full wp-image-1404" /></a>
+        <a href="/wp-content/uploads/2015/12/kubernetes-interface.png" rel="attachment wp-att-1404"><img src="/wp-content/uploads/2015/12/kubernetes-interface.png" alt="kubernetes-interface" width="674" height="614" class="alignnone size-full wp-image-1404" /></a>
     
     *   Open a browser and navigate to the Mesos web interface at `<hostname>/mesos`. Verify that the Kubernetes framework has registered and is starting tasks.
 
@@ -120,7 +120,7 @@ Now that Kubernetes is installed on DCOS, you can explore the [Kubernetes Sample
 
  [1]: https://github.com/kubernetes/kubernetes/blob/release-1.1/contrib/mesos/README.md
  [2]: https://github.com/kubernetes/kubernetes/blob/master/contrib/mesos/docs/scheduler.md
- [3]: /install/cli/
+ [3]: /administration/cli/install-cli/
  [4]: https://github.com/mesosphere/etcd-mesos
  [5]: http://kubernetes.io/docs/samples
  [6]: http://kubernetes.io/docs/user-guide/

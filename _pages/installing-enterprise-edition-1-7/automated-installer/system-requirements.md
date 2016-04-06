@@ -288,4 +288,4 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
 
 [Install DCOS](/install-dcos/)
 
- [1]: https://docs.mesosphere.com/administration/cli/
+ [1]: /administration/cli/

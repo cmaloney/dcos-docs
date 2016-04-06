@@ -29,7 +29,7 @@ You can access these logs in two ways:
         
         **Tip:** You can use the filters to narrow the scope.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/mesos-sandbox-log.png" rel="attachment wp-att-1559"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/mesos-sandbox-log.png" alt="mesos-sandbox-log" width="898" height="311" class="alignnone size-full wp-image-1559" /></a>
+        <a href="/wp-content/uploads/2015/12/mesos-sandbox-log.png" rel="attachment wp-att-1559"><img src="/wp-content/uploads/2015/12/mesos-sandbox-log.png" alt="mesos-sandbox-log" width="898" height="311" class="alignnone size-full wp-image-1559" /></a>
 
- [1]: ../introcli/command-reference/#scrollNav-5
- [2]: /install/awscluster#launchdcos
+ [1]: /administration/cli/command-reference/#scrollNav-5
+ [2]: /concepts/installing/awscluster#launchdcos

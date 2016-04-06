@@ -29,7 +29,7 @@ You can create additional Marathon instances for specific users by using the ins
             $ dcos package install marathon
             
         
-        By default the DCOS Service name is `marathon-user`. <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/marathontask.png" rel="attachment wp-att-1410"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/marathontask.png" alt="marathontask" width="709" height="44" class="alignnone size-full wp-image-1410" /></a>
+        By default the DCOS Service name is `marathon-user`. <a href="/wp-content/uploads/2015/12/marathontask.png" rel="attachment wp-att-1410"><img src="/wp-content/uploads/2015/12/marathontask.png" alt="marathontask" width="709" height="44" class="alignnone size-full wp-image-1410" /></a>
     
     *   To install multiple Marathon instances:
         
@@ -60,11 +60,11 @@ You can create additional Marathon instances for specific users by using the ins
         
         **Important:** Do not delete the `marathon` folder. This is the native DCOS Marathon instance.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkmarathon.png" rel="attachment wp-att-1407"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkmarathon-600x482.png" alt="zkmarathon" width="300" height="241" class="alignnone size-medium wp-image-1407" /></a>
+        <a href="/wp-content/uploads/2015/12/zkmarathon.png" rel="attachment wp-att-1407"><img src="/wp-content/uploads/2015/12/zkmarathon-600x482.png" alt="zkmarathon" width="300" height="241" class="alignnone size-medium wp-image-1407" /></a>
     
     2.  Choose Type **Delete**, enter the required **Username**, **Ticket/Code**, and **Reason** fields, and click **Next**.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkmarathondelete.png" rel="attachment wp-att-1409"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkmarathondelete-600x331.png" alt="zkmarathondelete" width="300" height="166" class="alignnone size-medium wp-image-1409" /></a>
+        <a href="/wp-content/uploads/2015/12/zkmarathondelete.png" rel="attachment wp-att-1409"><img src="/wp-content/uploads/2015/12/zkmarathondelete-600x331.png" alt="zkmarathondelete" width="300" height="166" class="alignnone size-medium wp-image-1409" /></a>
     
     3.  Click **OK** to confirm your deletion.
 
@@ -73,7 +73,7 @@ For more information:
 *   <a href="http://mesosphere.github.io/marathon/docs/" target="_blank">Marathon documentation</a>
 *   [Deploying a Web App][4]
 
- [1]: /install/cli/
+ [1]: /administration/cli/install-cli/
  [2]: /tutorials/marathon-add-user/
- [3]: /install/awscluster#launchdcos
+ [3]: /concepts/installing/awscluster#launchdcos
  [4]: /tutorials/deploywebapp/

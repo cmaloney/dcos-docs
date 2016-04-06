@@ -71,7 +71,7 @@ Added support for authentication against DCOS access control service.
 
 DCOS 1.6 now includes Marathon 0.15.1 with many UI enhancements.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/mara-relnotes-1-6.png" rel="attachment wp-att-3392"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/mara-relnotes-1-6-800x443.png" alt="mara-relnotes-1-6" width="800" height="443" class="alignnone size-large wp-image-3392" /></a>
+<a href="/wp-content/uploads/2016/02/mara-relnotes-1-6.png" rel="attachment wp-att-3392"><img src="/wp-content/uploads/2016/02/mara-relnotes-1-6-800x443.png" alt="mara-relnotes-1-6" width="800" height="443" class="alignnone size-large wp-image-3392" /></a>
 
 *   **Perform actions directly from the Applications list** You can now perform common Marathon functions, including scale, destroy, and suspend, directly from a contextual dropdown menu in the Applications list. You no longer have to click through to the application detail view. Additionally, you can perform scale and delete operations on entire Groups!
 
@@ -106,15 +106,15 @@ The Apache Mesos kernel is now at [version 0.27][6].
 *   The Service and Agent panels of the DCOS Web Interface won't render over 5,000 tasks. If you have a service or agent that has over 5,000 your browser may experience slowness. In this case you can close said browser tab and reopen the DCOS web interface.
 *   See additional known issues at <a href="https://support.mesosphere.com" target="_blank">support.mesosphere.com</a>.
 
- [1]: ../security-and-authentication/
- [2]: ../automated-gui/
- [3]: ../auto-command-line/
- [4]: ../auto-command-line/#scrollNav-4
- [5]: ../security-and-authentication/managing-authorization/
+ [1]: /administration/security-and-authentication/
+ [2]: /concepts/installing/installing-enterprise-edition/automated-gui/
+ [3]: /concepts/installing/installing-enterprise-edition/auto-command-line/
+ [4]: /concepts/installing/installing-enterprise-edition/auto-command-line/#scrollNav-4
+ [5]: /administration/security-and-authentication/managing-authorization/
  [6]: http://mesos.apache.org/blog/mesos-0-27-0-released/
  [7]: https://issues.apache.org/jira/browse/MESOS-1791
  [8]: https://issues.apache.org/jira/browse/MESOS-191
  [9]: https://issues.apache.org/jira/browse/MESOS-4085
  [10]: https://issues.apache.org/jira/browse/MESOS-2353
  [11]: https://git-wip-us.apache.org/repos/asf?p=mesos.git;a=blob_plain;f=CHANGELOG;hb=0.27.0
- [12]: ../manual-installation/
+ [12]: /concepts/installing/installing-enterprise-edition/manual-installation/

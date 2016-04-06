@@ -33,7 +33,7 @@ Velocity is distributed as a Docker image. In order to download and install Velo
 
 ## Installing Velocity
 
-[caption id="attachment_3997" align="aligncenter" width="800"]<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/01-turnkey-velocity.gif" rel="attachment wp-att-3997"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/01-turnkey-velocity-800x450.gif" alt="Velocity installation process." width="800" height="450" class="size-large wp-image-3997" /></a> Velocity installation process.[/caption]
+[caption id="attachment_3997" align="aligncenter" width="800"]<a href="/wp-content/uploads/2016/03/01-turnkey-velocity.gif" rel="attachment wp-att-3997"><img src="/wp-content/uploads/2016/03/01-turnkey-velocity-800x450.gif" alt="Velocity installation process." width="800" height="450" class="size-large wp-image-3997" /></a> Velocity installation process.[/caption]
 
 1.  First, add the private Velocity package repository to your DCOS cluster:
     
@@ -84,8 +84,8 @@ From the DCOS CLI, uninstall Velocity by running the following command:
  [3]: https://docs.docker.com/engine/reference/commandline/load/
  [4]: https://hub.docker.com
  [5]: https://docs.docker.com/engine/reference/commandline/login/
- [6]: https://docs.mesosphere.com/install/cli/
+ [6]: /administration/cli/install-cli/
  [7]: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch-nfs.html
  [8]: https://help.ubuntu.com/14.04/serverguide/network-file-system.html
  [9]: https://coreos.com/os/docs/latest/mounting-storage.html#mounting-nfs-exports
- [10]: /manage-service/velocity/configuration-reference
+ [10]: /usage/managing-services/velocity/configuration-reference

@@ -28,9 +28,9 @@ If you have not already installed Velocity as described on the [Overview and Ins
 
 Velocity can be accessed through the Dashboard or Services navigation menu’s within the DCOS UI. Click on the “velocity” service and click the "Open Service"" to access the Jenkins UI.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-velocity-healthy.png" rel="attachment wp-att-4059"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-velocity-healthy-800x351.png" alt="dcos-velocity-healthy" width="800" height="351" class="aligncenter size-large wp-image-4059" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-velocity-healthy.png" rel="attachment wp-att-4059"><img src="/wp-content/uploads/2016/03/dcos-velocity-healthy-800x351.png" alt="dcos-velocity-healthy" width="800" height="351" class="aligncenter size-large wp-image-4059" /></a>
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-velocity-jenkins-ui.png" rel="attachment wp-att-4060"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-velocity-jenkins-ui-800x516.png" alt="dcos-velocity-jenkins-ui" width="800" height="516" class="aligncenter size-large wp-image-4060" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-velocity-jenkins-ui.png" rel="attachment wp-att-4060"><img src="/wp-content/uploads/2016/03/dcos-velocity-jenkins-ui-800x516.png" alt="dcos-velocity-jenkins-ui" width="800" height="516" class="aligncenter size-large wp-image-4060" /></a>
 
 # The Job
 
@@ -38,13 +38,13 @@ We’ll create a new Jenkins job that will perform several operations with Docke
 
 Create a new "Freestyle" job with a name including only lowercase letters and hyphens. This name will be used later in the docker image name and possibly as the Marathon application ID.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-new-freestyle.png" rel="attachment wp-att-4061"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-new-freestyle-800x175.png" alt="dcos-jenkins-new-freestyle" width="800" height="175" class="aligncenter size-large wp-image-4061" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-jenkins-new-freestyle.png" rel="attachment wp-att-4061"><img src="/wp-content/uploads/2016/03/dcos-jenkins-new-freestyle-800x175.png" alt="dcos-jenkins-new-freestyle" width="800" height="175" class="aligncenter size-large wp-image-4061" /></a>
 
 # SCM / Git
 
 From the "Example Project" section above, fill in the Git repository URL with the newly created Git repository. This must be accessible to Jenkins and may require adding credentials to the Jenkins instance.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-repourl.png" rel="attachment wp-att-4062"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-repourl-800x185.png" alt="dcos-jenkins-repourl" width="800" height="185" class="aligncenter size-large wp-image-4062" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-jenkins-repourl.png" rel="attachment wp-att-4062"><img src="/wp-content/uploads/2016/03/dcos-jenkins-repourl-800x185.png" alt="dcos-jenkins-repourl" width="800" height="185" class="aligncenter size-large wp-image-4062" /></a>
 
 # Build Triggers
 
@@ -54,7 +54,7 @@ Select the "Poll SCM" build trigger with a schedule of: `*/5 * * * *`. This will
 
 A username and password are required to log in to Docker Hub. To log in securely, the "Build Environment" section of the Job configuration has a “Use secret text(s) or file(s)” option. Select this option and fill in the credentials appropriately. Use `DOCKER_HUB_USERNAME` for "Username Variable" and `DOCKER_HUB_PASSWORD` for "Password Variable".
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-bindings.png" rel="attachment wp-att-4063"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-bindings-800x356.png" alt="dcos-jenkins-bindings" width="800" height="356" class="aligncenter size-large wp-image-4063" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-jenkins-bindings.png" rel="attachment wp-att-4063"><img src="/wp-content/uploads/2016/03/dcos-jenkins-bindings-800x356.png" alt="dcos-jenkins-bindings" width="800" height="356" class="aligncenter size-large wp-image-4063" /></a>
 
 # Build Steps
 
@@ -82,7 +82,7 @@ From the “Add build step” drop-down list, select "Execute Shell" option and 
     docker push $IMAGE_NAME
     
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-exec-shell.png" rel="attachment wp-att-4064"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-exec-shell-800x202.png" alt="dcos-jenkins-exec-shell" width="800" height="202" class="aligncenter size-large wp-image-4064" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-jenkins-exec-shell.png" rel="attachment wp-att-4064"><img src="/wp-content/uploads/2016/03/dcos-jenkins-exec-shell-800x202.png" alt="dcos-jenkins-exec-shell" width="800" height="202" class="aligncenter size-large wp-image-4064" /></a>
 
 The script above performs steps one to three: log in, build, and push. The fourth and final step is handled by the Marathon Deployment post-build action below.
 
@@ -90,11 +90,11 @@ The script above performs steps one to three: log in, build, and push. The fourt
 
 Add a Marathon Deployment post-build action.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-plugin-popup.png" rel="attachment wp-att-4065"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-plugin-popup.png" alt="dcos-jenkins-plugin-popup" width="637" height="701" class="aligncenter size-full wp-image-4065" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-jenkins-plugin-popup.png" rel="attachment wp-att-4065"><img src="/wp-content/uploads/2016/03/dcos-jenkins-plugin-popup.png" alt="dcos-jenkins-plugin-popup" width="637" height="701" class="aligncenter size-full wp-image-4065" /></a>
 
 The Marathon instance within DCOS can be accessed using the URL `http://leader.mesos/service/marathon`. Fill in the fields appropriately, using Jenkins variables if desired. The Docker Image should be the same as the build step above (`${DOCKER_HUB_USERNAME}/${JOB_NAME}:${GIT_COMMIT}`) to ensure the correct image is used.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-velocity-marathon-config.png" rel="attachment wp-att-4066"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-velocity-marathon-config-800x300.png" alt="dcos-velocity-marathon-config" width="800" height="300" class="aligncenter size-large wp-image-4066" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-velocity-marathon-config.png" rel="attachment wp-att-4066"><img src="/wp-content/uploads/2016/03/dcos-velocity-marathon-config-800x300.png" alt="dcos-velocity-marathon-config" width="800" height="300" class="aligncenter size-large wp-image-4066" /></a>
 
 ## How It Works
 
@@ -112,23 +112,23 @@ Save the job configuration.
 
 Click "Build Now" and let the job build.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-build-now.png" rel="attachment wp-att-4067"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jenkins-build-now-800x224.png" alt="dcos-jenkins-build-now" width="800" height="224" class="aligncenter size-large wp-image-4067" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-jenkins-build-now.png" rel="attachment wp-att-4067"><img src="/wp-content/uploads/2016/03/dcos-jenkins-build-now-800x224.png" alt="dcos-jenkins-build-now" width="800" height="224" class="aligncenter size-large wp-image-4067" /></a>
 
 # Deployment
 
 Upon a successful run in Jenkins, the application will begin deployment on Marathon. Visit the Marathon web interface to monitor progress.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-marathon-demo-deploying.png" rel="attachment wp-att-4068"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-marathon-demo-deploying-800x172.png" alt="dcos-marathon-demo-deploying" width="800" height="172" class="aligncenter size-large wp-image-4068" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-marathon-demo-deploying.png" rel="attachment wp-att-4068"><img src="/wp-content/uploads/2016/03/dcos-marathon-demo-deploying-800x172.png" alt="dcos-marathon-demo-deploying" width="800" height="172" class="aligncenter size-large wp-image-4068" /></a>
 
 When the Status has changed to Running, the deployment is complete and you can visit the website.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-marathon-demo-running.png" rel="attachment wp-att-4069"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-marathon-demo-running-800x216.png" alt="dcos-marathon-demo-running" width="800" height="216" class="aligncenter size-large wp-image-4069" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-marathon-demo-running.png" rel="attachment wp-att-4069"><img src="/wp-content/uploads/2016/03/dcos-marathon-demo-running-800x216.png" alt="dcos-marathon-demo-running" width="800" height="216" class="aligncenter size-large wp-image-4069" /></a>
 
 ## Visit Your Site
 
 Visit port `80` on the public DCOS agent to display a jekyll website.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jekyll-site1.png" rel="attachment wp-att-4070"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jekyll-site1-800x313.png" alt="dcos-jekyll-site1" width="800" height="313" class="aligncenter size-large wp-image-4070" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-jekyll-site1.png" rel="attachment wp-att-4070"><img src="/wp-content/uploads/2016/03/dcos-jekyll-site1-800x313.png" alt="dcos-jekyll-site1" width="800" height="313" class="aligncenter size-large wp-image-4070" /></a>
 
 # Adding a New Post
 
@@ -136,10 +136,10 @@ The content in the `_posts` directory generates a jekyll website. For this examp
 
 Commit the new post to git. Shortly after the new commit lands on the master branch, Jenkins will see the change and redeploy to Marathon.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jekyll-updated.png" rel="attachment wp-att-4071"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/dcos-jekyll-updated-800x389.png" alt="dcos-jekyll-updated" width="800" height="389" class="aligncenter size-large wp-image-4071" /></a>
+<a href="/wp-content/uploads/2016/03/dcos-jekyll-updated.png" rel="attachment wp-att-4071"><img src="/wp-content/uploads/2016/03/dcos-jekyll-updated-800x389.png" alt="dcos-jekyll-updated" width="800" height="389" class="aligncenter size-large wp-image-4071" /></a>
 
  [1]: https://mesosphere.github.io/marathon/
- [2]: ../
+ [2]: /usage/managing-services/velocity/
  [3]: https://mesosphere.github.io/marathon/docs/application-basics.html
  [4]: https://github.com/mesosphere/cd-demo
  [5]: https://mesosphere.github.io/marathon/docs/native-docker.html

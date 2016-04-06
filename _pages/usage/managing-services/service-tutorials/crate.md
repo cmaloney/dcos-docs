@@ -40,7 +40,7 @@ To install Crate using the DCOS CLI:
     
     *   From the DCOS web interface, go to the **Services** tab and confirm that Crate is running:
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/cratetask.png" rel="attachment wp-att-1515"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/cratetask-800x47.png" alt="cratetask" width="800" height="47" class="alignnone size-large wp-image-1515" /></a>
+<a href="/wp-content/uploads/2015/12/cratetask.png" rel="attachment wp-att-1515"><img src="/wp-content/uploads/2015/12/cratetask-800x47.png" alt="cratetask" width="800" height="47" class="alignnone size-large wp-image-1515" /></a>
 
 ## <a name="usage"></a>Usage Examples
 
@@ -113,7 +113,7 @@ A single instance of the Crate framework can only run a single Crate cluster. To
     
     1.  Click on **Explorer** tab and select the desired app folder (`crate`) and click **Modify** at the bottom of the explorer.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/screenshot-delete-zookeeper.png" rel="attachment wp-att-1581"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/screenshot-delete-zookeeper-800x675.png" alt="screenshot-delete-zookeeper" width="800" height="675" class="alignnone size-large wp-image-1581" /></a>
+        <a href="/wp-content/uploads/2015/12/screenshot-delete-zookeeper.png" rel="attachment wp-att-1581"><img src="/wp-content/uploads/2015/12/screenshot-delete-zookeeper-800x675.png" alt="screenshot-delete-zookeeper" width="800" height="675" class="alignnone size-large wp-image-1581" /></a>
     
     2.  Choose Type **Delete**, enter the required **Username**, **Ticket/Code**, and **Reason** fields, and click **Next**.
     
@@ -132,13 +132,13 @@ Crate is <a href="https://crate.io/docs/support/" target="_blank">supported</a> 
  [1]: #install
  [2]: #usage
  [3]: #uninstall
- [4]: /install/cli/
- [5]: ../administration/package-repo-overview/
+ [4]: /administration/cli/install-cli/
+ [5]: /administration/package-repo-overview/
  [6]: #launch
  [7]: #shutdown
  [8]: #multiple
- [9]: ../administration/sshcluster/
- [10]: /install/awscluster#launchdcos
+ [9]: /administration/sshcluster/
+ [10]: /concepts/installing/awscluster#launchdcos
  [11]: https://github.com/crate/crate-mesos-framework#persistent-data-paths
  [12]: https://github.com/crate/crate-mesos-framework/blob/master/README.rst
  [13]: https://crate.io/docs

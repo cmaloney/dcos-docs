@@ -28,4 +28,4 @@ In this example, a Chronos job that sleeps for 10 seconds is created.
     
     <a href="http://live-mesosphere-documentation.pantheon.io/wp-content/uploads/2015/12/chronosforcerun.png" rel="attachment wp-att-1310"><img src="http://live-mesosphere-documentation.pantheon.io/wp-content/uploads/2015/12/chronosforcerun.png" alt="chronosforcerun" width="315" height="99" class="alignnone size-full wp-image-1310" /></a>
 
- [1]: ../reference/chronos/#chronosinstall
+ [1]: /usage/managing-services/chronos/#chronosinstall

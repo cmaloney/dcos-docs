@@ -30,7 +30,7 @@ To manage users:
     
     *   From the **Users** tab, click **New User** and fill in the full name, username, and password. <!-- The full name supports unicode characters. The username supports all alphanumeric characters. Names can contain (A - Z), lowercase, supports Japanese, German, and English chars. -->
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-add-user2-1.gif" rel="attachment wp-att-3494"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-add-user2-1-800x507.gif" alt="auth-enable-add-user2" width="800" height="507" class="alignnone size-large wp-image-3494" /></a>
+        <a href="/wp-content/uploads/2016/02/auth-enable-add-user2-1.gif" rel="attachment wp-att-3494"><img src="/wp-content/uploads/2016/02/auth-enable-add-user2-1-800x507.gif" alt="auth-enable-add-user2" width="800" height="507" class="alignnone size-large wp-image-3494" /></a>
     
     ### Import remote users
     
@@ -46,7 +46,7 @@ To manage users:
         
         1.  Click **Add Directory**.
             
-            <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-ldap.gif" rel="attachment wp-att-3790"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-ldap-800x484.gif" alt="auth-ldap" width="800" height="484" class="alignnone size-large wp-image-3790" /></a>
+            <a href="/wp-content/uploads/2016/02/auth-ldap.gif" rel="attachment wp-att-3790"><img src="/wp-content/uploads/2016/02/auth-ldap-800x484.gif" alt="auth-ldap" width="800" height="484" class="alignnone size-large wp-image-3790" /></a>
             
             **Host** Specify the hostname or IP address.
             
@@ -76,10 +76,10 @@ To manage users:
     
     You can modify permissions, group membership, and passwords. You cannot modify the username.
     
-    *   From the **Users** tab, click the user name and select your action. <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-modify.gif" rel="attachment wp-att-3495"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-modify-800x509.gif" alt="auth-enable-modify" width="800" height="509" class="alignnone size-large wp-image-3495" /></a>
+    *   From the **Users** tab, click the user name and select your action. <a href="/wp-content/uploads/2016/02/auth-enable-modify.gif" rel="attachment wp-att-3495"><img src="/wp-content/uploads/2016/02/auth-enable-modify-800x509.gif" alt="auth-enable-modify" width="800" height="509" class="alignnone size-large wp-image-3495" /></a>
     ### Delete users
     
-    1.  From the **Users** tab, select the user name and click **Actions -> Delete**. <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-delete-user.gif" rel="attachment wp-att-3498"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-delete-user-800x510.gif" alt="auth-enable-delete-user" width="800" height="510" class="alignnone size-large wp-image-3498" /></a>
+    1.  From the **Users** tab, select the user name and click **Actions -> Delete**. <a href="/wp-content/uploads/2016/02/auth-enable-delete-user.gif" rel="attachment wp-att-3498"><img src="/wp-content/uploads/2016/02/auth-enable-delete-user-800x510.gif" alt="auth-enable-delete-user" width="800" height="510" class="alignnone size-large wp-image-3498" /></a>
     2.  Click **Delete** to confirm the action.
     ### Switch users
     
@@ -87,7 +87,7 @@ To manage users:
     
     *   To log out of the DCOS web interface, click on your username in the lower left corner and select **Sign Out**.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-logout-user.gif" rel="attachment wp-att-3533"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-logout-user-800x430.gif" alt="auth-enable-logout-user" width="800" height="430" class="alignnone size-large wp-image-3533" /></a>
+        <a href="/wp-content/uploads/2016/02/auth-enable-logout-user.gif" rel="attachment wp-att-3533"><img src="/wp-content/uploads/2016/02/auth-enable-logout-user-800x430.gif" alt="auth-enable-logout-user" width="800" height="430" class="alignnone size-large wp-image-3533" /></a>
         
         You can now log in as another user.
     
@@ -113,12 +113,12 @@ To manage groups:
     
     1.  From the **Groups** tab, click **New Group**.
     2.  Type in the group name and click **Create**.
-    3.  Select the group name and add Members and Permissions and click **Close**. <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-define-group.gif" rel="attachment wp-att-3501"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-define-group-800x509.gif" alt="auth-enable-define-group" width="800" height="509" class="alignnone size-large wp-image-3501" /></a> 
+    3.  Select the group name and add Members and Permissions and click **Close**. <a href="/wp-content/uploads/2016/02/auth-enable-define-group.gif" rel="attachment wp-att-3501"><img src="/wp-content/uploads/2016/02/auth-enable-define-group-800x509.gif" alt="auth-enable-define-group" width="800" height="509" class="alignnone size-large wp-image-3501" /></a>
         *   **Members** Defines the users that are in the group.
         *   **Permissions** Defines the installed DCOS services and components.
     ### Add users to a group
     
-    1.  From the **Users** tab, select the user name and click **Actions -> Add to Group**. <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-add-user-group.gif" rel="attachment wp-att-3499"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/auth-enable-add-user-group-800x509.gif" alt="auth-enable-add-user-group" width="800" height="509" class="alignnone size-large wp-image-3499" /></a>
+    1.  From the **Users** tab, select the user name and click **Actions -> Add to Group**. <a href="/wp-content/uploads/2016/02/auth-enable-add-user-group.gif" rel="attachment wp-att-3499"><img src="/wp-content/uploads/2016/02/auth-enable-add-user-group-800x509.gif" alt="auth-enable-add-user-group" width="800" height="509" class="alignnone size-large wp-image-3499" /></a>
     2.  Choose the group and click **Add**. 
     
     ### Delete users from group

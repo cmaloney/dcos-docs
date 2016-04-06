@@ -39,15 +39,15 @@ Spark is a fast, general-purpose cluster computing system that makes parallel jo
     
     1.  Click on the **Explorer** tab and navigate to the `spark_mesos_dispatcher` folder.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkspark.png" rel="attachment wp-att-1413"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkspark-600x473.png" alt="zkspark" width="300" height="237" class="alignnone size-medium wp-image-1413" /></a>
+        <a href="/wp-content/uploads/2015/12/zkspark.png" rel="attachment wp-att-1413"><img src="/wp-content/uploads/2015/12/zkspark-600x473.png" alt="zkspark" width="300" height="237" class="alignnone size-medium wp-image-1413" /></a>
     
     2.  Choose Type **Delete**, enter the required **Username**, **Ticket/Code**, and **Reason** fields, and click **Next**.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zksparkdelete.png" rel="attachment wp-att-1412"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zksparkdelete-600x336.png" alt="zksparkdelete" width="300" height="168" class="alignnone size-medium wp-image-1412" /></a>
+        <a href="/wp-content/uploads/2015/12/zksparkdelete.png" rel="attachment wp-att-1412"><img src="/wp-content/uploads/2015/12/zksparkdelete-600x336.png" alt="zksparkdelete" width="300" height="168" class="alignnone size-medium wp-image-1412" /></a>
     
     3.  Click **OK** to confirm your deletion.
 
 For more information, see the <a href="https://github.com/mesosphere/dcos-spark" target="_blank">DCOS Spark CLI</a> documentation on GitHub.
 
- [1]: /install/cli/
- [2]: /install/awscluster#launchdcos
+ [1]: /administration/cli/install-cli/
+ [2]: /concepts/installing/awscluster#launchdcos

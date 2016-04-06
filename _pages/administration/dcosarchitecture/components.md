@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 The Mesosphere DCOS is comprised of Mesos master and agent nodes, a native DCOS Marathon instance, Mesos-DNS for service discovery, Admin Router for central authentication and proxy to DCOS services, and Zookeeper to coordinate and manage the installed DCOS services.
 
-<img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/Enterprise-Architecture-Diagram.png" alt="Enterprise Architecture Diagram" width="2468" height="1420" class="alignnone size-full wp-image-834" />
+<img src="/wp-content/uploads/2015/12/Enterprise-Architecture-Diagram.png" alt="Enterprise Architecture Diagram" width="2468" height="1420" class="alignnone size-full wp-image-834" />
 
 # DCOS master nodes
 

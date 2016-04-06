@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 The DCOS provides the admin, private, and public security zones.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/security-zones-ce.jpg" rel="attachment wp-att-1583"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/security-zones-ce-800x640.jpg" alt="security-zones-ce" width="800" height="640" class="alignnone size-large wp-image-1583" /></a>
+<a href="/wp-content/uploads/2015/12/security-zones-ce.jpg" rel="attachment wp-att-1583"><img src="/wp-content/uploads/2015/12/security-zones-ce-800x640.jpg" alt="security-zones-ce" width="800" height="640" class="alignnone size-large wp-image-1583" /></a>
 
 # Admin zone
 
@@ -37,4 +37,4 @@ The agent nodes in the public zone are labeled with a special role so that only 
 *   You must secure your cluster by using security rules. It is strongly recommended that you only allow internal traffic.
 *   If there is sensitive data in your cluster, follow standard cloud policies for accessing that data. Either set up a point to point VPN between your secure networks or run a VPN server inside your DCOS cluster.
 
- [1]: ../../../getting-started/installing/
+ [1]: /concepts/installing/

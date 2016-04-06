@@ -41,11 +41,11 @@ Chronos is the "cron" for your Mesosphere DCOS. It is a highly-available distrib
     
     1.  Click on the **Explorer** tab and navigate to the `chronos` folder.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
+        <a href="/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
     
     2.  Choose Type **Delete**, enter the required **Username**, **Ticket/Code**, and **Reason** fields, and click **Next**.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkchronosdelete.png" rel="attachment wp-att-1617"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkchronosdelete.png" alt="zkchronosdelete" width="613" height="339" class="alignnone size-full wp-image-1617" /></a>
+        <a href="/wp-content/uploads/2015/12/zkchronosdelete.png" rel="attachment wp-att-1617"><img src="/wp-content/uploads/2015/12/zkchronosdelete.png" alt="zkchronosdelete" width="613" height="339" class="alignnone size-full wp-image-1617" /></a>
     
     3.  Click **OK** to confirm your deletion.
 
@@ -55,6 +55,6 @@ For more information:
 
  [1]: #chronosinstall
  [2]: #uninstall
- [3]: /install/cli/
- [4]: ../administration/introcli/command-reference/
- [5]: /install/awscluster#launchdcos
+ [3]: /administration/cli/install-cli/
+ [4]: /administration/cli/command-reference/
+ [5]: /concepts/installing/awscluster#launchdcos

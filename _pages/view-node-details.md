@@ -123,4 +123,4 @@ You can get a detailed view of which nodes in your cluster are running which ser
              }
             ]
 
- [1]: ../administration/sshcluster/
+ [1]: /administration/sshcluster/

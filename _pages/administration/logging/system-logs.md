@@ -50,4 +50,4 @@ To access the DCOS core component logs, you must have SSH access to your DCOS cl
     
            journalctl -u dcos-exhibitor -b
 
- [1]: /install/sshcluster/
+ [1]: /concepts/installing/sshcluster/
