@@ -1,6 +1,6 @@
 ---
 UID: 56f98447932f0
-post_title: Components
+post_title: Architecture
 post_excerpt: ""
 layout: page
 published: true
