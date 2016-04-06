@@ -196,6 +196,6 @@ Now, if you navigate to the ELB public DNS address in your browser, you should s
 <img src="https://mesosphere.com/wp-content/uploads/2015/12/lb6.jpg" alt="lb6" width="621" height="405" class="aligncenter size-full wp-image-3826" />
 
  [1]: /administration/installing/
- [2]: /administration/cli/install-cli/
+ [2]: /usage/cli/install-cli/
  [3]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
  [4]: /administration/sshcluster/

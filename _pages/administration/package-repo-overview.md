@@ -34,7 +34,7 @@ See the [installing a DCOS service][12] tutorial.
  [6]: /usage/managing-services/kubernetes/
  [7]: /usage/managing-services/marathon/
  [8]: /usage/managing-services/spark/
- [9]: /administration/cli/install-cli/
+ [9]: /usage/cli/install-cli/
  [10]: https://github.com/mesosphere/multiverse
  [11]: /usage/managing-services/
  [12]: /administration/admin-tutorials/install-service/

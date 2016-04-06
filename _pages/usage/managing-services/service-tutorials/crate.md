@@ -132,7 +132,7 @@ Crate is <a href="https://crate.io/docs/support/" target="_blank">supported</a> 
  [1]: #install
  [2]: #usage
  [3]: #uninstall
- [4]: /administration/cli/install-cli/
+ [4]: /usage/cli/install-cli/
  [5]: /administration/package-repo-overview/
  [6]: #launch
  [7]: #shutdown

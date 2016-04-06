@@ -82,4 +82,4 @@ Common options: -h, --help - Show this message
 
  [1]: https://github.com/mesosphere/marathon-lb-autoscale
  [2]: /administration/installing/awscluster/
- [3]: /administration/cli/install-cli/
+ [3]: /usage/cli/install-cli/

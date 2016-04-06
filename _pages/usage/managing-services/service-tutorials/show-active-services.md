@@ -54,6 +54,6 @@ From the DCOS CLI, enter the `dcos service` command. In this example you can see
 *   **ID** Displays the DCOS service framework ID. This value is automatically generated and is unique across the cluster.
 
  [1]: /administration/installing/
- [2]: /administration/cli/install-cli/
+ [2]: /usage/cli/install-cli/
  [3]: https://mesosphere.github.io/marathon/docs/health-checks.html
  [4]: /administration/webinterface/#scrollNav-2

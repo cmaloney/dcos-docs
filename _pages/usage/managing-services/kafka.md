@@ -61,6 +61,6 @@ For more information:
 *   <a href="https://github.com/mesosphere/kafka/blob/master/README.md" target="_blank">Kafka Mesos Framework</a>
 *   <a href="http://kafka.apache.org/documentation.html" target="_blank">Apache Kafka Documentation</a>
 
- [1]: /administration/cli/install-cli/
+ [1]: /usage/cli/install-cli/
  [2]: /administration/installing/awscluster#launchdcos
  [3]: /sshcluster/

@@ -285,4 +285,4 @@ Download and save the DCOS setup file to your bootstrap node. This file is used 
 
 [Install DCOS](/install-dcos/)
 
- [1]: /administration/cli/
+ [1]: /usage/cli/

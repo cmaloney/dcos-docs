@@ -173,5 +173,5 @@ Now you can [assign user roles][4].
 
  [1]: /administration/installing/installing-enterprise-edition/configuration-parameters/
  [2]: /administration/installing/installing-enterprise-edition/dcos-cleanup-script/
- [3]: /administration/cli/
+ [3]: /usage/cli/
  [4]: /administration/security-and-authentication/

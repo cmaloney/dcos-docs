@@ -115,7 +115,7 @@ HDFS can be used to store and distribute data across your entire Mesosphere DCOS
 
 For more information, see the <a href="https://github.com/mesosphere/hdfs/" target="_blank">HDFS on Mesos documentation</a>.
 
- [1]: /administration/cli/install-cli/
+ [1]: /usage/cli/install-cli/
  [2]: /administration/sshcluster/
  [3]: /administration/installing/awscluster#launchdcos
  [4]: /administration/webinterface/#nodes

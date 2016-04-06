@@ -115,4 +115,4 @@ In this tutorial, a custom Docker app is created and added to Marathon.
  [1]: https://www.docker.com
  [2]: https://hub.docker.com
  [3]: /administration/installing/
- [4]: /administration/cli/install-cli/
+ [4]: /usage/cli/install-cli/

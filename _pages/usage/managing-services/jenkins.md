@@ -65,7 +65,7 @@ To use Jenkins on DCOS, you must provide a mount point to a shared file system o
 
 **Note:** You must manually clean up any job configurations and/or build data was stored on your NFS share.
 
- [1]: /administration/cli/install-cli/
+ [1]: /usage/cli/install-cli/
  [2]: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch-nfs.html
  [3]: https://help.ubuntu.com/14.04/serverguide/network-file-system.html
  [4]: https://coreos.com/os/docs/latest/mounting-storage.html#mounting-nfs-exports

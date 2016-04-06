@@ -120,7 +120,7 @@ Now that Kubernetes is installed on DCOS, you can explore the [Kubernetes Sample
 
  [1]: https://github.com/kubernetes/kubernetes/blob/release-1.1/contrib/mesos/README.md
  [2]: https://github.com/kubernetes/kubernetes/blob/master/contrib/mesos/docs/scheduler.md
- [3]: /administration/cli/install-cli/
+ [3]: /usage/cli/install-cli/
  [4]: https://github.com/mesosphere/etcd-mesos
  [5]: http://kubernetes.io/docs/samples
  [6]: http://kubernetes.io/docs/user-guide/

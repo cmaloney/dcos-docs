@@ -55,5 +55,5 @@ Prerequisite
 
 After you have your Marathon instance up and running, you can try [Deploying a Containerized App on a Public Node][2].
 
- [1]: /administration/cli/install-cli/
+ [1]: /usage/cli/install-cli/
  [2]: /overview/tutorials/deploy-containerized-app/

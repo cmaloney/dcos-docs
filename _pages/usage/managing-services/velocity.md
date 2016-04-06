@@ -84,7 +84,7 @@ From the DCOS CLI, uninstall Velocity by running the following command:
  [3]: https://docs.docker.com/engine/reference/commandline/load/
  [4]: https://hub.docker.com
  [5]: https://docs.docker.com/engine/reference/commandline/login/
- [6]: /administration/cli/install-cli/
+ [6]: /usage/cli/install-cli/
  [7]: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch-nfs.html
  [8]: https://help.ubuntu.com/14.04/serverguide/network-file-system.html
  [9]: https://coreos.com/os/docs/latest/mounting-storage.html#mounting-nfs-exports

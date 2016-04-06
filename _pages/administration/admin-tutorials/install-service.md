@@ -37,4 +37,4 @@ To install a DCOS service:
 
  [1]: /administration/package-repo-overview/
  [2]: /administration/installing/
- [3]: /administration/cli/install-cli/
+ [3]: /usage/cli/install-cli/
