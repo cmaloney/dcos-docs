@@ -192,21 +192,8 @@ In this example, read-only access to Chronos is granted to an existing user name
     
 1.  Go to the Services tab and copy the URL for the Chronos service, for example `http:<public-master-IP>/#/services/ui/chronos`, and send to Ted. Ted can click this link to access the Chronos. 
 
+    ![alt text](/assets/auth-enable-chronos-example4.gif)
 
-In this example, a group is created that has access to all Marathon services in DCOS, where `<service-type>` is `marathon`, `<service-name>` is `marathon`, `<namespace>` is `services`, and `<object-id>` is `/`.
 
-    dcos:service:marathon:marathon:services/
-
-In this example, a group is created that has access to the `user-marathon` instance `production` subgroup, where `<service-type>` is `marathon`, `<service-name>` is `user-marathon`, `<namespace>` is `services`, and `<object-id>` is `/production`.
-
-    dcos:service:marathon:user-marathon:services/production
-
-In this example, a group is created that has access to the `user-marathon` instance `production/product1` subgroup, where `<service-type>` is `marathon`, `<service-name>` is `user-marathon`, `<namespace>` is `services`, and `<object-id>` is `/production/product1`.
-
-    dcos:service:marathon:user-marathon:services/production/product1
-
-In this example, a superuser group is created that has access to evertyhing in DCOS, where `<service-type>` is `superuser`, `<service-name>` is `superuser`, `<namespace>` is `superuser`, and `<object-id>` is `superuser`. This group is created by default.
-
-    dcos:superuser
 
  [1]: https://www.ietf.org/rfc/rfc3986.txt
