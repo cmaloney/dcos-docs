@@ -84,8 +84,8 @@ Launch the DCOS web interface by entering the Mesos Master hostname:
 *   Try out the [Deploying a Containerized App on a Public Node][6] tutorial.
 
  [1]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
- [2]: /administration/dcosarchitecture/security/#scrollNav-1
- [3]: /administration/dcosarchitecture/security/#scrollNav-2
- [4]: /administration/dcosarchitecture/security/#scrollNav-3
+ [2]: /overview/security/#scrollNav-1
+ [3]: /overview/security/#scrollNav-2
+ [4]: /overview/security/#scrollNav-3
  [5]: /administration/cli/install-cli/
  [6]: /overview/tutorials/deploy-containerized-app/

@@ -171,4 +171,4 @@ over riding the framework-name (service endpoint)?
  [1]: https://github.com/mesosphere/universe
  [2]: https://github.com/mesosphere/multiverse
  [3]: https://github.com/mesosphere/universe#contributing-a-package
- [4]: /administration/dcosarchitecture/#scrollNav-2
+ [4]: /overview/security/#scrollNav-2
