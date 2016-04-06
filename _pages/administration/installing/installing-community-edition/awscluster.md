@@ -87,5 +87,5 @@ Launch the DCOS web interface by entering the Mesos Master hostname:
  [2]: /overview/security/#scrollNav-1
  [3]: /overview/security/#scrollNav-2
  [4]: /overview/security/#scrollNav-3
- [5]: /usage/cli/install-cli/
- [6]: /usage/tutorials/deploy-containerized-app/
+ [5]: /usage/cli/install/
+ [6]: /usage/tutorials/containerized-app/

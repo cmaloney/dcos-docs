@@ -14,5 +14,5 @@ DCOS services are Marathon applications that are packaged and available from the
 
 DCOS services are created by the community and by Mesosphere. The Mesosphere-maintained applications are: Cassandra, Chronos, HDFS, Jenkins, Kafka, Kubernetes, Marathon, Spark, and Velocity.
 
- [1]: /administration/universe/
+ [1]: /usage/package-repo/
  [2]: http://mesos.apache.org/documentation/latest/frameworks/

@@ -1,6 +1,6 @@
 ---
 UID: 56f98447f1528
-post_title: Monitoring DCOS Services
+post_title: List Installed DCOS Services
 post_excerpt: ""
 layout: page
 published: true
@@ -54,6 +54,6 @@ From the DCOS CLI, enter the `dcos service` command. In this example you can see
 *   **ID** Displays the DCOS service framework ID. This value is automatically generated and is unique across the cluster.
 
  [1]: /administration/installing/
- [2]: /usage/cli/install-cli/
+ [2]: /usage/cli/install/
  [3]: https://mesosphere.github.io/marathon/docs/health-checks.html
  [4]: /usage/webinterface/#scrollNav-2

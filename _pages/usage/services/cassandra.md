@@ -71,7 +71,7 @@ For more information:
 *   <a href="http://mesosphere.github.io/cassandra-mesos/" target="_blank">Cassandra Mesos documentation</a>
 *   [Deploying a Containerized App on a Public Node][4]
 
- [1]: /usage/cli/install-cli/
+ [1]: /usage/cli/install/
  [2]: /administration/sshcluster/
  [3]: /administration/installing/awscluster#launchdcos
- [4]: /usage/tutorials/deploy-containerized-app/
+ [4]: /usage/tutorials/containerized-app/

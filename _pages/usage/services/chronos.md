@@ -55,6 +55,6 @@ For more information:
 
  [1]: #chronosinstall
  [2]: #uninstall
- [3]: /usage/cli/install-cli/
+ [3]: /usage/cli/install/
  [4]: /usage/cli/command-reference/
  [5]: /administration/installing/awscluster#launchdcos

@@ -73,7 +73,7 @@ For more information:
 *   <a href="http://mesosphere.github.io/marathon/docs/" target="_blank">Marathon documentation</a>
 *   [Deploying a Web App][4]
 
- [1]: /usage/cli/install-cli/
+ [1]: /usage/cli/install/
  [2]: /usage/services/marathon/marathon-user-instance/
  [3]: /administration/installing/awscluster#launchdcos
  [4]: /tutorials/deploywebapp/
