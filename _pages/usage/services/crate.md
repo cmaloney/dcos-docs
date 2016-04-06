@@ -4,7 +4,7 @@ post_title: Deploying Crate as a DCOS Service
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 28
+menu_order: 12
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false

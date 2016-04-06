@@ -4,7 +4,7 @@ post_title: Chronos
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 4
+menu_order: 11
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false

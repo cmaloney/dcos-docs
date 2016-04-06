@@ -4,7 +4,7 @@ post_title: Marathon
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 9
+menu_order: 17
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
@@ -74,6 +74,6 @@ For more information:
 *   [Deploying a Web App][4]
 
  [1]: /usage/cli/install-cli/
- [2]: /tutorials/marathon-add-user/
+ [2]: /usage/services/marathon/marathon-user-instance/
  [3]: /administration/installing/awscluster#launchdcos
  [4]: /tutorials/deploywebapp/
