@@ -48,6 +48,6 @@ By default, the DCOS Cassandra service creates an instance named `cassandra`. Ad
     
     For more information on Mesos-DNS naming, see [Service Naming][3].
 
- [1]: ../administering/installing/
- [2]: ../sshcluster/
- [3]: https://docs.mesosphere.com/administration/service-discovery/service-naming/
+ [1]: /concepts/installing/
+ [2]: /administration/sshcluster/
+ [3]: /administration/service-discovery/service-naming/

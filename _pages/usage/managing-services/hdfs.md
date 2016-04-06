@@ -72,13 +72,13 @@ HDFS can be used to store and distribute data across your entire Mesosphere DCOS
     
     1.  Click on the **Explorer** tab and navigate to the **hadoop-ha -> hdfs** folder.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkhdfs2.png" rel="attachment wp-att-1620"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkhdfs2.png" alt="zkhdfs2" width="399" height="246" class="alignnone size-full wp-image-1620" /></a>
+        <a href="/wp-content/uploads/2015/12/zkhdfs2.png" rel="attachment wp-att-1620"><img src="/wp-content/uploads/2015/12/zkhdfs2.png" alt="zkhdfs2" width="399" height="246" class="alignnone size-full wp-image-1620" /></a>
     
     2.  Click the **Modify...** button at the bottom of the page.
     
     3.  Choose Type **Delete**, enter the required **Username**, **Ticket/Code**, and **Reason** fields, and click **Next**.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkhdfsdelete.png" rel="attachment wp-att-1621"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkhdfsdelete.png" alt="zkhdfsdelete" width="537" height="285" class="alignnone size-full wp-image-1621" /></a>
+        <a href="/wp-content/uploads/2015/12/zkhdfsdelete.png" rel="attachment wp-att-1621"><img src="/wp-content/uploads/2015/12/zkhdfsdelete.png" alt="zkhdfsdelete" width="537" height="285" class="alignnone size-full wp-image-1621" /></a>
     
     4.  You will be prompted to confirm the deletion. If you are sure you want to delete, click the OK button.
     
@@ -92,7 +92,7 @@ HDFS can be used to store and distribute data across your entire Mesosphere DCOS
     
     1.  Identify the HDFS agent nodes to delete by using the DCOS web interface [Nodes tab][4]. For example, to identify all of the HDFS agent nodes choose the the **hdfs** filter on the Nodes tab:
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/nodeshdfs.png" rel="attachment wp-att-1571"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/nodeshdfs-600x419.png" alt="nodeshdfs" width="300" height="210" class="alignnone size-medium wp-image-1571" /></a>
+        <a href="/wp-content/uploads/2015/12/nodeshdfs.png" rel="attachment wp-att-1571"><img src="/wp-content/uploads/2015/12/nodeshdfs-600x419.png" alt="nodeshdfs" width="300" height="210" class="alignnone size-medium wp-image-1571" /></a>
     
     2.  [SSH to your agent node][2].
     
@@ -115,7 +115,7 @@ HDFS can be used to store and distribute data across your entire Mesosphere DCOS
 
 For more information, see the <a href="https://github.com/mesosphere/hdfs/" target="_blank">HDFS on Mesos documentation</a>.
 
- [1]: /install/cli/
- [2]: ../administration/sshcluster/
- [3]: /install/awscluster#launchdcos
- [4]: /getting-started/webinterface/#nodes
+ [1]: /administration/cli/install-cli/
+ [2]: /administration/sshcluster/
+ [3]: /concepts/installing/awscluster#launchdcos
+ [4]: /administration/webinterface/#nodes

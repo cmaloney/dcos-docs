@@ -58,4 +58,4 @@ The general process is as follows:
 
 For more information, see the [dcos package][1] documentation.
 
- [1]: ../administration/introcli/command-reference/#scrollNav-4
+ [1]: /administration/cli/command-reference/#scrollNav-6

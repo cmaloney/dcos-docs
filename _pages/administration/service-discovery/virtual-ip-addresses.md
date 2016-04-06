@@ -25,7 +25,7 @@ To create a VIP:
     *   To create a new application, click **Create Application** and select the **Ports and Service Discovery** menu option. 
     *   To edit an existing application, select your application and click the **Configuration** tab, then click **Edit**. You can then select the **Ports and Service Discovery** menu option. 
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/ui-marathon-ports.gif" rel="attachment wp-att-4169"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/ui-marathon-ports-800x406.gif" alt="ui-marathon-ports" width="800" height="406" class="alignnone size-large wp-image-4169" /></a>
+    <a href="/wp-content/uploads/2016/03/ui-marathon-ports.gif" rel="attachment wp-att-4169"><img src="/wp-content/uploads/2016/03/ui-marathon-ports-800x406.gif" alt="ui-marathon-ports" width="800" height="406" class="alignnone size-large wp-image-4169" /></a>
 
 2.  Enter the Port, Protocol, Name, and VIP address.
     

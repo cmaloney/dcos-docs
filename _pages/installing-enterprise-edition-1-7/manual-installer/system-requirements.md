@@ -322,4 +322,4 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
 
 [Create A Script for IP Address Discovery](/create-a-script-for-ip-address-discovery/)
 
- [1]: https://docs.mesosphere.com/administration/cli/
+ [1]: /administration/cli/

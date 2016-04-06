@@ -100,7 +100,7 @@ To install the DCOS CLI, you must first install Python, pip, Git, and virtualenv
 
 2.  Run the installer and select the "Add python.exe to Path" option when you are prompted to "Customize Python" as shown in the screenshot below.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/01/python.png" rel="attachment wp-att-2944"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/01/python.png" alt="Python Installer with Path Option Selected" width="495" height="427" class="alignnone size-full wp-image-2944" /></a>
+    <a href="/wp-content/uploads/2016/01/python.png" rel="attachment wp-att-2944"><img src="/wp-content/uploads/2016/01/python.png" alt="Python Installer with Path Option Selected" width="495" height="427" class="alignnone size-full wp-image-2944" /></a>
     
     **Important:** If you do not select the "Add python.exe to Path" option, you must manually add the Python installation folder to your Path or the DCOS CLI will not work.
 
@@ -112,7 +112,7 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
 
 2.  Run Powershell as Administrator by right-clicking the Start menu shortcut as shown in the screenshot below:
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/01/powershell.png" rel="attachment wp-att-2943"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/01/powershell.png" alt="Start Menu with &#039;Launch as Administrator&#039; Option Highlighted" width="392" height="622" class="alignnone size-full wp-image-2943" /></a>
+    <a href="/wp-content/uploads/2016/01/powershell.png" rel="attachment wp-att-2943"><img src="/wp-content/uploads/2016/01/powershell.png" alt="Start Menu with &#039;Launch as Administrator&#039; Option Highlighted" width="392" height="622" class="alignnone size-full wp-image-2943" /></a>
     
     **Important:** You must run Powershell as Administrator or the CLI installation will fail.
 
@@ -131,7 +131,7 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
 
 3.  During the Git install, select the "Use Git from the Windows Command Prompt" option when you are prompted as shown in the screenshot below.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/01/git.png" rel="attachment wp-att-2945"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/01/git.png" alt="Git Installer with Windows Command Prompt Option Enabled" width="499" height="387" class="alignnone size-full wp-image-2945" /></a>
+    <a href="/wp-content/uploads/2016/01/git.png" rel="attachment wp-att-2945"><img src="/wp-content/uploads/2016/01/git.png" alt="Git Installer with Windows Command Prompt Option Enabled" width="499" height="387" class="alignnone size-full wp-image-2945" /></a>
     
     **Important:** If you do not select the "Use Git from the Windows Command Prompt" option, you must manually add the Git installation folder to your Path or the DCOS CLI will not work.
 

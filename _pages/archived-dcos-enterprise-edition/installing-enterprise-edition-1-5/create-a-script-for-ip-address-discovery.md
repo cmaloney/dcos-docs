@@ -74,5 +74,5 @@ In this step you create an IP detect script on your bootstrap node to broadcast 
 
 [Configure and install DCOS][2]
 
- [1]: ../getting-started/installing/installing-enterprise-edition/dcos-cleanup-script/
- [2]: ../configure-and-install-dcos/
+ [1]: /concepts/installing/installing-enterprise-edition/dcos-cleanup-script/
+ [2]: /archived-dcos-enterprise-edition/installing-enterprise-edition-1-5/configure-and-install-dcos/

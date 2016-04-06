@@ -21,7 +21,7 @@ You can monitor the installed DCOS services and their health through the DCOS we
 
 From the DCOS web interface, click the **Services** tab. In this example you can see the installed DCOS services Cassandra, Chronos, and HDFS. All of the services are showing a status of Healthy.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/services.png" rel="attachment wp-att-1126"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/services-800x486.png" alt="Services page" width="800" height="486" class="alignnone size-large wp-image-1126" /></a>
+<a href="/wp-content/uploads/2015/12/services.png" rel="attachment wp-att-1126"><img src="/wp-content/uploads/2015/12/services-800x486.png" alt="Services page" width="800" height="486" class="alignnone size-large wp-image-1126" /></a>
 
 *   **SERVICE NAME** Displays the DCOS service name.
 *   **HEALTH** Displays the [Marathon health check][3] status for the service.
@@ -53,7 +53,7 @@ From the DCOS CLI, enter the `dcos service` command. In this example you can see
 *   **DISK** Displays the amount of disk space used.
 *   **ID** Displays the DCOS service framework ID. This value is automatically generated and is unique across the cluster.
 
- [1]: ../getting-started/installing/
- [2]: ../install/cli/
+ [1]: /concepts/installing/
+ [2]: /administration/cli/install-cli/
  [3]: https://mesosphere.github.io/marathon/docs/health-checks.html
- [4]: https://docs.mesosphere.com/administration/webinterface/#scrollNav-2
+ [4]: /administration/webinterface/#scrollNav-2

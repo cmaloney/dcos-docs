@@ -39,9 +39,9 @@ The DCOS cloud templates are optimized to run Mesosphere DCOS. Depending on the 
 
 2.  On the **Select Template** page, accept the template specified for you and click **Next**.
 
-3.  On the **Specify Details** page, specify a cluster name, SSH key, accept the <a href="../community-edition-eula/" target="_blank">EULA</a>, and click **Next**. The other parameters are optional.
+3.  On the **Specify Details** page, specify a cluster name, SSH key, accept the <a href="/community-edition-eula/" target="_blank">EULA</a>, and click **Next**. The other parameters are optional.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/awstemplateparms.png" rel="attachment wp-att-1218"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/awstemplateparms.png" alt="awstemplateparms" width="551" height="326" class="alignnone size-full wp-image-1218" /></a>
+    <a href="/wp-content/uploads/2015/12/awstemplateparms.png" rel="attachment wp-att-1218"><img src="/wp-content/uploads/2015/12/awstemplateparms.png" alt="awstemplateparms" width="551" height="326" class="alignnone size-full wp-image-1218" /></a>
 
 4.  On the **Options** page, accept the defaults and click **Next**.
     
@@ -71,21 +71,21 @@ Launch the DCOS web interface by entering the Mesos Master hostname:
     
     **Tip:** You might need to resize your window to see this tab. You can find your DCOS hostname any time from the <a href="https://console.aws.amazon.com/cloudformation/home" target="_blank">Amazon CloudFormation Management</a> page.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/awsscreenshot2.png" rel="attachment wp-att-1167"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/awsscreenshot2.png" alt="awsscreenshot2" width="621" height="146" class="alignnone size-full wp-image-1167" /></a>
+    <a href="/wp-content/uploads/2015/12/awsscreenshot2.png" rel="attachment wp-att-1167"><img src="/wp-content/uploads/2015/12/awsscreenshot2.png" alt="awsscreenshot2" width="621" height="146" class="alignnone size-full wp-image-1167" /></a>
 
 3.  [Install the DCOS Command-Line Interface (CLI)][5]. You must install the CLI to administer your DCOS cluster.
     
     You also have the option to take a brief tutorial that walks you through the basics of using the Mesosphere DCOS. You can restart this tutorial anytime by clicking the signpost icon in the lower left corner.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/dashboardsmall.png" rel="attachment wp-att-1120"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/dashboardsmall-800x495.png" alt="dashboardsmall" width="800" height="495" class="alignnone size-large wp-image-1120" /></a>
+    <a href="/wp-content/uploads/2015/12/dashboardsmall.png" rel="attachment wp-att-1120"><img src="/wp-content/uploads/2015/12/dashboardsmall-800x495.png" alt="dashboardsmall" width="800" height="495" class="alignnone size-large wp-image-1120" /></a>
 
 # Next steps
 
 *   Try out the [Deploying a Containerized App on a Public Node][6] tutorial.
 
- [1]: ../administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
- [2]: ../administration/dcosarchitecture/security/#scrollNav-1
- [3]: ../administration/dcosarchitecture/security/#scrollNav-2
- [4]: https://docs.mesosphere.com/administration/dcosarchitecture/security/#scrollNav-3
- [5]: https://docs.mesosphere.com/administration/introcli/cli/
- [6]: ../getting-started/tutorials/deploy-containerized-app/
+ [1]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
+ [2]: /administration/dcosarchitecture/security/#scrollNav-1
+ [3]: /administration/dcosarchitecture/security/#scrollNav-2
+ [4]: /administration/dcosarchitecture/security/#scrollNav-3
+ [5]: /administration/cli/install-cli/
+ [6]: /concepts/tutorials/deploy-containerized-app/

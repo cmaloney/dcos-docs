@@ -40,4 +40,4 @@ If you try to connect to `master.mesos` using HTTP, you will be automatically re
 
 However, if you try to query or connect to `master.mesos` using any method other than HTTP, the results will be unpredictable because the name will resolve to a random master node. For example, a service that attempts to register with `master.mesos` may communicate with a non-leading master node and will be unable to register as a service on the cluster.
 
- [1]: https://docs.mesosphere.com/getting-started/installing/installing-enterprise-edition/#config-json
+ [1]: /concepts/installing/installing-enterprise-edition/#config-json

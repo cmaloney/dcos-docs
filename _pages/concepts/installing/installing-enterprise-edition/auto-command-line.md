@@ -125,7 +125,7 @@ You can view all of the automated command line installer options with the `--hel
       --test                Performs tests on the dcos_installer application
     
 
-**Tip:** If something goes wrong and you want to rerun your setup, use these cluster <a href="https://docs.mesosphere.com/getting-started/installing/installing-enterprise-edition/dcos-cleanup-script/" target="_blank">cleanup instructions</a>.
+**Tip:** If something goes wrong and you want to rerun your setup, use these cluster <a href="/administration/installing/installing-enterprise-edition/dcos-cleanup-script/" target="_blank">cleanup instructions</a>.
 
 To install DCOS:
 
@@ -235,7 +235,7 @@ To install DCOS:
     
     **Tip:** This process can take about 10 minutes. During this time you will see the Master nodes become visible on the Exhibitor consoles and come online, eventually showing a green light.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
+    <a href="/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
     
     When the status icons are green, you can access the DCOS web interface.
 
@@ -243,15 +243,15 @@ To install DCOS:
 
 8.  Click **Log In To DCOS**.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-installer-success1.png" rel="attachment wp-att-3198"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-installer-success1.png" alt="ui-installer-success1" width="625" height="404" class="alignnone size-full wp-image-3198" /></a>
+    <a href="/wp-content/uploads/2016/02/ui-installer-success1.png" rel="attachment wp-att-3198"><img src="/wp-content/uploads/2016/02/ui-installer-success1.png" alt="ui-installer-success1" width="625" height="404" class="alignnone size-full wp-image-3198" /></a>
 
 9.  Enter your administrator username and password.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-installer-auth2.png" rel="attachment wp-att-3341"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-3341" /></a>
+    <a href="/wp-content/uploads/2016/02/ui-installer-auth2.png" rel="attachment wp-att-3341"><img src="/wp-content/uploads/2016/02/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-3341" /></a>
     
     You are done!
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-dashboard-ee.png" rel="attachment wp-att-3343"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/02/ui-dashboard-ee-800x538.png" alt="ui-dashboard-ee" width="800" height="538" class="alignnone size-large wp-image-3343" /></a>
+    <a href="/wp-content/uploads/2016/02/ui-dashboard-ee.png" rel="attachment wp-att-3343"><img src="/wp-content/uploads/2016/02/ui-dashboard-ee-800x538.png" alt="ui-dashboard-ee" width="800" height="538" class="alignnone size-large wp-image-3343" /></a>
 
 # Next Steps
 
@@ -282,10 +282,10 @@ After DCOS is installed and deployed across your cluster, you can add more agent
         18:17:14:: 
         18:17:14:: ====> 10.10.0.160:22 FAILED
 
- [1]: ../configuration-parameters/
- [2]: ../manual-installation/
- [3]: ../manual-installation/#scrollNav-2
- [4]: ../security-and-authentication/managing-authorization/
+ [1]: /concepts/installing/installing-enterprise-edition/configuration-parameters/
+ [2]: /concepts/installing/installing-enterprise-edition/manual-installation/
+ [3]: /concepts/installing/installing-enterprise-edition/manual-installation/#scrollNav-2
+ [4]: /administration/security-and-authentication/managing-authorization/
  [5]: #hardware
  [6]: #software
  [7]: #two

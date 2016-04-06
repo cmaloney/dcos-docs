@@ -122,7 +122,7 @@ The output from these checks is used by the DCOS web interface to display your s
 *   If ANY of your health checks fail, your service is marked in red as Sick. Your documentation must provide troubleshooting information for resolving the issue.
 *   If your Service has no tasks running in Marathon, your service is marked in yellow as Idle. This state is normally temporary and occurs only when your service is launching. 
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/services.png" rel="attachment wp-att-1126"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/services-600x365.png" alt="Services page" width="500" height="383" class="alignnone size-medium wp-image-1126" /></a>
+<a href="/wp-content/uploads/2015/12/services.png" rel="attachment wp-att-1126"><img src="/wp-content/uploads/2015/12/services-600x365.png" alt="Services page" width="500" height="383" class="alignnone size-medium wp-image-1126" /></a>
 
 Your app MAY set `maxConsecutiveFailures=0` on any of your health checks to prevent Marathon from terminating your app if the failure threshold of the health check is reached.
 
@@ -168,5 +168,5 @@ ALL properties that are used in the `marathon.json` file that are not in a condi
  [4]: https://github.com/mesosphere/universe/blob/version-1.x/repo/packages/S/spark/2/command.json
  [5]: https://github.com/mesosphere/universe#resourcejson
  [6]: https://mesosphere.github.io/marathon/docs/health-checks.html
- [7]: ../administration/dcosarchitecture/components/
+ [7]: /administration/dcosarchitecture/components/
  [8]: https://github.com/mesosphere/universe/blob/version-1.x/repo/packages/M/marathon/4/marathon.json#L10-L12

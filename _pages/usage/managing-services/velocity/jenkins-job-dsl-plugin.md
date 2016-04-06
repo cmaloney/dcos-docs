@@ -24,7 +24,7 @@ A "seed job" is an initial Jenkins job template that is used to build additional
 
 The first step is to manually create a seed job via the Jenkins UI. Click "New Item", give your seed job a name (we’re using "Job DSL Tutorial"), select "Freestyle project", and click "OK":
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-seed-job.png" rel="attachment wp-att-4050"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-seed-job-800x315.png" alt="velocity-jobdsl-seed-job" width="800" height="315" class="aligncenter size-large wp-image-4050" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-jobdsl-seed-job.png" rel="attachment wp-att-4050"><img src="/wp-content/uploads/2016/03/velocity-jobdsl-seed-job-800x315.png" alt="velocity-jobdsl-seed-job" width="800" height="315" class="aligncenter size-large wp-image-4050" /></a>
 
 Next, define which project repository to monitor, how often, and the steps associated with testing the project.
 
@@ -53,25 +53,25 @@ Scroll down to the "Build" section, click "Add build step", and select "Process 
     }
     
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-add-build-step.png" rel="attachment wp-att-4051"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-add-build-step-800x280.png" alt="velocity-jobdsl-add-build-step" width="800" height="280" class="aligncenter size-large wp-image-4051" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-jobdsl-add-build-step.png" rel="attachment wp-att-4051"><img src="/wp-content/uploads/2016/03/velocity-jobdsl-add-build-step-800x280.png" alt="velocity-jobdsl-add-build-step" width="800" height="280" class="aligncenter size-large wp-image-4051" /></a>
 
 **Note**: rather than pasting inline, you can also version control your Job DSL scripts in a Git repository. To do so, have the seed job clone the Git repository and use the "Look on Filesystem" option to process one or more of the Job DSL scripts within the build’s workspace.
 
 Click "Save" and you’ll be presented with an overview of the seed job you’ve just created.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-seed-overview.png" rel="attachment wp-att-4052"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-seed-overview-800x315.png" alt="velocity-jobdsl-seed-overview" width="800" height="315" class="aligncenter size-large wp-image-4052" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-jobdsl-seed-overview.png" rel="attachment wp-att-4052"><img src="/wp-content/uploads/2016/03/velocity-jobdsl-seed-overview-800x315.png" alt="velocity-jobdsl-seed-overview" width="800" height="315" class="aligncenter size-large wp-image-4052" /></a>
 
 Click "Build Now" on the seed job. A new "Generated Jobs" folder will appear in the overview containing the job we’ve justed templated, `mesosphere-jenkins-mesos`.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-seed-overview-generated.png" rel="attachment wp-att-4053"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-seed-overview-generated-800x315.png" alt="velocity-jobdsl-seed-overview-generated" width="800" height="315" class="aligncenter size-large wp-image-4053" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-jobdsl-seed-overview-generated.png" rel="attachment wp-att-4053"><img src="/wp-content/uploads/2016/03/velocity-jobdsl-seed-overview-generated-800x315.png" alt="velocity-jobdsl-seed-overview-generated" width="800" height="315" class="aligncenter size-large wp-image-4053" /></a>
 
 You can follow the link to the new job and see it’s relation to the seed job in the overview.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-generated-overview.png" rel="attachment wp-att-4054"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-generated-overview-800x315.png" alt="velocity-jobdsl-generated-overview" width="800" height="315" class="aligncenter size-large wp-image-4054" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-jobdsl-generated-overview.png" rel="attachment wp-att-4054"><img src="/wp-content/uploads/2016/03/velocity-jobdsl-generated-overview-800x315.png" alt="velocity-jobdsl-generated-overview" width="800" height="315" class="aligncenter size-large wp-image-4054" /></a>
 
 In the seed job, we configured the `mesosphere-jenkins-mesos` job to trigger every 15 minutes. Rather than wait for this trigger, let’s click "Build Now" to see the resulting console build log, which is a directory listing (`ls -l`) of the specified repository.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-generated-console.png" rel="attachment wp-att-4055"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-generated-console-800x411.png" alt="velocity-jobdsl-generated-console" width="800" height="411" class="aligncenter size-large wp-image-4055" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-jobdsl-generated-console.png" rel="attachment wp-att-4055"><img src="/wp-content/uploads/2016/03/velocity-jobdsl-generated-console-800x411.png" alt="velocity-jobdsl-generated-console" width="800" height="411" class="aligncenter size-large wp-image-4055" /></a>
 
 # Extending the seed job
 
@@ -108,7 +108,7 @@ Go back to the "Job DSL Tutorial" seed job and click "Configure". Modify the cod
 
 Click "Save" button, then "Build Now". You should see three new Generated Items, one for each existing branch of the `mesosphere/jenkins-mesos` repository.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-generated-per-branch.png" rel="attachment wp-att-4056"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/03/velocity-jobdsl-generated-per-branch-800x379.png" alt="velocity-jobdsl-generated-per-branch" width="800" height="379" class="aligncenter size-large wp-image-4056" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-jobdsl-generated-per-branch.png" rel="attachment wp-att-4056"><img src="/wp-content/uploads/2016/03/velocity-jobdsl-generated-per-branch-800x379.png" alt="velocity-jobdsl-generated-per-branch" width="800" height="379" class="aligncenter size-large wp-image-4056" /></a>
 
 # Further reading
 
@@ -117,4 +117,4 @@ That’s it! While this tutorial is meant to show the simplest workflow possible
 *   <https://jenkinsci.github.io/job-dsl-plugin/>
 *   <https://github.com/jenkinsci/job-dsl-plugin/wiki/Real-World-Examples>
 
- [1]: ../
+ [1]: /usage/managing-services/velocity/

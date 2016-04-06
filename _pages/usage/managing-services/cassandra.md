@@ -54,13 +54,13 @@ For information about how Mesos DNS is implemented for the Cassandra DCOS servic
     
     1.  Click on the **Explorer** tab and navigate to the `cassandra-mesos` folder.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkcassandra.png" rel="attachment wp-att-1329"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkcassandra-150x150.png" alt="zkcassandra" width="150" height="150" class="alignnone size-thumbnail wp-image-1329" /></a>
+        <a href="/wp-content/uploads/2015/12/zkcassandra.png" rel="attachment wp-att-1329"><img src="/wp-content/uploads/2015/12/zkcassandra-150x150.png" alt="zkcassandra" width="150" height="150" class="alignnone size-thumbnail wp-image-1329" /></a>
     
     2.  Click the **Modify** button on the lower-left side of browser.
     
     3.  Choose Type **Delete**, enter the required **Username**, **Ticket/Code**, and **Reason** fields, and click **Next**.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkcassandradelete.png" rel="attachment wp-att-1332"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/zkcassandradelete-600x334.png" alt="zkcassandradelete" width="300" height="167" class="alignnone size-medium wp-image-1332" /></a>
+        <a href="/wp-content/uploads/2015/12/zkcassandradelete.png" rel="attachment wp-att-1332"><img src="/wp-content/uploads/2015/12/zkcassandradelete-600x334.png" alt="zkcassandradelete" width="300" height="167" class="alignnone size-medium wp-image-1332" /></a>
     
     4.  Click **OK** to confirm your deletion.
 
@@ -71,7 +71,7 @@ For more information:
 *   <a href="http://mesosphere.github.io/cassandra-mesos/" target="_blank">Cassandra Mesos documentation</a>
 *   [Deploying a Containerized App on a Public Node][4]
 
- [1]: /install/cli/
+ [1]: /administration/cli/install-cli/
  [2]: /administration/sshcluster/
- [3]: /install/awscluster#launchdcos
- [4]: ../getting-started/tutorials/deploy-containerized-app/
+ [3]: /concepts/installing/awscluster#launchdcos
+ [4]: /concepts/tutorials/deploy-containerized-app/

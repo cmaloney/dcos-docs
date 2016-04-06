@@ -101,6 +101,6 @@ For each Agent node in your DCOS cluster:
 
 For details on how to filter your logs with ELK, see [Filtering DCOS logs with ELK][3].
 
- [1]: ../release-notes/community-edition/1-3/
+ [1]: /administration/release-notes/community-edition/1-3/
  [2]: https://github.com/elastic/logstash-forwarder
- [3]: ./logging/filter-elk/
+ [3]: /administration/logging/filter-elk/

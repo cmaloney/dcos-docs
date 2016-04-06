@@ -18,7 +18,8 @@ In this tutorial, a custom Docker app is created and added to Marathon.
 
 *   [Docker][1] installed on your workstation
 *   [Docker Hub][2] account
-*   [DCOS and DCOS CLI][3] are installed
+*   [DCOS][3] installed
+*   [DCOS CLI][4] installed
 
 # Create a custom Docker container
 
@@ -113,4 +114,5 @@ In this tutorial, a custom Docker app is created and added to Marathon.
 
  [1]: https://www.docker.com
  [2]: https://hub.docker.com
- [3]: ../overview/installing/
+ [3]: /concepts/installing/
+ [4]: /administration/cli/install-cli/

@@ -14,7 +14,7 @@ You can use the [marathon-lb-autoscale][1] application to implement request rate
 
 marathon-lb-autoscale collects data from all HAProxy instances to determine the current RPS (requests per second) for your apps. The autoscale controller then attempts to maintain a defined target number of requests per second per app instance. marathon-lb-autoscale makes API calls to Marathon to scale the app.
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/marathon-lb-autoscale-1.png" rel="attachment wp-att-1259"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/marathon-lb-autoscale-1.png" alt="marathon-lb-autoscale" width="552" height="604" class="alignnone size-full wp-image-1259" /></a>
+<a href="/wp-content/uploads/2015/12/marathon-lb-autoscale-1.png" rel="attachment wp-att-1259"><img src="/wp-content/uploads/2015/12/marathon-lb-autoscale-1.png" alt="marathon-lb-autoscale" width="552" height="604" class="alignnone size-full wp-image-1259" /></a>
 
 **Prerequisites**
 
@@ -81,5 +81,5 @@ Common options: -h, --help - Show this message
 **Note:** You can also run autoscale.rb from the command line of your master node if you have Ruby installed.
 
  [1]: https://github.com/mesosphere/marathon-lb-autoscale
- [2]: https://docs.mesosphere.com/install/awscluster/
- [3]: https://docs.mesosphere.com/install/cli/
+ [2]: /concepts/installing/awscluster/
+ [3]: /administration/cli/install-cli/

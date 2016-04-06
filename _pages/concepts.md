@@ -14,7 +14,7 @@ The Mesosphere Datacenter Operating System (DCOS) spans all of the machines in y
 
 <!-- DCOS is available in a Community Edition on supported cloud providers and a commercial Enterprise Edition that can be hosted on cloud providers, on-premise, or in a hybrid cloud configuration. -->
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/get-started-overview1.jpg" rel="attachment wp-att-3006"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/get-started-overview1.jpg" alt="get-started-overview1" width="914" height="716" class="alignnone size-full wp-image-3006" /></a>
+<a href="/wp-content/uploads/2015/12/get-started-overview1.jpg" rel="attachment wp-att-3006"><img src="/wp-content/uploads/2015/12/get-started-overview1.jpg" alt="get-started-overview1" width="914" height="716" class="alignnone size-full wp-image-3006" /></a>
 
 The DCOS is built on top of these open-source components.
 

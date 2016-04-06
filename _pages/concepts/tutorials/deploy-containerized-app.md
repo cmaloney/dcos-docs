@@ -41,7 +41,7 @@ The [Cassandra][3] database is used on the back end to store the Oinker app data
     
     **Important:** Do not go on to the next steps until the Cassandra installation is complete and shows as Healthy in the DCOS web interface. It can take up to 10 minutes for Cassandra to initialize with DCOS.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/services.png" rel="attachment wp-att-1126"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/services.png" alt="Services page" width="1346" height="818" class="alignnone size-full wp-image-1126" /></a>
+    <a href="/wp-content/uploads/2015/12/services.png" rel="attachment wp-att-1126"><img src="/wp-content/uploads/2015/12/services.png" alt="Services page" width="1346" height="818" class="alignnone size-full wp-image-1126" /></a>
 
 # Install the Marathon load balancer
 
@@ -56,7 +56,7 @@ In this step you install the Marathon load balancer. The Marathon load balancer 
 
 3.  Verify that the Marathon load balancer is up and running. Use your public agent node IP and navigate to `http://<public slave ip>:9090/haproxy?stats`. You’ll see a statistics report page like this:
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/lb2.jpg" rel="attachment wp-att-2820"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/lb2.jpg" alt="lb2" width="628" height="440" class="alignnone size-full wp-image-2820" /></a>
+    <a href="/wp-content/uploads/2015/12/lb2.jpg" rel="attachment wp-att-2820"><img src="/wp-content/uploads/2015/12/lb2.jpg" alt="lb2" width="628" height="440" class="alignnone size-full wp-image-2820" /></a>
     
     **Tip:** You can find your public agent IP address in AWS by viewing your EC2 instances and searching for nodes with a Public IP and `aws:cloudformation:logical-id PublicSlaveServerGroup`.
 
@@ -128,7 +128,7 @@ In this step you deploy the Oinker containerized app. For more information, see 
     **From the Web interface**  
     The DCOS web interface shows the Oinker application being loaded.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/marathonapptutorial2.png" rel="attachment wp-att-2833"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/marathonapptutorial2-800x350.png" alt="marathonapptutorial2" width="800" height="350" class="alignnone size-large wp-image-2833" /></a>
+    <a href="/wp-content/uploads/2015/12/marathonapptutorial2.png" rel="attachment wp-att-2833"><img src="/wp-content/uploads/2015/12/marathonapptutorial2-800x350.png" alt="marathonapptutorial2" width="800" height="350" class="alignnone size-large wp-image-2833" /></a>
 
 5.  Go to the Amazon EC2 console and find your public ELB.
     
@@ -136,11 +136,11 @@ In this step you deploy the Oinker containerized app. For more information, see 
     
     2.  Click **Edit Health Check** and change the **ping port** to `9090` and **ping path** to `/_haproxy_health_check`.
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/aws-lb-health-check.png" rel="attachment wp-att-3013"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/aws-lb-health-check.png" alt="aws-lb-health-check" width="615" height="199" class="alignnone size-full wp-image-3013" /></a>
+        <a href="/wp-content/uploads/2015/12/aws-lb-health-check.png" rel="attachment wp-att-3013"><img src="/wp-content/uploads/2015/12/aws-lb-health-check.png" alt="aws-lb-health-check" width="615" height="199" class="alignnone size-full wp-image-3013" /></a>
     
     3.  Now, if you navigate to the instances tab, you should see the instances listed as `InService` that the ELB is serving to. For example: <!-- in production this is usually 3 instances -->
         
-        <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/ec2-health-check.png" rel="attachment wp-att-2826"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/ec2-health-check.png" alt="ec2-health-check" width="916" height="223" class="alignnone size-full wp-image-2826" /></a>
+        <a href="/wp-content/uploads/2015/12/ec2-health-check.png" rel="attachment wp-att-2826"><img src="/wp-content/uploads/2015/12/ec2-health-check.png" alt="ec2-health-check" width="916" height="223" class="alignnone size-full wp-image-2826" /></a>
 
 **Tip:** Mesos DNS generates a hostname for your internal Marathon LB. You can access internal services this command. You must be [SSH'd into your cluster][6].
 
@@ -155,11 +155,11 @@ Service discovery is natively built-in to DCOS through Mesos-DNS. The Cassandra 
 
 1.  Find the public ELB DNS name and enter into your browser. To do this, you’ll need to get the public ELB **DNS Name** from the Description tab in the EC2 Management Console. In this example, my public DNS name is `joel-ht5s-PublicSl-WPOWMR3C5291-2090420787.us-west-2.elb.amazonaws.com`.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/ec2-elb-dns.png" rel="attachment wp-att-2828"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/ec2-elb-dns-800x294.png" alt="ec2-elb-dns" width="800" height="294" class="alignnone size-large wp-image-2828" /></a>
+    <a href="/wp-content/uploads/2015/12/ec2-elb-dns.png" rel="attachment wp-att-2828"><img src="/wp-content/uploads/2015/12/ec2-elb-dns-800x294.png" alt="ec2-elb-dns" width="800" height="294" class="alignnone size-large wp-image-2828" /></a>
 
 2.  From the Oinker user interface, try it out by entering some "oinks."
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/oinkertutorial.png" rel="attachment wp-att-1719"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/oinkertutorial.png" alt="oinkertutorial" width="491" height="261" class="alignnone size-full wp-image-1719" /></a>
+    <a href="/wp-content/uploads/2015/12/oinkertutorial.png" rel="attachment wp-att-1719"><img src="/wp-content/uploads/2015/12/oinkertutorial.png" alt="oinkertutorial" width="491" height="261" class="alignnone size-full wp-image-1719" /></a>
 
 # Scale your app up or down with the load balancer
 
@@ -178,10 +178,10 @@ In this step you can see the load balancer in action by removing or adding nodes
     
         $ dcos marathon app update oinker-with-marathon-lb instances=4
 
- [1]: ../administration/terminology/
- [2]: ../administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
- [3]: ../manage-service/cassandra/
+ [1]: /administration/terminology/
+ [2]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
+ [3]: /usage/managing-services/cassandra/
  [4]: https://github.com/mesosphere/marathon-lb
  [5]: https://github.com/mesosphere/oinker
- [6]: ../administration/sshcluster/
- [7]: ../administration/service-discovery/
+ [6]: /administration/sshcluster/
+ [7]: /administration/service-discovery/

@@ -20,7 +20,7 @@ To find your your public node IP:
 
 2.  Click on the **Outputs** tab and copy/paste the Public slaves hostname into your browser to open the Oinker web interface.
     
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2015/12/awsec2privatedns.png" rel="attachment wp-att-1496"><img src="https://docs.mesosphere.com/wp-content/uploads/2015/12/awsec2privatedns-800x197.png" alt="awsec2privatedns" width="800" height="197" class="alignnone size-large wp-image-1496" /></a>
+    <a href="/wp-content/uploads/2015/12/awsec2privatedns.png" rel="attachment wp-att-1496"><img src="/wp-content/uploads/2015/12/awsec2privatedns-800x197.png" alt="awsec2privatedns" width="800" height="197" class="alignnone size-large wp-image-1496" /></a>
     
     **Tip:** You might have to refresh your browser to see your deployed app.
 
@@ -57,5 +57,5 @@ To upgrade a DCOS cluster:
 
 3.  Shutdown your existing DCOS cluster.
 
- [1]: ../administration/dcosarchitecture/security/#scrollNav-3
- [2]: /installing/installing-community-edition/awscluster/
+ [1]: /administration/dcosarchitecture/security/#scrollNav-3
+ [2]: /concepts/installing/installing-community-edition/awscluster/

@@ -95,6 +95,6 @@ For each agent node in your DCOS cluster:
 
 For details on how to filter your logs with Splunk, see [Filtering DCOS logs with Splunk][3].
 
- [1]: ../release-notes/community-edition/1-3/
+ [1]: /administration/release-notes/community-edition/1-3/
  [2]: http://www.splunk.com/en_us/download/universal-forwarder.html
- [3]: ../../logging/filter-splunk/
+ [3]: /administration/logging/filter-splunk/
