@@ -36,38 +36,135 @@ To create an advanced ACL group:
     ![alt text](/assets/auth-enable-advanced-acl.gif)
     
     ### Resource 
-    A resource has this format: 
+    Here are the available resource options.
     
-        dcos:<service-type>:<service-name>:<namespace>/<object-id>
+    *   `dcos:service` - resources defined by a DCOS service such as Cassandra. 
+        <p>
+        <table>
+          <tr>
+            <th>Resource</th>
+            <th>Description</th>
+            <th>Permission</th>
+          </tr>
+          <tr>
+            <td>dcos:service:&lt;service-name&gt;</td>
+            <td>Controls access to resources for an installed DCOS Service from the package repository.</td>
+            <td>create, read, update, delete</td>
+          </tr>
+          <tr>
+          </tr>
+        </table>
+        </p>
+    *   `dcos:adminrouter` - resources defined by Admin Router, such as locations.
+        <p>
+        <table>
+          <tr>
+            <th>Resource</th>
+            <th>Description</th>
+            <th>Permission</th>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:acs`</td>
+            <td>Controls access to the access control service API through Admin Router</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:package`</td>
+            <td>Controls access to the packaging API through Admin Router</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:ops:mesos`</td>
+            <td>Controls access to Mesos through Admin Router</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:ops:exhibitor`</td>
+            <td>Controls access to Exhibitor through Admin Router</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:ops:slave`</td>
+            <td>Controls access to Admin Router's /slave endpoint</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:ops:metadata`</td>
+            <td>Controls access to Admin Router's medatada endpoints</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:ops:historyservice`</td>
+            <td>Controls access to the history service through Admin Router</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:ops:mesos-dns`</td>
+            <td>Controls access to Mesos DNS through Admin Router</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:ops:networking`</td>
+            <td>Controls access to the networking API through Admin Router</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:ops:system-health`</td>
+            <td>Controls access to the health monitoring API through Admin Router</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:adminrouter:service:marathon`</td>
+            <td>Controls access to the DCOS Marathon instance. For example, you can grant a user access to `http://<public-master-IP>/service/marathon`.</td>
+            <td>full</td>
+          </tr>
+          <tr>
+          </tr>
+        </table>
+        </p>
+    <!-- For 1.9 *   `dcos:acs` - resources defined by the access control service. -->
+    *   `dcos:service:marathon`
+        <p>
+        <table>
+          <tr>
+            <th>Resource</th>
+            <th>Description</th>
+            <th>Permission</th>
+          </tr>
+          <tr>
+            <td>`dcos:service:marathon:services/`</td>
+            <td>Controls access to all apps managed by DCOS Marathon.</td>
+            <td>full</td>
+          </tr>
+          <tr>
+            <td>`dcos:service:marathon:marathon:services/production`</td>
+            <td>Controls group access to the DCOS Marathon instance.</td>
+            <td>create, read, update, delete</td>
+          </tr>
+          <tr>
+            <td>`dcos:service:marathon:<user-marathon>:services/production`</td>
+            <td>Controls group access to an installed Marathon instance (`<user-marathon>`).</td>
+            <td>create, read, update, delete</td>
+          </tr>
+        </table>
+        </p>
+    *   `dcos:superuser` - superusers are allowed to do everything.
+        <p>
+        <table>
+          <tr>
+            <th>Resource</th>
+            <th>Description</th>
+            <th>Permission</th>
+          </tr>
+          <tr>
+            <td>dcos:superuser</td>
+            <td>Superuser group</td>
+            <td>full</td>
+          </tr>
+        </table>
+        </p>
+            
     
-    *   **dcos**: The required prefix.
-    *   **service-type**: The service type: 
-        *   `dcos:service` - resources defined by a DCOS service such as Cassandra. 
-        *   `dcos:adminrouter` - resources defined by Admin Router, such as locations.
-        <!-- For 1.9 *   `dcos:acs` - resources defined by the access control service. -->
-        *   `dcos:superuser` - superusers are allowed to do everything.
-    *   **service-name** An [RFC 3986 (URI)][1] compliant name. For example, `dcos:service:kafka`. 
-    *   **namespace** The namespace can be: 
-        *   `dcos:<service-type>:<service-name>:services` - Marathon ACLs. 
-        *   `dcos:<service-type>:<service-name>:admin` - Admin Router ACLs.
-    *   **<object-id>** 
-    
-    ### Permission
-    The type of permissions assigned to the resource. The available permissions are determined by the type of namespace, `services` or `admin`.
-    
-    The available `dcos:<service-type>:<service-name>:services` namespace permissions are:
-    
-    *   `create` - Create an application. 
-    *   `delete` - Delete an application.
-    *   `read` - Read-only access to an application. 
-    *   `update` - Update an application.
-    
-    The available `admin` namespace permission is:
-    
-    *   `full` - Full CRUD access. This is the only available option for the `dcos:<service-type>:<service-name>:admin` namespace. 
-    
-    
-Available resources:
 
 
 
