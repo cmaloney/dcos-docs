@@ -56,4 +56,4 @@ From the DCOS CLI, enter the `dcos service` command. In this example you can see
  [1]: /administration/installing/
  [2]: /usage/cli/install-cli/
  [3]: https://mesosphere.github.io/marathon/docs/health-checks.html
- [4]: /administration/webinterface/#scrollNav-2
+ [4]: /usage/webinterface/#scrollNav-2

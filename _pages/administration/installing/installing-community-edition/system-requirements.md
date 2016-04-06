@@ -23,4 +23,4 @@ The [DCOS web interface][2] requires Internet access and a supported web browser
 <!-- *   Apple Safari, version 8 or later -->
 
  [1]: /usage/cli/
- [2]: /administration/webinterface/
+ [2]: /usage/webinterface/
