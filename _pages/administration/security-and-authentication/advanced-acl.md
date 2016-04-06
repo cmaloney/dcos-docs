@@ -38,26 +38,9 @@ To create an advanced ACL group:
     ### Resource 
     Here are the available resource options.
     
-    *   `dcos:service` - resources defined by a DCOS service such as Cassandra. 
-        <p>
-        <table>
-          <tr>
-            <th>Resource</th>
-            <th>Description</th>
-            <th>Permission</th>
-          </tr>
-          <tr>
-            <td>dcos:service:&lt;service-name&gt;</td>
-            <td>Controls access to resources for an installed DCOS Service from the package repository.</td>
-            <td>create, read, update, delete</td>
-          </tr>
-          <tr>
-          </tr>
-        </table>
-        </p>
     *   `dcos:adminrouter` - resources defined by Admin Router, such as locations.
         <p>
-        <table>
+        <table class="table">
           <tr>
             <th>Resource</th>
             <th>Description</th>
@@ -125,40 +108,45 @@ To create an advanced ACL group:
     <!-- For 1.9 *   `dcos:acs` - resources defined by the access control service. -->
     *   `dcos:service:marathon`
         <p>
-        <table>
+        <table class="table">
           <tr>
             <th>Resource</th>
             <th>Description</th>
             <th>Permission</th>
           </tr>
           <tr>
-            <td>`dcos:service:marathon:services/`</td>
+            <td>`dcos:service:marathon:marathon:services`</td>
             <td>Controls access to all apps managed by DCOS Marathon.</td>
-            <td>full</td>
-          </tr>
+            <td>create, read, update, delete</td>
+          </tr>         
           <tr>
-            <td>`dcos:service:marathon:marathon:services/production`</td>
+            <td>`dcos:service:marathon:marathon:services/<service-group>`</td>
             <td>Controls group access to the DCOS Marathon instance.</td>
             <td>create, read, update, delete</td>
           </tr>
           <tr>
-            <td>`dcos:service:marathon:<user-marathon>:services/production`</td>
+            <td>`dcos:service:marathon:<user-marathon>:services/<service-group>`</td>
             <td>Controls group access to an installed Marathon instance (`<user-marathon>`).</td>
             <td>create, read, update, delete</td>
+          </tr>
+            <tr>
+            <td>`dcos:service:marathon:marathon:admin`</td>
+            <td>Control access to specific operator endpoints. <!-- What are these endpoints? --></td>
+            <td>full</td>
           </tr>
         </table>
         </p>
     *   `dcos:superuser` - superusers are allowed to do everything.
         <p>
-        <table>
+        <table class="table">
           <tr>
             <th>Resource</th>
             <th>Description</th>
             <th>Permission</th>
           </tr>
           <tr>
-            <td>dcos:superuser</td>
-            <td>Superuser group</td>
+            <td>`dcos:superuser`</td>
+            <td>The superuser group has access to all DCOS components and is where DCOS administrator access is defined.</td>
             <td>full</td>
           </tr>
         </table>
