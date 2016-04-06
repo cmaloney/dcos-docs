@@ -42,8 +42,7 @@ To create an advanced ACL group:
     
     *   **dcos**: The required prefix.
     *   **service-type**: The service type: 
-        *   `dcos:service` - resources defined by a DCOS service such as Cassandra.
-             * `dcos:service:kafka:services`
+        *   `dcos:service` - resources defined by a DCOS service such as Cassandra. 
         *   `dcos:adminrouter` - resources defined by Admin Router, such as locations.
         <!-- For 1.9 *   `dcos:acs` - resources defined by the access control service. -->
         *   `dcos:superuser` - superusers are allowed to do everything.
@@ -80,7 +79,7 @@ In this example, read-only access to Chronos is granted to an existing user name
     
 1.  Open the Chronos Users group and click **Advanced ACLs**. 
 
-1.  Create an ACL group with Resource `dcos:service:chronos:services` and Permission `read`.
+1.  Create an ACL group with Resource `dcos:adminrouter:chronos:services` and Permission `read`.
 
     ![alt text](/assets/auth-enable-chronos-example2.gif)
     
