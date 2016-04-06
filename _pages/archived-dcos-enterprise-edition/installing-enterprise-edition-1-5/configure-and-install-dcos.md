@@ -399,4 +399,4 @@ You are done!
  [3]: https://techjourney.net/how-to-decrypt-an-enrypted-ssl-rsa-private-key-pem-key/
  [4]: /archived-dcos-enterprise-edition/installing-enterprise-edition-1-5/configure-and-install-dcos/configuration-parameters/
  [5]: http://mesos.apache.org/documentation/latest/containerizer/
- [6]: /concepts/installing/installing-enterprise-edition/dcos-cleanup-script/
+ [6]: /overview/installing/installing-enterprise-edition/dcos-cleanup-script/

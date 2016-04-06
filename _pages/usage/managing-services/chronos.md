@@ -57,4 +57,4 @@ For more information:
  [2]: #uninstall
  [3]: /administration/cli/install-cli/
  [4]: /administration/cli/command-reference/
- [5]: /concepts/installing/awscluster#launchdcos
+ [5]: /overview/installing/awscluster#launchdcos

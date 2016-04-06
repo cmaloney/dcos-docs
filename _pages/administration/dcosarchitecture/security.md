@@ -37,4 +37,4 @@ The agent nodes in the public zone are labeled with a special role so that only 
 *   You must secure your cluster by using security rules. It is strongly recommended that you only allow internal traffic.
 *   If there is sensitive data in your cluster, follow standard cloud policies for accessing that data. Either set up a point to point VPN between your secure networks or run a VPN server inside your DCOS cluster.
 
- [1]: /concepts/installing/
+ [1]: /overview/installing/

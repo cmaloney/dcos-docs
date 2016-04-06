@@ -282,9 +282,9 @@ After DCOS is installed and deployed across your cluster, you can add more agent
         18:17:14:: 
         18:17:14:: ====> 10.10.0.160:22 FAILED
 
- [1]: /concepts/installing/installing-enterprise-edition/configuration-parameters/
- [2]: /concepts/installing/installing-enterprise-edition/manual-installation/
- [3]: /concepts/installing/installing-enterprise-edition/manual-installation/#scrollNav-2
+ [1]: /overview/installing/installing-enterprise-edition/configuration-parameters/
+ [2]: /overview/installing/installing-enterprise-edition/manual-installation/
+ [3]: /overview/installing/installing-enterprise-edition/manual-installation/#scrollNav-2
  [4]: /administration/security-and-authentication/managing-authorization/
  [5]: #hardware
  [6]: #software

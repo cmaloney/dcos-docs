@@ -62,5 +62,5 @@ For more information:
 *   <a href="http://kafka.apache.org/documentation.html" target="_blank">Apache Kafka Documentation</a>
 
  [1]: /administration/cli/install-cli/
- [2]: /concepts/installing/awscluster#launchdcos
+ [2]: /overview/installing/awscluster#launchdcos
  [3]: /sshcluster/

@@ -117,5 +117,5 @@ For more information, see the <a href="https://github.com/mesosphere/hdfs/" targ
 
  [1]: /administration/cli/install-cli/
  [2]: /administration/sshcluster/
- [3]: /concepts/installing/awscluster#launchdcos
+ [3]: /overview/installing/awscluster#launchdcos
  [4]: /administration/webinterface/#nodes

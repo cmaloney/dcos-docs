@@ -52,4 +52,4 @@ When you run the application, you'll be prompted for the following parameters:
     Enter Autoscale multiplier for triggered Autoscale (ie 1.5) : 2
     Enter the Max instances that should ever exist for this application (ie. 20) : 10
 
- [1]: /concepts/installing/awscluster/
+ [1]: /overview/installing/awscluster/

@@ -73,5 +73,5 @@ For more information:
 
  [1]: /administration/cli/install-cli/
  [2]: /administration/sshcluster/
- [3]: /concepts/installing/awscluster#launchdcos
- [4]: /concepts/tutorials/deploy-containerized-app/
+ [3]: /overview/installing/awscluster#launchdcos
+ [4]: /overview/tutorials/deploy-containerized-app/
