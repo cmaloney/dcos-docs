@@ -37,6 +37,29 @@ To create an advanced ACL group:
     
     ### DCOS core components
     Access to these resources is controlled by the Admin Router.
+    
+    #### dcos:adminrouter:package
+    This resource controls access to the DCOS packaging API. Users with access can install DCOS services from the DCOS package repository.
+    The available permission is `full`.
+    
+    #### dcos:adminrouter:ops:mesos
+    This resource controls access to Mesos UI. Users with access can navigate to the Mesos UI. The available permission is `full`.
+    
+    #### dcos:adminrouter:ops:exhibitor
+    This resource controls access to Exhibitor UI. The available permission is `full`.
+    
+    #### dcos:adminrouter:ops:slave</code></td>
+    This resource controls access to Admin Router's agent endpoint. The available permission is `full`.
+    
+    #### dcos:adminrouter:service:marathon
+    This resource controls access to the DCOS Marathon instance. For example, you can grant a user access to `http://<public-master-IP>/service/marathon`. The available permission is `full`.
+    
+    #### dcos:adminrouter:service:<service-name>
+    This resource controls access to installed DCOS Services. The available permission is `full`.
+    
+    #### dcos:superuser
+    This resource controls access to the superuser group. This group has access to all DCOS components and is where DCOS administrator access is defined. The available permission is `full`.
+    
     <p>
     <table class="table">
       <tr>
@@ -45,7 +68,7 @@ To create an advanced ACL group:
         <th>Permission</th>
       </tr>
       <tr>
-        <td><code>dcos:adminrouter:package</code></td>
+        <td><strong>dcos:adminrouter:package</strong></td>
         <td>This resource controls access to the DCOS packaging API. Users with access can install DCOS services from the DCOS package repository.</td>
         <td>full</td>
       </tr>
