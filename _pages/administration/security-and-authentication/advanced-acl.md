@@ -115,7 +115,7 @@ To create an advanced ACL group:
     </p>
     <!-- For 1.9 *   `dcos:acs` - resources defined by the access control service. -->
 
-    ### DCOS Services 
+    ### DCOS Marathon 
     Access to these resources is controlled by the DCOS Marathon instance.
     <p>
     <table class="table">
@@ -151,7 +151,7 @@ To create an advanced ACL group:
 
 # Examples 
 
-## Superuser access to DCOS
+## Grant user admin access to DCOS
 In this example, superuser access is granted to an existing user named Carlos.
 
 1.  Click on the **System** and then the **Organization** tab. 
@@ -166,13 +166,13 @@ In this example, superuser access is granted to an existing user named Carlos.
 
 1.  Send Carlos a link to the web interface.
 
-## Access to a Marathon app group
+## Grant user access to a Marathon app group
 In this example, a user is granted access to a specific app group in Marathon.
 
 1.  Click on the **System** and then the **Organization** tab.
 
 
-## User access to install packages
+## Grant user access to install packages
 In this example, a user named Ted is granted access to install services from the DCOS package repository.
 
 1.  Click on the **System** and then the **Organization** tab. 

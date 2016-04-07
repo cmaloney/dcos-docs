@@ -40,9 +40,9 @@ In this step you create a YAML configuration file that is customized for your en
         $6$rounds=656000$v55tdnlMGNoSEgYH$1JAznj58MR.Bft2wd05KviSUUfZe45nsYsjlEl84w34pp48A9U2GoKzlycm3g6MBmg4cQW9k7iY4tpZdkWy9t1
         
 
-2.  Create a configuration file and save as `genconf/config.yaml`. For parameters descriptions and configuration examples, see the [documentation][1].
+2.  Create a configuration file and save as `genconf/config.yaml`. 
     
-    You can use this template to get started. This template specifies 3 Mesos masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers.
+    You can use this template to get started. This template specifies 3 Mesos masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][1].
     
         bootstrap_url: http://<bootstrap_public_ip>:<your_port>       
         cluster_name: '<cluster-name>'
