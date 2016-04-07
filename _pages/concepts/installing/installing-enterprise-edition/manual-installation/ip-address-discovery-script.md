@@ -16,7 +16,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
 
 1.  Create a directory named `genconf` on your bootstrap node and navigate to it.
     
-        $ mkdir -p genconf && cd genconf
+        $ mkdir -p genconf
         
 
 2.  Create an IP detection script for your environment and save as `genconf/ip-detect`. You can use the examples below.

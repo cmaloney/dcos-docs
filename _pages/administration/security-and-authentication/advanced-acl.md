@@ -13,8 +13,6 @@ hide_from_related: true
 You can define fine-grained access to applications that are running in DCOS by defining advanced ACL groups. Advanced ACL groups can provide multi-tenancy by isolating application teams, and individual users. You can also control customized access to applications, for example read-only access. This access is administered on the backend by Admin Router and the native Marathon instance.
 
 Authorization is not secure, but provides user isolation. Anything running inside the cluster, and anyone SSH’d into it, has access to everything.
-
-By default, when you install a DCOS service, an entry is created in the ACL for that particular service. For example, when you install Kafka, this ACL entry is created: `dcos:adminrouter:service:kafka`.
     
 
 You can create advanced ACL groups for each role in your organization. 
