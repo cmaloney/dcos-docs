@@ -92,15 +92,15 @@ To create an advanced ACL group:
             </tr>
       <tr>
         <td><code>dcos:service:marathon:marathon:services</code><p>This resource controls access to all apps managed by DCOS Marathon.</p></td>
-        <td><code>create, read, update, delete</code></td>
+        <td><code>create</code>, <code>read</code>,<code>update</code>, <code>delete</code></td>
       </tr>         
       <tr>
         <td><code>dcos:service:marathon:marathon:services/&lt;service-group&gt;</code><p>This resource controls group access to the DCOS Marathon instance.</p></td>
-        <td><code>create, read, update, delete</code></td>
+        <td><code>create</code>, <code>read</code>,<code>update</code>, <code>delete</code></td>
       </tr>
       <tr>
         <td><code>dcos:service:marathon:&lt;user-marathon&gt;:services/&lt;service-group&gt;</code><p>This resource controls group access to an installed Marathon instance (`<user-marathon>`).</p></td>
-        <td><code>create, read, update, delete</code></td>
+        <td><code>create</code>, <code>read</code>,<code>update</code>, <code>delete</code></td>
       </tr>
     </table>
     </p>
