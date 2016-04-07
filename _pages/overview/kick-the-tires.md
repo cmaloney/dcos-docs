@@ -32,12 +32,12 @@ Then continue down the road to mastery by perusing the docs on how to [administe
 Enjoy!
 
 
- [1] /overview/
- [2] /administration/installing/installing-community-edition/
- [3] /usage/webinterface/
- [4] /usage/cli/
- [5] /usage/package-repo/
- [6] /usage/services/
- [7] /usage/tutorials/
- [8] /usage/developing-services/
- [9] /administration/
+ [1]: /overview/
+ [2]: /administration/installing/installing-community-edition/
+ [3]: /usage/webinterface/
+ [4]: /usage/cli/
+ [5]: /usage/package-repo/
+ [6]: /usage/services/
+ [7]: /usage/tutorials/
+ [8]: /usage/developing-services/
+ [9]: /administration/
