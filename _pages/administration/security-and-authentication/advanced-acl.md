@@ -44,11 +44,6 @@ To create an advanced ACL group:
         <th>Description</th>
         <th>Permission</th>
       </tr>
-      <!-- tr>
-        <td><code>dcos:adminrouter:acs</code></td>
-        <td><p>Controls access to the DCOS access control service API. </p><p><strong>Important:</strong> This group has access all permissions, including granting superuser access.</p></td>
-        <td>full</td>
-      </tr -->
       <tr>
         <td><code>dcos:adminrouter:package</code></td>
         <td>This resource controls access to the DCOS packaging API. Users with access can install DCOS services from the DCOS package repository.</td>
@@ -69,31 +64,6 @@ To create an advanced ACL group:
         <td>Controls access to Admin Router's /slave endpoint</td>
         <td>full</td>
       </tr>
-      <!-- tr>
-        <td><code>dcos:adminrouter:ops:metadata</code></td>
-        <td>Controls access to Admin Router's medatada endpoints</td>
-        <td>full</td>
-      </tr>
-      <tr>
-        <td><code>dcos:adminrouter:ops:historyservice</code></td>
-        <td>Controls access to the history service through Admin Router</td>
-        <td>full</td>
-      </tr>
-      <tr>
-        <td><code>dcos:adminrouter:ops:mesos-dns</code></td>
-        <td>Controls access to Mesos DNS through Admin Router</td>
-        <td>full</td>
-      </tr>
-      <tr>
-        <td><code>dcos:adminrouter:ops:networking</code></td>
-        <td>Controls access to the networking API through Admin Router</td>
-        <td>full</td>
-      </tr>
-      <tr>
-        <td><code>dcos:adminrouter:ops:system-health</code></td>
-        <td>Controls access to the health monitoring API through Admin Router</td>
-        <td>full</td>
-      </tr -->
       <tr>
         <td><code>dcos:adminrouter:service:marathon</code></td>
         <td>Controls access to the DCOS Marathon instance. For example, you can grant a user access to `http://<public-master-IP>/service/marathon`.</td>
