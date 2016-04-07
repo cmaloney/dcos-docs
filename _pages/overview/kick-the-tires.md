@@ -10,11 +10,11 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-If you've already read through the other [Overview][1] topics and you're looking to get some more hands on experience, the next step is to spin up a DCOS cluster for yourself.
+If you've already read through the other [overview][1] topics and you're looking to get some more hands on experience, the next step is to spin up a DCOS cluster for yourself.
 
 # Install DCOS
 
-The best way to try out DCOS is to [Install the Community Edition][2] on your favorite cloud provider.
+The best way to try out DCOS is to [install the Community Edition][2] on your favorite cloud provider.
 
 Once you've got DCOS installed, explore the [Web Interface][3].
 
@@ -28,7 +28,7 @@ For a more curated experience, choose one of our [tutorials][7] to follow.
 
 # Go The Distance
 
-When you've got the basics down, read more about [developing your own services]]8].
+When you've got the basics down, read more about [developing your own services][8].
 
 Then continue down the road to mastery by perusing the docs on how to [administer a DCOS installation][8].
 
