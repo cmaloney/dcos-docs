@@ -146,12 +146,12 @@ In this example, user access is granted to Chronos to an existing user named Ted
 
 1.  From the **Permissions** tab click **Add Service** -> **Chronos**.
 
-    ![Add Chronos](/assets/auth-enable-ex-chronos-user.gif)
+    ![Add Chronos](/assets/images/auth-enable-ex-chronos-user.gif)
     
 1.  Click **Close** to save these changes.
     
 1.  Go to the Services tab and copy the URL for the Chronos service, for example `http:<public-master-IP>/#/services/ui/chronos`, and send to Ted. Ted can click this link to access the Chronos. 
 
-    ![alt text](/assets/auth-enable-chronos-example4.gif)
+    ![alt text](/assets/images/auth-enable-chronos-example4.gif)
 
  [1]: https://en.wikipedia.org/wiki/STARTTLS

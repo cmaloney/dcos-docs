@@ -31,7 +31,7 @@ To create an advanced ACL group:
 
 5.  Define your advanced ACL by providing Resource and Permission and then click **Add Rule**.
 
-    ![alt text](/assets/auth-enable-advanced-acl.gif)
+    ![alt text](/assets/images/auth-enable-advanced-acl.gif)
     
     Here are the available resource options.
     
@@ -160,7 +160,7 @@ In this example, superuser access is granted to an existing user named Carlos.
 
 1.  Click **Members** **Add User** and add Carlos to this group.
 
-    ![add user carlos](/assets/auth-enable-ex-superuser.gif)
+    ![add user carlos](/assets/images/auth-enable-ex-superuser.gif)
     
 1.  Click **Close** to save these changes.
 
@@ -181,13 +181,13 @@ In this example, a user named Ted is granted access to install services from the
 
 1.  Enter `DCOS package` for Group name and click **Create**.
 
-    ![alt text](/assets/auth-enable-ex-package-user.gif)
+    ![alt text](/assets/images/auth-enable-ex-package-user.gif)
     
 1.  Open the DCOS package group. 
 
     1.  From the **Advanced ACLs** tab, enter Resource `dcos:adminrouter:package`, Permission `full`, and click **Add Rule**.
 
-        ![alt text](/assets/auth-enable-ex-package-user2.gif)
+        ![alt text](/assets/images/auth-enable-ex-package-user2.gif)
             
     1.  From the **Members** tab, select Ted from the dropdown menu.
     

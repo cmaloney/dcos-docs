@@ -12,7 +12,7 @@ hide_from_related: true
 ---
 You can monitor the health of your cluster components from the DCOS web interface. The component health page provides the health status of all DCOS system components that are running in systemd. You can drill down by health status, host IP address, or specific systemd unit.
 
-![alt text](/assets/ui-sys-health.gif)
+![alt text](/assets/images/ui-sys-health.gif)
 
 Possible health states are unhealthy and healthy. 
 
