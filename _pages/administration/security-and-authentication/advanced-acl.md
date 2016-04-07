@@ -38,69 +38,39 @@ To create an advanced ACL group:
     ### DCOS core components
     Access to these resources is controlled by the Admin Router.
     
-    #### dcos:adminrouter:package
-    This resource controls access to the DCOS packaging API. Users with access can install DCOS services from the DCOS package repository.
-    The available permission is `full`.
-    
-    #### dcos:adminrouter:ops:mesos
-    This resource controls access to Mesos UI. Users with access can navigate to the Mesos UI. The available permission is `full`.
-    
-    #### dcos:adminrouter:ops:exhibitor
-    This resource controls access to Exhibitor UI. The available permission is `full`.
-    
-    #### dcos:adminrouter:ops:slave</code></td>
-    This resource controls access to Admin Router's agent endpoint. The available permission is `full`.
-    
-    #### dcos:adminrouter:service:marathon
-    This resource controls access to the DCOS Marathon instance. For example, you can grant a user access to `http://<public-master-IP>/service/marathon`. The available permission is `full`.
-    
-    #### dcos:adminrouter:service:<service-name>
-    This resource controls access to installed DCOS Services. The available permission is `full`.
-    
-    #### dcos:superuser
-    This resource controls access to the superuser group. This group has access to all DCOS components and is where DCOS administrator access is defined. The available permission is `full`.
-    
     <p>
     <table class="table">
       <tr>
         <th>Resource</th>
-        <th>Description</th>
         <th>Permission</th>
       </tr>
       <tr>
-        <td><strong>dcos:adminrouter:package</strong></td>
-        <td>This resource controls access to the DCOS packaging API. Users with access can install DCOS services from the DCOS package repository.</td>
-        <td>full</td>
+        <td><code>dcos:adminrouter:package</code><p>This resource controls access to the DCOS packaging API. Users with access can install DCOS services from the DCOS package repository.</p></td>
+        <td><code>full</code></td>
       </tr>
       <tr>
-        <td><code>dcos:adminrouter:ops:mesos</code></td>
-        <td>This resource controls access to Mesos UI. Users with access can navigate to the Mesos UI.</td>
-        <td>full</td>
+        <td><code>dcos:adminrouter:ops:mesos</code><p>This resource controls access to Mesos UI. Users with access can navigate to the Mesos UI.</p></td>
+        <td><code>full</code></td>
       </tr>
       <tr>
-        <td><code>dcos:adminrouter:ops:exhibitor</code></td>
-        <td>This resource controls access to Exhibitor UI.  </td>
-        <td>full</td>
+        <td><code>dcos:adminrouter:ops:exhibitor</code><p>This resource controls access to Exhibitor UI.</p></td>
+        <td><code>full</code></td>
       </tr>
       <tr>
-        <td><code>dcos:adminrouter:ops:slave</code></td>
-        <td>Controls access to Admin Router's /slave endpoint</td>
-        <td>full</td>
+        <td><code>dcos:adminrouter:ops:slave</code><p>This resource controls access to Admin Router's agent endpoint.</p></td>
+        <td><code>full</code></td>
       </tr>
       <tr>
-        <td><code>dcos:adminrouter:service:marathon</code></td>
-        <td>Controls access to the DCOS Marathon instance. For example, you can grant a user access to `http://<public-master-IP>/service/marathon`.</td>
-        <td>full</td>
+        <td><code>dcos:adminrouter:service:marathon</code><p>This resource controls access to the DCOS Marathon instance. For example, you can grant a user access to `http://<public-master-IP>/service/marathon`.</p></td>
+        <td><code>full</code></td>
       </tr>
       <tr>
-              <td><code>dcos:adminrouter:service:&lt;service-name&gt;</code></td>
-              <td>Controls access to installed DCOS Services.</td>
-              <td>full</td>
-            </tr>
+        <td><code>dcos:adminrouter:service:&lt;service-name&gt;</code><p>This resource controls access to installed DCOS Services.</p></td>
+        <td><code>full</code></td>
+      </tr>
       <tr>
-      <td><code>dcos:superuser</code></td>
-      <td>The superuser group has access to all DCOS components and is where DCOS administrator access is defined.</td>
-      <td>full</td>
+      <td><code>dcos:superuser</code><p>This resource controls access to the the superuser group. This group has access to all DCOS components and is where DCOS administrator access is defined.</p></td>
+      <td><code>full</code></td>
     </tr>
       <tr>
       </tr>
@@ -114,28 +84,23 @@ To create an advanced ACL group:
     <table class="table">
       <tr>
         <th>Resource</th>
-        <th>Description</th>
         <th>Permission</th>
       </tr>
               <tr>
-              <td><code>dcos:service:marathon:marathon:admin</code></td>
-              <td>Control access to specific operator endpoints. <!-- What are these endpoints? --></td>
-              <td>full</td>
+              <td><code>dcos:service:marathon:marathon:admin</code><p>This resource control access to specific operator endpoints. <!-- What are these endpoints? --></p></td>
+              <td><code>full</code></td>
             </tr>
       <tr>
-        <td><code>dcos:service:marathon:marathon:services</code></td>
-        <td>Controls access to all apps managed by DCOS Marathon.</td>
-        <td>create, read, update, delete</td>
+        <td><code>dcos:service:marathon:marathon:services</code><p>This resource controls access to all apps managed by DCOS Marathon.</p></td>
+        <td><code>create, read, update, delete</code></td>
       </tr>         
       <tr>
-        <td><code>dcos:service:marathon:marathon:services/&lt;service-group&gt;</code></td>
-        <td>Controls group access to the DCOS Marathon instance.</td>
-        <td>create, read, update, delete</td>
+        <td><code>dcos:service:marathon:marathon:services/&lt;service-group&gt;</code><p>This resource controls group access to the DCOS Marathon instance.</p></td>
+        <td><code>create, read, update, delete</code></td>
       </tr>
       <tr>
-        <td><code>dcos:service:marathon:&lt;user-marathon&gt;:services/&lt;service-group&gt;</code></td>
-        <td>Controls group access to an installed Marathon instance (`<user-marathon>`).</td>
-        <td>create, read, update, delete</td>
+        <td><code>dcos:service:marathon:&lt;user-marathon&gt;:services/&lt;service-group&gt;</code><p>This resource controls group access to an installed Marathon instance (`<user-marathon>`).</p></td>
+        <td><code>create, read, update, delete</code></td>
       </tr>
     </table>
     </p>
