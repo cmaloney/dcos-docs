@@ -291,7 +291,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
         
         Before installing DCOS, you must ensure that all of your cluster nodes have the following prerequisites. The cluster nodes are designated Mesos masters and agents during installation.
         
-        ## Data compression
+        ### Data compression
         
         You must have the <a href="http://www.info-zip.org/UnZip.html" target="_blank">UnZip</a>, <a href="https://www.gnu.org/software/tar/" target="_blank">GNU tar</a>, and <a href="http://tukaani.org/xz/" target="_blank">XZ Utils</a> data compression utilities installed on your cluster nodes.
         
@@ -300,7 +300,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
             $ sudo yum install -y tar xz unzip curl
             
         
-        ## Cluster permissions
+        ### Cluster permissions
         
         On each of your cluster nodes, use the following command to:
         

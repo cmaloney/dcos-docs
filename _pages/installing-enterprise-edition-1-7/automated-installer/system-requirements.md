@@ -287,6 +287,6 @@ Download and save the DCOS setup file to your bootstrap node. This file is used 
         
 # Next step
 
-[Install DCOS](/install-dcos/)
+Choose [GUI](/gui-install/) or [Command Line](cli-install) installation.
 
  [1]: /usage/cli/

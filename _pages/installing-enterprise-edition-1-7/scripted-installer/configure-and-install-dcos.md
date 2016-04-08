@@ -69,7 +69,7 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 
 **Prerequisites**
 
-*   A `genconf/config.yaml` file that is optimized for [manual distribution of DCOS across your nodes][3].
+*   A `genconf/config.yaml` file that is optimized for manual distribution of DCOS across your nodes.
 *   A `genconf/ip-detect` script.
 
 <!-- Early access URL: https://downloads.mesosphere.com/dcos/EarlyAccess/dcos_generate_config.sh -->

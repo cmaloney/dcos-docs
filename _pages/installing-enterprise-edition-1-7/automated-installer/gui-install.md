@@ -80,7 +80,7 @@ The automated GUI installation method provides a simple graphical interface that
         
         **Important:** The IP address of a node must not change after DCOS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be wiped and reinstalled.
 
-5.  Click **Run Pre-Flight**. The preflight script installs the cluster [prerequisites][2] and validates that your cluster is installable. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
+5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the scripted installer [prerequisites](/scripted-installer/system-requirements/#scrollNav-2). This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
     <a href="/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" rel="attachment wp-att-3197"><img src="/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" alt="ui-installer-pre-flight1" width="626" height="405" class="alignnone size-full wp-image-3197" /></a>
     
