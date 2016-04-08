@@ -107,9 +107,9 @@ The Apache Mesos kernel is now at [version 0.27][6].
 *   See additional known issues at <a href="https://support.mesosphere.com" target="_blank">support.mesosphere.com</a>.
 
  [1]: /administration/security-and-authentication/
- [2]: /concepts/installing/installing-enterprise-edition/automated-gui/
- [3]: /concepts/installing/installing-enterprise-edition/auto-command-line/
- [4]: /concepts/installing/installing-enterprise-edition/auto-command-line/#scrollNav-4
+ [2]: /administration/installing/installing-enterprise-edition/automated-gui/
+ [3]: /administration/installing/installing-enterprise-edition/auto-command-line/
+ [4]: /administration/installing/installing-enterprise-edition/auto-command-line/#scrollNav-4
  [5]: /administration/security-and-authentication/managing-authorization/
  [6]: http://mesos.apache.org/blog/mesos-0-27-0-released/
  [7]: https://issues.apache.org/jira/browse/MESOS-1791
@@ -117,4 +117,4 @@ The Apache Mesos kernel is now at [version 0.27][6].
  [9]: https://issues.apache.org/jira/browse/MESOS-4085
  [10]: https://issues.apache.org/jira/browse/MESOS-2353
  [11]: https://git-wip-us.apache.org/repos/asf?p=mesos.git;a=blob_plain;f=CHANGELOG;hb=0.27.0
- [12]: /concepts/installing/installing-enterprise-edition/manual-installation/
+ [12]: /administration/installing/installing-enterprise-edition/manual-installation/

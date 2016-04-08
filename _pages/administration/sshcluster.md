@@ -1,6 +1,6 @@
 ---
 UID: 56f98449546cf
-post_title: SSHing to a DCOS Cluster
+post_title: SSHing into Nodes
 post_excerpt: ""
 layout: page
 published: true
@@ -143,9 +143,9 @@ To install these programs, download the Windows installer <a href="http://www.ch
                 
                     ssh core@<agent-node-hostname>
 
- [1]: /administration/cli/command-reference/
+ [1]: /usage/cli/command-reference/
  [2]: #unix
  [3]: #windows
- [4]: /concepts/installing/awscluster/#create
+ [4]: /administration/installing/awscluster/#create
  
 

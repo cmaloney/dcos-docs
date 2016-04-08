@@ -1,6 +1,6 @@
 ---
 UID: 56f98447c920b
-post_title: Managing DCOS Clusters in AWS
+post_title: Managing AWS Clusters
 post_excerpt: ""
 layout: page
 published: true
@@ -57,5 +57,5 @@ To upgrade a DCOS cluster:
 
 3.  Shutdown your existing DCOS cluster.
 
- [1]: /administration/dcosarchitecture/security/#scrollNav-3
- [2]: /concepts/installing/installing-community-edition/awscluster/
+ [1]: /overview/security/#scrollNav-3
+ [2]: /administration/installing/installing-community-edition/awscluster/
