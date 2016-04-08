@@ -1,6 +1,7 @@
 ---
 post_title: Command Line
 layout: page
+menu_order: 3
 published: true
 ---
 
