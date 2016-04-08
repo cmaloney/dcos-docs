@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-If you've already read through the other [overview][1] topics and you're looking to get some more hands on experience, the next step is to spin up a DCOS cluster for yourself.
+If you've read through the other [overview][1] topics and you want some hands-on experience, the next step is to spin up a DCOS cluster for yourself.
 
 # Install DCOS
 
@@ -24,13 +24,13 @@ If you're savvy with a terminal, you might also want to play around with the [DC
 
 First, take a look at the [package repository][5] and install you favorite [services][6] with ease.
 
-For a more curated experience, choose one of our [tutorials][7] to follow.
+For a more curated experience, follow one of our [tutorials][7].
 
 # Go The Distance
 
-When you've got the basics down, read more about [developing your own services](/usage/developing-services/).
+When you've got the basics down, read more about [developing your own services][8].
 
-Then continue down the road to mastery by perusing the docs on how to [administer a DCOS installation][8].
+Then continue down the road to mastery by perusing the docs on how to [administer a DCOS installation][9].
 
 Enjoy!
 
@@ -41,4 +41,5 @@ Enjoy!
  [5]: /usage/package-repo/
  [6]: /usage/services/
  [7]: /usage/tutorials/
- [8]: /administration/
+ [8]: /usage/developing-services/
+ [9]: /administration/
