@@ -33,7 +33,7 @@ In this tutorial a Spark job is run by using DCOS.
 
 3.  To run a job with the main method in a class called `MySampleClass` and arguments 10:
     
-        $ dcos spark run --submit-args=’--class MySampleClass http://external.website/mysparkapp.jar 10’
+        $ dcos spark run --submit-args='--class MySampleClass http://external.website/mysparkapp.jar 10'
         
 
 4.  View the Spark scheduler progress by navigating to the Spark web interface as shown with this command:
@@ -43,7 +43,7 @@ In this tutorial a Spark job is run by using DCOS.
 
 5.  Set the `--supervise` flag when running the job to allow the scheduler to restart the job anytime the job finishes.
     
-        $ dcos spark run --submit-args=’--supervise --class MySampleClass http://external.website/mysparkapp.jar 10’
+        $ dcos spark run --submit-args='--supervise --class MySampleClass http://external.website/mysparkapp.jar 10'
         
 
 6.  You can set the amount of cores and memory that the driver will require to be scheduled by passing in `--driver-cores` and `--driver-memory` flags. Any options that the usual spark-submit script accepts are also accepted by DCOS Spark CLI.
