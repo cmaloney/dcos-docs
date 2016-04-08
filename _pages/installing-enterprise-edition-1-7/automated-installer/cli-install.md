@@ -1,24 +1,30 @@
 ---
+UID: 5708121e3f1ae
 post_title: Command Line
+post_excerpt: ""
 layout: page
-menu_order: 3
 published: true
+menu_order: 3
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 The automated command line installation method provides a guided installation of DCOS.
 
 This installation method uses a bootstrap node to administer the DCOS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DCOS installation.
 
 To use the automated command-line installation method:
 
-- Cluster nodes must be network accessible from the bootstrap node.
-- Cluster nodes must have SSH enabled and ports open from the bootstrap node.
-- The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH. Encrypted SSH keys are not supported.
+*   Cluster nodes must be network accessible from the bootstrap node.
+*   Cluster nodes must have SSH enabled and ports open from the bootstrap node.
+*   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH. Encrypted SSH keys are not supported.
 
 # Create a Script for IP Address Discovery
+
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DCOS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DCOS is started on the node.
 
-**Important:** The IP address of a node must not change after DCOS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled](/concepts/installing/installing-enterprise-edition/dcos-cleanup-script/).
+**Important:** The IP address of a node must not change after DCOS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][1].
 
 1.  Create a directory named `genconf` on your bootstrap node and navigate to it.
     
@@ -76,7 +82,6 @@ In this step you create an IP detect script to broadcast the IP address of each 
             echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}' | tail -1)
             
 
-
 # <a name="config-json"></a>Configure your cluster
 
 In this step you create a YAML configuration file that is customized for your environment. DCOS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
@@ -98,7 +103,7 @@ In this step you create a YAML configuration file that is customized for your en
 
 2.  Create a configuration file and save as `genconf/config.yaml`.
     
-    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][1].
+    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][2].
     
         agent_list:
         - <agent-private-ip-1>
@@ -126,9 +131,9 @@ In this step you create a YAML configuration file that is customized for your en
         superuser_username: <username>
         
     
-    **Important:** You cannot use an NFS mount for Exhibitor storage with the automated command line installation method. To use an NFS mount for Exhibitor storage (`exhibitor_storage_backend: shared_filesystem`), you must use the [Manual command line installation method][2].
+    **Important:** You cannot use an NFS mount for Exhibitor storage with the automated command line installation method. To use an NFS mount for Exhibitor storage (`exhibitor_storage_backend: shared_filesystem`), you must use the [Manual command line installation method][3].
 
-3.  Copy your private SSH key to `genconf/ssh_key`. For more information, see the [ssh_key_path][1] parameter.
+3.  Copy your private SSH key to `genconf/ssh_key`. For more information, see the [ssh_key_path][2] parameter.
     
         $ cp <path-to-key> genconf/ssh_key && chmod 0600 genconf/ssh_key
         
@@ -198,7 +203,7 @@ To install DCOS:
         │   ├── ip-detect     
         
 
-2.  <a name="two"></a>Install the cluster prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For a full list of cluster prerequisites, see this [documentation][3].
+2.  <a name="two"></a>Install the cluster prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For a full list of cluster prerequisites, see this [documentation][4].
     
         $ sudo bash dcos_generate_config.ee.sh --install-prereqs
         
@@ -304,7 +309,7 @@ To install DCOS:
 
 ### Add DCOS users
 
-You can assign user roles and grant access to DCOS services. For more information, see the [documentation][4].
+You can assign user roles and grant access to DCOS services. For more information, see the [documentation][5].
 
 ### Add more agent nodes
 
@@ -312,10 +317,10 @@ After DCOS is installed and deployed across your cluster, you can add more agent
 
 **Prerequisite:**
 
-*   The agent nodes must meet the [hardware][5] and [software][6] prerequisites.
+*   The agent nodes must meet the [hardware][6] and [software][7] prerequisites.
 
-1.  Update the `config.yaml` file with the additional agent nodes. For parameters descriptions and configuration examples, see the [documentation][1].
-2.  Run the installation steps beginning with [installing the cluster][7] prerequisites:
+1.  Update the `config.yaml` file with the additional agent nodes. For parameters descriptions and configuration examples, see the [documentation][2].
+2.  Run the installation steps beginning with [installing the cluster][8] prerequisites:
     
         $ sudo bash dcos_generate_config.ee.sh --install-prereqs
         
@@ -329,10 +334,11 @@ After DCOS is installed and deployed across your cluster, you can add more agent
         18:17:14:: 
         18:17:14:: ====> 10.10.0.160:22 FAILED
 
- [1]: /concepts/installing/installing-enterprise-edition/configuration-parameters/
- [2]: /concepts/installing/installing-enterprise-edition/manual-installation/
- [3]: /concepts/installing/installing-enterprise-edition/manual-installation/#scrollNav-2
- [4]: /administration/security-and-authentication/managing-authorization/
- [5]: #hardware
- [6]: #software
- [7]: #two
+ [1]: /concepts/installing/installing-enterprise-edition/dcos-cleanup-script/
+ [2]: /concepts/installing/installing-enterprise-edition/configuration-parameters/
+ [3]: /concepts/installing/installing-enterprise-edition/manual-installation/
+ [4]: /concepts/installing/installing-enterprise-edition/manual-installation/#scrollNav-2
+ [5]: /administration/security-and-authentication/managing-authorization/
+ [6]: #hardware
+ [7]: #software
+ [8]: #two
