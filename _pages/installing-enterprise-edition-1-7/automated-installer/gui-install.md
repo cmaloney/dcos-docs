@@ -119,5 +119,5 @@ The automated GUI installation method provides a simple graphical interface that
 Now you can [assign user roles][3].
 
  [1]: /administration/service-discovery/
- [2]: /installing-enterprise-edition-1-7/manual-installer/#scrollNav-2
+ [2]: /installing-enterprise-edition-1-7/scripted-installer/#scrollNav-2
  [3]: /administration/security-and-authentication/managing-authorization/
