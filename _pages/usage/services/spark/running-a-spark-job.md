@@ -35,11 +35,6 @@ In this tutorial a Spark job is run by using DCOS.
     
         $ dcos spark run --submit-args=’--class MySampleClass http://external.website/mysparkapp.jar 10’
         
-    
-    You can also upload jar files and reference those jars in your job. For example:
-    
-        $ dcos spark run --submit-args='-Dspark.mesos.coarse=true --driver-cores 1 --driver-memory 1024M --class org.apache.spark.examples.SparkPi https://downloads.mesosphere.com/spark/assets/spark-examples_2.10-1.4.0-SNAPSHOT.jar 30'
-        
 
 4.  View the Spark scheduler progress by navigating to the Spark web interface as shown with this command:
     
