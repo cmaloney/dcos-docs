@@ -19,8 +19,8 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
 1 node with 2 Cores, 16 GB RAM, 60 GB HDD. This is the node where DCOS installation is run. This bootstrap node must also have:
 
 *   Python, pip, and virtualenv must be installed for the DCOS [CLI][1]. pip must be configured to pull packages from PyPI or your private PyPI, if applicable.
-*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. </ul> 
-    </li> </ul>
+*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. 
+*  An unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH. Encrypted SSH keys are not supported.
     
 ## Cluster nodes
 
@@ -96,6 +96,8 @@ Here are the agent node hardware requirements.
 
 ### Port Configuration
 
+*   Each node is network accessible from the bootstrap node.
+*   Each node has SSH enabled and ports open from the bootstrap node.
 *   Each node has IP-to-IP connectivity from itself to all nodes in the DCOS cluster.
 *   Each node has Network Time Protocol (NTP) for clock synchronization enabled.
 *   Each node has ICMP enabled.
@@ -219,6 +221,8 @@ Here are the agent node hardware requirements.
       </tr>
     </table>
         
+
+       
         
 # Software Prerequisites
 
