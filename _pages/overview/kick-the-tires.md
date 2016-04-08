@@ -28,7 +28,7 @@ For a more curated experience, choose one of our [tutorials][7] to follow.
 
 # Go The Distance
 
-When you've got the basics down, read more about [developing your own services][8].
+When you've got the basics down, read more about [developing your own services](/usage/developing-services/).
 
 Then continue down the road to mastery by perusing the docs on how to [administer a DCOS installation][8].
 
