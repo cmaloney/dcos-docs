@@ -167,7 +167,7 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 
 Now you can [assign user roles][4].
 
- [1]: /installing-enterprise-edition-1-7/configuration-parameters/
+ [1]: /configuration-parameters/
  [2]: /administration/installing/installing-enterprise-edition/dcos-cleanup-script/
  [3]: /usage/cli/
  [4]: /administration/security-and-authentication/
