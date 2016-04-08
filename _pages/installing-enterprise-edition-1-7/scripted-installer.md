@@ -1,6 +1,6 @@
 ---
 UID: 5703eac617d56
-post_title: Manual Installer
+post_title: Scripted Installer
 post_excerpt: ""
 layout: page
 published: true
