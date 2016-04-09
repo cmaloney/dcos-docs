@@ -36,7 +36,7 @@ The automated GUI installation method provides a simple graphical interface that
 
 3.  Click **Begin Installation**.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-begin.png" rel="attachment wp-att-3190"><img src="/wp-content/uploads/2016/02/ui-installer-begin-800x510.png" alt="ui-installer-begin" width="800" height="510" class="alignnone size-large wp-image-3190" /></a>
+    ![alt text](/assets/images/ui-installer-begin.png)
 
 4.  Specify your Deployment and DCOS Environment settings:
     
@@ -82,7 +82,7 @@ The automated GUI installation method provides a simple graphical interface that
 
 5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the scripted installer [prerequisites](/scripted-installer/system-requirements/#scrollNav-2). This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" rel="attachment wp-att-3197"><img src="/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" alt="ui-installer-pre-flight1" width="626" height="405" class="alignnone size-full wp-image-3197" /></a>
+    ![alt text](/assets/images/ui-installer-pre-flight1.png)
     
     **Important:** If you exit your GUI installation before launching DCOS, you must do this before reinstalling:
     
@@ -98,21 +98,21 @@ The automated GUI installation method provides a simple graphical interface that
 
 7.  Click **Run Post-Flight**. If errors any errors are found, fix and then click **Retry**.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-post-flight1.png" rel="attachment wp-att-3196"><img src="/wp-content/uploads/2016/02/ui-installer-post-flight1.png" alt="ui-installer-post-flight1" width="623" height="366" class="alignnone size-full wp-image-3196" /></a>
+    ![alt text](/assets/images/ui-installer-post-flight1.png)
     
     **Tip:** You can click **Download Logs** to view your logs locally.
 
 8.  Click **Log In To DCOS**.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-success1.png" rel="attachment wp-att-3198"><img src="/wp-content/uploads/2016/02/ui-installer-success1.png" alt="ui-installer-success1" width="625" height="404" class="alignnone size-full wp-image-3198" /></a>
+    ![alt text](/assets/images/ui-installer-success1.png)
 
 9.  Enter your administrator username and password.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-auth2.png" rel="attachment wp-att-3341"><img src="/wp-content/uploads/2016/02/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-3341" /></a>
+    ![alt text](/assets/images/ui-installer-auth2.png)
     
     You are done!
     
-    <a href="/wp-content/uploads/2016/02/ui-dashboard-ee.png" rel="attachment wp-att-3343"><img src="/wp-content/uploads/2016/02/ui-dashboard-ee-800x538.png" alt="ui-dashboard-ee" width="800" height="538" class="alignnone size-large wp-image-3343" /></a>
+    ![alt text](/assets/images/ui-dashboard-ee.png)
 
 ## Next Steps
 

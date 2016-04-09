@@ -149,7 +149,7 @@ In this step you create a custom DCOS build file on your bootstrap node and then
     
     **Tip:** This process can take about 10 minutes. During this time you will see the Master nodes become visible on the Exhibitor consoles and come online, eventually showing a green light.
     
-    <a href="/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
+    ![alt text](/assets/images/chef-zk-status.png)
     
     When the status icons are green, you can access the DCOS web interface.
 
@@ -157,12 +157,12 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 
 9.  Enter your administrator username and password.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-auth2.png" rel="attachment wp-att-3341"><img src="/wp-content/uploads/2016/02/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-3341" /></a>
+    ![alt text](/assets/images/ui-installer-auth2.png)
     
     You are done!
     
-    <a href="/wp-content/uploads/2016/02/ui-dashboard-ee.png" rel="attachment wp-att-3343"><img src="/wp-content/uploads/2016/02/ui-dashboard-ee-800x538.png" alt="ui-dashboard-ee" width="800" height="538" class="alignnone size-large wp-image-3343" /></a>
-
+    ![alt text](/assets/images/ui-dashboard-ee.png)
+    
 ### Next Steps
 
 Now you can [assign user roles][4].
