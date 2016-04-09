@@ -92,7 +92,7 @@ The automated GUI installation method provides a simple graphical interface that
 
 6.  Click **Deploy** to install DCOS on your cluster. If errors any errors are found, fix and then click **Retry**.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-deploy1.png" rel="attachment wp-att-3195"><img src="/wp-content/uploads/2016/02/ui-installer-deploy1.png" alt="ui-installer-deploy1" width="628" height="406" class="alignnone size-full wp-image-3195" /></a>
+    ![alt text](/assets/images/ui-installer-deploy1.png)
     
     **Tip:** This step might take a few minutes, depending on the size of your cluster.
 
