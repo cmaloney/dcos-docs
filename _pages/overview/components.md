@@ -14,7 +14,7 @@ DCOS is built on top of the following open-source components.
 
 ## Mesos
 
-<a href="http://mesos.apache.org/" target="_blank">Mesos</a> is the distributed systems kernel that is at the core of DCOS. Mesos provides efficient resource isolation and sharing across distributed applications or frameworks. Mesos pools your infrastructure, automatically allocating resources and scheduling tasks based on demands and policy.
+<a href="https://mesosphere.com/why-mesos/" target="_blank">Mesos</a> is the distributed systems kernel that is at the core of DCOS. Mesos provides efficient resource isolation and sharing across distributed applications or frameworks. Mesos pools your infrastructure, automatically allocating resources and scheduling tasks based on demands and policy.
 
 Mesosphere is a significant contributor to the Apache Mesos project and is the primary organization writing open-source services for Mesos, such as Marathon and Chronos.
 
