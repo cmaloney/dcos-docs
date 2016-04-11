@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 You can update the DCOS CLI to the latest version or downgrade to an older version.
 
-# Upgrade the CLI
+# <a name="upgrade"></a>Upgrade the CLI
 
 You can upgrade an existing DCOS CLI installation to the latest build.
 
@@ -21,7 +21,7 @@ You can upgrade an existing DCOS CLI installation to the latest build.
         $ sudo pip install -U dcoscli
         
 
-# Downgrade the CLI
+# <a name="downgrade"></a>Downgrade the CLI
 
 You can downgrade an existing DCOS CLI installation to an older version.
 
