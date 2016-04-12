@@ -31,10 +31,6 @@ The DCOS cloud templates are optimized to run Mesosphere DCOS. Depending on the 
 
 1.  Launch the <a href="http://mesosphere.com/amazon/setup" target="_blank">DCOS template</a> on CloudFormation and select the region and number of masters. You must have a key pair for your selected region.
     
-    <!-- a href="http://mesosphere.com/amazon/setup" target="_blank">DCOS template</a>: The current stable release. -->
-    
-    <!-- - <a href="https://downloads.mesosphere.com/dcos/EarlyAccess/aws.html">DCOS 1.3 early access template</a> -->
-    
     **Important:** The Mesosphere template is configured for running DCOS. If you modify the template you might be unable to run certain packages on your DCOS cluster. For more information, see the <a href="https://support.mesosphere.com/hc/en-us/articles/205674655-How-can-I-modify-the-DCOS-template-on-AWS-CloudFormation-" target="_blank">Knowledge Base</a>.
 
 2.  On the **Select Template** page, accept the template specified for you and click **Next**.
