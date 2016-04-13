@@ -16,16 +16,16 @@ In this tutorial you install and deploy a containerized Ruby on Rails app named 
 
 With this tutorial you will learn:
 
-*   How to install a DCOS service 
-*   How to add apps to Marathon 
-*   How to route apps to the public node 
-*   How your apps are discovered
-*   How to scale your apps
+*   How to install a DCOS service.
+*   How to add apps to Marathon.
+*   How to route apps to the public node.
+*   How your apps are discovered.
+*   How to scale your apps.
 
 **Prerequisites:**
 
-*   A DCOS cluster created by using the template on [AWS CloudFormation](/administration/installing/cloud/) with at least 4 [private agents][1] and 1 [public agent][1]
-*   The public IP address of your DCOS [public agent][2]
+*   A DCOS cluster created by using the [AWS CloudFormation](/administration/installing/cloud/) templates with at least 4 [private agents][1] and 1 [public agent][1].
+*   The public IP address of your DCOS [public agent][2].
 
 # Add the Cassandra database
 
