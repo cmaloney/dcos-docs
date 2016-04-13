@@ -14,7 +14,9 @@ hide_from_related: false
 DCOS agent nodes can be designated as [public](/overview/concepts/#public) or [private](/overview/concepts/#private) during [advanced installation](/administration/installing/custom/) or [cloud installation](/administration/installing/cloud/). Public agent nodes provide public access to your DCOS applications. By default apps are launched on private agent nodes. To launch an app on a public node, you must create a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter specified.
 
 
-1.  Install DCOS and DCOS CLI by using the [advanced installation](/administration/installing/custom/) or [cloud installation](/administration/installing/cloud/) instructions. You must declare at least one agent node as public. For example, with advanced installation you can designate an agent node with this command:
+1.  Install DCOS and DCOS CLI by using the [advanced installation](/administration/installing/custom/) or [cloud installation](/administration/installing/cloud/) instructions. You must declare at least one agent node as public. 
+
+    For example, with advanced installation you can designate an agent node with this command:
 
         $ sudo bash dcos_install.sh slave_public
         
