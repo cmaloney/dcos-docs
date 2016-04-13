@@ -44,7 +44,7 @@ DCOS agent nodes can be designated as [public](/overview/concepts/#public) or [p
             "mem": 64
         }
 
-    For more information about the `acceptedResourceRoles` parameter, see the Marathon REST API [documentation](https://mesosphere.github.io/marathon/docs/rest-api.html). For a comprehensive example of deploying an app in the public zone to route HTTP requests, see [Deploying a Containerized App on a Public Node][1].
+    For more information about the `acceptedResourceRoles` parameter, see the Marathon REST API [documentation](https://mesosphere.github.io/marathon/docs/rest-api.html). 
     
 1.  Add the your app to Marathon by using this command:
         
