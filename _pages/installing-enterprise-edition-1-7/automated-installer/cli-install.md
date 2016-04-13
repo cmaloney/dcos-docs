@@ -169,7 +169,7 @@ You can view all of the automated command line installer options with the `--hel
       --test                Performs tests on the dcos_installer application
     
 
-**Tip:** If something goes wrong and you want to rerun your setup, use these cluster <a href="/administration/installing/installing-enterprise-edition/dcos-cleanup-script/" target="_blank">cleanup instructions</a>.
+**Tip:** If something goes wrong and you want to rerun your setup, use these cluster <a href="/administration/installing/custom/dcos-cleanup-script/" target="_blank">cleanup instructions</a>.
 
 To install DCOS:
 
@@ -326,10 +326,10 @@ After DCOS is installed and deployed across your cluster, you can add more agent
         18:17:14:: 
         18:17:14:: ====> 10.10.0.160:22 FAILED
 
- [1]: /concepts/installing/installing-enterprise-edition/dcos-cleanup-script/
- [2]: /concepts/installing/installing-enterprise-edition/configuration-parameters/
- [3]: /concepts/installing/installing-enterprise-edition/manual-installation/
- [4]: /concepts/installing/installing-enterprise-edition/manual-installation/#scrollNav-2
+ [1]: /concepts/installing/custom/dcos-cleanup-script/
+ [2]: /concepts/installing/custom/configuration-parameters/
+ [3]: /concepts/installing/custom/manual-installation/
+ [4]: /concepts/installing/custom/manual-installation/#scrollNav-2
  [5]: /administration/security-and-authentication/managing-authorization/
  [6]: #hardware
  [7]: #software

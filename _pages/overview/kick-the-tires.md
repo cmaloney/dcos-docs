@@ -35,7 +35,7 @@ Then continue down the road to mastery by perusing the docs on how to [administe
 Enjoy!
 
  [1]: /overview/
- [2]: /administration/installing/installing-community-edition/
+ [2]: /administration/installing/cloud/
  [3]: /usage/webinterface/
  [4]: /usage/cli/
  [5]: /usage/package-repo/
