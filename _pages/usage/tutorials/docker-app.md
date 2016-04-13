@@ -12,14 +12,11 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-In this tutorial, a custom Docker app is created and added to Marathon.
+In this tutorial, a custom Marathon app that includes a Docker image is created and added to Marathon.
 
 ### Prerequisites
-
-*   [Docker][1] installed on your workstation
-*   [Docker Hub][2] account
-*   [DCOS][3] installed
-*   [DCOS CLI][4] installed
+*   [DCOS][3] installed with at least one [public node](/overview/concepts/#public).
+*   [DCOS CLI][4] installed.
 
 # Create a custom Docker container
 
@@ -97,7 +94,7 @@ In this tutorial, a custom Docker app is created and added to Marathon.
         }
         
 
-3.  Add the nginx Docker container to Marathon by using the DCOS command:
+3.  Add the your app to Marathon by using this DCOS command:
     
         $ dcos marathon app add nginx.json
         

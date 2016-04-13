@@ -11,10 +11,19 @@ hide_from_navigation: false
 hide_from_related: false
 ---
 
-DCOS agent nodes can be designated as [public](/overview/concepts/#public) or [private](/overview/concepts/#private). Public agent nodes can provide public access to DCOS applications. By default apps are launched on private agent nodes and the Admin Router provides a proxy from your apps on private nodes to public nodes. 
+DCOS agent nodes can be designated as [public](/overview/concepts/#public) or [private](/overview/concepts/#private) during [advanced installation](/administration/installing/custom/) or [cloud installation](/administration/installing/cloud/). Public agent nodes provide public access to your DCOS applications. By default apps are launched on private agent nodes. To launch an app on a public node, you must create a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter specified.
 
-You can designate agent nodes as public or private during [advanced installation](/administration/installing/custom/) or after you are up and running by creating a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter included. For example:
 
+1.  Install DCOS and DCOS CLI by using the [advanced installation](/administration/installing/custom/) or [cloud installation](/administration/installing/cloud/) instructions. You must declare at least one agent node as public. For example, with advanced installation you can designate an agent node with this command:
+
+        $ sudo bash dcos_install.sh slave_public
+        
+    For example, with the AWS cloud installation, you can specify a public agent node with the `PublicSlaveInstanceCount` box:
+   
+    ![alt text](/assets/images/dcos-aws-step2c.png)
+        
+1.  Create a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter specified. For example:
+    
         {
             "id": "/product/service/myApp",
             "container": {
@@ -33,6 +42,20 @@ You can designate agent nodes as public or private during [advanced installation
             "mem": 64
         }
 
-For more information about the `acceptedResourceRoles` parameter, see the Marathon REST API [documentation](https://mesosphere.github.io/marathon/docs/rest-api.html). For a comprehensive example of deploying an app in the public zone to route HTTP requests, see [Deploying a Containerized App on a Public Node][1].
+    For more information about the `acceptedResourceRoles` parameter, see the Marathon REST API [documentation](https://mesosphere.github.io/marathon/docs/rest-api.html). For a comprehensive example of deploying an app in the public zone to route HTTP requests, see [Deploying a Containerized App on a Public Node][1].
+    
+1.  Add the your app to Marathon by using this command:
+        
+        $ dcos marathon app add myApp.json
+        
+    If this is added successfully, there is no output.
+        
+1.  Verify that the app is added:
+    
+        $ dcos marathon app list
+        ID      MEM  CPUS  TASKS  HEALTH  DEPLOYMENT  CONTAINER  CMD                        
+        /nginx   64  0.1    0/1    ---      scale       DOCKER   None
 
  [1]: /tutorials/containerized-app/
+ [3]: /administration/installing/
+ [4]: /usage/cli/install/
