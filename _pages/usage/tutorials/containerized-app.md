@@ -24,9 +24,8 @@ With this tutorial you will learn:
 
 **Prerequisites:**
 
-*   [community-edition-prereq]
-*   DCOS cluster with at least 4 [private agent nodes][1] and 1 [public agent node][1]
-*   Your DCOS [public node hostname][2]
+*   A DCOS cluster created by using the template on [AWS CloudFormation](/administration/installing/cloud/) with at least 4 [private agents][1] and 1 [public agent][1]
+*   The public IP address of your DCOS [public agent][2]
 
 # Add the Cassandra database
 
