@@ -71,12 +71,12 @@ In this tutorial, a custom Docker app is created and added to Marathon.
 
 # Add your Docker app to Marathon
 
-1.  Create a file named `nginx.json` by using nano, or another text editor of your choice:
+1.  Create a Marathon app definition file named `nginx.json` by using nano, or another text editor of your choice:
     
         $ nano nginx.json
         
 
-2.  Paste the following into the `nginx.json` file. If you’ve created your own Docker container, replace the image name mesosphere with your Docker Hub username:
+2.  Copy and paste the following into your app definition file. If you’ve created your own Docker container, replace the image name `mesosphere/simple-docker` with your Docker Hub username. This app definition specifies an app named `nginx` that runs one instance of itself on a public agent node (`"acceptedResourceRoles": ["slave_public"]`).
     
         {
             "id": "nginx",
@@ -96,8 +96,6 @@ In this tutorial, a custom Docker app is created and added to Marathon.
             "mem": 64
         }
         
-    
-    This file specifies a simple Marathon application called “nginx” that runs one instance of itself on a public node.
 
 3.  Add the nginx Docker container to Marathon by using the DCOS command:
     

@@ -146,5 +146,5 @@ To use the automated GUI installation method:
 Now you can [assign user roles][3].
 
  [1]: /administration/service-discovery/
- [2]: /administration/installing/installing-enterprise-edition/manual-installation/#scrollNav-2
+ [2]: /administration/installing/custom/manual-installation/#scrollNav-2
  [3]: /administration/security-and-authentication/managing-authorization/

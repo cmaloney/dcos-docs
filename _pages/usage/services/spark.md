@@ -50,4 +50,4 @@ Spark is a fast, general-purpose cluster computing system that makes parallel jo
 For more information, see the <a href="https://github.com/mesosphere/dcos-spark" target="_blank">DCOS Spark CLI</a> documentation on GitHub.
 
  [1]: /usage/cli/install/
- [2]: /administration/installing/awscluster#launchdcos
+ [2]: /administration/installing/cloud/aws#launchdcos
