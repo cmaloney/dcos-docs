@@ -83,16 +83,6 @@ This option specifies that Keepalived with a VIP is used to discover the master.
     *  **num_masters**
        This parameter specifies the number of Mesos masters in your DCOS cluster. If `master_discovery: static`, do not use the `num_masters` parameter. 
 
-<!--
-#### **rexray_config_method**
-This parameter specifies the REX-Ray configuration method. REX-Ray is a vendor agnostic storage orchestration engine. For more information, see the <a href="http://mesosphere.github.io/marathon/docs/external-volumes.html">Marathon</a> and <a href="https://rexray.readthedocs.org/en/v0.3.2/user-guide/config/" target="_blank">REX-Ray</a> documentation.
-
-*  `empty`An empty REX-ray configuration. This is the default value.
-*  `file`Specify the path to a REX-Ray configuration file with `rexray_config_filename`, and that'll become the REX-Ray configuration for your cluster. 
-*  **rexray_config_filename**The path of a REX-Ray configuration file. 
-*  `aws`A REX-Ray configuration that is set up for AWS EC2 (EBS) and AWS Identity and Access Management (IAM).
--->
-
 ## Security and Authentication
 
 ### auth_cookie_secure_flag
