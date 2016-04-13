@@ -141,14 +141,14 @@ In this step you create a custom DCOS build file on your bootstrap node and then
             
     
     4.  Run this command to install DCOS on your agent nodes. You must designate your agent nodes as [public](/overview/concepts/#public) or [private](/overview/concepts/#private). 
-            
-        - Private agent nodes:
+    
+        *  Private agent nodes:
         
-            $ sudo bash dcos_install.sh slave
+               <pre>$ sudo bash dcos_install.sh slave</pre>
             
-        - Public agent nodes:
+        *  Public agent nodes:
             
-            $ sudo bash dcos_install.sh slave_public         
+               <pre>$ sudo bash dcos_install.sh slave_public</pre>         
 
 6.  Monitor Exhibitor and wait for it to converge at `http://<master-ip>:8181/exhibitor/v1/ui/index.html`.
     
