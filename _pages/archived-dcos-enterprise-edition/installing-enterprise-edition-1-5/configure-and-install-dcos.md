@@ -63,7 +63,7 @@ In this step you create a YAML configuration file that is customized for your en
         
         ssh_config:
           log_directory: /genconf/logs          
-          ssh_port: '22'
+          ssh_port: 22
           ssh_user: <username>
           ###########################################################
           # Specify your agent AND master nodes in the target_hosts #

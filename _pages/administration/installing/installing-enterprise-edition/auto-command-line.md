@@ -73,7 +73,7 @@ In this step you create a YAML configuration file that is customized for your en
         resolvers:
         - 8.8.4.4
         - 8.8.8.8 
-        ssh_port: '22'
+        ssh_port: 22
         ssh_user: <username>
         superuser_password_hash: <hashed-password>
         superuser_username: <username>
