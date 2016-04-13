@@ -40,9 +40,12 @@ In this step you create a YAML configuration file that is customized for your en
         $6$rounds=656000$v55tdnlMGNoSEgYH$1JAznj58MR.Bft2wd05KviSUUfZe45nsYsjlEl84w34pp48A9U2GoKzlycm3g6MBmg4cQW9k7iY4tpZdkWy9t1
         
 
-2.  Create a configuration file and save as `genconf/config.yaml`. 
+2.  Create a configuration file and save as `genconf/config.yaml`.  You can use this template to get started. 
+
+    The template specifies 3 Mesos masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers. For parameters descriptions and configuration examples, see the [documentation][1].
     
-    You can use this template to get started. This template specifies 3 Mesos masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][1].
+    - If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. 
+    - If you want to configure public access to your cluster, add the `roles: slave_public` and `weights: slave_public=1`. 
     
         bootstrap_url: http://<bootstrap_public_ip>:<your_port>       
         cluster_name: '<cluster-name>'
@@ -140,9 +143,15 @@ In this step you create a custom DCOS build file on your bootstrap node and then
             $ curl -O http://<bootstrap-ip>:<your_port>/dcos_install.sh
             
     
-    4.  Run this command to install DCOS on your agent nodes:
+    4.  Run this command to install DCOS on your agent nodes. You must designate your agent nodes as [public](/overview/concepts/#public) or [private](/overview/concepts/#private). 
+    
+        - Private agent nodes:
         
             $ sudo bash dcos_install.sh slave
+            
+        - Public agent nodes:
+            
+            $ sudo bash dcos_install.sh slave_public
             
 
 6.  Monitor Exhibitor and wait for it to converge at `http://<master-ip>:8181/exhibitor/v1/ui/index.html`.
