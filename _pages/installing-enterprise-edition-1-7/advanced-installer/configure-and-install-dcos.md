@@ -147,11 +147,11 @@ In this step you create a custom DCOS build file on your bootstrap node and then
     
         *  Private agent nodes:
         
-               $ sudo bash dcos_install.sh slave
+               <pre>$ sudo bash dcos_install.sh slave</pre>
             
         *  Public agent nodes:
             
-               $ sudo bash dcos_install.sh slave_public
+               <pre>$ sudo bash dcos_install.sh slave_public</pre>
             
 
 6.  Monitor Exhibitor and wait for it to converge at `http://<master-ip>:8181/exhibitor/v1/ui/index.html`.
