@@ -39,8 +39,8 @@ The example below shows how you could create an image which includes `sbt`, a Sc
     ENV SBT_HOME /usr/local/sbt
     ENV PATH ${PATH}:${SBT_HOME}/bin
     
-    RUN curl -sL "http://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz" \
-        | gunzip | tar -x -C /usr/local && echo -ne "- with sbt $SBT_VERSION\n" >> /root/.built
+    RUN curl -sL "http://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz" 
+        | gunzip | tar -x -C /usr/local && echo -ne "- with sbt $SBT_VERSIONn" >> /root/.built
     
 
 # Modifying the SSH host keys
@@ -57,7 +57,7 @@ Once the image has been created and is available on Docker Hub or your private D
 
 Scroll to the "Cloud" section at the bottom and click "Advanced". You will see a grey button to "Add Slave Info":
 
-<a href="/wp-content/uploads/2016/03/velocity-add-slave-info.png" rel="attachment wp-att-4016"><img src="/wp-content/uploads/2016/03/velocity-add-slave-info.png" alt="velocity-add-slave-info" width="740" height="228" class="aligncenter size-full wp-image-4016" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-add-slave-info.png" rel="attachment wp-att-4016"><img src="/wp-content/uploads/2016/03/velocity-add-slave-info.png" alt="velocity-add-slave-info" width="740" height="228" class="aligncenter size-full wp-image-4016" style="padding:10px;border:1px solid #ccc" /></a>
 
 On the "Add Slave Info" page, set values based on the needs of your particular job or application. Some options include:
 
@@ -75,11 +75,11 @@ On the "Add Slave Info" page, set values based on the needs of your particular j
     actualMem = slaveMem + maxExecutors * executorMem
     
 
-<a href="/wp-content/uploads/2016/03/velocity-jenkins-slave-info.png" rel="attachment wp-att-4017"><img src="/wp-content/uploads/2016/03/velocity-jenkins-slave-info.png" alt="velocity-jenkins-slave-info" width="691" height="228" class="aligncenter size-full wp-image-4017" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-jenkins-slave-info.png" rel="attachment wp-att-4017"><img src="/wp-content/uploads/2016/03/velocity-jenkins-slave-info.png" alt="velocity-jenkins-slave-info" width="691" height="228" class="aligncenter size-full wp-image-4017" style="padding:10px;border:1px solid #ccc" /></a>
 
 To configure this Jenkins agent with a custom Docker image that you have created, click "Advanced" again and select the "Use Docker Containerizer" checkbox. Here you can specify the "Docker Image" name.
 
-<a href="/wp-content/uploads/2016/03/velocity-docker-containerizer-settings.png" rel="attachment wp-att-4018"><img src="/wp-content/uploads/2016/03/velocity-docker-containerizer-settings.png" alt="velocity-docker-containerizer-settings" width="676" height="583" class="aligncenter size-full wp-image-4018" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-docker-containerizer-settings.png" rel="attachment wp-att-4018"><img src="/wp-content/uploads/2016/03/velocity-docker-containerizer-settings.png" alt="velocity-docker-containerizer-settings" width="676" height="583" class="aligncenter size-full wp-image-4018" style="padding:10px;border:1px solid #ccc" /></a>
 
 **Note:** If you're creating a new Docker-in-Docker image, be sure to select "Docker Privileged Mode" and specify a custom Docker command shell.
 
@@ -89,7 +89,7 @@ Click "Save."
 
 To configure a build to use the newly specified image, click on "Configure" for the build, select "Restrict where this project can be run," and specify the same "Label String":
 
-<a href="/wp-content/uploads/2016/03/velocity-job-build-label-string.png" rel="attachment wp-att-4024"><img src="/wp-content/uploads/2016/03/velocity-job-build-label-string-800x63.png" alt="velocity-job-build-label-string" width="800" height="63" class="aligncenter size-large wp-image-4024" /></a>
+<a href="/wp-content/uploads/2016/03/velocity-job-build-label-string.png" rel="attachment wp-att-4024"><img src="/wp-content/uploads/2016/03/velocity-job-build-label-string-800x63.png" alt="velocity-job-build-label-string" width="800" height="63" class="aligncenter size-large wp-image-4024" style="padding:10px;border:1px solid #ccc" /></a>
 
 Click "Save."
 
