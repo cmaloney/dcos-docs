@@ -325,6 +325,23 @@ After DCOS is installed and deployed across your cluster, you can add more agent
         18:17:14::           
         18:17:14:: 
         18:17:14:: ====> 10.10.0.160:22 FAILED
+        
+### Uninstalling DCOS
+
+1.  From the bootstrap node, enter this command:
+
+        $ sudo bash dcos_generate_config.sh --uninstall
+        Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
+        ====> EXECUTING UNINSTALL
+        This will uninstall DCOS on your cluster. You may need to manually remove /var/lib/zookeeper in some cases after this completes, please see our documentation for details. Are you ABSOLUTELY sure you want to proceed? [ (y)es/(n)o ]: yes
+        ====> START uninstall_dcos
+        ====> STAGE uninstall
+        ====> STAGE uninstall
+        ====> OUTPUT FOR uninstall_dcos
+        ====> END uninstall_dcos with returncode: 0
+        ====> SUMMARY FOR uninstall_dcos
+        2 out of 2 hosts successfully completed uninstall_dcos stage.
+        ====> END OF SUMMARY FOR uninstall_dcos
 
  [1]: /concepts/installing/custom/dcos-cleanup-script/
  [2]: /concepts/installing/custom/configuration-parameters/

@@ -183,6 +183,12 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 
 Now you can [assign user roles][4].
 
+### Uninstalling DCOS
+
+1.  Enter this command on each cluster node.
+
+        $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
+
  [1]: /administration/installing/custom/configuration-parameters/
  [2]: /administration/installing/custom/dcos-cleanup-script/
  [3]: /usage/cli/
