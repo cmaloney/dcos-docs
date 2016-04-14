@@ -15,8 +15,8 @@ This page contains terms and definitions for the Mesosphere DCOS.
 ### Admin router
 The admin router runs on the DCOS master servers to provide a proxy for the admin parts of the cluster.
 
-### <a name="agent"></a>Agent node### 
-A Mesos agent node runs a discrete Mesos task on behalf of a framework. It is a agent instance registered with the Mesos master. The synonym of agent node is worker or slave node.
+### <a name="agent"></a>Agent node
+A Mesos agent node runs a discrete Mesos task on behalf of a framework. It is a agent instance registered with the Mesos master. The synonym of agent node is worker or slave node. See also [private](#private) and [public](#public) agent nodes.
 
 ### Cloud template
 The <a href="/tag/community/">DCOS Community Edition (CE) cloud templates</a> are optimized to run Mesosphere DCOS. The templates are a JSON-formatted text files that describe the resources and properties.
@@ -61,10 +61,10 @@ DCOS services are Mesosphere-certified applications that are packaged and availa
 An offer represents available resources (e.g. cpu, disk, memory) which an agent offers to the master and the master hands to the registered frameworks in some order.
 
 ### <a name="private"></a>Private agent node
-The DCOS <a href="/dcosarchitecture/components/#scrollNav-2">private agent nodes</a> run the deployed apps and services.
+Private agent nodes run DCOS apps and services through a non-routable network that is only accessible from the admin zone or through the edgerouter from the public zone. By default DCOS launches apps on private agent nodes. DCOS agent nodes can be designated as [public](/overview/concepts/#public) or [private](/overview/concepts/#private) during installation. For more information, see the Network Security [documentation](/overview/security/).
 
 ### <a name="public"></a>Public agent node
-The DCOS <a href="/dcosarchitecture/components/#scrollNav-2">public agent nodes</a> provide public access to DCOS applications that are run on a public agent node.
+Public agent nodes run DCOS apps and services in a publicly accessible network. DCOS agent nodes can be designated as [public](/overview/concepts/#public) or [private](/overview/concepts/#private) during installation. For more information, see the Network Security [documentation](/overview/security/).
 
 ### Slave
 The synonym of slave node is worker or agent node. A Mesos agent node runs a discrete Mesos task on behalf of a framework. It is a agent instance registered with the Mesos master. 
