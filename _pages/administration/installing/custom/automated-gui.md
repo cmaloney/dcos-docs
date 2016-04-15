@@ -71,10 +71,10 @@ To use the automated GUI installation method:
     :   Specify a publicly accessible proxy IP address to one of your master nodes. If you don't have a proxy or already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DCOS web interface on the master node after DCOS is installed.
     
     **SSH Username**
-    :   Specify the SSH username, for example `centos`. SSH Listening Port
+    :   Specify the SSH username, for example `centos`. 
     
     **SSH Listening Port**
-    :   Specify the port to SSH to, for example `22`. SSH Key
+    :   Specify the port to SSH to, for example `22`. 
     
     **SSH Key**
     :   Specify the private SSH key with access to your master IPs.

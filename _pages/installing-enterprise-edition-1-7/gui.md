@@ -49,11 +49,11 @@ The DC/OS installation creates these folders:
 
 3.  Click **Begin Installation**.
     
-    ![alt text](/assets/images/ui-installer-begin-1-7.png)
+    ![alt text](/assets/images/gui-installer-begin-ee.gif)
 
 4.  Specify your Deployment and DC/OS Environment settings:
 
-    ![alt text](/assets/images/ui-installer-pre-flight-1-7.gif)
+    ![alt text](/assets/images/gui-installer-setup-ee.gif)
     
     ### Deployment Settings
     
@@ -67,21 +67,24 @@ The DC/OS installation creates these folders:
     :   Specify a publicly accessible proxy IP address to one of your master nodes. If you don't have a proxy or already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DC/OS web interface on the master node after DC/OS is installed.
     
     **SSH Username**
-    :   Specify the SSH username, for example `centos`. SSH Listening Port
+    :   Specify the SSH username, for example `centos`. 
     
     **SSH Listening Port**
-    :   Specify the port to SSH to, for example `22`. SSH Key
+    :   Specify the port to SSH to, for example `22`.
     
-    **SSH Key**
+    **Private SSH Key**
     :   Specify the private SSH key with access to your master IPs.
+    
+    **Customer ID**
+    :   Specify the 30-character UUID that was given to you by the Mesosphere customer representative.   
     
     ### DC/OS Environment Settings
     
-    **Username**
-    :   Specify the administrator username. This username is required for using DC/OS. This feature is only available in Enterprise Edition.
+    **Username (Enterprise)**
+    :   Specify the administrator username. This username is required for using DC/OS. This feature is only available in DC/OS Enterprise.
     
-    **Password**
-    :   Specify the administrator password. This password is required for using DC/OS. This feature is only available in Enterprise Edition.
+    **Password (Enterprise)**
+    :   Specify the administrator password. This password is required for using DC/OS. This feature is only available in DC/OS Enterprise.
     
     **Upstream DNS Servers**
     
@@ -117,7 +120,7 @@ The DC/OS installation creates these folders:
 
 8.  Click **Log In To DC/OS**.
     
-    ![alt text](/assets/images/ui-installer-success1.png)
+    ![alt text](/assets/images/ui-installer-success-ee.gif)
 
 9.  Enter your administrator username and password.
     
@@ -125,7 +128,7 @@ The DC/OS installation creates these folders:
     
     You are done!
     
-    ![alt text](/assets/images/ui-dashboard-ee-1-7.gif)
+    ![alt text](/assets/images/dashboard-ee.gif)
 
 ## Next Steps
 
