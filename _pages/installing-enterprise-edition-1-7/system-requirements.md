@@ -1,5 +1,5 @@
 ---
-UID: 5703eac5ec464
+UID: 5703eac67f213
 post_title: System Requirements
 post_excerpt: ""
 layout: page
@@ -16,11 +16,11 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
 
 ## Bootstrap node
 
-1 node with 2 Cores, 16 GB RAM, 60 GB HDD. This is the node where DCOS installation is run. This bootstrap node must also have:
+1 node with 2 Cores, 16 GB RAM, 60 GB HDD. This is the node where DC/OS installation is run. This bootstrap node must also have:
 
-*   Python, pip, and virtualenv must be installed for the DCOS [CLI][1]. pip must be configured to pull packages from PyPI or your private PyPI, if applicable.
-*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. 
-*  An unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH. Encrypted SSH keys are not supported.
+*   Python, pip, and virtualenv must be installed for the DC/OS [CLI][1]. pip must be configured to pull packages from PyPI or your private PyPI, if applicable.
+*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. </ul> 
+    </li> </ul>
     
 ## Cluster nodes
 
@@ -87,23 +87,22 @@ Here are the agent node hardware requirements.
 </ul>
 
 *   Your Linux distribution must be running the latest version. You can update CentOS with this command:
-<pre>$ sudo yum upgrade -y</pre>
+        
+        $ sudo yum upgrade -y
 
 *   On RHEL 7 and CentOS 7, firewalld must be stopped and disabled. It is a known <a href="https://github.com/docker/docker/issues/16137" target="_blank">Docker issue</a> that firewalld interacts poorly with Docker. For more information, see the <a href="https://docs.docker.com/v1.6/installation/centos/#firewalld" target="_blank">Docker CentOS firewalld</a> documentation.
-<pre>$ sudo systemctl stop firewalld && sudo systemctl disable firewalld</pre>
 
-</ul>
+        $ sudo systemctl stop firewalld && sudo systemctl disable firewalld</pre>
+
 
 ### Port Configuration
 
-*   Each node is network accessible from the bootstrap node.
-*   Each node has SSH enabled and ports open from the bootstrap node.
-*   Each node has IP-to-IP connectivity from itself to all nodes in the DCOS cluster.
+*   Each node has IP-to-IP connectivity from itself to all nodes in the DC/OS cluster.
 *   Each node has Network Time Protocol (NTP) for clock synchronization enabled.
 *   Each node has ICMP enabled.
 *   Each node has TCP and UDP enabled port 53 for DNS.
-*   All hostnames (FQDN and short hostnames) must be resolvable in DNS, both forward and reverse lookups must succeed. </ul> 
-    These ports must be open for communication from the master nodes to the agent nodes:</li> </ul>
+*   All hostnames (FQDN and short hostnames) must be resolvable in DNS, both forward and reverse lookups must succeed. 
+*   These ports must be open for communication from the master nodes to the agent nodes:
     
     <table class="table">
       <tr>
@@ -127,7 +126,7 @@ Here are the agent node hardware requirements.
       </tr>
     </table>
     
-    </ul> These ports must be open for communication from the agent nodes to the master nodes.
+*   These ports must be open for communication from the agent nodes to the master nodes.
     
     <table class="table">
       <tr>
@@ -220,10 +219,7 @@ Here are the agent node hardware requirements.
         </td>
       </tr>
     </table>
-        
-
-       
-        
+    
 # Software Prerequisites
 
 ## All Nodes
@@ -277,16 +273,49 @@ Your bootstrap and cluster nodes must have Docker version 1.9 or greater install
 
 ## Bootstrap node
 
-The bootstrap node is a permanent part of your cluster and is required for DCOS recovery. The leader state and leader election of your Mesos masters is maintained in Exhibitor ZooKeeper. Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
+Before installing DC/OS, you must ensure that your bootstrap node has the following prerequisites.
 
-### DCOS setup file
+### DC/OS setup file
 
-Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or <sales@mesosphere.com> to obtain the DCOS setup file.
+Download and save the DC/OS setup file to your bootstrap node. This file is used to create your customized DC/OS build file. Contact your sales representative or sales@mesosphere.com to obtain the DC/OS setup file.
 
-</li> </ul></li> </ul>
+### Docker Nginx
+
+Install the Docker Nginx image:
+
+    $ sudo docker pull nginx
+    
+
+## Cluster nodes
+
+Before installing DC/OS, you must ensure that all of your cluster nodes have the following prerequisites. The cluster nodes are designated Mesos masters and agents during installation.
+
+### Data compression
+
+You must have the <a href="http://www.info-zip.org/UnZip.html" target="_blank">UnZip</a>, <a href="https://www.gnu.org/software/tar/" target="_blank">GNU tar</a>, and <a href="http://tukaani.org/xz/" target="_blank">XZ Utils</a> data compression utilities installed on your cluster nodes.
+
+To install these utilities on CentOS7 and RHEL7:
+
+    $ sudo yum install -y tar xz unzip curl
+    
+
+### Cluster permissions
+
+On each of your cluster nodes, use the following command to:
+
+*   Disable SELinux or set it to permissive mode.
+*   Add nogroup to each of your Mesos masters and agents.</li> 
+*   Disable IPV6. For more information see <a href="https://wiki.centos.org/FAQ/CentOS7#head-8984faf811faccca74c7bcdd74de7467f2fcd8ee" target="_blank">How do I disable IPv6</a>.</li> 
+*   Reboot your cluster for the changes to take affect</p> 
+    
+        $ sudo sed -i s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config &&
+         sudo groupadd nogroup &&
+         sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 &&
+         sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 &&
+         sudo reboot
         
-# Next step
-
-Choose [GUI](/gui-install/) or [Command Line](cli-install) installation.
+    
+    **Tip:** It may take a few minutes for your node to come back online after reboot.
+        
 
  [1]: /usage/cli/
