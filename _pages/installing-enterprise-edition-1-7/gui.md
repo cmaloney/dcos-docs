@@ -49,7 +49,7 @@ The DC/OS installation creates these folders:
 
 3.  Click **Begin Installation**.
     
-    ![alt text](/assets/images/ui-installer-begin-1-7.gif)
+    ![alt text](/assets/images/ui-installer-begin-1-7.png)
 
 4.  Specify your Deployment and DC/OS Environment settings:
 
