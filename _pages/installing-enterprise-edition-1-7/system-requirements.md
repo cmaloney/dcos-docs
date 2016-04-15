@@ -262,7 +262,9 @@ Your bootstrap and cluster nodes must have Docker version 1.9 or greater install
               sudo systemctl enable docker
             
         
-        This can take a few minutes. This is what the end of the process should look like: Complete! Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+        This can take a few minutes. This is what the end of the process should look like: 
+        
+            Complete! Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
     
     You can test that your Docker build is properly installed with this command:
     
@@ -277,7 +279,7 @@ Before installing DC/OS, you must ensure that your bootstrap node has the follow
 
 ### DC/OS setup file
 
-Download and save the DC/OS setup file to your bootstrap node. This file is used to create your customized DC/OS build file. Contact your sales representative or sales@mesosphere.com to obtain the DC/OS setup file.
+Download and save the DC/OS setup file to your bootstrap node. This file is used to create your customized DC/OS build file. Contact your sales representative or <a href="mailto:sales@mesosphere.com">sales@mesosphere.com</a> to obtain the DC/OS setup file.
 
 ### Docker Nginx (advanced installer)
 
