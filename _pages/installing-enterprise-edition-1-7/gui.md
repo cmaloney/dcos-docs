@@ -99,8 +99,8 @@ The DC/OS installation creates these folders:
     
     **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
     
-        *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
-        *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
+    *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
+    *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
         
 
 6.  Click **Deploy** to install DC/OS on your cluster. If errors any errors are found, fix and then click **Retry**.
