@@ -25,8 +25,7 @@ The DC/OS installation creates these folders:
 *   Various units prefixed with `dcos` in `/etc/systemd/system`
     :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
 
-
-# Install DC/OS 
+# Install DC/OS
 
 1.  From your terminal, start the DC/OS GUI installer with this command.
     
@@ -47,13 +46,11 @@ The DC/OS installation creates these folders:
 
 2.  Launch the DC/OS web installer in your browser at: `http://<bootstrap-node-public-ip>:9000`.
 
-3.  Click **Begin Installation**.
-    
-    ![alt text](/assets/images/gui-installer-begin-ee.gif)
+3.  Click **Begin Installation**. <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-begin-ee.gif" rel="attachment wp-att-4820"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-begin-ee-800x439.gif" alt="gui-installer-begin-ee" width="800" height="439" class="alignnone size-large wp-image-4820" /></a>
 
 4.  Specify your Deployment and DC/OS Environment settings:
-
-    ![alt text](/assets/images/gui-installer-setup-ee.gif)
+    
+    ![alt text][1]
     
     ### Deployment Settings
     
@@ -67,7 +64,7 @@ The DC/OS installation creates these folders:
     :   Specify a publicly accessible proxy IP address to one of your master nodes. If you don't have a proxy or already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DC/OS web interface on the master node after DC/OS is installed.
     
     **SSH Username**
-    :   Specify the SSH username, for example `centos`. 
+    :   Specify the SSH username, for example `centos`.
     
     **SSH Listening Port**
     :   Specify the port to SSH to, for example `22`.
@@ -76,7 +73,7 @@ The DC/OS installation creates these folders:
     :   Specify the private SSH key with access to your master IPs.
     
     **Customer ID**
-    :   Specify the 30-character UUID that was given to you by the Mesosphere customer representative.   
+    :   Specify the 30-character UUID that was given to you by the Mesosphere customer representative.
     
     ### DC/OS Environment Settings
     
@@ -90,7 +87,7 @@ The DC/OS installation creates these folders:
     
     :   Specify a comma-separated list of DNS resolvers for your DC/OS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`).
         
-        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][1].
+        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][2].
     
     **IP Detect Script**
     
@@ -98,46 +95,45 @@ The DC/OS installation creates these folders:
         
         **Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be wiped and reinstalled.
 
-5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the scripted installer [prerequisites](/scripted-installer/system-requirements/#scrollNav-2). This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
+5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the scripted installer [prerequisites][3]. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
     **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
     
     *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
     *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
-        
 
 6.  Click **Deploy** to install DC/OS on your cluster. If errors any errors are found, fix and then click **Retry**.
     
-    ![alt text](/assets/images/ui-installer-deploy1.png)
+    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-deploy1.png" rel="attachment wp-att-4822"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-deploy1.png" alt="ui-installer-deploy1" width="628" height="406" class="alignnone size-full wp-image-4822" /></a>
     
     **Tip:** This step might take a few minutes, depending on the size of your cluster.
 
 7.  Click **Run Post-Flight**. If errors any errors are found, fix and then click **Retry**.
-
-    ![alt text](/assets/images/ui-installer-post-flight1.png)
+    
+    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-post-flight1.png" rel="attachment wp-att-4821"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-post-flight1.png" alt="ui-installer-post-flight1" width="623" height="366" class="alignnone size-full wp-image-4821" /></a>
     
     **Tip:** You can click **Download Logs** to view your logs locally.
 
 8.  Click **Log In To DC/OS**.
     
-    ![alt text](/assets/images/ui-installer-success-ee.gif)
+    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-success-ee.gif" rel="attachment wp-att-4815"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-success-ee-800x442.gif" alt="gui-installer-success-ee" width="800" height="442" class="alignnone size-large wp-image-4815" /></a>
 
 9.  Enter your administrator username and password.
     
-    ![alt text](/assets/images/ui-installer-auth-1-7.gif)
+    ![alt text][4]
     
     You are done!
     
-    ![alt text](/assets/images/dashboard-ee.gif)
+    ![alt text][5]
 
 ## Next Steps
 
-Now you can [assign user roles][3].
+Now you can [assign user roles][6].
 
 ### Uninstalling DC/OS
 
 1.  From the bootstrap node, enter this command:
-
+    
         $ sudo bash dcos_generate_config.sh --uninstall
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
         ====> EXECUTING UNINSTALL
@@ -151,6 +147,9 @@ Now you can [assign user roles][3].
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /administration/service-discovery/
- [2]: /installing-enterprise-edition-1-7/scripted-installer/#scrollNav-2
- [3]: /administration/security-and-authentication/managing-authorization/
+ [1]: /assets/images/gui-installer-setup-ee.gif
+ [2]: /administration/service-discovery/
+ [3]: /scripted-installer/system-requirements/#scrollNav-2
+ [4]: /assets/images/ui-installer-auth-1-7.gif
+ [5]: /assets/images/dashboard-ee.gif
+ [6]: /administration/security-and-authentication/managing-authorization/
