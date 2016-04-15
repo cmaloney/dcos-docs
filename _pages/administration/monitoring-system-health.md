@@ -31,108 +31,89 @@ The system health endpoint is exposed at port 1050:
 # DCOS components
 
 ### Admin Router
-<!-- dcos-adminrouter.service/ -->
-The admin router is an open-source Nginx configuration created by Mesosphere that provides central authentication and proxy to DCOS services within the cluster.
+The admin router is an open-source Nginx configuration created by Mesosphere that provides central authentication and proxy to DCOS services within the cluster.<!-- dcos-adminrouter.service/ -->
 
 ### Admin Router Reloader
-<!-- dcos-adminrouter-reload.service/ -->
-Restarts the Admin router Nginx server so that it can pick up new DNS resolutions, for example `master.mesos` and `leader.mesos`.
+Restarts the Admin router Nginx server so that it can pick up new DNS resolutions, for example `master.mesos` and `leader.mesos`.<!-- dcos-adminrouter-reload.service/ -->
 
 ### Admin Router Reloader Timer
-<!-- dcos-adminrouter-reload.timer/ -->
-Sets the Admin Router Reloader interval at once per hour.
+Sets the Admin Router Reloader interval at once per hour.<!-- dcos-adminrouter-reload.timer/ -->
 
 ### Cluster ID
-<!-- dcos-cluster-id.service/ -->
+A randomly generated UUID that tracks individual cluster deployments.<!-- dcos-cluster-id.service/ -->
 
 ### Diagnostics
-<!-- dcos-ddt.service/ -->
-This component informs DCOS of individual node health for things like system resources as well as DCOS-specific services.
+This component informs DCOS of individual node health for things like system resources as well as DCOS-specific services.<!-- dcos-ddt.service/ -->
 
 ### DNS Dispatcher
-<!-- dcos-spartan.service/ -->
-The DCOS DNS Dispatcher is an RFC5625 Compliant DNS Forwarder. It's job is to dual-dispatch DNS to multiple upstream resolvers, and to route DNS to the upstreams or Mesos DNS, depending on some rules.
+The DCOS DNS Dispatcher is an RFC5625 Compliant DNS Forwarder. It's job is to dual-dispatch DNS to multiple upstream resolvers, and to route DNS to the upstreams or Mesos DNS, depending on some rules.<!-- dcos-spartan.service/ -->
     
 ### DNS Dispatcher Watchdog
-<!-- dcos-spartan-watchdog.service/ -->
-This service ensures that the DNS Dispatcher is running and healthy. If the DNS Dispatcher is unhealthy, this watchdog service kills it.
+This service ensures that the DNS Dispatcher is running and healthy. If the DNS Dispatcher is unhealthy, this watchdog service kills it.<!-- dcos-spartan-watchdog.service/ -->
     
 ### DNS Dispatcher Watchdog Timer
-<!-- dcos-spartan-watchdog.timer/ -->
-This service wakes up the DNS Dispatcher Watchdog every 5 minutes, to see if DC/OS needs to restart DNS Dispatcher.
+This service wakes up the DNS Dispatcher Watchdog every 5 minutes, to see if DC/OS needs to restart DNS Dispatcher. <!-- dcos-spartan-watchdog.timer/ -->
 
 ### Erlang Port Mapping Daemon
-<!-- dcos-epmd.service/ -->
-This daemon acts as a name server on all hosts involved in distributed Erlang computations. For more information, see the [documentation](http://erlang.org/doc/man/epmd.html).
+This daemon acts as a name server on all hosts involved in distributed Erlang computations. For more information, see the [documentation](http://erlang.org/doc/man/epmd.html). <!-- dcos-epmd.service/ -->
 
-### Exhibitor
-<!-- dcos-exhibitor.service/ -->
-The Exhibitor supervisor for Zookeeper.
+### Exhibitor 
+The Exhibitor supervisor for Zookeeper. <!-- dcos-exhibitor.service/ -->
   
 ### Generate resolv.conf
-<!-- dcos-gen-resolvconf.service/ -->
-This is a service that helps the agent nodes locate the master nodes.
+This is a service that helps the agent nodes locate the master nodes.<!-- dcos-gen-resolvconf.service/ -->
 
 ### Generate resolv.conf Timer
-<!-- dcos-gen-resolvconf.timer/ -->
-Periodically updates the systemd-resolved for Mesos DNS.
+Periodically updates the systemd-resolved for Mesos DNS.<!-- dcos-gen-resolvconf.timer/ -->
 
 ### Identity and Access Management
 Enterprise DCOS access control service. For more information, see the [documentation](/administration/security-and-authentication/).
 
 ### Keepalived
-<!-- dcos-keepalived.service/ -->
-Runs keepalived to make a VRRP load balancer that can be used to access the masters.
+Runs keepalived to make a VRRP load balancer that can be used to access the masters.<!-- dcos-keepalived.service/ -->
   
 ### Layer 4 Load Balancer
-<!-- dcos-minuteman.service/ -->
+The DC/OS Layer 4 Load Balancer that enables multi-tier microservices architectures. For more information, see the [documentation](usage/service-discovery/load-balancing/).<!-- dcos-minuteman.service/ -->
+
 
 ### Logrotate
-<!-- dcos-logrotate.service/ -->
-Logrotate allows for the automatic rotation compression, removal, and mailing of log files.
+Logrotate allows for the automatic rotation compression, removal, and mailing of log files.<!-- dcos-logrotate.service/ -->
 
 ### Logrotate Timer
-<!-- dcos-logrotate.timer/ -->
-Sets the logrotate interval at 2 minutes.
+Sets the logrotate interval at 2 minutes. <!-- dcos-logrotate.timer/ -->
 
 ### Marathon
-<!-- dcos-marathon.service/ -->
-The DCOS Marathon instance starts and monitors DCOS applications and services.
+The DCOS Marathon instance starts and monitors DCOS applications and services.<!-- dcos-marathon.service/ -->
 
 ### Mesos Agent
-<!-- dcos-mesos-slave.service/ -->
-The mesos-slave process.
+The mesos-slave process for [private](/overview/concepts/#private) agent nodes.<!-- dcos-mesos-slave.service/ -->
 
 ### Mesos Agent Public
-<!-- dcos-mesos-slave-public.service/ -->
+The mesos-slave process for [public](/overview/concepts/#public) agent nodes.<!-- dcos-mesos-slave-public.service/ -->
 
 ### Mesos DNS
-<!-- dcos-mesos-dns.service/ -->
-Mesos DNS provides service discovery within the cluster.
+Mesos DNS provides service discovery within the cluster.<!-- dcos-mesos-dns.service/ -->
 
 ### Mesos History
-<!-- dcos-history-service.service/ -->
-Enables the DCOS web interface to display cluster usage statistics.
+Enables the DCOS web interface to display cluster usage statistics.<!-- dcos-history-service.service/ -->
   
 ### Mesos Master
-<!-- dcos-mesos-master.service/ -->
-The mesos-master process orchestrates agent tasks.
+The mesos-master process orchestrates agent tasks.<!-- dcos-mesos-master.service/ -->
 
 ### Mesos Persistent Volume Discovery
-<!-- dcos-vol-discovery-pub-agent.service/ -->
+During DC/OS startup, this service connects to existing Mesos volume mounts on agent nodes. For more information on Mesos Persistent Volumes, see the [documentation](http://mesos.apache.org/documentation/latest/persistent-volume/). <!-- dcos-vol-discovery-pub-agent.service/ -->
+
+### Network Metrics Aggregator
+Collects statistics from the Layer 4 Load Balancer and displays them in the DC/OS Network tab.<!-- dcos-networking_api.service/ -->
 
 ### OAuth
-<!-- dcos-oauth.service/ -->
-DC/OS authorization service.
+DC/OS authorization service. <!-- dcos-oauth.service/ -->
 
 ### Package Service
-<!-- dcos-cosmos.service/ -->
-This process manage the Universe package repositories. 
+This process manage the Universe package repositories. <!-- dcos-cosmos.service/ -->
 
 ### Signal
-<!-- dcos-signal.service/ -->
-Sends a periodic ping back to Mesosphere with high-level cluster information to help improve DCOS, and provides advanced monitoring of cluster issues.
+Sends a periodic ping back to Mesosphere with high-level cluster information to help improve DCOS, and provides advanced monitoring of cluster issues.<!-- dcos-signal.service/ -->
 
 ### Signal Timer
-<!-- dcos-signal.timer/ -->
-Sets the Signal component interval at once per hour.
+Sets the Signal component interval at once per hour.<!-- dcos-signal.timer/ -->
