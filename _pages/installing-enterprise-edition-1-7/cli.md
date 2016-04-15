@@ -216,13 +216,13 @@ To install DC/OS:
     Here is an example of the output.
     
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf 
-        20:47:49 dcos_installer.action_lib.prettyprint:: ====> EXECUTING INSTALL PREREQUISITES
-        20:47:49 dcos_installer.action_lib.prettyprint:: ====> START install_prereqs
-        20:52:32 dcos_installer.action_lib.prettyprint:: ====> STAGE install_prereqs
-        20:52:55 dcos_installer.action_lib.prettyprint:: ====> STAGE install_prereqs
-        20:52:55 dcos_installer.action_lib.prettyprint:: ====> END install_prereqs with returncode: 0
-        20:52:55 dcos_installer.action_lib.prettyprint:: ====> SUMMARY
-        20:52:55 dcos_installer.action_lib.prettyprint:: 2 out of 2 hosts successfully completed install_prereqs stage.
+        ====> dcos_installer.action_lib.prettyprint:: ====> EXECUTING INSTALL PREREQUISITES
+        ====> dcos_installer.action_lib.prettyprint:: ====> START install_prereqs
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE install_prereqs
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE install_prereqs
+        ====> dcos_installer.action_lib.prettyprint:: ====> END install_prereqs with returncode: 0
+        ====> dcos_installer.action_lib.prettyprint:: ====> SUMMARY
+        ====> dcos_installer.action_lib.prettyprint:: 2 out of 2 hosts successfully completed install_prereqs stage.
         
 
 3.  Run a preflight script to validate that your cluster is installable.
@@ -233,15 +233,15 @@ To install DC/OS:
     Here is an example of the output.
     
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
-        20:54:02 dcos_installer.action_lib.prettyprint:: ====> EXECUTING PREFLIGHT
-        20:54:02 dcos_installer.action_lib.prettyprint:: ====> START run_preflight
-        20:54:03 dcos_installer.action_lib.prettyprint:: ====> STAGE preflight
-        20:54:03 dcos_installer.action_lib.prettyprint:: ====> STAGE preflight
-        20:54:03 dcos_installer.action_lib.prettyprint:: ====> STAGE preflight_cleanup
-        20:54:03 dcos_installer.action_lib.prettyprint:: ====> STAGE preflight_cleanup
-        20:54:03 dcos_installer.action_lib.prettyprint:: ====> END run_preflight with returncode: 0
-        20:54:03 dcos_installer.action_lib.prettyprint:: ====> SUMMARY
-        20:54:03 dcos_installer.action_lib.prettyprint:: 2 out of 2 hosts successfully completed run_preflight stage.
+        ====> dcos_installer.action_lib.prettyprint:: ====> EXECUTING PREFLIGHT
+        ====> dcos_installer.action_lib.prettyprint:: ====> START run_preflight
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE preflight
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE preflight
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE preflight_cleanup
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE preflight_cleanup
+        ====> dcos_installer.action_lib.prettyprint:: ====> END run_preflight with returncode: 0
+        ====> dcos_installer.action_lib.prettyprint:: ====> SUMMARY
+        ====> dcos_installer.action_lib.prettyprint:: 2 out of 2 hosts successfully completed run_preflight stage.
         
     
     **Tip:** For a detailed view, you can append log level debug (`-v`) to your command. For example `sudo bash dcos_generate_config.ee.sh --preflight -v`.
@@ -254,19 +254,19 @@ To install DC/OS:
     Here is an example of the output.
     
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
-        20:55:00 dcos_installer.action_lib.prettyprint:: ====> EXECUTING DC/OS INSTALLATION
-        20:55:00 dcos_installer.action_lib.prettyprint:: ====> START deploy_master
-        20:57:04 dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_master
-        20:57:04 dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_master_cleanup
-        20:57:04 dcos_installer.action_lib.prettyprint:: ====> END deploy_master with returncode: 0
-        20:57:04 dcos_installer.action_lib.prettyprint:: ====> SUMMARY
-        20:57:04 dcos_installer.action_lib.prettyprint:: 1 out of 1 hosts successfully completed deploy_master stage.
-        20:57:04 dcos_installer.action_lib.prettyprint:: ====> START deploy_agent
-        20:59:19 dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_agent
-        20:59:19 dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_agent_cleanup
-        20:59:19 dcos_installer.action_lib.prettyprint:: ====> END deploy_agent with returncode: 0
-        20:59:19 dcos_installer.action_lib.prettyprint:: ====> SUMMARY
-        20:59:19 dcos_installer.action_lib.prettyprint:: 1 out of 1 hosts successfully completed deploy_agent stage.
+        ====> dcos_installer.action_lib.prettyprint:: ====> EXECUTING DC/OS INSTALLATION
+        ====> dcos_installer.action_lib.prettyprint:: ====> START deploy_master
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_master
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_master_cleanup
+        ====> dcos_installer.action_lib.prettyprint:: ====> END deploy_master with returncode: 0
+        ====> dcos_installer.action_lib.prettyprint:: ====> SUMMARY
+        ====> dcos_installer.action_lib.prettyprint:: 1 out of 1 hosts successfully completed deploy_master stage.
+        ====> dcos_installer.action_lib.prettyprint:: ====> START deploy_agent
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_agent
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_agent_cleanup
+        ====> dcos_installer.action_lib.prettyprint:: ====> END deploy_agent with returncode: 0
+        ====> dcos_installer.action_lib.prettyprint:: ====> SUMMARY
+        ====> dcos_installer.action_lib.prettyprint:: 1 out of 1 hosts successfully completed deploy_agent stage.
         
 
 5.  Run the DC/OS diagnostic script to verify that services are up and running.
@@ -277,15 +277,15 @@ To install DC/OS:
     Here is an example of the output.
     
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
-        21:22:44 dcos_installer.action_lib.prettyprint:: ====> EXECUTING POSTFLIGHT
-        21:22:44 dcos_installer.action_lib.prettyprint:: ====> START run_postflight
-        21:22:45 dcos_installer.action_lib.prettyprint:: ====> STAGE postflight
-        21:22:45 dcos_installer.action_lib.prettyprint:: ====> STAGE postflight
-        21:22:45 dcos_installer.action_lib.prettyprint:: ====> STAGE postflight_cleanup
-        21:22:45 dcos_installer.action_lib.prettyprint:: ====> STAGE postflight_cleanup
-        21:22:45 dcos_installer.action_lib.prettyprint:: ====> END run_postflight with returncode: 0
-        21:22:45 dcos_installer.action_lib.prettyprint:: ====> SUMMARY
-        21:22:45 dcos_installer.action_lib.prettyprint:: 2 out of 2 hosts successfully completed run_postflight stage.
+        ====> dcos_installer.action_lib.prettyprint:: ====> EXECUTING POSTFLIGHT
+        ====> dcos_installer.action_lib.prettyprint:: ====> START run_postflight
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE postflight
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE postflight
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE postflight_cleanup
+        ====> dcos_installer.action_lib.prettyprint:: ====> STAGE postflight_cleanup
+        ====> dcos_installer.action_lib.prettyprint:: ====> END run_postflight with returncode: 0
+        ====> dcos_installer.action_lib.prettyprint:: ====> SUMMARY
+        ====> dcos_installer.action_lib.prettyprint:: 2 out of 2 hosts successfully completed run_postflight stage.
         
 
 6.  Monitor Exhibitor and wait for it to converge at `http://<master-public-ip>:8181/exhibitor/v1/ui/index.html`.
@@ -300,7 +300,7 @@ To install DC/OS:
 
 8.  Click **Log In To DC/OS**.
     
-    ![alt text](/assets/images/ui-installer-success1.png)
+    ![alt text](/assets/images/gui-installer-login-ee.gif)
 
 9.  Enter your administrator username and password.
     
@@ -332,12 +332,12 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
     
     **Important:** You can ignore the errors that are shown. For example, during the `--preflight` you may see this error:
     
-        18:17:14::           Found an existing DC/OS installation. To reinstall DC/OS on this this machine you must
-        18:17:14::           first uninstall DC/OS then run dcos_install.sh. To uninstall DC/OS, follow the product
-        18:17:14::           documentation provided with DC/OS.
-        18:17:14::           
-        18:17:14:: 
-        18:17:14:: ====> 10.10.0.160:22 FAILED
+        ====> Found an existing DC/OS installation. To reinstall DC/OS on this this machine you must
+        ====> first uninstall DC/OS then run dcos_install.sh. To uninstall DC/OS, follow the product
+        ====> documentation provided with DC/OS.
+        ====>            
+        ====>  
+        ====> 10.10.0.160:22 FAILED
         
 ### Uninstalling DC/OS
 
