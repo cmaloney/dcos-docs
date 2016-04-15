@@ -1,6 +1,6 @@
 ---
 UID: 56f9844593827
-post_title: Archived DCOS Enterprise Edition
+post_title: Archived DC/OS Enterprise Edition
 post_excerpt: ""
 layout: page
 published: true

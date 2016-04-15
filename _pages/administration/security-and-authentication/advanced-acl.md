@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: true
 hide_from_related: true
 ---
-You can define fine-grained access to applications that are running in DCOS by defining advanced ACL groups. Advanced ACL groups can provide multi-tenancy by isolating application teams, and individual users. You can also control customized access to applications, for example read-only access. This access is administered on the backend by Admin Router and the native Marathon instance.
+You can define fine-grained access to applications that are running in DC/OS by defining advanced ACL groups. Advanced ACL groups can provide multi-tenancy by isolating application teams, and individual users. You can also control customized access to applications, for example read-only access. This access is administered on the backend by Admin Router and the native Marathon instance.
 
 Authorization is not secure, but provides user isolation. Anything running inside the cluster, and anyone SSH’d into it, has access to everything.
     
@@ -19,7 +19,7 @@ You can create advanced ACL groups for each role in your organization.
 
 To create an advanced ACL group:
 
-1.  Launch the DCOS web interface and login with your Admin username and password.
+1.  Launch the DC/OS web interface and login with your Admin username and password.
 
 2.  Click on the **System** tab, select **Organization**, and then **Groups**.
 
@@ -33,7 +33,7 @@ To create an advanced ACL group:
     
     Here are the available resource options.
     
-    ### DCOS core components
+    ### DC/OS core components
     Access to these resources is controlled by the Admin Router.
     
     <p>
@@ -43,7 +43,7 @@ To create an advanced ACL group:
         <th>Permission</th>
       </tr>
       <tr>
-        <td><code>dcos:adminrouter:package</code><p>This resource controls access to the DCOS packaging API. Users with access can install DCOS services from the DCOS package repository.</p></td>
+        <td><code>dcos:adminrouter:package</code><p>This resource controls access to the DC/OS packaging API. Users with access can install DC/OS services from the DC/OS package repository.</p></td>
         <td><code>full</code></td>
       </tr>
       <tr>
@@ -59,15 +59,15 @@ To create an advanced ACL group:
         <td><code>full</code></td>
       </tr>
       <tr>
-        <td><code>dcos:adminrouter:service:marathon</code><p>This resource controls access to the DCOS Marathon instance. For example, you can grant a user access to `http://<public-master-IP>/service/marathon`.</p></td>
+        <td><code>dcos:adminrouter:service:marathon</code><p>This resource controls access to the DC/OS Marathon instance. For example, you can grant a user access to `http://<public-master-IP>/service/marathon`.</p></td>
         <td><code>full</code></td>
       </tr>
       <tr>
-        <td><code>dcos:adminrouter:service:&lt;service-name&gt;</code><p>This resource controls access to installed DCOS Services.</p></td>
+        <td><code>dcos:adminrouter:service:&lt;service-name&gt;</code><p>This resource controls access to installed DC/OS Services.</p></td>
         <td><code>full</code></td>
       </tr>
       <tr>
-      <td><code>dcos:superuser</code><p>This resource controls access to the the superuser group. This group has access to all DCOS components and is where DCOS administrator access is defined.</p></td>
+      <td><code>dcos:superuser</code><p>This resource controls access to the the superuser group. This group has access to all DC/OS components and is where DC/OS administrator access is defined.</p></td>
       <td><code>full</code></td>
     </tr>
       <tr>
@@ -76,8 +76,8 @@ To create an advanced ACL group:
     </p>
     <!-- For 1.9 *   `dcos:acs` - resources defined by the access control service. -->
 
-    ### DCOS Marathon 
-    Access to these resources is controlled by the DCOS Marathon instance.
+    ### DC/OS Marathon 
+    Access to these resources is controlled by the DC/OS Marathon instance.
     <p>
     <table class="table">
       <tr>
@@ -89,11 +89,11 @@ To create an advanced ACL group:
               <td><code>full</code></td>
             </tr>
       <tr>
-        <td><code>dcos:service:marathon:marathon:services</code><p>This resource controls access to all apps managed by DCOS Marathon.</p></td>
+        <td><code>dcos:service:marathon:marathon:services</code><p>This resource controls access to all apps managed by DC/OS Marathon.</p></td>
         <td><code>create</code>, <code>read</code>,<code>update</code>, <code>delete</code></td>
       </tr>         
       <tr>
-        <td><code>dcos:service:marathon:marathon:services/&lt;service-group&gt;</code><p>This resource controls group access to the DCOS Marathon instance.</p></td>
+        <td><code>dcos:service:marathon:marathon:services/&lt;service-group&gt;</code><p>This resource controls group access to the DC/OS Marathon instance.</p></td>
         <td><code>create</code>, <code>read</code>,<code>update</code>, <code>delete</code></td>
       </tr>
       <tr>
@@ -129,17 +129,17 @@ In this example, a user is granted access to a specific app group in Marathon.
 
 
 ## Grant user access to install packages
-In this example, a user named Ted is granted access to install services from the DCOS package repository.
+In this example, a user named Ted is granted access to install services from the DC/OS package repository.
 
 1.  Click on the **System** and then the **Organization** tab. 
 
 1.  From the **Groups** tab click **New Group**. 
 
-1.  Enter `DCOS package` for Group name and click **Create**.
+1.  Enter `DC/OS package` for Group name and click **Create**.
 
     ![alt text](/assets/images/auth-enable-ex-package-user.gif)
     
-1.  Open the DCOS package group. 
+1.  Open the DC/OS package group. 
 
     1.  From the **Advanced ACLs** tab, enter Resource `dcos:adminrouter:package`, Permission `full`, and click **Add Rule**.
 
@@ -155,7 +155,7 @@ In this example, a user named Ted is granted access to install services from the
         52.26.144.2's username: ted
         ted@52.26.144.2's password: 
         [core.dcos_acs_token]: set to 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJ0ZWQiLCJleHAiOiIxNDYwNDE1NjY0In0.IGk3OOPCpoEUTnaY-V4OMJ1DOGl8YWau8Hd4uedc5lI'
-        This will install Apache Kafka DCOS Service.
+        This will install Apache Kafka DC/OS Service.
         Continue installing? [yes/no]
 
 

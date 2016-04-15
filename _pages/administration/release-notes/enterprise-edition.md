@@ -10,4 +10,4 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The release notes describe the DCOS Enterprise Edition (EE) updates.
+The release notes describe the DC/OS Enterprise Edition (EE) updates.

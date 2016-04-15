@@ -10,14 +10,14 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-Follow these instructions to download and configure a local <a href="http://mesosphere.github.io/universe/" target="_blank">DCOS Universe</a>. After downloading the Universe components, you can install and run DCOS services on a datacenter without internet access.
+Follow these instructions to download and configure a local <a href="http://mesosphere.github.io/universe/" target="_blank">DC/OS Universe</a>. After downloading the Universe components, you can install and run DC/OS services on a datacenter without internet access.
 
 #### Prerequisites
 
-*   DCOS cluster
+*   DC/OS cluster
 *   8\.5 GB of disk space
 
-To install the DCOS local Universe:
+To install the DC/OS local Universe:
 
 1.  Download the package binaries as a single tarball. This package includes regular tarballs and Docker images.
     
@@ -217,7 +217,7 @@ To install the DCOS local Universe:
             }
             
 
-6.  <a name="next"></a>Set the DCOS CLI package source to your local Universe repository:
+6.  <a name="next"></a>Set the DC/OS CLI package source to your local Universe repository:
     
         $ dcos package repo add <repo-name> '["file:///<path-to-cloned-repo>"]'
         
@@ -227,7 +227,7 @@ To install the DCOS local Universe:
         $ dcos config set core.reporting false
         
 
-8.  Install DCOS services. For example, to install Cassandra:
+8.  Install DC/OS services. For example, to install Cassandra:
     
         dcos package install cassandra
 

@@ -10,15 +10,15 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-During DCOS installation, each of the components will converge from a failing state to a running state in the logs.
+During DC/OS installation, each of the components will converge from a failing state to a running state in the logs.
 
-The DCOS components come online in this sequence. <!-- Add example of clusters converging and show logs with ignorable errors; clean logs. Examples of common failures are harder to show, because this would be a bug. -->
+The DC/OS components come online in this sequence. <!-- Add example of clusters converging and show logs with ignorable errors; clean logs. Examples of common failures are harder to show, because this would be a bug. -->
 
 # ZooKeeper and Exhibitor
 
 ZooKeeper and Exhibitor start on the master nodes. The Exhibitor storage location must be configured properly for this to work. For more information, see the [exhibitor_storage_backend][1] parameter.
 
-The DCOS uses ZooKeeper, a high-performance coordination service to manage the installed DCOS services. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DCOS installation. This Zookeeper instance should be separate from your cluster. Consider using a separate directory path for the DCOS cluster so that it does not interfere with other services that use the Zookeeper instance. For more information, see Configuration Parameters.
+The DC/OS uses ZooKeeper, a high-performance coordination service to manage the installed DC/OS services. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation. This Zookeeper instance should be separate from your cluster. Consider using a separate directory path for the DC/OS cluster so that it does not interfere with other services that use the Zookeeper instance. For more information, see Configuration Parameters.
 
 *   Go to the Exhibitor web interface and view status at `<master-hostname>/exhibitor`.
 
@@ -62,7 +62,7 @@ The Mesos master process starts on the master nodes. The `mesos-master` process 
 
 # Mesos-DNS
 
-Mesos-DNS is started on the DCOS master nodes. Mesos-DNS provides service discovery within the cluster. Optionally, Mesos-DNS can forward unhandled requests to an external DNS server, depending on how the cluster is configured. For example, anything that does not end in `.mesos` will be forwarded there.
+Mesos-DNS is started on the DC/OS master nodes. Mesos-DNS provides service discovery within the cluster. Optionally, Mesos-DNS can forward unhandled requests to an external DNS server, depending on how the cluster is configured. For example, anything that does not end in `.mesos` will be forwarded there.
 
 **Troubleshooting:**
 
@@ -84,19 +84,19 @@ Mesos-DNS is started on the DCOS master nodes. Mesos-DNS provides service discov
          mesos-dns[1197]: I1118 13:59:34.766124 1197 detect.go:313] resting before next detection cycle
         
 
-# DCOS Marathon
+# DC/OS Marathon
 
-DCOS Marathon is started on the master nodes. The native Marathon instance that is the “init system” for DCOS. It starts and monitors applications and services.
+DC/OS Marathon is started on the master nodes. The native Marathon instance that is the “init system” for DCOS. It starts and monitors applications and services.
 
 **Troubleshooting:**
 
-*   Go directly to the DCOS Marathon web interface and view status at `<master-node>/marathon`.
+*   Go directly to the DC/OS Marathon web interface and view status at `<master-node>/marathon`.
 *   SSH to your master node and enter this command to view the logs from boot time:
     
          journalctl -u dcos-marathon -b
         
     
-    For example, here is a snippet of the DCOS Marathon log as it converges to a successful state:
+    For example, here is a snippet of the DC/OS Marathon log as it converges to a successful state:
     
          java[1288]: I1118 13:59:39.125041  1363 group.cpp:331] Group process (group(1)@10.0.7.166:48531) connected to ZooKeeper
          java[1288]: I1118 13:59:39.125100  1363 group.cpp:805] Syncing group operations: queue size (joins, cancels, datas) = (0, 0, 0)
@@ -112,7 +112,7 @@ DCOS Marathon is started on the master nodes. The native Marathon instance that 
 
 # Admin Router
 
-The Admin router is started on the master nodes. The admin router provides central authentication and proxy to DCOS services within the cluster. For HA, an optional Admin load balancer can be configured in front of the Admin router to provide failover and load balancing.
+The Admin router is started on the master nodes. The admin router provides central authentication and proxy to DC/OS services within the cluster. For HA, an optional Admin load balancer can be configured in front of the Admin router to provide failover and load balancing.
 
 **Troubleshooting:**
 
@@ -153,9 +153,9 @@ gen_resolvconf is started. This is a service that helps the agent nodes locate t
          gen_resolvconf.py[1073]: Updating /etc/resolv.conf
         
 
-# DCOS agent nodes
+# DC/OS agent nodes
 
-DCOS private and public agent nodes are started.
+DC/OS private and public agent nodes are started.
 
 Deployed apps and services are run on the private agent nodes. You must have at least 1 private agent node.
 
@@ -163,9 +163,9 @@ Publicly accessible applications are run in the public agent node. Public agent 
 
 **Troubleshooting:**
 
-*   You might not be able to SSH to agent nodes, depending on your cluster network configuration. Alternatively, you can SSH from a master node to your agent nodes. For more information, see <a href="/administration/sshcluster/" target="_blank">SSHing to a DCOS cluster</a>.
+*   You might not be able to SSH to agent nodes, depending on your cluster network configuration. Alternatively, you can SSH from a master node to your agent nodes. For more information, see <a href="/administration/sshcluster/" target="_blank">SSHing to a DC/OS cluster</a>.
 
-*   You can get the IP address of registered agent nodes from the **Nodes** tab in the <a href="/overview/webinterface/#scrollNav-3" target="_blank">DCOS web interface</a>. Nodes that have not registered are not shown.
+*   You can get the IP address of registered agent nodes from the **Nodes** tab in the <a href="/overview/webinterface/#scrollNav-3" target="_blank">DC/OS web interface</a>. Nodes that have not registered are not shown.
 
 *   SSH to your master node and enter this command to view the logs from boot time:
     

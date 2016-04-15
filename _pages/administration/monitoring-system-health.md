@@ -10,9 +10,9 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: true
 hide_from_related: true
 ---
-You can monitor the health of your cluster components from the DCOS web interface component health page. 
+You can monitor the health of your cluster components from the DC/OS web interface component health page. 
 
-The component health page provides the health status of all DCOS system components that are running in systemd. You can drill down by health status, host IP address, or specific systemd unit.
+The component health page provides the health status of all DC/OS system components that are running in systemd. You can drill down by health status, host IP address, or specific systemd unit.
 
 Possible health states are unhealthy and healthy. 
 
@@ -28,10 +28,10 @@ The system health endpoint is exposed at port 1050:
 
     $ curl <host_ip>:1050/system/health/v1
     
-# DCOS components
+# DC/OS components
 
 ### Admin Router
-The admin router is an open-source Nginx configuration created by Mesosphere that provides central authentication and proxy to DCOS services within the cluster.<!-- dcos-adminrouter.service/ -->
+The admin router is an open-source Nginx configuration created by Mesosphere that provides central authentication and proxy to DC/OS services within the cluster.<!-- dcos-adminrouter.service/ -->
 
 ### Admin Router Reloader
 Restarts the Admin router Nginx server so that it can pick up new DNS resolutions, for example `master.mesos` and `leader.mesos`.<!-- dcos-adminrouter-reload.service/ -->
@@ -43,10 +43,10 @@ Sets the Admin Router Reloader interval at once per hour.<!-- dcos-adminrouter-r
 A randomly generated UUID that tracks individual cluster deployments.<!-- dcos-cluster-id.service/ -->
 
 ### Diagnostics
-This component informs DCOS of individual node health for things like system resources as well as DCOS-specific services.<!-- dcos-ddt.service/ -->
+This component informs DC/OS of individual node health for things like system resources as well as DCOS-specific services.<!-- dcos-ddt.service/ -->
 
 ### DNS Dispatcher
-The DCOS DNS Dispatcher is an RFC5625 Compliant DNS Forwarder. It's job is to dual-dispatch DNS to multiple upstream resolvers, and to route DNS to the upstreams or Mesos DNS, depending on some rules.<!-- dcos-spartan.service/ -->
+The DC/OS DNS Dispatcher is an RFC5625 Compliant DNS Forwarder. It's job is to dual-dispatch DNS to multiple upstream resolvers, and to route DNS to the upstreams or Mesos DNS, depending on some rules.<!-- dcos-spartan.service/ -->
     
 ### DNS Dispatcher Watchdog
 This service ensures that the DNS Dispatcher is running and healthy. If the DNS Dispatcher is unhealthy, this watchdog service kills it.<!-- dcos-spartan-watchdog.service/ -->
@@ -67,7 +67,7 @@ This is a service that helps the agent nodes locate the master nodes.<!-- dcos-g
 Periodically updates the systemd-resolved for Mesos DNS.<!-- dcos-gen-resolvconf.timer/ -->
 
 ### Identity and Access Management
-Enterprise DCOS access control service. For more information, see the [documentation](/administration/security-and-authentication/).
+Enterprise DC/OS access control service. For more information, see the [documentation](/administration/security-and-authentication/).
 
 ### Keepalived
 Runs keepalived to make a VRRP load balancer that can be used to access the masters.<!-- dcos-keepalived.service/ -->
@@ -83,7 +83,7 @@ Logrotate allows for the automatic rotation compression, removal, and mailing of
 Sets the logrotate interval at 2 minutes. <!-- dcos-logrotate.timer/ -->
 
 ### Marathon
-The DCOS Marathon instance starts and monitors DCOS applications and services.<!-- dcos-marathon.service/ -->
+The DC/OS Marathon instance starts and monitors DC/OS applications and services.<!-- dcos-marathon.service/ -->
 
 ### Mesos Agent
 The mesos-slave process for [private](/overview/concepts/#private) agent nodes.<!-- dcos-mesos-slave.service/ -->
@@ -95,7 +95,7 @@ The mesos-slave process for [public](/overview/concepts/#public) agent nodes.<!-
 Mesos DNS provides service discovery within the cluster.<!-- dcos-mesos-dns.service/ -->
 
 ### Mesos History
-Enables the DCOS web interface to display cluster usage statistics.<!-- dcos-history-service.service/ -->
+Enables the DC/OS web interface to display cluster usage statistics.<!-- dcos-history-service.service/ -->
   
 ### Mesos Master
 The mesos-master process orchestrates agent tasks.<!-- dcos-mesos-master.service/ -->

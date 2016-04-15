@@ -1,6 +1,6 @@
 ---
 UID: 56f9a5595fa87
-post_title: Viewing DCOS Registered Apps
+post_title: Viewing DC/OS Registered Apps
 post_excerpt: ""
 layout: page
 published: true

@@ -16,11 +16,11 @@ In this tutorial, a custom Marathon app that includes a Docker image is created 
 
 ### Prerequisites
 *   [DCOS][3] installed with at least one [public node](/overview/concepts/#public).
-*   [DCOS CLI][4] installed.
+*   [DC/OS CLI][4] installed.
 
 # Create a custom Docker container
 
-1.  In the `dcos` directory created by the DCOS CLI installation script, create a new directory named `simple-docker-tutorial` and navigate to it:
+1.  In the `dcos` directory created by the DC/OS CLI installation script, create a new directory named `simple-docker-tutorial` and navigate to it:
     
         $ mkdir simple-docker-tutorial
         $ cd simple-docker-tutorial
@@ -94,7 +94,7 @@ In this tutorial, a custom Marathon app that includes a Docker image is created 
         }
         
 
-3.  Add the your app to Marathon by using this DCOS command:
+3.  Add the your app to Marathon by using this DC/OS command:
     
         $ dcos marathon app add nginx.json
         

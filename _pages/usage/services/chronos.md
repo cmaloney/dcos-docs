@@ -19,9 +19,9 @@ Chronos is the "cron" for your Mesosphere DCOS. It is a highly-available distrib
 
 **Prerequisite**
 
-*   The DCOS CLI must be [installed][3].
+*   The DC/OS CLI must be [installed][3].
 
-1.  From the DCOS CLI, enter this command:
+1.  From the DC/OS CLI, enter this command:
     
         $ dcos package install chronos
         
@@ -32,7 +32,7 @@ Chronos is the "cron" for your Mesosphere DCOS. It is a highly-available distrib
 
 ### <a name="uninstall"></a>Uninstalling Chronos
 
-1.  From the DCOS CLI, enter this command:
+1.  From the DC/OS CLI, enter this command:
     
         $ dcos package uninstall chronos
         

@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The DCOS provides the admin, private, and public security zones.
+The DC/OS provides the admin, private, and public security zones.
 
 <a href="/wp-content/uploads/2015/12/security-zones-ce.jpg" rel="attachment wp-att-1583"><img src="/wp-content/uploads/2015/12/security-zones-ce-800x640.jpg" alt="security-zones-ce" width="800" height="640" class="alignnone size-large wp-image-1583" /></a>
 
@@ -32,9 +32,9 @@ The agent nodes in the public zone are labeled with a special role so that only 
 
 # Limitations
 
-*   The DCOS Community Edition does not provide authentication. Authentication is available in the <a href="https://mesosphere.com/product/#" target="_blank">DCOS Enterprise Edition</a>. 
-*   The DCOS CLI and web interface do not currently use an encrypted channel for communication. However, you can upload your own SSL certificate to the masters and change your CLI and web interface configuration to use HTTPS instead of HTTP.
+*   The DC/OS Community Edition does not provide authentication. Authentication is available in the <a href="https://mesosphere.com/product/#" target="_blank">DC/OS Enterprise Edition</a>. 
+*   The DC/OS CLI and web interface do not currently use an encrypted channel for communication. However, you can upload your own SSL certificate to the masters and change your CLI and web interface configuration to use HTTPS instead of HTTP.
 *   You must secure your cluster by using security rules. It is strongly recommended that you only allow internal traffic.
-*   If there is sensitive data in your cluster, follow standard cloud policies for accessing that data. Either set up a point to point VPN between your secure networks or run a VPN server inside your DCOS cluster.
+*   If there is sensitive data in your cluster, follow standard cloud policies for accessing that data. Either set up a point to point VPN between your secure networks or run a VPN server inside your DC/OS cluster.
 
  [1]: /administration/installing/
