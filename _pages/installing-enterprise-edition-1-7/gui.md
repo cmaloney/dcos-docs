@@ -49,9 +49,11 @@ The DC/OS installation creates these folders:
 
 3.  Click **Begin Installation**.
     
-    ![alt text](/assets/images/ui-installer-begin.png)
+    ![alt text](/assets/images/ui-installer-begin-1-7.gif)
 
 4.  Specify your Deployment and DC/OS Environment settings:
+
+    ![alt text](/assets/images/ui-installer-pre-flight-1-7.gif)
     
     ### Deployment Settings
     
@@ -95,8 +97,6 @@ The DC/OS installation creates these folders:
 
 5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the scripted installer [prerequisites](/scripted-installer/system-requirements/#scrollNav-2). This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
-    ![alt text](/assets/images/ui-installer-pre-flight.png)
-    
     **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
     
     *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
@@ -121,11 +121,11 @@ The DC/OS installation creates these folders:
 
 9.  Enter your administrator username and password.
     
-    ![alt text](/assets/images/ui-installer-auth2.png)
+    ![alt text](/assets/images/ui-installer-auth-1-7.gif)
     
     You are done!
     
-    ![alt text](/assets/images/ui-dashboard-ee.png)
+    ![alt text](/assets/images/ui-dashboard-ee-1-7.gif)
 
 ## Next Steps
 
