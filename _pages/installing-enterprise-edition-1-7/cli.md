@@ -1,6 +1,6 @@
 ---
 UID: 5708121e3f1ae
-post_title: Command Line
+post_title: CLI Installer
 post_excerpt: ""
 layout: page
 published: true
@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The automated command line installation method provides a guided installation of DC/OS from the command line. With this method you can choose from the complete set of DC/OS configuration options. 
+The automated CLI installer provides a guided installation of DC/OS from the command line. With this method you can choose from the complete set of DC/OS configuration options. 
 
 This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.
 
