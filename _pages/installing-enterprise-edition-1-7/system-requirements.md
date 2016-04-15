@@ -50,6 +50,11 @@ Here are the master node hardware requirements.
       Nodes: 3<br />OS: Enterprise Linux 7 kernel 3.10.0-327 or CoreOS Stable<br />Processor: 4 cores<br />Memory: 32 GB RAM<br />Hard disk space: 120 GB
     </td>
   </tr>
+  <tr>
+   <td colspan="2">
+    <p>There are many mixed workloads on the masters, for example Mesos replicated log and Zookeeper. Some of these require fsync()ing every so often, and this can generate a lot of very expensive random I/O. We recommend the following: <ul><li>Solid-state drive (SSD)</li><li>RAID controllers with a BBU</li><li>RAID controller cache configured in writeback mode</li></ul></p>
+    </td>
+    </tr>
 </table>
 
 ### Agent nodes
@@ -79,7 +84,7 @@ Here are the agent node hardware requirements.
   
   <tr>
     <td colspan="2">
-      The agent nodes must also have: * A <code>/var</code> directory with 10 GB or more of free space. This directory is used by the sandbox for both Docker and Mesos Containerizer.* Network Access to a public Docker repository or to an internal Docker registry.</ul>
+      The agent nodes must also have a <code>/var</code> directory with 10 GB or more of free space. This directory is used by the sandbox for both Docker and Mesos Containerizer.* Network Access to a public Docker repository or to an internal Docker registry.</ul>
     </td>
   </tr>
 </table>
