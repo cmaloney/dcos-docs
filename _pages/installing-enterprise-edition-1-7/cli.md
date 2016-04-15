@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The automated CLI installer provides a guided installation of DC/OS from the command line. With this method you can choose from the complete set of DC/OS configuration options. 
+The automated CLI installer provides a guided installation of DC/OS from the command line. With this method you can choose from the complete set of DC/OS configuration options.
 
 This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.
 
@@ -292,29 +292,27 @@ To install DC/OS:
     
     **Tip:** This process can take about 10 minutes. During this time you will see the Master nodes become visible on the Exhibitor consoles and come online, eventually showing a green light.
     
-    ![alt text](/assets/images/chef-zk-status.png)
+    ![alt text][5]
     
     When the status icons are green, you can access the DC/OS web interface.
 
 7.  Launch the DC/OS web interface at: `http://<public-master-ip>/`.
 
-8.  Click **Log In To DC/OS**.
-    
-    ![alt text](/assets/images/gui-installer-login-ee.gif)
+8.  Click **Begin Installation**. <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-begin-ee.gif" rel="attachment wp-att-4820"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-begin-ee-800x439.gif" alt="gui-installer-begin-ee" width="800" height="439" class="alignnone size-large wp-image-4820" /></a>
 
-9.  Enter your administrator username and password.
+9.  Enter your administrator username and password and Click **Log In To DC/OS**.
     
-    ![alt text](/assets/images/ui-installer-auth2.png)
+    ![alt text][6]
     
     You are done!
     
-    ![alt text](/assets/images/ui-dashboard-ee.png)
+    ![alt text][7]
 
 # Next Steps
 
 ### Add DC/OS users
 
-You can assign user roles and grant access to DC/OS services. For more information, see the [documentation][5].
+You can assign user roles and grant access to DC/OS services. For more information, see the [documentation][8].
 
 ### Add more agent nodes
 
@@ -322,10 +320,10 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
 
 **Prerequisite:**
 
-*   The agent nodes must meet the [hardware][6] and [software][7] prerequisites.
+*   The agent nodes must meet the [hardware][9] and [software][10] prerequisites.
 
 1.  Update the `config.yaml` file with the additional agent nodes. For parameters descriptions and configuration examples, see the [documentation][2].
-2.  Run the installation steps beginning with [installing the cluster][8] prerequisites:
+2.  Run the installation steps beginning with [installing the cluster][11] prerequisites:
     
         $ sudo bash dcos_generate_config.ee.sh --install-prereqs
         
@@ -339,10 +337,11 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         ====>  
         ====> 10.10.0.160:22 FAILED
         
+
 ### Uninstalling DC/OS
 
 1.  From the bootstrap node, enter this command:
-
+    
         $ sudo bash dcos_generate_config.sh --uninstall
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
         ====> EXECUTING UNINSTALL
@@ -360,7 +359,10 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
  [2]: /concepts/installing/custom/configuration-parameters/
  [3]: /concepts/installing/custom/manual-installation/
  [4]: /concepts/installing/custom/manual-installation/#scrollNav-2
- [5]: /administration/security-and-authentication/managing-authorization/
- [6]: #hardware
- [7]: #software
- [8]: #two
+ [5]: /assets/images/chef-zk-status.png
+ [6]: /assets/images/gui-installer-login-ee.gif
+ [7]: /assets/images/ui-dashboard-ee.png
+ [8]: /administration/security-and-authentication/managing-authorization/
+ [9]: #hardware
+ [10]: #software
+ [11]: #two
