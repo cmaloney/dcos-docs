@@ -14,6 +14,17 @@ The automated command line installation method provides a guided installation of
 
 This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.
 
+The DC/OS installation creates these folders:
+
+*   `/opt/mesosphere`
+    :   Contains all the DC/OS binaries, libraries, cluster configuration. Do not modify.
+
+*   `/etc/systemd/system/dcos.target.wants`
+    :   Contains the systemd services which start the things that make up systemd. They must live outside of `/opt/mesosphere` because of systemd constraints.
+
+*   Various units prefixed with `dcos` in `/etc/systemd/system`
+    :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
+
 # Create a Script for IP Address Discovery
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
