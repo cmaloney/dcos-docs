@@ -95,7 +95,7 @@ The DC/OS installation creates these folders:
 
 5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the scripted installer [prerequisites](/scripted-installer/system-requirements/#scrollNav-2). This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
-    ![alt text](/assets/images/ui-installer-pre-flight1.png)
+    ![alt text](/assets/images/ui-installer-pre-flight.png)
     
     **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
     
