@@ -290,7 +290,7 @@ For advanced install only, install the Docker Nginx image with this command:
 
 ## Cluster nodes 
 
-Before installing DC/OS by using the advanced installer, you must ensure that all of your cluster nodes have the following prerequisites. The cluster nodes are designated Mesos masters and agents during installation.
+For advanced install only, your cluster nodes must have the following prerequisites. The cluster nodes are designated as Mesos masters and agents during installation.
 
 ### Data compression (advanced installer)
 
