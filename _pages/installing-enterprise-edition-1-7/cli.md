@@ -25,7 +25,7 @@ The DC/OS installation creates these folders:
 *   Various units prefixed with `dcos` in `/etc/systemd/system`
     :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
 
-# Create a Script for IP Address Discovery
+# Create an IP detection script
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
 
@@ -87,7 +87,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}' | tail -1)
             
 
-# <a name="config-json"></a>Configure your cluster
+# <a name="config-json"></a>Create a configuration file
 
 In this step you create a YAML configuration file that is customized for your environment. DC/OS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
 

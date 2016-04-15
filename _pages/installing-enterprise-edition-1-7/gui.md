@@ -105,13 +105,13 @@ The DC/OS installation creates these folders:
 
 6.  Click **Deploy** to install DC/OS on your cluster. If errors any errors are found, fix and then click **Retry**.
     
-    ![alt text](/assets/images/ui-installer-deploy.png)
+    ![alt text](/assets/images/ui-installer-deploy1.png)
     
     **Tip:** This step might take a few minutes, depending on the size of your cluster.
 
 7.  Click **Run Post-Flight**. If errors any errors are found, fix and then click **Retry**.
-    
-    ![alt text](/assets/images/ui-installer-post-flight.png)
+
+    ![alt text](/assets/images/ui-installer-post-flight1.png)
     
     **Tip:** You can click **Download Logs** to view your logs locally.
 
