@@ -279,18 +279,18 @@ Before installing DC/OS, you must ensure that your bootstrap node has the follow
 
 Download and save the DC/OS setup file to your bootstrap node. This file is used to create your customized DC/OS build file. Contact your sales representative or sales@mesosphere.com to obtain the DC/OS setup file.
 
-### Docker Nginx
+### Docker Nginx (advanced installer)
 
-Install the Docker Nginx image:
+For advanced install only, install the Docker Nginx image with this command:
 
     $ sudo docker pull nginx
     
 
-## Cluster nodes
+## Cluster nodes 
 
-Before installing DC/OS, you must ensure that all of your cluster nodes have the following prerequisites. The cluster nodes are designated Mesos masters and agents during installation.
+Before installing DC/OS by using the advanced installer, you must ensure that all of your cluster nodes have the following prerequisites. The cluster nodes are designated Mesos masters and agents during installation.
 
-### Data compression
+### Data compression (advanced installer)
 
 You must have the <a href="http://www.info-zip.org/UnZip.html" target="_blank">UnZip</a>, <a href="https://www.gnu.org/software/tar/" target="_blank">GNU tar</a>, and <a href="http://tukaani.org/xz/" target="_blank">XZ Utils</a> data compression utilities installed on your cluster nodes.
 
@@ -299,7 +299,7 @@ To install these utilities on CentOS7 and RHEL7:
     $ sudo yum install -y tar xz unzip curl
     
 
-### Cluster permissions
+### Cluster permissions (advanced installer)
 
 On each of your cluster nodes, use the following command to:
 
