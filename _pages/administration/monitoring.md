@@ -25,11 +25,11 @@ You can click on the System page to go to the main system health user interface 
 
 When a component isn't healthy, you can drill down on it, to view the nodes where the component is running:
 
-![view](https://dl.dropboxusercontent.com/u/77193293/systemHealthScreens/sys_unhealthy_view.png) FIXME
+![view](https://dl.dropboxusercontent.com/u/77193293/systemHealthScreens/sys_unhealthy_view.png) <!-- FIXME -->
 
 You can debug more by clicking the node, where you'll be able to see the unhealthy component journald (log) output:
 
-![log](https://dl.dropboxusercontent.com/u/77193293/systemHealthScreens/sys_unhealthy.png) FIXME
+![log](https://dl.dropboxusercontent.com/u/77193293/systemHealthScreens/sys_unhealthy.png) <!-- FIXME -->
 
 ## Health States
 Possible health states are unhealthy and healthy. We infer this from codes 0 and 1. 
