@@ -183,4 +183,4 @@ In this step you can see the load balancer in action by removing or adding nodes
  [4]: https://github.com/mesosphere/marathon-lb
  [5]: https://github.com/mesosphere/oinker
  [6]: /administration/sshcluster/
- [7]: /administration/service-discovery/
+ [7]: /usage/service-discovery/

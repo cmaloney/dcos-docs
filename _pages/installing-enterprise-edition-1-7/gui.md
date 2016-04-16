@@ -148,7 +148,7 @@ Now you can [assign user roles][6].
         ====> END OF SUMMARY FOR uninstall_dcos
 
  [1]: /assets/images/gui-installer-setup-ee.gif
- [2]: /administration/service-discovery/
+ [2]: /usage/service-discovery/
  [3]: /scripted-installer/system-requirements/#scrollNav-2
  [4]: /assets/images/ui-installer-auth-1-7.gif
  [5]: /assets/images/dashboard-ee.gif

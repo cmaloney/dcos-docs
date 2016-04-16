@@ -50,4 +50,4 @@ By default, the DCOS Cassandra service creates an instance named `cassandra`. Ad
 
  [1]: /administration/installing/
  [2]: /administration/sshcluster/
- [3]: /administration/service-discovery/service-naming/
+ [3]: /usage/service-discovery/service-naming/

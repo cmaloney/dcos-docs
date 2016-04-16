@@ -162,6 +162,6 @@ Now you can [assign user roles][3].
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /administration/service-discovery/
+ [1]: /usage/service-discovery/
  [2]: /administration/installing/custom/manual-installation/#scrollNav-2
  [3]: /administration/security-and-authentication/managing-authorization/
