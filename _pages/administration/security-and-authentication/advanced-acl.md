@@ -122,10 +122,7 @@ In this example, superuser access is granted to an existing user named Carlos.
 
 1.  Send Carlos a link to the web interface.
 
-## Grant user access to a Marathon app group
-In this example, a user is granted access to a specific app group in Marathon.
-
-1.  Click on the **System** and then the **Organization** tab.
+<!-- ## Grant user access to a Marathon app group -->
 
 
 ## Grant user access to install packages
