@@ -17,7 +17,7 @@ The component health page provides the health status of all DC/OS system compone
 ## Getting Started
 When you launch the DC/OS UI, you'll see the Component Health badge in the main DC/OS UI dashboard:
 
-![login](img/dashboard-ee.gif) 
+![login](/assets/image/dashboard-ee.gif) 
 
 You can click on the System page to go to the main system health user interface and sort by health. 
 
