@@ -53,8 +53,3 @@ For example, to access the Mesos API:
 
     $ curl --header "Authorization: token=<authtoken>" http://<master-host-name>/mesos/master/state.json
     
-# Get the auth access log
-
-Issue this command from your master node:
-
-    GET /mesos/master/state-summary HTTP/1.1
