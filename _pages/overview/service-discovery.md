@@ -10,6 +10,9 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: true
 hide_from_related: true
 ---
+DCOS provides every task with a well known DNS name by using Mesos DNS. You can request a well known VIP that enables clients to have a single configuration value.
+
+# VIP
 DCOS can map traffic from a single Virtual IP (VIP) to multiple IP addresses and ports.
 
 You can assign a VIP to your application by using the DCOS Marathon web interface. The values you enter in these fields are translated into the appropriate `portMapping` entry in your application definition. Toggle to `JSON mode` as you create your app to see and edit your application definition.
@@ -32,6 +35,10 @@ To create a VIP:
     **Tip:** Select **JSON Mode** to edit your application directly in JSON.
     
     For more information on port configuration, see the [ports documentation][1].
+    
+3.  From inside the cluster, you will be able to use your VIP directly. You can SSH into the cluster and run this command to see it work:
+    
+        curl 1.1.1.1:5000
 
 ## Assigning Multiple VIPs to Your App
 
@@ -65,5 +72,10 @@ To assign multiple VIPs to your application, switch to JSON mode and add the add
         }
       ]
     }
+
+# Mesos-DNS
+  Every task started by DCOS is assigned a well known DNS name. If you're interested in extending this out past Marathon services, check out Mesos-DNS. For a Marathon service named "testing", you can find where it is running by using this command:
+  
+      dig testing.marathon.mesos
 
  [1]: http://mesosphere.github.io/marathon/docs/ports.html
