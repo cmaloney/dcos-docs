@@ -38,7 +38,7 @@ Enjoy!
  [2]: /administration/installing/cloud/
  [3]: /usage/webinterface/
  [4]: /usage/cli/
- [5]: /usage/package-repo/
+ [5]: /usage/services/repo/
  [6]: /usage/services/
  [7]: /usage/tutorials/
  [8]: /usage/developing-services/
