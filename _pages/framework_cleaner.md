@@ -50,7 +50,7 @@ Below are some examples of default configurations. These will vary depending on 
     *   Default: `-r kafka-role -p kafka-principal -z kafka`
     *   Custom name: `-r <name>-role -p <name>-principal -z <name>`
 
-When the framework cleaner has completed its work, it will automatically remove itself from Marathon to ensure that it's only run once. This removal will often result in a `TASK_KILLED` outcome for the janitor task. It will also quickly disappear from both the Marathon web interface and the Dashboard.
+When the framework cleaner has completed its work, it will automatically remove itself from Marathon to ensure that it's only run once. This removal will often result in a `TASK_KILLED` or even a `TASK_FAILED` outcome for the janitor task, even if it finished successfully. The janitor task will also quickly disappear from both the Marathon web interface and the Dashboard.
 
 # Verify the Outcome
 
@@ -60,8 +60,10 @@ To view the script's outcome, go to Mesos (http://your-cluster.com/mesos) and lo
     
     your-machine$ dcos node ssh --master-proxy --mesos-id=c62affd0-ce56-413b-85e7-32e510a7e131-S3
     
-    agent-node$ docker ps -a CONTAINER ID IMAGE COMMAND ... 828ee17b5fd3 mesosphere/janitor:latest /bin/sh -c /janito ...
-    
+    agent-node$ docker ps -a
+    CONTAINER ID        IMAGE                       COMMAND             ...
+    828ee17b5fd3        mesosphere/janitor:latest   /bin/sh -c /janito  ...
+
     agent-node$ docker logs 828ee17b5fd3
 
 Here's an example of the output for a successful run for a Cassandra installation:
