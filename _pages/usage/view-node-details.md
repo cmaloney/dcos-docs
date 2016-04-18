@@ -12,7 +12,9 @@ hide_from_related: true
 ---
 You can get a detailed view of which nodes in your cluster are running which service.
 
-[tutorial-prereq]
+**Prerequisites:**  
+
+* <a href="https://docs.mesosphere.com/concepts/installing/">DCOS and DCOS CLI</a> are installed
 
 1.  SSH into your [master node][1].
 
