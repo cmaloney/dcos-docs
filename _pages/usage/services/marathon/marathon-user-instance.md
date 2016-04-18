@@ -12,19 +12,19 @@ hide_from_related: false
 ---
 A native Marathon instance is installed as a part of the DCOS installation. This tutorial creates a Marathon instance on top of the native Marathon to create separate user environments.
 
-With the introduction of the Mesosphere Universe package repository in DC/OS 1.7 it is now possible to easily deploy a user instance of Marathon via the Universe web UI.
+The Mesosphere Universe package repository in DC/OS 1.7 makes it easy to deploy a user instance of Marathon via the Universe web UI.
 
 ![Marathon in Universe](/assets/images/mom-screen-0.png)
 
-Below we'll see how the same can be achieved using the DC/OS CLI as well.
+We'll also see how to add a Marathon user instance via the DC/OS CLI.
 
 ## Deploy via Mesosphere Universe
 
-From the Universe page, locate the Marathon package and simply click the Install Package button.
+From the Universe page, locate the Marathon package and click Install Package.
 
 ![Install Dialog](/assets/images/mom-screen-1.png)
 
-You can click on Advanced Installation to edit advanced settings before proceeding. Once the Marathon instance is started it will show in the Services page and you will be able to launch its web UI and deploy your applications from there. [Read more about Mesosphere Universe](https://dcos.io).
+Click Advanced Installation to edit advanced settings before proceeding. Once the Marathon instance starts, you will see it on the Services page. From there, you can launch its web UI and deploy your applications. [Read more about Mesosphere Universe](https://dcos.io).
 
 
 ## Deploy via the CLI
