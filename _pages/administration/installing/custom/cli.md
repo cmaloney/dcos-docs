@@ -70,16 +70,16 @@ In this step you create an IP detect script to broadcast the IP address of each 
     
     *   #### Use the network route to the Mesos master
         
-        This method uses the route to a Mesos master to find the source IP address to then communicate with that node..
+        This method uses the route to a Mesos master to find the source IP address to then communicate with that node.
         
         In this example, we assume that the Mesos master has an IP address of `172.28.128.3`. You can use any language for this script. Your Shebang line must be pointed at the correct environment for the language used and the output must be the correct IP address.
         
-        <pre>#!/usr/bin/env bash
+        ```bash
+        #!/usr/bin/env bash
         set -o nounset -o errexit
-        
-        MASTER_IP=172.28.128.3
-        
-        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | tail -1)</pre>
+        export PATH=/usr/sbin:/usr/bin:$PATH
+        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+        ```
 
 # Configure and Install DCOS
 
