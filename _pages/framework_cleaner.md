@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The framework cleaner script, `janitor.py`, uses cluster-internal endpoints for interacting with DCOS services, avoiding the need to authenticate itself.
+The framework cleaner docker image, `mesosphere/janitor`, uses cluster-internal endpoints for interacting with DCOS services, avoiding the need to authenticate itself.
 
 # Run the Script
 
@@ -45,11 +45,11 @@ Below are some examples of default configurations. These will vary depending on 
     *   Default: `-r kafka-role -p kafka-principal -z kafka`
     *   Custom name: `-r <name>-role -p <name>-principal -z <name>`
 
-When the framework cleaner has completed its work, it will automatically remove itself from Marathon to ensure that it's only run once. This removal will often result in a `TASK_KILLED` outcome for the janitor task. It will also quick disappear from both the Marathon web interface and the Dashboard.
+When the framework cleaner has completed its work, it will automatically remove itself from Marathon to ensure that it's only run once. This removal will often result in a `TASK_KILLED` outcome for the janitor task. It will also quickly disappear from both the Marathon web interface and the Dashboard.
 
 # Verify the Outcome
 
-To view the script's outcome, go to Mesos (http://your-cluster.com/mesos) and look at the task's `stdout` content. If stdout` lacks content, run the following command manually:
+To view the script's outcome, go to Mesos (http://your-cluster.com/mesos) and look at the task's `stdout` content. If `stdout` lacks content, run the following command manually:
 
     # Determine id of agent which ran the Docker task. This is an example:
     
