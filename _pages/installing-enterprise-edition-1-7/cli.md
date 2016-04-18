@@ -357,8 +357,8 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
 
  [1]: /concepts/installing/custom/dcos-cleanup-script/
  [2]: /concepts/installing/custom/configuration-parameters/
- [3]: /concepts/installing/custom/manual-installation/
- [4]: /concepts/installing/custom/manual-installation/#scrollNav-2
+ [3]: /concepts/installing/custom/advanced/
+ [4]: /concepts/installing/custom/advanced/#scrollNav-2
  [5]: /assets/images/chef-zk-status.png
  [6]: /assets/images/gui-installer-login-ee.gif
  [7]: /assets/images/ui-dashboard-ee.png

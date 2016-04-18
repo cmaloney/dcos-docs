@@ -117,4 +117,4 @@ The Apache Mesos kernel is now at [version 0.27][6].
  [9]: https://issues.apache.org/jira/browse/MESOS-4085
  [10]: https://issues.apache.org/jira/browse/MESOS-2353
  [11]: https://git-wip-us.apache.org/repos/asf?p=mesos.git;a=blob_plain;f=CHANGELOG;hb=0.27.0
- [12]: /administration/installing/custom/manual-installation/
+ [12]: /administration/installing/custom/advanced/

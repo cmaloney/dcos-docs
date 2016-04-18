@@ -1,6 +1,6 @@
 ---
 UID: 56f98445e31c9
-post_title: Automated GUI installation
+post_title: GUI
 post_excerpt: ""
 layout: page
 published: true
@@ -163,5 +163,5 @@ Now you can [assign user roles][3].
         ====> END OF SUMMARY FOR uninstall_dcos
 
  [1]: /usage/service-discovery/
- [2]: /administration/installing/custom/manual-installation/#scrollNav-2
+ [2]: /administration/installing/custom/advanced/#scrollNav-2
  [3]: /administration/security-and-authentication/managing-authorization/
