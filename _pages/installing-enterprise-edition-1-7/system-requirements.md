@@ -97,7 +97,7 @@ Here are the agent node hardware requirements.
 
 *   On RHEL 7 and CentOS 7, firewalld must be stopped and disabled. It is a known <a href="https://github.com/docker/docker/issues/16137" target="_blank">Docker issue</a> that firewalld interacts poorly with Docker. For more information, see the <a href="https://docs.docker.com/v1.6/installation/centos/#firewalld" target="_blank">Docker CentOS firewalld</a> documentation.
 
-        $ sudo systemctl stop firewalld && sudo systemctl disable firewalld</pre>
+        $ sudo systemctl stop firewalld && sudo systemctl disable firewalld
 
 
 ### Port Configuration
