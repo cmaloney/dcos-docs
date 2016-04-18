@@ -22,14 +22,6 @@ To use the automated GUI installation method:
 *   Cluster nodes must have SSH enabled and ports open from the bootstrap node
 *   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH
 
-[installing-enterprise-edition-hardware]
-
-# Software Prerequisites
-
-## All Nodes
-
-[docker-prereq] [bootstrap-prereq-ssh-gui]
-
 # Install DCOS
 
 **Important:** Encrypted SSH keys are not supported.
