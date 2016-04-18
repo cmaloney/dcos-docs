@@ -4,7 +4,7 @@ post_title: Advanced
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 2
+menu_order: 3
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
@@ -62,7 +62,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             #!/usr/bin/env bash
             set -o nounset -o errexit
             export PATH=/usr/sbin:/usr/bin:$PATH
-            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}' | head -1)
             
     
     *   #### Use the network route to the Mesos master
@@ -76,9 +76,9 @@ In this step you create an IP detect script to broadcast the IP address of each 
             
             MASTER_IP=172.28.128.3
             
-            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | tail -1)
+            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}' | tail -1)
             
-            
+
 # <a name="config-json"></a>Configure your cluster
 
 In this step you create a YAML configuration file that is customized for your environment. DCOS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
@@ -98,7 +98,7 @@ In this step you create a YAML configuration file that is customized for your en
         $6$rounds=656000$v55tdnlMGNoSEgYH$1JAznj58MR.Bft2wd05KviSUUfZe45nsYsjlEl84w34pp48A9U2GoKzlycm3g6MBmg4cQW9k7iY4tpZdkWy9t1
         
 
-2.  Create a configuration file and save as `genconf/config.yaml`. 
+2.  Create a configuration file and save as `genconf/config.yaml`.
     
     You can use this template to get started. This template specifies 5 agent nodes, 3 masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][1].
     
@@ -204,16 +204,14 @@ In this step you create a custom DCOS build file on your bootstrap node and then
             $ curl -O http://<bootstrap-ip>:<your_port>/dcos_install.sh
             
     
-    4.  Run this command to install DCOS on your agent nodes. You must designate your agent nodes as [public](/overview/concepts/#public) or [private](/overview/concepts/#private). 
+    4.  Run this command to install DCOS on your agent nodes. You must designate your agent nodes as [public][4] or [private][5].
+        
+        *   Private agent nodes:
+        <pre>$ sudo bash dcos_install.sh slave</pre>
     
-        *  Private agent nodes:
-           
-           <pre>$ sudo bash dcos_install.sh slave</pre>
-           
-       *   Public agent nodes:
-       
-           <pre>$ sudo bash dcos_install.sh slave_public</pre> 
-
+    *   Public agent nodes:
+        
+        <pre>$ sudo bash dcos_install.sh slave_public</pre>
 
 6.  Monitor Exhibitor and wait for it to converge at `http://<master-ip>:8181/exhibitor/v1/ui/index.html`.
     
@@ -239,15 +237,17 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 
 ### Next Steps
 
-Now you can [assign user roles][4].
+Now you can [assign user roles][6].
 
 ### Uninstalling DCOS
 
 1.  Enter this command on each cluster node.
-
+    
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
 
  [1]: /administration/installing/custom/configuration-parameters/
  [2]: /administration/installing/custom/dcos-cleanup-script/
  [3]: /usage/cli/
- [4]: /administration/security-and-authentication/
+ [4]: /overview/concepts/#public
+ [5]: /overview/concepts/#private
+ [6]: /administration/security-and-authentication/
