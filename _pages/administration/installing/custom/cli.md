@@ -74,12 +74,12 @@ In this step you create an IP detect script to broadcast the IP address of each 
         
         In this example, we assume that the Mesos master has an IP address of `172.28.128.3`. You can use any language for this script. Your Shebang line must be pointed at the correct environment for the language used and the output must be the correct IP address.
         
-            #!/usr/bin/env bash
-            set -o nounset -o errexit
-            
-            MASTER_IP=172.28.128.3
-            
-            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | tail -1)
+        <pre>#!/usr/bin/env bash
+        set -o nounset -o errexit
+        
+        MASTER_IP=172.28.128.3
+        
+        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | tail -1)</pre>
 
 # Configure and Install DCOS
 
