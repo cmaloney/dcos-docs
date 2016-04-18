@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The framework cleaner docker image, `mesosphere/janitor`, uses cluster-internal endpoints for interacting with DCOS services, avoiding the need to authenticate itself.
+The framework cleaner docker image, `mesosphere/janitor`, simplifies the process of removing your service instance from Zookeeper and destroying all the data associated with it. `mesosphere/janitor` uses cluster-internal endpoints for interacting with DCOS services, avoiding the need to authenticate itself.
 
 # Run the Script
 
