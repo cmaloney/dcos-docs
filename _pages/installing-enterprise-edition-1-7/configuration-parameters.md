@@ -132,24 +132,9 @@ This parameter specifies the allowable amount of time, in seconds, for an action
 
 **Tip:** If have a slower network environment, consider changing to `process_timeout: 600`.
 
-<!--
-### <a name="roles"></a>roles
-This parameter specifies the Mesos roles to delegate to a node. For more information, see <a href="https://open.mesosphere.com/reference/mesos-master/#roles" target="_blank">Mesos roles</a>. The available options are `slave_public`, ` master `, and `slave`.
+<!-- ### <a name="roles"></a>roles This parameter specifies the Mesos roles to delegate to a node. For more information, see <a href="https://open.mesosphere.com/reference/mesos-master/#roles" target="_blank">Mesos roles</a>. The available options are `slave_public`, ` master `, and `slave`. *  `roles: slave_public` Runs the public agent node. This is the default value. *  `roles: master` Runs the master node. *  `roles: slave` Runs the private agent node. -->
 
-*  `roles: slave_public`
-   Runs the public agent node. This is the default value. 
-*  `roles: master`
-   Runs the master node. 
-*  `roles: slave`
-   Runs the private agent node. 
-   
-   -->
-
-<!-- 
-### <a name="weights"></a>weights
-This parameter specifies the priority of the role. For more information, see <a href="https://open.mesosphere.com/reference/mesos-master/#weights" target="_blank">Mesos weights</a>.
-
--->
+<!-- ### <a name="weights"></a>weights This parameter specifies the priority of the role. For more information, see <a  href="https://open.mesosphere.com/reference/mesos-master/#weights" target="_blank">Mesos weights</a>. -->
 
 # <a name="examples1"></a>Example Configurations
 
