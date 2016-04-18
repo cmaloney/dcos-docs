@@ -16,7 +16,7 @@ This document is a simple overview of material described in greater detail in th
 
 Spark on Mesos supports two "modes" of operation: coarse-grained mode and fine-grained mode. Coarse-grained mode provides lower latency, whereas fine-grained mode provides higher utilization. More info [here][2].
 
-## Coarse-grained mode
+# Coarse-grained mode
 
 "Coarse-grained" mode is so-called because each Spark **executor** is represented by a single Mesos task. As a result, executors have a constant size throughout their lifetime.
 
@@ -29,7 +29,7 @@ Notes:
 
 *   We highly recommend you set `spark.cores.max`. If you do not, your Spark job may consume all available resources in your cluster, resulting in unhappy peers.
 
-## Fine-grained mode
+# Fine-grained mode
 
 In "fine-grained" mode, each Spark **task** is represented by a single Mesos task. When a Spark task finishes, the resources represented by its Mesos task are relinquished. Fine-grained mode enables finer-grained resource allocation at the cost of task startup latency.
 
