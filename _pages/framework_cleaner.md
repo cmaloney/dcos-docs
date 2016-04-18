@@ -1,3 +1,17 @@
+
+---
+UID: 5715531b80d8d
+post_title: The Framework Cleaner Script
+post_excerpt: ""
+layout: page
+published: true
+menu_order: 0
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
+---
+
 The framework cleaner docker image, `mesosphere/janitor`, uses cluster-internal endpoints for interacting with DCOS services, avoiding the need to authenticate itself.
 
 # Run the Script
