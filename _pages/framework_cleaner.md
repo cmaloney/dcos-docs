@@ -10,27 +10,28 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The framework cleaner script, `janitor.py, uses cluster-internal endpoints for interacting with DCOS services, avoiding the need to authenticate itself.
+The framework cleaner script, `janitor.py`, uses cluster-internal endpoints for interacting with DCOS services, avoiding the need to authenticate itself.
 
 # Run the Script
 
 Enter the following as a marathon task (JSON Mode enabled). Replace the values passed to `-r`/`-p`/`-z` according to what needs to be cleaned up:
 
-`{
-  "id": "janitor",
-  "cmd": "/janitor.py -r sample-role -p sample-principal -z sample",
-  "cpus": 1,
-  "mem": 128,
-  "disk": 1,
-  "instances": 1,
-  "container": {
-    "docker": {
-      "image": "mesosphere/janitor:latest",
-      "network": "HOST"
-    },
-    "type": "DOCKER"
-  }
-}`
+    {
+      "id": "janitor",
+      "cmd": "/janitor.py -r sample-role -p sample-principal -z sample",
+      "cpus": 1,
+      "mem": 128,
+      "disk": 1,
+      "instances": 1,
+      "container": {
+        "docker": {
+          "image": "mesosphere/janitor:latest",
+          "network": "HOST"
+        },
+        "type": "DOCKER"
+      }
+    }
+    
 
 Below are some examples of default configurations. These will vary depending on selected task name, etc.
 
@@ -50,16 +51,10 @@ When the framework cleaner has completed its work, it will automatically remove 
 
 To view the script's outcome, go to Mesos (http://your-cluster.com/mesos) and look at the task's `stdout` content. If stdout` lacks content, run the following command manually:
 
-~~~
-
-# Determine id of agent which ran the Docker task. This is an example:
-
-your-machine$ dcos node ssh --master-proxy --mesos-id=c62affd0-ce56-413b-85e7-32e510a7e131-S3
-
-agent-node$ docker ps -a CONTAINER ID IMAGE COMMAND ... 828ee17b5fd3 mesosphere/janitor:latest /bin/sh -c /janito ...
-
-agent-node$ docker logs 828ee17b5fd3
-
-# 
-
-~~~
+    # Determine id of agent which ran the Docker task. This is an example:
+    
+    your-machine$ dcos node ssh --master-proxy --mesos-id=c62affd0-ce56-413b-85e7-32e510a7e131-S3
+    
+    agent-node$ docker ps -a CONTAINER ID IMAGE COMMAND ... 828ee17b5fd3 mesosphere/janitor:latest /bin/sh -c /janito ...
+    
+    agent-node$ docker logs 828ee17b5fd3
