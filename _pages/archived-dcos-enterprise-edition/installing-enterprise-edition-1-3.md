@@ -166,7 +166,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
         #!/usr/bin/env bash
         set -o nounset -o errexit
         export PATH=/usr/sbin:/usr/bin:$PATH
-        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3&#92;[0-9]{1,3&#92;[0-9]{1,3&#92;[0-9]{1,3}' | head -1)
+        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
         
 
 *   #### Use the network route to the Mesos master
@@ -180,7 +180,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
         
         MASTER_IP=172.28.128.3
         
-        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3&#92;[0-9]{1,3&#92;[0-9]{1,3&#92;[0-9]{1,3}' | tail -1)
+        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
         
 
 # <a name="config-json"></a>Step 3: Configure your cluster
