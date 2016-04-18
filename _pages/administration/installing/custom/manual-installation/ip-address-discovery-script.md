@@ -1,6 +1,6 @@
 ---
 UID: 56f984464a89f
-post_title: 'Step 1: Create a script for IP address discovery'
+post_title: Create a script for IP address discovery
 post_excerpt: ""
 layout: page
 published: true
@@ -72,7 +72,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
 
 ## Next step
 
-[Step 2: Configure and install DCOS][2]
+[Configure and install DCOS][2]
 
  [1]: /administration/installing/custom/dcos-cleanup-script/
  [2]: /administration/installing/custom/manual-installation/configure-and-install-dcos/
