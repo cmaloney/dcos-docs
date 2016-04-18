@@ -56,7 +56,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
             
     
-    *   #### Use the network route to the Mesos master
+    *   #### Use the network route to the Mesos master 
         
         This method uses the route to a Mesos master to find the source IP address to then communicate with that node.
         
