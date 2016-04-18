@@ -134,7 +134,7 @@ In this step you create an <span class="caps">IP</span> detect script to broadca
         #!/usr/bin/env bash
         set -o nounset -o errexit
         export PATH=/usr/sbin:/usr/bin:$PATH
-        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3&#92;[0-9]{1,3&#92;[0-9]{1,3&#92;[0-9]{1,3}' | head -1)
         
 
 *   #### Use the network route to the Mesos master {#use-the-network-route-to-the-mesos-master}
@@ -148,7 +148,7 @@ In this step you create an <span class="caps">IP</span> detect script to broadca
         
         MASTER_IP=172.28.128.3
         
-        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | tail -1)
+        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3&#92;[0-9]{1,3&#92;[0-9]{1,3&#92;[0-9]{1,3}' | tail -1)
         
 
 * * *
