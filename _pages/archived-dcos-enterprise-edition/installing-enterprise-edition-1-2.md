@@ -10,12 +10,12 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-This topic provides instructions for installing <span class="caps">DCOS</span> in your environment by using a customized Bash install script.
+This topic provides instructions for installing <span class="caps">DC/OS</span> in your environment by using a customized Bash install script.
 
-The <span class="caps">DCOS</span> installation creates these folders:
+The <span class="caps">DC/OS</span> installation creates these folders:
 
 *   `/opt/mesosphere`
-    :   Contains all the <span class="caps">DCOS</span> binaries, libraries, cluster configuration. Do not modify.
+    :   Contains all the <span class="caps">DC/OS</span> binaries, libraries, cluster configuration. Do not modify.
 
 *   `/etc/systemd/system/dcos.target.wants`
     :   Contains the systemd services which start the things that make up systemd. They must live outside of `/opt/mesosphere` because of systemd constraints.
@@ -27,7 +27,7 @@ The <span class="caps">DCOS</span> Enterprise Edition is installed in your envir
 
 # Prerequisites
 
-Contact your sales representative or <sales@mesosphere.io> to obtain the DCOS setup file.
+Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
 
 ### <a name="prerequisites"></a>Cluster prerequisites {#a-nameprerequisitesacluster-prerequisites}
 
@@ -134,7 +134,7 @@ In this step you create an <span class="caps">IP</span> detect script to broadca
         #!/usr/bin/env bash
         set -o nounset -o errexit
         export PATH=/usr/sbin:/usr/bin:$PATH
-        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
         
 
 *   #### Use the network route to the Mesos master {#use-the-network-route-to-the-mesos-master}
@@ -148,7 +148,7 @@ In this step you create an <span class="caps">IP</span> detect script to broadca
         
         MASTER_IP=172.28.128.3
         
-        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | tail -1)
+        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
         
 
 * * *
@@ -188,9 +188,9 @@ In this step you create a custom <span class="caps">DCOS</span> build file on yo
 *   **rsync utility** The <a href="https://rsync.samba.org/" target="_blank">rsync utility</a> is used to distribute <span class="caps">DCOS</span> installation files to your cluster. 
 *   **Docker** Docker must be installed on your workstation. If you are using <span class="caps">RHEL7</span>, Docker must be installed by using a subscription channel. For more information, see <a href="https://access.redhat.com/articles/881893" target="_blank">Docker Formatted Container Images on Red Hat Systems</a>.
 
-1.  Download and save the DCOS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your workstation. This file is used to create your customized DCOS build file.
+1.  Download and save the DC/OS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your workstation. This file is used to create your customized DC/OS build file.
     
-    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DCOS setup file.
+    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
 
 2.  Run the <span class="caps">DCOS</span> setup script with your [`ip-detect.sh`][3] and [`config.json`][4] files as arguments. The setup script uses the generic <span class="caps">DCOS</span> install files in the Docker container to create customized <span class="caps">DCOS</span> build files for your cluster. The build files are output to `./genconf/serve/`.
     

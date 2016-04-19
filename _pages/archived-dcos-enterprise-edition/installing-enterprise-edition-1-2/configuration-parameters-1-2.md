@@ -112,7 +112,7 @@ Here are the <span class="caps">DCOS</span> cluster configuration parameters. Th
 
 <!-- REmoved CM3. 
 - vrrp
-  : *For DCOS 1.3 and later:* Use keepalived with a VIP. You are required to maintain this VIP infrastructure. For example, `"master_discovery":"vrrp"`.
+  : *For DC/OS 1.3 and later:* Use keepalived with a VIP. You are required to maintain this VIP infrastructure. For example, `"master_discovery":"vrrp"`.
   
   - keepalived_router_id
     : Specify the virtual router ID of the keepalived cluster. You must use the same virtual router ID across your cluster. For example, `"keepalived_router_id":"51"`.
@@ -130,7 +130,7 @@ Here are the <span class="caps">DCOS</span> cluster configuration parameters. Th
 <a name="master-lb"></a>master_lb
 <!-- master_lb "it depends" on what you set "master_discovery" to. this is deprecated in CM.3 
 
-: *For DCOS 1.2 and earlier:* This parameter specifies the IP address of the load balancer in front of the Mesos masters that distributes workloads. This address is used to access the DCOS web interface. For example, `"master_lb": "10.10.20.1"`. -->
+: *For DC/OS 1.2 and earlier:* This parameter specifies the IP address of the load balancer in front of the Mesos masters that distributes workloads. This address is used to access the DC/OS web interface. For example, `"master_lb": "10.10.20.1"`. -->
 
 <a name="num-masters"></a>num_masters
 

@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: true
 ---
-These configuration parameters are specified in [YAML][1] format in your config.yaml file. During DCOS installation the configuration file is used to generate a customized DCOS build. <!-- A config.yaml template file is available [here][2]. -->
+These configuration parameters are specified in [YAML][1] format in your config.yaml file. During DC/OS installation the configuration file is used to generate a customized DC/OS build. <!-- A config.yaml template file is available [here][2]. -->
 
 # Cluster Setup
 
@@ -77,7 +77,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
 
 # <a name="examples1"></a>Example Configurations
 
-#### DCOS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, and static master list specified.
+#### DC/OS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, and static master list specified.
 
     agent_list:
     - <agent-private-ip-1>
@@ -105,7 +105,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
     ssh_user: <username>
     
 
-#### <a name="shared"></a>DCOS cluster with 3 masters, an Exhibitor/Zookeeper shared filesystem storage backend, Internal DNS
+#### <a name="shared"></a>DC/OS cluster with 3 masters, an Exhibitor/Zookeeper shared filesystem storage backend, Internal DNS
 
     agent_list:
     - <agent-private-ip-1>
@@ -134,7 +134,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
     weights: slave_public=1
     
 
-#### <a name="aws"></a>DCOS Cluster with 3 masters, an Exhibitor/Zookeeper backed by an AWS S3 bucket, AWS DNS, and a public agent node
+#### <a name="aws"></a>DC/OS Cluster with 3 masters, an Exhibitor/Zookeeper backed by an AWS S3 bucket, AWS DNS, and a public agent node
 
     agent_list:
     - <agent-private-ip-1>
@@ -148,6 +148,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
     bootstrap_url: file:///tmp/dcos
     cluster_name: s3-example
     exhibitor_storage_backend: aws_s3
+    exhibitor_explicit_keys: 'true'
     log_directory: /genconf/logs
     master_discovery: static
     master_list:
@@ -166,7 +167,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
     weights: slave_public=1
     
 
-#### <a name="zk"></a>DCOS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, VRRP master discovery, public agent node, and Google DNS
+#### <a name="zk"></a>DC/OS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, VRRP master discovery, public agent node, and Google DNS
 
     agent_list:
     - <agent-private-ip-1>

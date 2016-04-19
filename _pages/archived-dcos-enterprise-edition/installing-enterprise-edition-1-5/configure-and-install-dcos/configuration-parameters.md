@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: true
 ---
-These configuration parameters are specified in [YAML][1] format in your config.yaml file. During DCOS installation the configuration file is used to generate a customized DCOS build. <!-- A config.yaml template file is available [here][2]. -->
+These configuration parameters are specified in [YAML][1] format in your config.yaml file. During DC/OS installation the configuration file is used to generate a customized DC/OS build. <!-- A config.yaml template file is available [here][2]. -->
 
 # <a name="config_cluster"></a>Cluster Configuration
 
@@ -18,7 +18,7 @@ These parameters specify your cluster configuration in the `config_cluster` sect
 
 ## <a name="bootstrap-url"></a>bootstrap_url
 
-This parameter specifies the URI path for the DCOS installer to store the customized DCOS build files, which can be local (`bootstrap_url:file:///opt/dcos_install_tmp`) or hosted (`http://<your-web-server>`). By default this is set to `file:///opt/dcos_install_tmp` in the `config.yaml` template file, which is the location where the DCOS installer puts your install tarball.
+This parameter specifies the URI path for the DC/OS installer to store the customized DC/OS build files, which can be local (`bootstrap_url:file:///opt/dcos_install_tmp`) or hosted (`http://<your-web-server>`). By default this is set to `file:///opt/dcos_install_tmp` in the `config.yaml` template file, which is the location where the DC/OS installer puts your install tarball.
 
 **Tip:** This parameter is for advanced users. The default value should work for most installations.
 
@@ -37,7 +37,7 @@ This parameter specifies a space-separated list of domains that are tried when a
 
 A `search` line with the specified contents is added to the `/etc/resolv.conf` file of every cluster host. `search` can do the same things as `domain` and is more extensible because multiple domains can be specified.
 
-In this example, `example.com` has public website `www.example.com` and all of the hosts in the datacenter have fully qualified domain names that end with `dc1.example.com`. One of the hosts in your datacenter has the hostname `foo.dc1.example.com`. If `dns_search` is set to 'dc1.example.com example.com', then every DCOS host which does a name lookup of foo will get the A record for `foo.dc1.example.com`. If a machine looks up `www`, first `www.dc1.example.com` would be checked, but it does not exist, so the search would try the next domain, lookup `www.example.com`, find an A record, and then return it.
+In this example, `example.com` has public website `www.example.com` and all of the hosts in the datacenter have fully qualified domain names that end with `dc1.example.com`. One of the hosts in your datacenter has the hostname `foo.dc1.example.com`. If `dns_search` is set to 'dc1.example.com example.com', then every DC/OS host which does a name lookup of foo will get the A record for `foo.dc1.example.com`. If a machine looks up `www`, first `www.dc1.example.com` would be checked, but it does not exist, so the search would try the next domain, lookup `www.example.com`, find an A record, and then return it.
 
     dns_search: dc1.example.com dc1.example.com example.com dc1.example.com dc2.example.com example.com
     
@@ -50,11 +50,11 @@ This parameter specifies the amount of time to wait before removing the Docker i
 
 ## <a name="exhibitor-storage"></a>exhibitor_storage_backend
 
-This parameter specifies the type of Exhibitor storage backend. During DCOS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DCOS installation. The available options are `zookeeper`, `aws_s3`, and `shared_filesystem`:
+This parameter specifies the type of Exhibitor storage backend. During DC/OS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation. The available options are `zookeeper`, `aws_s3`, and `shared_filesystem`:
 
 *   zookeeper
     :   *   exhibitor_zk_hosts
-            :   This parameter specifes the location of a bootstrap ZooKeeper (ZK) instance. This ZK instance must be a production cluster that is separate from the DCOS internal ZK instance. This cluster is only used for configuring the internal Exhibitor instances. Specify the value as a comma-separated list of one or more ZK node IP addresses, and the port number.
+            :   This parameter specifes the location of a bootstrap ZooKeeper (ZK) instance. This ZK instance must be a production cluster that is separate from the DC/OS internal ZK instance. This cluster is only used for configuring the internal Exhibitor instances. Specify the value as a comma-separated list of one or more ZK node IP addresses, and the port number.
             
             **Tip:** You can set up a temporary ZK bootstrap instance by running this command on your installer machine. This temporary ZK instance is for testing purposes only and should not be used in a production environment:
             
@@ -104,7 +104,7 @@ This parameter specifies the type of Exhibitor storage backend. During DCOS inst
         
         *   exhibitor_fs_config_dir : This parameter specifies the absolute path to the folder that Exhibitor uses to coordinate its configuration. This should be a directory inside of a Network File System (NFS) mount. For example, if every master has `/fserv` mounted via NFS, set as `exhibitor_fs_config_dir: /fserv/dcos-exhibitor`.
         
-        **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DCOS cluster will not start.
+        **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DC/OS cluster will not start.
         
         Here is a shared_filesystem example:
         
@@ -178,7 +178,7 @@ This parameter specifies the Mesos master discovery method:
 
 ## <a name="num-masters"></a>num_masters
 
-If `master_discovery: vrrp`, this parameter specifies the number of Mesos masters in your DCOS cluster. For example:
+If `master_discovery: vrrp`, this parameter specifies the number of Mesos masters in your DC/OS cluster. For example:
 
     num_masters: 3
     
@@ -187,12 +187,12 @@ If `master_discovery: vrrp`, this parameter specifies the number of Mesos master
 
 ## <a name="resolvers"></a>resolvers
 
-This required parameters specifies a YAML-formatted nested series (`-`) of DNS resolvers for your DCOS host nodes, or accept the default value of `8.8.8.8`. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, it is acceptable to set this to a public nameserver like Google or AWS. For example:
+This required parameters specifies a YAML-formatted nested series (`-`) of DNS resolvers for your DC/OS host nodes, or accept the default value of `8.8.8.8`. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, it is acceptable to set this to a public nameserver like Google or AWS. For example:
 
     resolvers: - 8.8.8.8 - 8.8.4.4
     
 
-*Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
+*Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
 
 ## <a name="roles"></a>roles
 
@@ -227,7 +227,7 @@ This parameter specifies the Mesos roles to delegate to this node or accept the 
 
 # <a name="ssh_config"></a>SSH Configuration
 
-These parameters specify the SSH credentials for your cluster in the `ssh_config` section of the config.yaml file. This information is used during DCOS installation for `--preflight`, `--deploy`, `--postflight`, and `--clean-dcos` checks.
+These parameters specify the SSH credentials for your cluster in the `ssh_config` section of the config.yaml file. This information is used during DC/OS installation for `--preflight`, `--deploy`, `--postflight`, and `--clean-dcos` checks.
 
 *   It's recommended to rotate keys in the cluster after deployment.
 *   It's recommended to copy your private SSH key to the `genconf/` directory that is mounted to `/genconf` inside the installer Docker container. If you change this to a path on the host machine, the installer can't find the key because `/genconf` is mounted by default in the installer script.
@@ -279,7 +279,7 @@ These parameters specify the SSH credentials for your cluster in the `ssh_config
 
 # <a name="examples1"></a>Example YAML configuration files
 
-#### DCOS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, master list specified, Google DNS resolvers, and SSH configuration specified
+#### DC/OS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, master list specified, Google DNS resolvers, and SSH configuration specified
 
 <!-- You can find this configuration in the config.yaml [template file][3]. -->
 
@@ -312,7 +312,7 @@ These parameters specify the SSH credentials for your cluster in the `ssh_config
           - <target-host-5>
     
 
-#### <a name="shared"></a>DCOS cluster with 3 masters, an Exhibitor/Zookeeper shared filesystem storage backend, Internal DNS
+#### <a name="shared"></a>DC/OS cluster with 3 masters, an Exhibitor/Zookeeper shared filesystem storage backend, Internal DNS
 
     cluster_config:
       cluster_name: fs-example
@@ -340,7 +340,7 @@ These parameters specify the SSH credentials for your cluster in the `ssh_config
       - <target-host-5>
     
 
-#### <a name="aws"></a>DCOS Cluster with 3 masters, an Exhibitor/Zookeeper backed by an AWS S3 bucket, and AWS DNS
+#### <a name="aws"></a>DC/OS Cluster with 3 masters, an Exhibitor/Zookeeper backed by an AWS S3 bucket, and AWS DNS
 
     cluster_config:
       cluster_name: s3-example
@@ -371,7 +371,7 @@ These parameters specify the SSH credentials for your cluster in the `ssh_config
       - <target-host-5>
     
 
-#### <a name="zk"></a>DCOS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, Google DNS
+#### <a name="zk"></a>DC/OS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, Google DNS
 
     cluster_config:
         cluster_name: zk-example

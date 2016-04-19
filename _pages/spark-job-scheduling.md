@@ -92,7 +92,7 @@ The following is a description of the most common Spark on Mesos scheduling prop
       </td>
       
       <td>
-        Coarse-grained mode only. DCOS Spark >= 1.6.1. Executor CPU allocation.
+        Coarse-grained mode only. DC/OS Spark >= 1.6.1. Executor CPU allocation.
       </td>
     </tr>
     

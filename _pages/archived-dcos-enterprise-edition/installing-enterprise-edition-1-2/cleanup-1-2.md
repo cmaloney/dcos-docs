@@ -1,6 +1,6 @@
 ---
 UID: 56f984476146b
-post_title: DCOS cleanup script (1.2)
+post_title: DC/OS cleanup script (1.2)
 post_excerpt: ""
 layout: page
 published: true

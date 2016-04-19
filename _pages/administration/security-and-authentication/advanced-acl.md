@@ -78,31 +78,55 @@ To create an advanced ACL group:
 
     ### DC/OS Marathon 
     Access to these resources is controlled by the DC/OS Marathon instance.
+    
+    Marathon Resource Identifiers follow this schema: <code>dcos:service:marathon:{service name}:services/{group id}</code>
+    
+    Restrictions apply to applications and application groups in one service. 
+    Valid actions for a path are: `create`, `read`, `update`, `delete`. A shortcut for all actions is `full`.
+    
+    Since you can have multiple Marathons installed in your cluster, you can define rules for every service separately.
+    The `service name` must be RFC 3986 (URI) compliant. 
+    The DC/OS ACS is responsible for enforcing this. 
+    The service name is passed to Marathon via the  `--framework_name` command line argument. 
+    
+    The `group id` is the ID of the group in Marathon.
+    Applications and Application Groups in Marathon build a tree. 
+    Each can be identified via their path from the root group, e.g. `/production/frontend/webserver`. 
+    An ACL rule will grant access to the entire subtree rooted at the path represented by the resource identifier. For example, if a user is granted create permission on `/production`, then they are allowed to create an app named `/production/frontend/webserver`.
+
+
+    Examples:
     <p>
     <table class="table">
       <tr>
         <th>Resource</th>
         <th>Permission</th>
       </tr>
-              <tr>
-              <td><code>dcos:service:marathon:marathon:admin</code><p>This resource control access to specific operator endpoints. <!-- What are these endpoints? --></p></td>
-              <td><code>full</code></td>
-            </tr>
       <tr>
-        <td><code>dcos:service:marathon:marathon:services</code><p>This resource controls access to all apps managed by DC/OS Marathon.</p></td>
-        <td><code>create</code>, <code>read</code>,<code>update</code>, <code>delete</code></td>
+        <td><code>dcos:service:marathon:marathon</code><p>This resource controls access to all apps managed by DC/OS Marathon.</p></td>
+        <td><code>full</code></td>
       </tr>         
       <tr>
-        <td><code>dcos:service:marathon:marathon:services/&lt;service-group&gt;</code><p>This resource controls group access to the DC/OS Marathon instance.</p></td>
-        <td><code>create</code>, <code>read</code>,<code>update</code>, <code>delete</code></td>
+        <td><code>dcos:service:marathon:marathon-user</code><p>This resource controls access to all apps managed by the installed Marathon service <code>marathon-user</code>.</p></td>
+        <td><code>full</code></td>
+      </tr>         
+      <tr>
+        <td><code>dcos:service:marathon:marathon:services/service-group</code><p>This resource restricts group access to the group <code>service-group</code> in DC/OS Marathon instance.</p></td>
+        <td><code>full</code></td>
       </tr>
       <tr>
-        <td><code>dcos:service:marathon:&lt;user-marathon&gt;:services/&lt;service-group&gt;</code><p>This resource controls group access to an installed Marathon instance (`<user-marathon>`).</p></td>
+        <td><code>dcos:service:marathon:marathon-user:services/service-group</code><p>This resource controls group access to an installed Marathon instance <code>marathon-user</code>.</p></td>
+        <td><code>full</code></td>
+      </tr>
+      <tr>
+        <td><code>dcos:service:marathon:marathon:services/group1/group2</code><p>This resource restricts group access to the group <code>/group1/group2</code> in DC/OS Marathon instance.</p></td>
         <td><code>create</code>, <code>read</code>,<code>update</code>, <code>delete</code></td>
       </tr>
     </table>
     </p>
-            
+    
+    After creating a service level rule, make sure the related group exists in the Marathon instance.
+    Users with limited access rights will only see applications and groups according to the defined ACLs.
 
 
 # Examples 

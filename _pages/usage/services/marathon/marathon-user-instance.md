@@ -10,11 +10,28 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-A native Marathon instance is installed as a part of the DCOS installation. This tutorial creates a Marathon instance on top of the native Marathon to create separate user environments.
+A native Marathon instance is installed as a part of the DC/OS installation. This tutorial creates a Marathon instance on top of the native Marathon to create separate user environments.
+
+The Mesosphere Universe package repository in DC/OS makes it easy to deploy a user instance of Marathon via the Universe web UI.
+
+![Marathon in Universe](/assets/images/mom-screen-0.png)
+
+You'll also see how to add a Marathon user instance via the DC/OS CLI.
+
+## Deploy via Mesosphere Universe
+
+From the Universe page, locate the Marathon package and click Install Package.
+
+![Install Dialog](/assets/images/mom-screen-1.png)
+
+Click Advanced Installation to edit advanced settings before proceeding. Once the Marathon instance starts, you will see it on the Services page. From there, you can launch its web UI and deploy your applications. [Read more about Mesosphere Universe](https://dcos.io).
+
+
+## Deploy via the CLI
 
 Prerequisite
 
-:   [Install the DCOS CLI][1]
+:   [Install the DC/OS CLI][1]
 
 1.  Create a JSON configuration file, specify `marathon-alice` as the framework name, and save as `newuser.json`:
     
@@ -23,21 +40,21 @@ Prerequisite
     
     **Tip:** You must create separate JSON configuration files for each Marathon instance.
 
-2.  From the DCOS CLI, enter this command to install the Marathon instance:
+2.  From the DC/OS CLI, enter this command to install the Marathon instance:
     
         $ dcos package install --options=newuser.json marathon
         
 
-3.  From the DCOS web interface **Services** tab, click on the **marathon-alice** service name to navigate to the Marathon web interface.
+3.  From the DC/OS web interface **Services** tab, click on the **marathon-alice** service name to navigate to the Marathon web interface.
 
-4.  Optional: You can modify the DCOS CLI configuration to point to the **marathon-alice** instance. This allows you to administer your Marathon instance by using the DCOS CLI.
+4.  Optional: You can modify the DC/OS CLI configuration to point to the **marathon-alice** instance. This allows you to administer your Marathon instance by using the DC/OS CLI.
     
-    1.  From the DCOS CLI, set the `marathon.url` property to point to the **marathon-alice** instance, where `<hostname>` is the Marathon web interface hostname:
+    1.  From the DC/OS CLI, set the `marathon.url` property to point to the **marathon-alice** instance, where `<hostname>` is the Marathon web interface hostname:
         
             $ dcos config set marathon.url http://<hostname>/service/marathon-alice/
             
     
-    2.  Verify that the the `marathon.url` is set. The `marathon.url` takes precedence over the native Marathon in DCOS.
+    2.  Verify that the the `marathon.url` is set. The `marathon.url` takes precedence over the native Marathon in DC/OS.
         
             $ dcos config show
             core.dcos_url=http://nodel-elasticl-1xyz-1940784093.us-west-2.elb.amazonaws.com

@@ -1,6 +1,6 @@
 ---
 UID: 57131fab93c64
-post_title: High Availability in DCOS
+post_title: High Availability in DC/OS
 post_excerpt: ""
 layout: page
 published: true
@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-This document discusses the high availability features in DCOS and best practices for building highly available applications on DCOS.
+This document discusses the high availability features in DC/OS and best practices for building highly available applications on DC/OS.
 
 ## General concepts of high availability
 
@@ -18,7 +18,7 @@ This document discusses the high availability features in DCOS and best practice
 
 A common pattern in highly available systems is the leader/follower concept. This is also sometimes referred to as: master/slave, primary/replica, or some combination thereof. Generally speaking, this architecture is used when you have one authoritative process, with N standby processes. In some systems, the standby processes might also be capable of serving requests or performing other operations. For example, when running a database like MySQL with a master and replica, the replica is able to serve read-only requests, but it cannot accept writes (only the master will accept writes).
 
-In DCOS, a number of components follow the leader/follower pattern. We'll discuss some of them here and how they work.
+In DC/OS, a number of components follow the leader/follower pattern. We'll discuss some of them here and how they work.
 
 #### Mesos
 
@@ -30,7 +30,7 @@ Marathon may be operated in HA mode, which allows running multiple Marathon inst
 
 #### ZooKeeper
 
-ZooKeeper is used by numerous services in DCOS to provide consistency. ZooKeeper can be used as a distributed locking service, a state store, and a messaging system. ZooKeeper uses Paxos-like log replication and a leader/follower architecture to maintain consistency across multiple ZooKeeper instances. For a more detailed explanation of how ZooKeeper works, check out the [ZooKeeper internals document][2].
+ZooKeeper is used by numerous services in DC/OS to provide consistency. ZooKeeper can be used as a distributed locking service, a state store, and a messaging system. ZooKeeper uses Paxos-like log replication and a leader/follower architecture to maintain consistency across multiple ZooKeeper instances. For a more detailed explanation of how ZooKeeper works, check out the [ZooKeeper internals document][2].
 
 ### Fault domain isolation
 
@@ -39,7 +39,7 @@ Fault domain isolation is an important part of building HA systems. In order to 
 *   Physical domains: this includes machine, rack, datacenter, region, availability zone, and so on.
 *   Network domains: machines within the same network may be subject to network partitions. For example, a shared network switch may fail or have invalid configuration.
 
-With DCOS, it's recommended that masters be distributed across racks for HA, but not across DCs or regions. Agents may be distributed across regions/DCs, and it's recommended that you tag agents with attributes to describe their location. Synchronous services like ZooKeeper should also remain within the same region/DC to reduce network latency.
+With DC/OS, it's recommended that masters be distributed across racks for HA, but not across DCs or regions. Agents may be distributed across regions/DCs, and it's recommended that you tag agents with attributes to describe their location. Synchronous services like ZooKeeper should also remain within the same region/DC to reduce network latency.
 
 For applications which require HA, they should also be distributed across fault domains. With Marathon, this can be accomplished by using the [`UINQUE` and `GROUP_BY` constraints operator][3].
 
@@ -49,7 +49,7 @@ HA services should be decoupled, with responsibilities divided amongst services.
 
 ### Eliminating single points of failure
 
-Single points of failure come in many forms. A service like ZooKeeper, for example, can become a single point of failure when every service in your system shares one ZooKeeper cluster. You can reduce risks by running multiple ZooKeeper clusters for separate services. With DCOS, there's an [Exhibitor package][4] included which makes this easy:
+Single points of failure come in many forms. A service like ZooKeeper, for example, can become a single point of failure when every service in your system shares one ZooKeeper cluster. You can reduce risks by running multiple ZooKeeper clusters for separate services. With DC/OS, there's an [Exhibitor package][4] included which makes this easy:
 
 `$ dcos package install exhibitor`
 
@@ -63,7 +63,7 @@ Fast failure detection comes in many forms. Services like ZooKeeper can be used 
 
 When failures do occur, failover [should be as fast as possible][5]. Fast failover can be achieved by: * Using an HA load balancer like [marathon-lb][6], or [Minuteman][7] for internal layer 4 load balancing. * Building apps in accordance with the [12-factor app][8] manifesto. * Following REST best-practices when building services: in particular, avoiding storing client state on the server between requests.
 
-A number of DCOS services follow the fail-fast pattern in the event of errors. Specifically, both Mesos and Marathon will shut down in the case of unrecoverable conditions such as losing leadership.
+A number of DC/OS services follow the fail-fast pattern in the event of errors. Specifically, both Mesos and Marathon will shut down in the case of unrecoverable conditions such as losing leadership.
 
  [1]: https://mesos.apache.org/documentation/latest/high-availability/
  [2]: https://zookeeper.apache.org/doc/r3.4.8/zookeeperInternals.html

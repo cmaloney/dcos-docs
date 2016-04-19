@@ -1,6 +1,6 @@
 ---
 UID: 56f9a5595fa87
-post_title: Viewing Registered Apps
+post_title: Viewing DC/OS Registered Apps
 post_excerpt: ""
 layout: page
 published: true
@@ -14,7 +14,7 @@ You can get a detailed view of which nodes in your cluster are running which ser
 
 **Prerequisites:**  
 
-* <a href="https://docs.mesosphere.com/concepts/installing/">DCOS and DCOS CLI</a> are installed
+* <a href="https://docs.mesosphere.com/concepts/installing/">DC/OS and DC/OS CLI</a> are installed
 
 1.  SSH into your [master node][1].
 
