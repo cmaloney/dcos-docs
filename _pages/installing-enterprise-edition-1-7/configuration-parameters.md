@@ -91,6 +91,9 @@ This parameter specifies whether to allow web browsers to send the DC/OS authent
 *  `auth_cookie_secure_flag: false` Send the DC/OS authentication cookie through non-HTTPS connections.  If you are accessing the DC/OS cluster through an HTTP connection, this is the required setting. This is the default value.
 *  `auth_cookie_secure_flag: true` Require an HTTPS connection to send the DC/OS authentication cookie. If you are accessing the DC/OS cluster through only HTTPS connections, this is the recommended setting.
 
+### customer_key
+This parameter specifies the Enterprise DC/OS customer ID. The customer ID is obtained by contacting <a href="mailto:sales@mesosphere.io">sales@mesosphere.io</a>. <!-- Needs work -->
+
 ### ssh_key_path
 This parameter specifies the path to the installer uses to log into the target nodes. By default this is set to `/genconf/ssh_key`. This parameter should not be changed because `/genconf` is local to the container that is running the installer, and is a mounted volume.
 ### ssh_port
