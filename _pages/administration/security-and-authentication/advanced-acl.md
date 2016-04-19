@@ -79,25 +79,20 @@ To create an advanced ACL group:
     ### DC/OS Marathon 
     Access to these resources is controlled by the DC/OS Marathon instance.
     
-    Marathon Resource Identifiers will follow the following schema: </br>
-    <code>dcos:service:marathon:{service name}:services/{group id}</code>
+    Marathon Resource Identifiers follow this schema: <code>dcos:service:marathon:{service name}:services/{group id}</code>
     
     Restrictions apply to applications and application groups in one service. 
-    Valid actions for a path are: </br> 
-    `create`, `read`, `update`, `delete`.
-    A shortcut for all of the four actions is `full`.
-     
+    Valid actions for a path are: `create`, `read`, `update`, `delete`. A shortcut for all actions is `full`.
     
     Since you can have multiple Marathons installed in your cluster, you can define rules for every service separately.
     The `service name` must be RFC 3986 (URI) compliant. 
-    The DCOS ACS will be responsible for enforcing this. 
+    The DCOS ACS is responsible for enforcing this. 
     The service name is passed to Marathon via the  `--framework_name` command line argument. 
     
-    The `group id` is the id of the group in Marathon.
+    The `group id` is the ID of the group in Marathon.
     Applications and Application Groups in Marathon build a tree. 
     Each can be identified via their path from the root group, e.g. `/production/frontend/webserver`. 
-    An ACL rule will grant access to the entire subtree rooted at the path represented by the resource identifier.
-    If a user has been granted create permission on `/production`, then he will be allowed to create an app named `/production/frontend/webserver`.
+    An ACL rule will grant access to the entire subtree rooted at the path represented by the resource identifier. For example, if a user is granted create permission on `/production`, then they are allowed to create an app named `/production/frontend/webserver`.
 
 
     Examples:
@@ -131,7 +126,7 @@ To create an advanced ACL group:
     </p>
     
     After creating a service level rule, make sure the related group exists in the Marathon instance.
-    Users with limited access right will only see applications and groups according to the defined ACLs.
+    Users with limited access rights will only see applications and groups according to the defined ACLs.
 
 
 # Examples 
