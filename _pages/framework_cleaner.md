@@ -23,11 +23,11 @@ The script takes the following flags:
 
 These are some examples of default configurations (these will vary depending on selected task name, etc):
     - Cassandra:
-        - Default: `-r cassandra_role -p cassandra_principal -z cassandra`
-        - Custom name: `-r <name>_role -p <name>_principal -z <name>`
+            - Default: `-r cassandra_role -p cassandra_principal -z cassandra`
+            - Custom name: `-r <name>_role -p <name>_principal -z <name>`
     - Kafka:
-        - Default: `-r kafka-role -p kafka-principal -z kafka`
-        - Custom name: `-r <name>-role -p <name>-principal -z <name>`
+            - Default: `-r kafka-role -p kafka-principal -z kafka`
+            - Custom name: `-r <name>-role -p <name>-principal -z <name>`
 
 # Run from the DC/OS CLI
 
@@ -63,7 +63,7 @@ From the Marathon web interface, use the JSON editor to add the following as a M
     
 When the framework cleaner has completed its work, it will automatically remove itself from Marathon to ensure that it's only run once. This removal will often result in a `TASK_KILLED` or even a `TASK_FAILED` outcome for the janitor task, even if it finished successfully. The janitor task will also quickly disappear from both the Marathon web interface and the Dashboard.
 
-# Verify the Outcome
+## Verify the Outcome
 
 To view the script's outcome, go to Mesos (http://your-cluster.com/mesos) and look at the task's `stdout` content. If `stdout` lacks content, run the following command manually:
 
