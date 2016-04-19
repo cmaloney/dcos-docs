@@ -27,7 +27,7 @@ The <span class="caps">DCOS</span> Enterprise Edition is installed in your envir
 
 # Prerequisites
 
-Contact your sales representative or <sales@mesosphere.io> to obtain the DCOS setup file.
+Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
 
 ### <a name="prerequisites"></a>Cluster prerequisites {#a-nameprerequisitesacluster-prerequisites}
 
@@ -188,9 +188,9 @@ In this step you create a custom <span class="caps">DCOS</span> build file on yo
 *   **rsync utility** The <a href="https://rsync.samba.org/" target="_blank">rsync utility</a> is used to distribute <span class="caps">DCOS</span> installation files to your cluster. 
 *   **Docker** Docker must be installed on your workstation. If you are using <span class="caps">RHEL7</span>, Docker must be installed by using a subscription channel. For more information, see <a href="https://access.redhat.com/articles/881893" target="_blank">Docker Formatted Container Images on Red Hat Systems</a>.
 
-1.  Download and save the DCOS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your workstation. This file is used to create your customized DCOS build file.
+1.  Download and save the DC/OS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your workstation. This file is used to create your customized DC/OS build file.
     
-    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DCOS setup file.
+    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
 
 2.  Run the <span class="caps">DCOS</span> setup script with your [`ip-detect.sh`][3] and [`config.json`][4] files as arguments. The setup script uses the generic <span class="caps">DCOS</span> install files in the Docker container to create customized <span class="caps">DCOS</span> build files for your cluster. The build files are output to `./genconf/serve/`.
     

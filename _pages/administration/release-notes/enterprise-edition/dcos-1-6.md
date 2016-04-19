@@ -1,6 +1,6 @@
 ---
 UID: 56f98445f1630
-post_title: DCOS 1.6
+post_title: DC/OS 1.6
 post_excerpt: ""
 layout: page
 published: true
@@ -12,7 +12,7 @@ hide_from_related: true
 ---
 The release notes provide a list of useful topics and links for Mesosphere DCOS.
 
-# DCOS Access Control Service
+# DC/OS Access Control Service
 
 You can now enable authorization and authentication in your datacenter.
 
@@ -23,14 +23,14 @@ You can now enable authorization and authentication in your datacenter.
 
 For more information, see the [documentation][1].
 
-# <a name="dcos"></a>Improved DCOS installation
+# <a name="dcos"></a>Improved DC/OS installation
 
-**Automated DCOS Installer**
+**Automated DC/OS Installer**
 
-New automated DCOS installer that includes a GUI or command line invocation.
+New automated DC/OS installer that includes a GUI or command line invocation.
 
-*   Automated GUI installer provides a graphical user interface that guides you through the installation of DCOS Enterprise Edition. With the GUI installer you can interactively install DCOS to a cluster, using a minimal configuration set. This minimal configuration set includes Zookeeper as the Exhibitor shared storage and a static master list (known master IP addresses, not behind a VIP). For more information, see the [documentation][2].
-*   Automated command line installer provides a guided installation of DCOS Enterprise Edition with the full configuration set available. For more information, see the [documentation][3].
+*   Automated GUI installer provides a graphical user interface that guides you through the installation of DC/OS Enterprise Edition. With the GUI installer you can interactively install DC/OS to a cluster, using a minimal configuration set. This minimal configuration set includes Zookeeper as the Exhibitor shared storage and a static master list (known master IP addresses, not behind a VIP). For more information, see the [documentation][2].
+*   Automated command line installer provides a guided installation of DC/OS Enterprise Edition with the full configuration set available. For more information, see the [documentation][3].
 
 **Ease of installation**
 
@@ -40,36 +40,36 @@ New automated DCOS installer that includes a GUI or command line invocation.
 
 *   `superuser_username` and `superuser_password_hash` are new configuration parameters for authentication to the DCOS. For more information, see the [documentation][4].
 
-# DCOS Web Interface
+# DC/OS Web Interface
 
-**Integration with DCOS access control service**
+**Integration with DC/OS access control service**
 
-*   Access to the DCOS web interface now requires login.
+*   Access to the DC/OS web interface now requires login.
 *   Superusers can manage users and groups from a corresponding control panel.
 *   Superusers can control user or group access to services by adding them to the corresponding access control lists.
 *   Superusers can configure a directory (LDAP) back-end for other users to authenticate against.
 *   For more information, see the [documentation][5].
 
-**Mesos UI capabilities now in the DCOS web interface** You can view cluster task information that was previously only available in the Mesos interface.
+**Mesos UI capabilities now in the DC/OS web interface** You can view cluster task information that was previously only available in the Mesos interface.
 
-*   **File browser** You can now browse and download files in Task sandboxes formerly found in the Mesos UI. Files can be downloaded by using the DCOS web interface.
-*   **Log Viewer** You can now view live logs for stderr and stdout in the DCOS web interface.
+*   **File browser** You can now browse and download files in Task sandboxes formerly found in the Mesos UI. Files can be downloaded by using the DC/OS web interface.
+*   **Log Viewer** You can now view live logs for stderr and stdout in the DC/OS web interface.
 
 **Fixes and improvements**
 
 *   Table scrolling issue is fixed.
 *   Modal sizing, resizing, and scrolling issues are fixed.
-*   The Intercom button and DCOS Tour buttons are now optional in web interface.
+*   The Intercom button and DC/OS Tour buttons are now optional in web interface.
 *   Issue with graphs showing NaN is fixed.
 *   Issue with no stroke on graphs when at 0% is fixed.
 
-# DCOS Command Line Interface (CLI)
+# DC/OS Command Line Interface (CLI)
 
-Added support for authentication against DCOS access control service.
+Added support for authentication against DC/OS access control service.
 
-# DCOS Marathon Upgrade
+# DC/OS Marathon Upgrade
 
-DCOS 1.6 now includes Marathon 0.15.1 with many UI enhancements.
+DC/OS 1.6 now includes Marathon 0.15.1 with many UI enhancements.
 
 <a href="/wp-content/uploads/2016/02/mara-relnotes-1-6.png" rel="attachment wp-att-3392"><img src="/wp-content/uploads/2016/02/mara-relnotes-1-6-800x443.png" alt="mara-relnotes-1-6" width="800" height="443" class="alignnone size-large wp-image-3392" /></a>
 
@@ -81,16 +81,16 @@ DCOS 1.6 now includes Marathon 0.15.1 with many UI enhancements.
 
 # Advanced AWS Templates
 
-The advanced DCOS AWS CloudFormation Templates extend the basic DCOS template functionality by adding the ability to instantiate a complete DCOS cluster on an existing VPC/Subnet combination, extend/update an existing DCOS cluster by adding more agent nodes, or create a new DCOS cluster that consists of 1-7 masters and unlimited agent nodes.
+The advanced DC/OS AWS CloudFormation Templates extend the basic DC/OS template functionality by adding the ability to instantiate a complete DC/OS cluster on an existing VPC/Subnet combination, extend/update an existing DC/OS cluster by adding more agent nodes, or create a new DC/OS cluster that consists of 1-7 masters and unlimited agent nodes.
 
 *   New AWS Cloudformation template types available: Infra, Master, Private Agent, and Public Agent
 *   Supports deployment to customer provided VPC
 *   Instance Type can be specified for Master and Agent templates
-*   Composable: template deployments can be deployed and combined with each other in a pluggable fashion, for multiple agent auto-scale groups, multiple DCOS clusters within the same VPC, etc.
+*   Composable: template deployments can be deployed and combined with each other in a pluggable fashion, for multiple agent auto-scale groups, multiple DC/OS clusters within the same VPC, etc.
 
 Contact <a href="mailto:sales@mesosphere.io" target="_blank">sales@mesosphere.io</a> for more information.
 
-# <a name="mesos"></a>DCOS Mesos Upgrade
+# <a name="mesos"></a>DC/OS Mesos Upgrade
 
 The Apache Mesos kernel is now at [version 0.27][6].
 
@@ -103,7 +103,7 @@ The Apache Mesos kernel is now at [version 0.27][6].
 # <a name="known-issues"></a>Known Issues and Limitations
 
 *   You cannot use an NFS mount for Exhibitor storage with the automated command line installation method. To use an NFS mount for Exhibitor storage (`exhibitor_storage_backend: shared_filesystem`), you must use the [Manual command line installation method][12].
-*   The Service and Agent panels of the DCOS Web Interface won't render over 5,000 tasks. If you have a service or agent that has over 5,000 your browser may experience slowness. In this case you can close said browser tab and reopen the DCOS web interface.
+*   The Service and Agent panels of the DC/OS Web Interface won't render over 5,000 tasks. If you have a service or agent that has over 5,000 your browser may experience slowness. In this case you can close said browser tab and reopen the DC/OS web interface.
 *   See additional known issues at <a href="https://support.mesosphere.com" target="_blank">support.mesosphere.com</a>.
 
  [1]: /administration/security-and-authentication/

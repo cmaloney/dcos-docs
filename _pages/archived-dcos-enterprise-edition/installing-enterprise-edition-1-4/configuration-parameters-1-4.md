@@ -10,11 +10,11 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: true
 ---
-Here are the DCOS cluster configuration parameters. The DCOS build uses these parameters to create a customized install.
+Here are the DC/OS cluster configuration parameters. The DC/OS build uses these parameters to create a customized install.
 
 # <a name="bootstrap-url"></a>bootstrap_url
 
-This parameter specifies the location for the DCOS installer to store the customized DCOS build files. This location can be local (`"bootstrap_url":"file:///tmp/dcos"`) or hosted (`http://<your-web-server>`).
+This parameter specifies the location for the DC/OS installer to store the customized DC/OS build files. This location can be local (`"bootstrap_url":"file:///tmp/dcos"`) or hosted (`http://<your-web-server>`).
 
 # <a name="cluster-name"></a>cluster_name
 
@@ -26,7 +26,7 @@ This parameter specifies a space-separated list of domains that are tried when a
 
 A `search` line with the specified contents is added to the `/etc/resolv.conf` file of every cluster host. `search` can do the same things as `domain` and is more extensible because multiple domains can be specified.
 
-In this example, `example.com` has public website `www.example.com` and all of the hosts in the datacenter have fully qualified domain names that end with `dc1.example.com`. One of the hosts in your datacenter has the hostname `foo.dc1.example.com`. If `dns_search` is set to 'dc1.example.com example.com', then every DCOS host which does a name lookup of "foo" will get the A record for `foo.dc1.example.com`. If a machine looks up `www`, first `www.dc1.example.com` would be checked, but it does not exist, so the search would try the next domain, lookup `www.example.com`, find an A record, and then return it.
+In this example, `example.com` has public website `www.example.com` and all of the hosts in the datacenter have fully qualified domain names that end with `dc1.example.com`. One of the hosts in your datacenter has the hostname `foo.dc1.example.com`. If `dns_search` is set to 'dc1.example.com example.com', then every DC/OS host which does a name lookup of "foo" will get the A record for `foo.dc1.example.com`. If a machine looks up `www`, first `www.dc1.example.com` would be checked, but it does not exist, so the search would try the next domain, lookup `www.example.com`, find an A record, and then return it.
 
     "dns_search": "dc1.example.com dc1.example.com example.com dc1.example.com dc2.example.com example.com",
     
@@ -37,7 +37,7 @@ This parameter specifies the amount of time to wait before removing the Docker i
 
 # <a name="exhibitor-storage"></a>exhibitor_storage_backend
 
-This parameter specifies the name of Exhibitor storage backend. During DCOS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DCOS installation. The available options are `zookeeper`, `aws_s3`, and `shared_filesystem`:
+This parameter specifies the name of Exhibitor storage backend. During DC/OS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation. The available options are `zookeeper`, `aws_s3`, and `shared_filesystem`:
 
 *   **zookeeper**
     :   *   **exhibitor_zk_hosts** This parameter specifies a comma-separated list of one or more Zookeeper node IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this Zookeeper cluster to orchestrate it's configuration.
@@ -72,7 +72,7 @@ This parameter specifies the name of Exhibitor storage backend. During DCOS inst
     
     *   **exhibitor_fs_config_dir** This parameter specifies the absolute path to the folder that Exhibitor uses to coordinate its configuration. This should be a directory inside of a Network File System (NFS) mount. For example, if every master has `/fserv` mounted via NFS, set as `"exhibitor_fs_config_dir": "/fserv/dcos-exhibitor"`.
         
-        **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DCOS cluster will not start.
+        **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DC/OS cluster will not start.
         
         Here is a shared_filesystem example:
         
@@ -107,11 +107,11 @@ This parameter specifies the Mesos master discovery method:
 
 # <a name="num-masters"></a>num_masters
 
-This parameter specifies the number of Mesos masters in your DCOS cluster. For example, `"num_masters": 3`.
+This parameter specifies the number of Mesos masters in your DC/OS cluster. For example, `"num_masters": 3`.
 
 # <a name="resolvers"></a>resolvers
 
-This required parameters specifies a JSON-formatted list of DNS resolvers for your DCOS host nodes or accept the default value of `[\"8.8.8.8\"]`. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, it is acceptable to set this to a public nameserver like Google or AWS. For example, `"resolvers": "[\"8.8.8.8\", \"8.8.4.4\"]"`.
+This required parameters specifies a JSON-formatted list of DNS resolvers for your DC/OS host nodes or accept the default value of `[\"8.8.8.8\"]`. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, it is acceptable to set this to a public nameserver like Google or AWS. For example, `"resolvers": "[\"8.8.8.8\", \"8.8.4.4\"]"`.
 
     *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
     
@@ -132,7 +132,7 @@ This parameter specifies the priority of the role or accept the default value of
 
 # <a name="examples"></a>Example JSON configuration files
 
-#### <a name="zk"></a>DCOS cluster with 3 masters, Exhibitor/Zookeeper backed by another Zookeeper instance, Google DNS
+#### <a name="zk"></a>DC/OS cluster with 3 masters, Exhibitor/Zookeeper backed by another Zookeeper instance, Google DNS
 
     {
         "cluster_name": "zk-example",
@@ -152,7 +152,7 @@ This parameter specifies the priority of the role or accept the default value of
     }
     
 
-#### <a name="shared"></a>DCOS cluster with 3 masters, Exhibitor/Zookeeper backed by a shared filesystem mount, Internal DNS
+#### <a name="shared"></a>DC/OS cluster with 3 masters, Exhibitor/Zookeeper backed by a shared filesystem mount, Internal DNS
 
     {
         "cluster_name": "fs-example",
@@ -166,7 +166,7 @@ This parameter specifies the priority of the role or accept the default value of
     }
     
 
-#### <a name="aws"></a>DCOS Cluster with 3 masters, Exhibitor/Zookeeper backed by an AWS S3 bucket, and AWS DNS
+#### <a name="aws"></a>DC/OS Cluster with 3 masters, Exhibitor/Zookeeper backed by an AWS S3 bucket, and AWS DNS
 
     {
         "cluster_name": "s3-example",

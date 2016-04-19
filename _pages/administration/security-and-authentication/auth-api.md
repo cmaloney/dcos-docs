@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-You can make external calls to HTTP API endpoints in your DCOS cluster.
+You can make external calls to HTTP API endpoints in your DC/OS cluster.
 
 You must first obtain an authentication token and then include it in your HTTP request. 
 
@@ -42,7 +42,7 @@ The response provides an authentication token that you can provide in the HTTP A
 
 # Make HTTP request using the Authorization header
 
-To authenticate an HTTP request against a DCOS component, specify the `<authtoken>` in the request header.
+To authenticate an HTTP request against a DC/OS component, specify the `<authtoken>` in the request header.
 
 For example, to access the Marathon API:
 

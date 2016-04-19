@@ -1,6 +1,6 @@
 ---
 UID: 56f98445c7a36
-post_title: DCOS 1.6
+post_title: DC/OS 1.6
 post_excerpt: ""
 layout: page
 published: true
@@ -12,24 +12,24 @@ hide_from_related: false
 ---
 The release notes provide a list of useful topics and links for Mesosphere DCOS.
 
-# DCOS Web Interface
+# DC/OS Web Interface
 
-**Mesos UI capabilities now in the DCOS web interface** You can now view cluster task information that was previously only available in the Mesos interface.
+**Mesos UI capabilities now in the DC/OS web interface** You can now view cluster task information that was previously only available in the Mesos interface.
 
-*   **File browser** You can now browse and download files in Task sandboxes formerly found in the Mesos UI. Files can be downloaded by using the DCOS web interface.
-*   **Log Viewer** You can now view live logs for stderr and stdout in the DCOS web interface.
+*   **File browser** You can now browse and download files in Task sandboxes formerly found in the Mesos UI. Files can be downloaded by using the DC/OS web interface.
+*   **Log Viewer** You can now view live logs for stderr and stdout in the DC/OS web interface.
 
 **Fixes and improvements**
 
 *   Table scrolling issue is fixed.
 *   Modal sizing, resizing, and scrolling issues are fixed.
-*   The Intercom button and DCOS Tour buttons are now optional in web interface.
+*   The Intercom button and DC/OS Tour buttons are now optional in web interface.
 *   Issue with graphs showing NaN is fixed.
 *   Issue with no stroke on graphs when at 0% is fixed.
 
-# DCOS Marathon Upgrade
+# DC/OS Marathon Upgrade
 
-DCOS 1.6 now includes Marathon 0.15.1 with many UI enhancements.
+DC/OS 1.6 now includes Marathon 0.15.1 with many UI enhancements.
 
 <a href="/wp-content/uploads/2016/02/mara-relnotes-1-6.png" rel="attachment wp-att-3392"><img src="/wp-content/uploads/2016/02/mara-relnotes-1-6-800x443.png" alt="mara-relnotes-1-6" width="800" height="443" class="alignnone size-large wp-image-3392" /></a>
 
@@ -39,7 +39,7 @@ DCOS 1.6 now includes Marathon 0.15.1 with many UI enhancements.
 
 *   **Application Health** The health status breakdown is now shown in the application details page.
 
-# <a name="mesos"></a>DCOS Mesos Upgrade
+# <a name="mesos"></a>DC/OS Mesos Upgrade
 
 The Apache Mesos kernel is now at [version 0.27][1].
 
@@ -51,7 +51,7 @@ The Apache Mesos kernel is now at [version 0.27][1].
 
 # <a name="known-issues"></a>Known Issues and Limitations
 
-*   The Service and Agent panels of the DCOS Web Interface won't render over 5,000 tasks. If you have a service or agent that has over 5,000 your browser may experience slowness. In this case you can close said browser tab and reopen the DCOS web interface.
+*   The Service and Agent panels of the DC/OS Web Interface won't render over 5,000 tasks. If you have a service or agent that has over 5,000 your browser may experience slowness. In this case you can close said browser tab and reopen the DC/OS web interface.
 *   See additional known issues at <a href="https://support.mesosphere.com" target="_blank">support.mesosphere.com</a>.
 
  [1]: http://mesos.apache.org/blog/mesos-0-27-0-released/

@@ -1,6 +1,6 @@
 ---
 UID: 56f984461f361
-post_title: 'Step 4: Configure and install DCOS (Minuteman)'
+post_title: 'Step 4: Configure and install DC/OS (Minuteman)'
 post_excerpt: ""
 layout: page
 published: true
@@ -10,13 +10,13 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: true
 hide_from_related: true
 ---
-Choose your DCOS installation method:
+Choose your DC/OS installation method:
 
 *   [Using the GUI installer to install DCOS][1]
-*   [Using SSH to distribute DCOS across your nodes][2]
-*   [Manually distributing DCOS across your nodes][3]
+*   [Using SSH to distribute DC/OS across your nodes][2]
+*   [Manually distributing DC/OS across your nodes][3]
 
-<!-- [Step 3: Configure and install DCOS using SSH to distribute DCOS across your nodes][5] -->
+<!-- [Step 3: Configure and install DC/OS using SSH to distribute DC/OS across your nodes][5] -->
 
 # <a name="gui"></a>Using the GUI installer to install DCOS
 
@@ -29,17 +29,17 @@ Choose your DCOS installation method:
         $ mkdir -p /etc/mesosphere/roles/; touch /etc/mesosphere/roles/minuteman
         
 
-2.  Download and save the DCOS setup file, `dcos_generate_config.ee.sh`, to the `dcos` directory on your bootstrap node. This file is used to create your customized DCOS build file.
+2.  Download and save the DC/OS setup file, `dcos_generate_config.ee.sh`, to the `dcos` directory on your bootstrap node. This file is used to create your customized DC/OS build file.
     
-    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DCOS setup file.
+    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
 
-3.  From your terminal, start the DCOS installer with this command. Contact your sales representative or sales@mesosphere.io to obtain 1. From your terminal, start the DCOS installer with this command.
+3.  From your terminal, start the DC/OS installer with this command. Contact your sales representative or sales@mesosphere.io to obtain 1. From your terminal, start the DC/OS installer with this command.
     
-    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DCOS setup file.
+    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
     
         $ sudo bash dcos_generate_config.ee.sh --web
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
-        16:36:09 dcos_installer.action_lib.prettyprint:: ====> Starting DCOS installer in web mode
+        16:36:09 dcos_installer.action_lib.prettyprint:: ====> Starting DC/OS installer in web mode
         16:36:09 root:: Starting server ('0.0.0.0', 9000)
         
     
@@ -48,7 +48,7 @@ Choose your DCOS installation method:
         $ sudo bash dcos_generate_config.ee.sh --web -v
         
 
-4.  Launch the DCOS web installer in your browser at: `http://<public-ip>:9000`.
+4.  Launch the DC/OS web installer in your browser at: `http://<public-ip>:9000`.
 
 5.  Click **Begin Installation**.
     
@@ -59,7 +59,7 @@ Choose your DCOS installation method:
     *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
     *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
 
-6.  Specify your Deployment and DCOS Environment settings:
+6.  Specify your Deployment and DC/OS Environment settings:
     
     ### Deployment Settings
     
@@ -70,14 +70,14 @@ Choose your DCOS installation method:
     :   Specify a comma-separated list of your static agent IP addresses.
     
     **Accessible Master IP Address**
-    :   Specify the IP address to a publicly accessible proxy to one of your master nodes. If you either don't have a proxy or you already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DCOS web interface after the deployment succeeds.
+    :   Specify the IP address to a publicly accessible proxy to one of your master nodes. If you either don't have a proxy or you already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DC/OS web interface after the deployment succeeds.
     
     **SSH Username**
     :   Specify the SSH username, for example `centos`. SSH Listening Port
     :   Specify the port to SSH to, for example `22`. SSH Key
     :   Specify the SSH key with access to your master IPs.
     
-    ### DCOS Environment Settings
+    ### DC/OS Environment Settings
     
     **Username**
     :   Specify the administrator username. This username is required for using DCOS.
@@ -101,7 +101,7 @@ Choose your DCOS installation method:
     
     <a href="/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" rel="attachment wp-att-3197"><img src="/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" alt="ui-installer-pre-flight1" width="626" height="405" class="alignnone size-full wp-image-3197" /></a>
 
-8.  Click **Deploy** to install DCOS on your cluster. If errors any errors are found, fix and then click **Retry**.
+8.  Click **Deploy** to install DC/OS on your cluster. If errors any errors are found, fix and then click **Retry**.
     
     <a href="/wp-content/uploads/2016/02/ui-installer-deploy1.png" rel="attachment wp-att-3195"><img src="/wp-content/uploads/2016/02/ui-installer-deploy1.png" alt="ui-installer-deploy1" width="628" height="406" class="alignnone size-full wp-image-3195" /></a>
 
@@ -127,7 +127,7 @@ Choose your DCOS installation method:
 
 Now you can [assign user roles][6].
 
-# <a name="ssh"></a>Using SSH to distribute DCOS across your nodes
+# <a name="ssh"></a>Using SSH to distribute DC/OS across your nodes
 
 **Prerequisite:**
 
@@ -135,7 +135,7 @@ Now you can [assign user roles][6].
 
 ### <a name="config-json"></a>4\.1 Configure your cluster
 
-In this step you create a YAML configuration file that is customized for your environment. DCOS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
+In this step you create a YAML configuration file that is customized for your environment. DC/OS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
 
 1.  Customize this `config.yaml` template file for your environment. <!-- do not change bootstrap_url -->
     
@@ -174,13 +174,13 @@ In this step you create a YAML configuration file that is customized for your en
     
     **bootstrap_url**
     
-    :   This parameter specifies the URI path for the DCOS installer to store the customized DCOS build files. Use the default value of `bootstrap_url: file:///opt/dcos_install_tmp`, unless you have moved the installer assets from their default location.
+    :   This parameter specifies the URI path for the DC/OS installer to store the customized DC/OS build files. Use the default value of `bootstrap_url: file:///opt/dcos_install_tmp`, unless you have moved the installer assets from their default location.
     
     **cluster_name**
     :   Specify the name of your cluster.
     
     **exhibitor_storage_backend**
-    :   This parameter specifies the type of storage backend for Exhibitor. By default this is set to `zookeeper` in the `config.yaml` template file. During DCOS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DCOS installation.
+    :   This parameter specifies the type of storage backend for Exhibitor. By default this is set to `zookeeper` in the `config.yaml` template file. During DC/OS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation.
     
     **exhibitor_zk_hosts**
     :   Specify a comma-separated list of one or more Zookeeper node IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this Zookeeper cluster to orchestrate it's configuration.
@@ -196,7 +196,7 @@ In this step you create a YAML configuration file that is customized for your en
     
     **resolvers**
     
-    :   Specify a JSON-formatted list of DNS servers for your DCOS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
+    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
         
         *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
     
@@ -226,13 +226,13 @@ In this step you create a YAML configuration file that is customized for your en
 
 ### <a name="install-bash"></a>4\.2 Install DCOS
 
-In this step you create a custom DCOS build file on your bootstrap node and then install DCOS onto your cluster. With this installation method you create a bootstrap server that uses your SSH key and connects to every node to automate the deployment.
+In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS onto your cluster. With this installation method you create a bootstrap server that uses your SSH key and connects to every node to automate the deployment.
 
 **Tip:** If something goes wrong and you want to rerun your setup, use these cluster [cleanup instructions][7].
 
 **Prerequisites**
 
-*   A `genconf/config.yaml` file that is optimized for automatic distribution of DCOS across your nodes with SSH.
+*   A `genconf/config.yaml` file that is optimized for automatic distribution of DC/OS across your nodes with SSH.
 *   A `genconf/ip-detect` script.
 
 <!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
@@ -241,11 +241,11 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 
 To install DCOS:
 
-1.  Download and save the DCOS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your bootstrap node. This file is used to create your customized DCOS build file.
+1.  Download and save the DC/OS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your bootstrap node. This file is used to create your customized DC/OS build file.
     
-    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DCOS setup file.
+    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
 
-2.  From the `dcos` directory, run the DCOS installer shell script on your bootstrapping master nodes to generate a customized DCOS build. The setup script extracts a Docker container that uses the generic DCOS install files to create customized DCOS build files for your cluster. The build files are output to `./genconf/serve/`.
+2.  From the `dcos` directory, run the DC/OS installer shell script on your bootstrapping master nodes to generate a customized DC/OS build. The setup script extracts a Docker container that uses the generic DC/OS install files to create customized DC/OS build files for your cluster. The build files are output to `./genconf/serve/`.
     
         $ sudo bash dcos_generate_config.sh --genconf
         Extracking docker container from this script
@@ -276,12 +276,12 @@ To install DCOS:
         Running preflight checks
         
 
-5.  Install DCOS on your cluster.
+5.  Install DC/OS on your cluster.
     
         $ sudo bash dcos_generate_config.sh --deploy
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/someuser/genconf
         ...
-        Starting DCOS install process
+        Starting DC/OS install process
         Running preflight checks
         Creating directories under /etc/mesosphere
         Creating role file for master
@@ -293,7 +293,7 @@ To install DCOS:
     
     **Tip:** For a detailed view, you can add log level debug (`-v`) to your command. For example `sudo bash dcos_generate_config.sh --deploy -v`.
 
-6.  Run the DCOS diagnostic script to verify that services are up and running.
+6.  Run the DC/OS diagnostic script to verify that services are up and running.
     
         $ sudo bash dcos_generate_config.sh --postflight
         
@@ -304,9 +304,9 @@ To install DCOS:
     
     <a href="/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
     
-    When the status icons are green, you can access the DCOS web interface.
+    When the status icons are green, you can access the DC/OS web interface.
 
-8.  Launch the DCOS web interface at: `http://<public-master-ip>/`.
+8.  Launch the DC/OS web interface at: `http://<public-master-ip>/`.
 
 9.  Click **Log In To DCOS**.
     
@@ -324,7 +324,7 @@ To install DCOS:
 
 Now you can [assign user roles][6].
 
-# <a name="manual"></a>Manually distributing DCOS across your nodes
+# <a name="manual"></a>Manually distributing DC/OS across your nodes
 
 **Prerequisite:**
 
@@ -332,7 +332,7 @@ Now you can [assign user roles][6].
 
 ### <a name="config-json"></a>4\.1 Configure your cluster
 
-In this step you create a YAML configuration file that is customized for your environment. DCOS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
+In this step you create a YAML configuration file that is customized for your environment. DC/OS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
 
 1.  Customize this `config.yaml` template file for your environment. <!-- bootstrap_url is changeable -->
     
@@ -360,12 +360,12 @@ In this step you create a YAML configuration file that is customized for your en
     
     **bootstrap_url**
     
-    :   This parameter specifies the URI path for the DCOS installer to store the customized DCOS build files, which can be local (`bootstrap_url:file:///opt/dcos_install_tmp`) or hosted (`http://<your-web-server>`). By default this is set to `file:///opt/dcos_install_tmp` in the `config.yaml` template file, which is the location where the DCOS installer puts your install tarball.
+    :   This parameter specifies the URI path for the DC/OS installer to store the customized DC/OS build files, which can be local (`bootstrap_url:file:///opt/dcos_install_tmp`) or hosted (`http://<your-web-server>`). By default this is set to `file:///opt/dcos_install_tmp` in the `config.yaml` template file, which is the location where the DC/OS installer puts your install tarball.
         
         **Tip:** This parameter is for advanced users. The default value should work for most installations.
     
     **exhibitor_storage_backend**
-    :   This parameter specifies the type of storage backend for Exhibitor. By default this is set to `zookeeper` in the `config.yaml` template file. During DCOS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DCOS installation.
+    :   This parameter specifies the type of storage backend for Exhibitor. By default this is set to `zookeeper` in the `config.yaml` template file. During DC/OS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation.
     
     **exhibitor_zk_hosts**
     :   Specify a comma-separated list of one or more Zookeeper node IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this Zookeeper cluster to orchestrate it's configuration.
@@ -378,7 +378,7 @@ In this step you create a YAML configuration file that is customized for your en
     
     **resolvers**
     
-    :   Specify a JSON-formatted list of DNS servers for your DCOS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
+    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
         
         *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
     
@@ -394,13 +394,13 @@ In this step you create a YAML configuration file that is customized for your en
 
 ## <a name="install-bash"></a>4\.2 Install DCOS
 
-In this step you create a custom DCOS build file on your bootstrap node and then install DCOS onto your cluster. With this method you package the DCOS distribution yourself and connect to every server manually and run the commands.
+In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS onto your cluster. With this method you package the DC/OS distribution yourself and connect to every server manually and run the commands.
 
 **Tip:** If something goes wrong and you want to rerun your setup, use these cluster [cleanup instructions][5].
 
 **Prerequisites**
 
-*   A `genconf/config.yaml` file that is optimized for manual distribution of DCOS across your nodes.
+*   A `genconf/config.yaml` file that is optimized for manual distribution of DC/OS across your nodes.
 *   A `genconf/ip-detect` script. 
 *   The Docker nginx image must be on your bootstrap node. You can use this command to install the nginx container:
     
@@ -413,11 +413,11 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 
 <!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh --> To install DCOS:
 
-1.  Download and save the DCOS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your bootstrap node. This file is used to create your customized DCOS build file.
+1.  Download and save the DC/OS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your bootstrap node. This file is used to create your customized DC/OS build file.
     
-    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DCOS setup file.
+    **Important:** Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
 
-2.  From the `dcos` directory, run the DCOS installer shell script on your bootstrapping master nodes to generate a customized DCOS build. The setup script extracts a Docker container that uses the generic DCOS install files to create customized DCOS build files for your cluster. The build files are output to `./genconf/serve/`.
+2.  From the `dcos` directory, run the DC/OS installer shell script on your bootstrapping master nodes to generate a customized DC/OS build. The setup script extracts a Docker container that uses the generic DC/OS install files to create customized DC/OS build files for your cluster. The build files are output to `./genconf/serve/`.
     
     At this point your directory structure should resemble:
     
@@ -428,21 +428,21 @@ In this step you create a custom DCOS build file on your bootstrap node and then
         │   ├── ip-detect
         
 
-3.  Run this command to generate your customized DCOS build file:
+3.  Run this command to generate your customized DC/OS build file:
     
         $ sudo bash dcos_generate_config.sh
         
     
     **Tip:** For the install script to work, you must have created `genconf/config.yaml` and `genconf/ip-detect`.
 
-4.  From the `dcos` directory, run this command to host the DCOS install package through an nginx Docker container. For `<your-port>`, specify the port value that is used in the `bootstrap_url`.
+4.  From the `dcos` directory, run this command to host the DC/OS install package through an nginx Docker container. For `<your-port>`, specify the port value that is used in the `bootstrap_url`.
     
         $ docker run -d -p <your-port>:80 -v $PWD/genconf/serve:/usr/share/nginx/html:ro nginx
         
 
-5.  Run these commands on each of your master nodes in succession to install DCOS using your custom build file.
+5.  Run these commands on each of your master nodes in succession to install DC/OS using your custom build file.
     
-    **Tip:** Although there is no actual harm to your cluster, DCOS may issue error messages until all of your master nodes are configured.
+    **Tip:** Although there is no actual harm to your cluster, DC/OS may issue error messages until all of your master nodes are configured.
 
 6.  SSH to your node:
     
@@ -454,17 +454,17 @@ In this step you create a custom DCOS build file on your bootstrap node and then
         $ mkdir /tmp/dcos && cd /tmp/dcos
         
 
-8.  Download the DCOS installer from the nginx Docker container, where `<bootstrap-ip>` and `<your_port>` are specified in `bootstrap_url`:
+8.  Download the DC/OS installer from the nginx Docker container, where `<bootstrap-ip>` and `<your_port>` are specified in `bootstrap_url`:
     
         $ curl -O http://<bootstrap-ip>:<your_port>/dcos_install.sh
         
 
-9.  Run this command to install DCOS on your master node:
+9.  Run this command to install DC/OS on your master node:
     
         $ sudo bash dcos_install.sh master,minuteman
         
 
-10. Run these commands on each of your agent nodes to install DCOS using your custom build file.
+10. Run these commands on each of your agent nodes to install DC/OS using your custom build file.
 
 11. SSH to your node:
     
@@ -476,12 +476,12 @@ In this step you create a custom DCOS build file on your bootstrap node and then
         $ mkdir /tmp/dcos && cd /tmp/dcos
         
 
-13. Download the DCOS installer from the nginx Docker container, where `<bootstrap-ip>` and `<your_port>` are specified in `bootstrap_url`:
+13. Download the DC/OS installer from the nginx Docker container, where `<bootstrap-ip>` and `<your_port>` are specified in `bootstrap_url`:
     
         $ curl http://<bootstrap-ip>:<your_port>/dcos_install.sh
         
 
-14. Run this command to install DCOS on your agent node:
+14. Run this command to install DC/OS on your agent node:
     
         $ sudo bash dcos_install.sh slave,minuteman
         
@@ -492,9 +492,9 @@ In this step you create a custom DCOS build file on your bootstrap node and then
     
     <a href="/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
     
-    When the status icons are green, you can access the DCOS web interface.
+    When the status icons are green, you can access the DC/OS web interface.
 
-16. Launch the DCOS web interface at: `http://<load-balanced-ip>/`.
+16. Launch the DC/OS web interface at: `http://<load-balanced-ip>/`.
 
 17. Click **Log In To DCOS**.
     

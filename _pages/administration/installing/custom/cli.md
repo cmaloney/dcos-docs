@@ -10,9 +10,9 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The automated command line installation method provides a guided installation of DCOS Enterprise Edition.
+The automated command line installation method provides a guided installation of DC/OS Enterprise Edition.
 
-This installation method uses a bootstrap node to administer the DCOS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DCOS installation.
+This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.
 
 To use the automated command-line installation method:
 
@@ -83,7 +83,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
 
 # Configure and Install DCOS
 
-In this step you create a customized YAML configuration file and install DCOS across your cluster using SSH.
+In this step you create a customized YAML configuration file and install DC/OS across your cluster using SSH.
 
 **Prerequisite:**
 
@@ -91,7 +91,7 @@ In this step you create a customized YAML configuration file and install DCOS ac
 
 ## <a name="config-json"></a>Configure your cluster
 
-In this step you create a YAML configuration file that is customized for your environment. DCOS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
+In this step you create a YAML configuration file that is customized for your environment. DC/OS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
 
 1.  From your home directory, run this command to create a hashed password for superuser authentication, where `<superuser_password>` is the superuser password. Use the hashed password key for the `superuser_password_hash` parameter in your `config.yaml` file.
     
@@ -118,7 +118,7 @@ In this step you create a YAML configuration file that is customized for your en
         - <agent-private-ip-3>
         - <agent-private-ip-4>
         - <agent-private-ip-5>
-        # Use this bootstrap_url value unless you have moved the DCOS installer assets.   
+        # Use this bootstrap_url value unless you have moved the DC/OS installer assets.   
         bootstrap_url: file:///opt/dcos_install_tmp
         cluster_name: <cluster-name>
         exhibitor_storage_backend: zookeeper
@@ -147,7 +147,7 @@ In this step you create a YAML configuration file that is customized for your en
 
 ## <a name="install-bash"></a>Install DCOS
 
-In this step you create a custom DCOS build file on your bootstrap node and then install DCOS across your cluster nodes with SSH. With this installation method you create a bootstrap server that uses your SSH key and connects to every node to automate the deployment.
+In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS across your cluster nodes with SSH. With this installation method you create a bootstrap server that uses your SSH key and connects to every node to automate the deployment.
 
 You can view all of the automated command line installer options with the `--help` flag:
 
@@ -188,7 +188,7 @@ You can view all of the automated command line installer options with the `--hel
 
 To install DCOS:
 
-1.  From your home directory, run the DCOS installer shell script on your bootstrapping master nodes to generate a customized DCOS build. The setup script extracts a Docker container that uses the generic DCOS install files to create customized DCOS build files for your cluster. The build files are output to `./genconf/serve/`.
+1.  From your home directory, run the DC/OS installer shell script on your bootstrapping master nodes to generate a customized DC/OS build. The setup script extracts a Docker container that uses the generic DC/OS install files to create customized DC/OS build files for your cluster. The build files are output to `./genconf/serve/`.
     
         $ sudo bash dcos_generate_config.ee.sh --genconf
         
@@ -248,7 +248,7 @@ To install DCOS:
     
     **Tip:** For a detailed view, you can append log level debug (`-v`) to your command. For example `sudo bash dcos_generate_config.ee.sh --preflight -v`.
 
-4.  Install DCOS on your cluster.
+4.  Install DC/OS on your cluster.
     
         $ sudo bash dcos_generate_config.ee.sh --deploy
         
@@ -256,7 +256,7 @@ To install DCOS:
     Here is an example of the output.
     
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
-        20:55:00 dcos_installer.action_lib.prettyprint:: ====> EXECUTING DCOS INSTALLATION
+        20:55:00 dcos_installer.action_lib.prettyprint:: ====> EXECUTING DC/OS INSTALLATION
         20:55:00 dcos_installer.action_lib.prettyprint:: ====> START deploy_master
         20:57:04 dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_master
         20:57:04 dcos_installer.action_lib.prettyprint:: ====> STAGE deploy_master_cleanup
@@ -271,7 +271,7 @@ To install DCOS:
         20:59:19 dcos_installer.action_lib.prettyprint:: 1 out of 1 hosts successfully completed deploy_agent stage.
         
 
-5.  Run the DCOS diagnostic script to verify that services are up and running.
+5.  Run the DC/OS diagnostic script to verify that services are up and running.
     
         $ sudo bash dcos_generate_config.ee.sh --postflight
         
@@ -296,9 +296,9 @@ To install DCOS:
     
     <a href="/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
     
-    When the status icons are green, you can access the DCOS web interface.
+    When the status icons are green, you can access the DC/OS web interface.
 
-7.  Launch the DCOS web interface at: `http://<public-master-ip>/`.
+7.  Launch the DC/OS web interface at: `http://<public-master-ip>/`.
 
 8.  Click **Log In To DCOS**.
     
@@ -314,13 +314,13 @@ To install DCOS:
 
 # Next Steps
 
-### Add DCOS users
+### Add DC/OS users
 
-You can assign user roles and grant access to DCOS services. For more information, see the [documentation][4].
+You can assign user roles and grant access to DC/OS services. For more information, see the [documentation][4].
 
 ### Add agent nodes
 
-After DCOS is installed and deployed across your cluster, you can add more agent nodes.
+After DC/OS is installed and deployed across your cluster, you can add more agent nodes.
 
 **Prerequisite:**
 
@@ -334,8 +334,8 @@ After DCOS is installed and deployed across your cluster, you can add more agent
     
     **Important:** You can ignore the errors that are shown. For example, during the `--preflight` you may see this error:
     
-        18:17:14::           Found an existing DCOS installation. To reinstall DCOS on this this machine you must
-        18:17:14::           first uninstall DCOS then run dcos_install.sh. To uninstall DCOS, follow the product
+        18:17:14::           Found an existing DC/OS installation. To reinstall DC/OS on this this machine you must
+        18:17:14::           first uninstall DC/OS then run dcos_install.sh. To uninstall DCOS, follow the product
         18:17:14::           documentation provided with DCOS.
         18:17:14::           
         18:17:14:: 
@@ -348,7 +348,7 @@ After DCOS is installed and deployed across your cluster, you can add more agent
         $ sudo bash dcos_generate_config.sh --uninstall
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
         ====> EXECUTING UNINSTALL
-        This will uninstall DCOS on your cluster. You may need to manually remove /var/lib/zookeeper in some cases after this completes, please see our documentation for details. Are you ABSOLUTELY sure you want to proceed? [ (y)es/(n)o ]: yes
+        This will uninstall DC/OS on your cluster. You may need to manually remove /var/lib/zookeeper in some cases after this completes, please see our documentation for details. Are you ABSOLUTELY sure you want to proceed? [ (y)es/(n)o ]: yes
         ====> START uninstall_dcos
         ====> STAGE uninstall
         ====> STAGE uninstall
