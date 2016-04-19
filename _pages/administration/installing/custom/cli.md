@@ -81,7 +81,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             
             echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
 
-# Configure and Install DCOS
+# Configure and Install DC/OS
 
 In this step you create a customized YAML configuration file and install DC/OS across your cluster using SSH.
 
@@ -145,7 +145,7 @@ In this step you create a YAML configuration file that is customized for your en
         $ cp <path-to-key> genconf/ssh_key && chmod 0600 genconf/ssh_key
         
 
-## <a name="install-bash"></a>Install DCOS
+## <a name="install-bash"></a>Install DC/OS
 
 In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS across your cluster nodes with SSH. With this installation method you create a bootstrap server that uses your SSH key and connects to every node to automate the deployment.
 
@@ -186,7 +186,7 @@ You can view all of the automated command line installer options with the `--hel
 
 **Tip:** If something goes wrong and you want to rerun your setup, use these cluster <a href="/administration/installing/custom/dcos-cleanup-script/" target="_blank">cleanup instructions</a>.
 
-To install DCOS:
+To install DC/OS:
 
 1.  From your home directory, run the DC/OS installer shell script on your bootstrapping master nodes to generate a customized DC/OS build. The setup script extracts a Docker container that uses the generic DC/OS install files to create customized DC/OS build files for your cluster. The build files are output to `./genconf/serve/`.
     
@@ -300,7 +300,7 @@ To install DCOS:
 
 7.  Launch the DC/OS web interface at: `http://<public-master-ip>/`.
 
-8.  Click **Log In To DCOS**.
+8.  Click **Log In To DC/OS**.
     
     <a href="/wp-content/uploads/2016/02/ui-installer-success1.png" rel="attachment wp-att-3198"><img src="/wp-content/uploads/2016/02/ui-installer-success1.png" alt="ui-installer-success1" width="625" height="404" class="alignnone size-full wp-image-3198" /></a>
 
@@ -335,13 +335,13 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
     **Important:** You can ignore the errors that are shown. For example, during the `--preflight` you may see this error:
     
         18:17:14::           Found an existing DC/OS installation. To reinstall DC/OS on this this machine you must
-        18:17:14::           first uninstall DC/OS then run dcos_install.sh. To uninstall DCOS, follow the product
-        18:17:14::           documentation provided with DCOS.
+        18:17:14::           first uninstall DC/OS then run dcos_install.sh. To uninstall DC/OS, follow the product
+        18:17:14::           documentation provided with DC/OS.
         18:17:14::           
         18:17:14:: 
         18:17:14:: ====> 10.10.0.160:22 FAILED
         
-### Uninstalling DCOS
+### Uninstalling DC/OS
 
 1.  From the bootstrap node, enter this command:
 

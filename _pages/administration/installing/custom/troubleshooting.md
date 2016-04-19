@@ -86,7 +86,7 @@ Mesos-DNS is started on the DC/OS master nodes. Mesos-DNS provides service disco
 
 # DC/OS Marathon
 
-DC/OS Marathon is started on the master nodes. The native Marathon instance that is the “init system” for DCOS. It starts and monitors applications and services.
+DC/OS Marathon is started on the master nodes. The native Marathon instance that is the “init system” for DC/OS. It starts and monitors applications and services.
 
 **Troubleshooting:**
 

@@ -50,7 +50,7 @@ For this to work, the metadata for your service must be registered in the Mesosp
 
 ### 04\. Service SHOULD have a simple lowercase service name.
 
-The name of the service is the name provided in Universe. That name should be a simple name without reference to Mesos or DCOS. For example, the HDFS-Mesos framework is listed in the universe as `hdfs`. This name should also be the first level property of the <a href="https://github.com/mesosphere/universe/blob/version-2.x/repo/packages/H/hdfs/0/config.json#L4" target="_blank">config.json</a> file.
+The name of the service is the name provided in Universe. That name should be a simple name without reference to Mesos or DC/OS. For example, the HDFS-Mesos framework is listed in the universe as `hdfs`. This name should also be the first level property of the <a href="https://github.com/mesosphere/universe/blob/version-2.x/repo/packages/H/hdfs/0/config.json#L4" target="_blank">config.json</a> file.
 
 ### 05\. Service package MUST include a Marathon deployment descriptor file.
 

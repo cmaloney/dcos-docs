@@ -12,9 +12,9 @@ hide_from_related: false
 ---
 A **Certified** DC/OS Service:
 
-*   Has been verified by Mesosphere as correctly integrating with DCOS, however it makes no guarantees regarding the production worthiness of the underlying service. 
-*   Has been verified by Mesosphere as meeting best practices for Mesos framework implementation.
-*   Is regularly tested automatically by Mesosphere against all currently supported versions of DCOS.
+-  Has been verified by Mesosphere as correctly integrating with DC/OS, however it makes no guarantees regarding the production worthiness of the underlying service. 
+-  Has been verified by Mesosphere as meeting best practices for Mesos framework implementation.
+-  Is regularly tested automatically by Mesosphere against all currently supported versions of DC/OS.
 
 **Disclaimer** Mesosphere makes no guarantee of the correctness, performance or stability of Certified DC/OS Services. Mesosphere does not provide support for Certified DC/OS Services; It is the responsibility of the Service creator (see requirement 22).
 
@@ -69,7 +69,7 @@ You CAN rely on the local installation of:
 *   Docker
 *   ulimit = infinity
 
-A common situation is the use of Java and the need for a JRE. The JRE is not provided by DCOS. If your Service requires a JRE, you must ship one with your package. The CDN backed url example below shows how to use a JRE with a Java framework.
+A common situation is the use of Java and the need for a JRE.  The JRE is not provided by DC/OS. If your Service requires a JRE, you must ship one with your package. The CDN backed url example below shows how to use a JRE with a Java framework.
 
 Dependencies can be provided via:
 

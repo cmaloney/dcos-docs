@@ -14,7 +14,7 @@ Cassandra is an open source distributed database management system designed to h
 
 For information about how Mesos DNS is implemented for the Cassandra DC/OS service, see the <a href="http://mesosphere.github.io/cassandra-mesos/docs/mesos-dns.html" target="_blank">Cassandra-Mesos documentation</a>.
 
-# <a name="cassandrainstall"></a>Installing Cassandra on DCOS
+# <a name="cassandrainstall"></a>Installing Cassandra on DC/OS
 
 **Prerequisite**
 

@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-Mesos-DNS defines the DNS top-level domain `.mesos` for Mesos tasks that are running on DCOS. Tasks and services are discovered by looking up A and, optionally, SRV records within this Mesos domain.
+Mesos-DNS defines the DNS top-level domain `.mesos` for Mesos tasks that are running on DC/OS. Tasks and services are discovered by looking up A and, optionally, SRV records within this Mesos domain.
 
 # <a name="a-records"></a>A Records
 

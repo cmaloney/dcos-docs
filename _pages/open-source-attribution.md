@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-Below is a list of third party open source software which is provided by Mesosphere in connection with Mesosphere DCOS:
+Below is a list of third party open source software which is provided by Mesosphere in connection with Mesosphere DC/OS:
 
 *   [analytics-python][1]
 *   [CDH5][2]

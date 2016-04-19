@@ -36,7 +36,7 @@ To manage users:
     
     **Disclaimer:** This is an alpha feature and is meant for testing purposes only.
     
-    To provide external user access to DCOS, you can authenticate users that are defined in an LDAP 3 (RFC 4510) registry. You can then provide users with a single sign-on (SSO), granting them access the authorized services in your DC/OS datacenter. You cannot create new LDAP users in DCOS, but they can be imported.
+    To provide external user access to DC/OS, you can authenticate users that are defined in an LDAP 3 (RFC 4510) registry. You can then provide users with a single sign-on (SSO), granting them access the authorized services in your DC/OS datacenter. You cannot create new LDAP users in DC/OS, but they can be imported.
     
     When a user logs in and provides an LDAP user name and password, that information is used to connect to an LDAP server and authenticate a user. If successful, the DC/OS authentication issues a session credential with the user’s distinguished name.
     

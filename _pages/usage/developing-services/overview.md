@@ -13,7 +13,7 @@ hide_from_related: false
 
 # <a name="universe"></a>Package Repositories
 
-The DC/OS Universe contains all services that are installable DCOS. For more information on DC/OS Universe, see the [GitHub Universe repository][1].
+The DC/OS Universe contains all services that are installable DC/OS. For more information on DC/OS Universe, see the [GitHub Universe repository][1].
 
 All services in the package repositories are required to meet a certain standard as defined by Mesosphere. For details on submitting a DC/OS service, see [Contributing a package][3].
 
@@ -66,7 +66,7 @@ Each DC/OS service contains `package.json`, `config.json`, and `marathon.json` f
     
     *   The `"name": "cassandra",` parameter specified here defines the DC/OS service name in the package repository. The must be the first parameter in the file. 
     *   Focus the description on your service. Assume that all users are familiar with DC/OS and Mesos.
-    *   The `tags` parameter is used for user searches (`dcos package search <criteria>`). Add tags that distinguish your service in some way. Avoid the following terms: Mesos, Mesosphere, DCOS, and datacenter. For example, the unicorns service could have:
+    *   The `tags` parameter is used for user searches (`dcos package search <criteria>`). Add tags that distinguish your service in some way. Avoid the following terms: Mesos, Mesosphere, DC/OS, and datacenter. For example, the unicorns service could have:
         
               "tags": ["rainbows", "mythical"]
             
@@ -131,7 +131,7 @@ Here is a detailed developer workflow for creating a DC/OS service:
     3.  Add `package.json`, `config.json`, and `marathon.json` to your index directory.
     4.  If you have a CLI subcommand, create a `command.json` file and add to your index directory.
 
-3.  Test your service on DCOS:
+3.  Test your service on DC/OS:
     
     1.  Configure DC/OS to point to your local repository. For example, if your forked repository at `https://github.com/mesosphere/altuniverse` and using the `version-1.x` branch, add it to your DC/OS configuration with this command:
         

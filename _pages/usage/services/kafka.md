@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 Kafka is a distributed, partitioned, replicated commit log service. It provides the functionality of a messaging system, but with a unique design. The Kafka DC/OS service also has its own CLI as well.
 
-# <a name="kafkainstall"></a>Installing Kafka on DCOS
+# <a name="kafkainstall"></a>Installing Kafka on DC/OS
 
 **Prerequisite**
 

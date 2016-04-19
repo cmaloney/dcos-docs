@@ -77,7 +77,7 @@ hide_from_related: false
 # dcos help
 
     Description:
-        Display help information about DCOS.
+        Display help information about DC/OS.
     
     Usage:
         dcos help
@@ -104,7 +104,7 @@ hide_from_related: false
 # dcos marathon
 
     Description:
-        Deploy and manage applications to DCOS.
+        Deploy and manage applications to DC/OS.
     
     Usage:
         dcos marathon --config-schema
@@ -262,7 +262,7 @@ hide_from_related: false
         log
             Prints the Mesos logs for the leading master node, agent nodes, or both.
         ssh
-            Establish an SSH connection to the master or agent nodes of your DCOS
+            Establish an SSH connection to the master or agent nodes of your DC/OS
             cluster.
     
     Options:
@@ -340,9 +340,9 @@ By default, `dcos node ssh` connects to the private IP of the node, which is onl
         search
             Search the package repository.
         repo add
-            Add a package repository to DCOS.
+            Add a package repository to DC/OS.
         repo remove
-            Remove a package repository from DCOS.
+            Remove a package repository from DC/OS.
         repo list
             Print the package repository sources. Possible sources include a local
             file, HTTPS, and Git.

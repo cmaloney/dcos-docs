@@ -57,7 +57,7 @@ In <a href="https://console.aws.amazon.com/cloudformation/home" target="_blank">
 
 **Troubleshooting:** A ROLLBACK_COMPLETE status means the deployment has failed. See the **Events** tab for useful information about failures. For more information, see the <a href="https://support.mesosphere.com/hc/en-us/articles/205316535-Why-did-my-AWS-cluster-Rollback-" target="_blank">Mesosphere Knowledge Base</a>.
 
-# <a name="launchdcos"></a>Launch DCOS
+# <a name="launchdcos"></a>Launch DC/OS
 
 Launch the DC/OS web interface by entering the Mesos Master hostname:
 
@@ -71,7 +71,7 @@ Launch the DC/OS web interface by entering the Mesos Master hostname:
 
 3.  [Install the DC/OS Command-Line Interface (CLI)][5]. You must install the CLI to administer your DC/OS cluster.
     
-    You also have the option to take a brief tutorial that walks you through the basics of using the Mesosphere DCOS. You can restart this tutorial anytime by clicking the signpost icon in the lower left corner.
+    You also have the option to take a brief tutorial that walks you through the basics of using the Mesosphere DC/OS. You can restart this tutorial anytime by clicking the signpost icon in the lower left corner.
     
     <a href="/wp-content/uploads/2015/12/dashboardsmall.png" rel="attachment wp-att-1120"><img src="/wp-content/uploads/2015/12/dashboardsmall-800x495.png" alt="dashboardsmall" width="800" height="495" class="alignnone size-large wp-image-1120" /></a>
 

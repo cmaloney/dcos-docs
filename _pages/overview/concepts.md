@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-This page contains terms and definitions for the Mesosphere DCOS.
+This page contains terms and definitions for the Mesosphere DC/OS.
 
 ### Admin router
 The admin router runs on the DC/OS master servers to provide a proxy for the admin parts of the cluster.
@@ -19,7 +19,7 @@ The admin router runs on the DC/OS master servers to provide a proxy for the adm
 A Mesos agent node runs a discrete Mesos task on behalf of a framework. It is a agent instance registered with the Mesos master. The synonym of agent node is worker or slave node. See also [private](#private) and [public](#public) agent nodes.
 
 ### Cloud template
-The <a href="/tag/community/">DC/OS Community Edition (CE) cloud templates</a> are optimized to run Mesosphere DCOS. The templates are a JSON-formatted text files that describe the resources and properties.
+The <a href="/tag/community/">DC/OS Community Edition (CE) cloud templates</a> are optimized to run Mesosphere DC/OS. The templates are a JSON-formatted text files that describe the resources and properties.
 
 ### Containerizer
 The <a href="http://mesos.apache.org/documentation/latest/containerizer/">MesosContainerizer</a> provides lightweight containerization and resource isolation of executors using Linux-specific functionality such as cgroups and namespaces.
@@ -27,14 +27,14 @@ The <a href="http://mesos.apache.org/documentation/latest/containerizer/">MesosC
 ### Datacenter operating system
 A new class of operating system that spans all of the machines in a datacenter or cloud and organizes them to act as one big computer.
 
-### DCOS
+### DC/OS
 The abbreviated form of the Mesosphere Datacenter Operating System.
 
 ### DC/OS Cluster
 A group of Mesos master and agent nodes.
 
 ### DC/OS Marathon
-The native Marathon instance that is the “init system” for DCOS. It starts and monitors DC/OS applications and services. 
+The native Marathon instance that is the “init system” for DC/OS. It starts and monitors DC/OS applications and services. 
 
 ### DC/OS service
 DC/OS services are Mesosphere-certified applications that are packaged and available from the public <a href="https://github.com/mesosphere/universe">GitHub package repositories</a>. Available DC/OS services include Mesosphere-certified Mesos frameworks and other applications. A <a href="http://mesos.apache.org/documentation/latest/frameworks/">Mesos framework</a> is the combination of a Mesos scheduler and an optional custom executor.

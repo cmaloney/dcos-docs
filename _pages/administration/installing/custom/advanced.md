@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-With the advanced installer, you package the DCOS distribution yourself and connect to every node manually to run the DCOS installation commands. This installation method is recommended if you don't have SSH access to your cluster or if you want to integrate with an existing system.
+With the advanced installer, you package the DC/OS distribution yourself and connect to every node manually to run the DC/OS installation commands. This installation method is recommended if you don't have SSH access to your cluster or if you want to integrate with an existing system.
 
 This installation method requires:
 
@@ -81,7 +81,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
 
 # <a name="config-json"></a>Configure your cluster
 
-In this step you create a YAML configuration file that is customized for your environment. DCOS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
+In this step you create a YAML configuration file that is customized for your environment. DC/OS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
 
 1.  From the bootstrap node, run this command to create a hashed password for superuser authentication, where `<superuser_password>` is the superuser password. Use the hashed password key for the `superuser_password_hash` parameter in your `config.yaml` file.
     
@@ -125,22 +125,22 @@ In this step you create a YAML configuration file that is customized for your en
         superuser_username: <username>
         
 
-# <a name="install-bash"></a>Install DCOS
+# <a name="install-bash"></a>Install DC/OS
 
-In this step you create a custom DCOS build file on your bootstrap node and then install DCOS onto your cluster. With this method you package the DCOS distribution yourself and connect to every server manually and run the commands.
+In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS onto your cluster. With this method you package the DC/OS distribution yourself and connect to every server manually and run the commands.
 
 **Tip:** If something goes wrong and you want to rerun your setup, use these cluster [cleanup instructions][2].
 
 **Prerequisites**
 
-*   A `genconf/config.yaml` file that is optimized for [manual distribution of DCOS across your nodes][3].
+*   A `genconf/config.yaml` file that is optimized for [manual distribution of DC/OS across your nodes][3].
 *   A `genconf/ip-detect` script.
 
 <!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
 
-<!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh --> To install DCOS:
+<!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh --> To install DC/OS:
 
-1.  From the bootstrap node, run the DCOS installer shell script to generate a customized DCOS build file. The setup script extracts a Docker container that uses the generic DCOS install files to create customized DCOS build files for your cluster. The build files are output to `./genconf/serve/`.
+1.  From the bootstrap node, run the DC/OS installer shell script to generate a customized DC/OS build file. The setup script extracts a Docker container that uses the generic DC/OS install files to create customized DC/OS build files for your cluster. The build files are output to `./genconf/serve/`.
     
     At this point your directory structure should resemble:
     
@@ -151,21 +151,21 @@ In this step you create a custom DCOS build file on your bootstrap node and then
         │   ├── ip-detect
         
 
-2.  Run this command to generate your customized DCOS build file:
+2.  Run this command to generate your customized DC/OS build file:
     
         $ sudo bash dcos_generate_config.ee.sh
         
     
     **Tip:** For the install script to work, you must have created `genconf/config.yaml` and `genconf/ip-detect`.
 
-3.  From your home directory, run this command to host the DCOS install package through an nginx Docker container. For `<your-port>`, specify the port value that is used in the `bootstrap_url`.
+3.  From your home directory, run this command to host the DC/OS install package through an nginx Docker container. For `<your-port>`, specify the port value that is used in the `bootstrap_url`.
     
         $ sudo docker run -d -p <your-port>:80 -v $PWD/genconf/serve:/usr/share/nginx/html:ro nginx
         
 
-4.  Run these commands on each of your master nodes in succession to install DCOS using your custom build file.
+4.  Run these commands on each of your master nodes in succession to install DC/OS using your custom build file.
     
-    **Tip:** Although there is no actual harm to your cluster, DCOS may issue error messages until all of your master nodes are configured.
+    **Tip:** Although there is no actual harm to your cluster, DC/OS may issue error messages until all of your master nodes are configured.
     
     1.  SSH to your master nodes:
         
@@ -177,17 +177,17 @@ In this step you create a custom DCOS build file on your bootstrap node and then
             $ mkdir /tmp/dcos && cd /tmp/dcos
             
     
-    3.  Download the DCOS installer from the nginx Docker container, where `<bootstrap-ip>` and `<your_port>` are specified in `bootstrap_url`:
+    3.  Download the DC/OS installer from the nginx Docker container, where `<bootstrap-ip>` and `<your_port>` are specified in `bootstrap_url`:
         
             $ curl -O http://<bootstrap-ip>:<your_port>/dcos_install.sh
             
     
-    4.  Run this command to install DCOS on your master nodes:
+    4.  Run this command to install DC/OS on your master nodes:
         
             $ sudo bash dcos_install.sh master
             
 
-5.  Run these commands on each of your agent nodes to install DCOS using your custom build file.
+5.  Run these commands on each of your agent nodes to install DC/OS using your custom build file.
     
     1.  SSH to your agent nodes:
         
@@ -199,12 +199,12 @@ In this step you create a custom DCOS build file on your bootstrap node and then
             $ mkdir /tmp/dcos && cd /tmp/dcos
             
     
-    3.  Download the DCOS installer from the nginx Docker container, where `<bootstrap-ip>` and `<your_port>` are specified in `bootstrap_url`:
+    3.  Download the DC/OS installer from the nginx Docker container, where `<bootstrap-ip>` and `<your_port>` are specified in `bootstrap_url`:
         
             $ curl -O http://<bootstrap-ip>:<your_port>/dcos_install.sh
             
     
-    4.  Run this command to install DCOS on your agent nodes. You must designate your agent nodes as [public][4] or [private][5].
+    4.  Run this command to install DC/OS on your agent nodes. You must designate your agent nodes as [public][4] or [private][5].
         
         *   Private agent nodes:
         <pre>$ sudo bash dcos_install.sh slave</pre>
@@ -219,11 +219,11 @@ In this step you create a custom DCOS build file on your bootstrap node and then
     
     <a href="/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
     
-    When the status icons are green, you can access the DCOS web interface.
+    When the status icons are green, you can access the DC/OS web interface.
 
-7.  Launch the DCOS web interface at: `http://<master-node-public-ip>/`.
+7.  Launch the DC/OS web interface at: `http://<master-node-public-ip>/`.
 
-8.  Click **Log In To DCOS**.
+8.  Click **Log In To DC/OS**.
     
     <a href="/wp-content/uploads/2016/02/ui-installer-success1.png" rel="attachment wp-att-3198"><img src="/wp-content/uploads/2016/02/ui-installer-success1.png" alt="ui-installer-success1" width="625" height="404" class="alignnone size-full wp-image-3198" /></a>
 
@@ -239,7 +239,7 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 
 Now you can [assign user roles][6].
 
-### Uninstalling DCOS
+### Uninstalling DC/OS
 
 1.  Enter this command on each cluster node.
     

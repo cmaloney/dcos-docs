@@ -54,7 +54,7 @@ Prerequisite
             $ dcos config set marathon.url http://<hostname>/service/marathon-alice/
             
     
-    2.  Verify that the the `marathon.url` is set. The `marathon.url` takes precedence over the native Marathon in DCOS.
+    2.  Verify that the the `marathon.url` is set. The `marathon.url` takes precedence over the native Marathon in DC/OS.
         
             $ dcos config show
             core.dcos_url=http://nodel-elasticl-1xyz-1940784093.us-west-2.elb.amazonaws.com

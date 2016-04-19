@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-In this tutorial a Spark job is run by using DCOS.
+In this tutorial a Spark job is run by using DC/OS.
 
 **Prerequisites:**
 

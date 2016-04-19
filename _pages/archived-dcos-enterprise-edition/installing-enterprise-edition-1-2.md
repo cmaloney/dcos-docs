@@ -10,12 +10,12 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-This topic provides instructions for installing <span class="caps">DCOS</span> in your environment by using a customized Bash install script.
+This topic provides instructions for installing <span class="caps">DC/OS</span> in your environment by using a customized Bash install script.
 
-The <span class="caps">DCOS</span> installation creates these folders:
+The <span class="caps">DC/OS</span> installation creates these folders:
 
 *   `/opt/mesosphere`
-    :   Contains all the <span class="caps">DCOS</span> binaries, libraries, cluster configuration. Do not modify.
+    :   Contains all the <span class="caps">DC/OS</span> binaries, libraries, cluster configuration. Do not modify.
 
 *   `/etc/systemd/system/dcos.target.wants`
     :   Contains the systemd services which start the things that make up systemd. They must live outside of `/opt/mesosphere` because of systemd constraints.

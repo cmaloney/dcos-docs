@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 Spark is a fast, general-purpose cluster computing system that makes parallel jobs easy to write.
 
-# <a name="sparkinstall"></a>Installing Spark on DCOS
+# <a name="sparkinstall"></a>Installing Spark on DC/OS
 
 **Prerequisites:**
 

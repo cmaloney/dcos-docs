@@ -1,6 +1,6 @@
 ---
 UID: 570461981caca
-post_title: What is DCOS?
+post_title: What is DC/OS?
 post_excerpt: ""
 layout: page
 published: true
@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The Datacenter Operating System (DCOS) is a distributed operating system based on the <a href="https://mesosphere.com/why-mesos/" target="_blank">Apache Mesos</a> distributed systems kernel. It integrates several battle-tested [open-source components][1] to enable the management of multiple machines as if they were a single computer. The combination of scalability, availability, efficiency, flexibility, and usability makes DC/OS the best way to build, deploy, and manage modern applications.
+The Datacenter Operating System (DC/OS) is a distributed operating system based on the <a href="https://mesosphere.com/why-mesos/" target="_blank">Apache Mesos</a> distributed systems kernel. It integrates several battle-tested [open-source components][1] to enable the management of multiple machines as if they were a single computer. The combination of scalability, availability, efficiency, flexibility, and usability makes DC/OS the best way to build, deploy, and manage modern applications.
 
 ## Scalability
 

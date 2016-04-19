@@ -192,7 +192,7 @@ This required parameters specifies a YAML-formatted nested series (`-`) of DNS r
     resolvers: - 8.8.8.8 - 8.8.4.4
     
 
-*Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
+*Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
 
 ## <a name="roles"></a>roles
 

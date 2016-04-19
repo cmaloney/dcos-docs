@@ -86,7 +86,7 @@ To create an advanced ACL group:
     
     Since you can have multiple Marathons installed in your cluster, you can define rules for every service separately.
     The `service name` must be RFC 3986 (URI) compliant. 
-    The DCOS ACS is responsible for enforcing this. 
+    The DC/OS ACS is responsible for enforcing this. 
     The service name is passed to Marathon via the  `--framework_name` command line argument. 
     
     The `group id` is the ID of the group in Marathon.

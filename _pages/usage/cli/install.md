@@ -63,7 +63,7 @@ The easiest way to install the DC/OS CLI is by clicking the signpost icon in the
     You can now use the CLI.
     
         Command line utility for the Mesosphere Datacenter Operating 
-        System (DCOS). The Mesosphere DC/OS is a distributed operating 
+        System (DC/OS). The Mesosphere DC/OS is a distributed operating 
         system built around Apache Mesos. This utility provides tools 
         for easy management of a DC/OS installation.
         
@@ -217,7 +217,7 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
     You can now use the CLI.
     
         Command line utility for the Mesosphere Datacenter Operating 
-        System (DCOS). The Mesosphere DC/OS is a distributed operating 
+        System (DC/OS). The Mesosphere DC/OS is a distributed operating 
         system built around Apache Mesos. This utility provides tools 
         for easy management of a DC/OS installation.
         

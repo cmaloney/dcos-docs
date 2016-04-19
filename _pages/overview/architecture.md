@@ -30,7 +30,7 @@ Mesos DNS provides service discovery within the cluster. Mesos DNS allows applic
 
 ### DC/OS Marathon
 
-The native Marathon instance that is the “init system” for DCOS. It starts and monitors DC/OS applications and services.
+The native Marathon instance that is the “init system” for DC/OS. It starts and monitors DC/OS applications and services.
 
 ### ZooKeeper
 

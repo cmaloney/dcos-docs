@@ -10,4 +10,4 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: true
 ---
-You can access installation instructions for past versions of DCOS.
+You can access installation instructions for past versions of DC/OS.

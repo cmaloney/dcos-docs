@@ -14,7 +14,7 @@ You can make external calls to HTTP API endpoints in your DC/OS cluster.
 
 You must first obtain an authentication token and then include it in your HTTP request. 
 
-By default authentication tokens expire after 5 days. You can view the expiration time in the ["exp" (Expiration Time) Claim](https://tools.ietf.org/html/rfc7519#section-4.1.4) of the JSON Web Token (JWT). You can refresh your JWT by re-logging in to DCOS.
+By default authentication tokens expire after 5 days. You can view the expiration time in the ["exp" (Expiration Time) Claim](https://tools.ietf.org/html/rfc7519#section-4.1.4) of the JSON Web Token (JWT). You can refresh your JWT by re-logging in to DC/OS.
 
 # Generate the authentication token
 

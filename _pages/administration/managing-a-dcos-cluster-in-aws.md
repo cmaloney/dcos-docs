@@ -26,7 +26,7 @@ To find your your public node IP:
 
 # Scaling an AWS cluster
 
-The DC/OS AWS CloudFormation template is optimized to run the DCOS, but you might want to change the number of agent nodes based on your needs.
+The DC/OS AWS CloudFormation template is optimized to run the DC/OS, but you might want to change the number of agent nodes based on your needs.
 
 **Important:** Scaling down your AWS cluster could result in data loss. It is recommended that you scale down by 1 node at a time, letting the DC/OS service recover. For example, if you are running a DC/OS service and you scale down from 10 to 5 nodes, this could result in losing all Mesos name nodes or journals at once, taking your entire cluster down.
 

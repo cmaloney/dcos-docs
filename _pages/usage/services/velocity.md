@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 # Overview
 
-[Mesosphere Velocity][1] helps organizations accelerate application delivery by lowering the barriers to continuous integration and continuous delivery (CI/CD) for modern and traditional applications. Building upon capabilities in Mesosphere DCOS, and with Jenkins at its core, Velocity provides scalable and reliable infrastructure for application lifecycle management. Velocity’s tight integration with Marathon provides an end-to-end solution that automates the full application lifecycle, including building, testing and deploying applications in production.
+[Mesosphere Velocity][1] helps organizations accelerate application delivery by lowering the barriers to continuous integration and continuous delivery (CI/CD) for modern and traditional applications. Building upon capabilities in Mesosphere DC/OS, and with Jenkins at its core, Velocity provides scalable and reliable infrastructure for application lifecycle management. Velocity’s tight integration with Marathon provides an end-to-end solution that automates the full application lifecycle, including building, testing and deploying applications in production.
 
 Velocity allows you to scale your CI/CD infrastructure by dynamically creating and destroying build agents as demand increases or decreases and enables you to avoid the statically partitioned infrastructure typical of other standalone Jenkins clusters. You may also run multiple instances of Velocity on a single DC/OS cluster, allowing multiple teams to use a single pool of resources, improving the efficiency of your CI/CD infrastructure.
 
@@ -20,7 +20,7 @@ To deploy Velocity, you must provide a mount point to a shared file system on ea
 
 # Installation
 
-Velocity is distributed as a Docker image. In order to download and install Velocity, you will first need to contact [Mesosphere Sales][2]. The Sales or Support team will give you a link to the Docker image and a link to the Velocity package repository for DCOS. There are two supported methods for running Velocity on your DC/OS cluster:
+Velocity is distributed as a Docker image. In order to download and install Velocity, you will first need to contact [Mesosphere Sales][2]. The Sales or Support team will give you a link to the Docker image and a link to the Velocity package repository for DC/OS. There are two supported methods for running Velocity on your DC/OS cluster:
 
 *   *With a private Docker registry.* If you wish to use a private Docker registry, we will give you a URL to the Velocity Docker image, which you can load into your registry. More information about loading Docker images into a registry is available at [docs.docker.com][3].
 *   *Using the public Docker Hub.* You can also pull the image from the Mesosphere organization hosted on [hub.docker.com][4]. You must provide Mesosphere Support with the Docker account that you wish to use to authenticate with Docker Hub (via `docker login`). More information is available at [docs.docker.com][5].
@@ -61,7 +61,7 @@ You can run multiple Velocity installations on the same cluster by choosing a un
 
 ## Running Velocity
 
-The first time Velocity runs, it populates the directory on your NFS share with a basic Jenkins configuration and a pre-selected set of plugins. If Marathon needs to restart the task on a different host, the container automatically mounts your existing data directory, including job configurations, build history, and installed plugins. For future versions of DCOS, we are planning to add support for other distributed file systems and leverage the external persistent volume support coming soon to DCOS.
+The first time Velocity runs, it populates the directory on your NFS share with a basic Jenkins configuration and a pre-selected set of plugins. If Marathon needs to restart the task on a different host, the container automatically mounts your existing data directory, including job configurations, build history, and installed plugins. For future versions of DC/OS, we are planning to add support for other distributed file systems and leverage the external persistent volume support coming soon to DC/OS.
 
 1.  Verify that Velocity is installed and healthy.
     

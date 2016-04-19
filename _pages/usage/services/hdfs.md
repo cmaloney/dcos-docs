@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 HDFS can be used to store and distribute data across your entire Mesosphere DC/OS cluster.
 
-# <a name="hdfsinstall"></a>Installing HDFS on DCOS
+# <a name="hdfsinstall"></a>Installing HDFS on DC/OS
 
 **Prerequisites**
 
@@ -96,7 +96,7 @@ HDFS can be used to store and distribute data across your entire Mesosphere DC/O
     
     2.  [SSH to your agent node][2].
     
-    3.  Navigate to your data directory in the agent node. In DCOS, the default location for HDFS data directories is `/var/lib/hdfs`.
+    3.  Navigate to your data directory in the agent node. In DC/OS, the default location for HDFS data directories is `/var/lib/hdfs`.
         
             $ cd /var/lib
             

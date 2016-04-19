@@ -22,7 +22,7 @@ To use the automated GUI installation method:
 *   Cluster nodes must have SSH enabled and ports open from the bootstrap node
 *   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH
 
-# Install DCOS
+# Install DC/OS
 
 **Important:** Encrypted SSH keys are not supported.
 
@@ -74,10 +74,10 @@ To use the automated GUI installation method:
     ### DC/OS Environment Settings
     
     **Username**
-    :   Specify the administrator username. This username is required for using DCOS.
+    :   Specify the administrator username. This username is required for using DC/OS.
     
     **Password**
-    :   Specify the administrator password. This password is required for using DCOS.
+    :   Specify the administrator password. This password is required for using DC/OS.
     
     **ZooKeeper for Exhibitor Private IP**
     
@@ -92,7 +92,7 @@ To use the automated GUI installation method:
     
     :   Specify a comma-separated list of DNS resolvers for your DC/OS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`).
         
-        *Caution:* If you set this parameter incorrectly you will have to reinstall DCOS. For more information about service discovery, see this [documentation][1].
+        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][1].
     
     **IP Detect Script**
     
@@ -102,7 +102,7 @@ To use the automated GUI installation method:
 
 5.  Click **Run Pre-Flight**. The preflight script installs the cluster [prerequisites][2] and validates that your cluster is installable. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
-    **Important:** If you exit your GUI installation before launching DCOS, you must do this before reinstalling:
+    **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
     
     *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
     *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
@@ -121,7 +121,7 @@ To use the automated GUI installation method:
     
     **Tip:** You can click **Download Logs** to view your logs locally.
 
-8.  Click **Log In To DCOS**.
+8.  Click **Log In To DC/OS**.
     
     <a href="/wp-content/uploads/2016/02/ui-installer-success1.png" rel="attachment wp-att-3198"><img src="/wp-content/uploads/2016/02/ui-installer-success1.png" alt="ui-installer-success1" width="625" height="404" class="alignnone size-full wp-image-3198" /></a>
 
@@ -137,7 +137,7 @@ To use the automated GUI installation method:
 
 Now you can [assign user roles][3].
 
-### Uninstalling DCOS
+### Uninstalling DC/OS
 
 1.  From the bootstrap node, enter this command:
 

@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: true
 ---
-The release notes provide a list of useful topics and links for Mesosphere DCOS.
+The release notes provide a list of useful topics and links for Mesosphere DC/OS.
 
 # DC/OS Access Control Service
 
@@ -19,7 +19,7 @@ You can now enable authorization and authentication in your datacenter.
 *   Provides an HTTP API for managing users, groups, and access control lists.
 *   Provides an interface for authentication and authorization.
 *   Uses a highly available persistence layer.
-*   Provides a login endpoint that allows for authentication against a DCOS-internal set of users or against a remote directory service via LDAP 3 (RFC 4510).
+*   Provides a login endpoint that allows for authentication against a DC/OS-internal set of users or against a remote directory service via LDAP 3 (RFC 4510).
 
 For more information, see the [documentation][1].
 
@@ -38,7 +38,7 @@ New automated DC/OS installer that includes a GUI or command line invocation.
 
 **New Configuration Parameters**
 
-*   `superuser_username` and `superuser_password_hash` are new configuration parameters for authentication to the DCOS. For more information, see the [documentation][4].
+*   `superuser_username` and `superuser_password_hash` are new configuration parameters for authentication to the DC/OS. For more information, see the [documentation][4].
 
 # DC/OS Web Interface
 

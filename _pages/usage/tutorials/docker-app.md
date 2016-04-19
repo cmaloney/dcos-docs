@@ -15,7 +15,7 @@ hide_from_related: false
 In this tutorial, a custom Marathon app that includes a Docker image is created and added to Marathon.
 
 ### Prerequisites
-*   [DCOS][3] installed with at least one [public node](/overview/concepts/#public).
+*   [DC/OS][3] installed with at least one [public node](/overview/concepts/#public).
 *   [DC/OS CLI][4] installed.
 
 # Create a custom Docker container

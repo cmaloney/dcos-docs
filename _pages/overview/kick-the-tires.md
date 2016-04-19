@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 If you've read through the other [overview][1] topics and you want some hands-on experience, the next step is to spin up a DC/OS cluster for yourself.
 
-# Install DCOS
+# Install DC/OS
 
 The best way to try out DC/OS is to [install the Community Edition][2] on your favorite cloud provider.
 

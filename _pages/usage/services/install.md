@@ -14,7 +14,7 @@ You can install datacenter application packages directly from the DC/OS package 
 
 **Prerequisite:**
 
-*   [DCOS][2] installed
+*   [DC/OS][2] installed
 *   [DC/OS CLI][3] installed
 
 To install a DC/OS service:

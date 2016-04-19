@@ -16,11 +16,11 @@ Crate is a distributed NoSQL database that you can use to query and compute data
 
 The Crate DC/OS service is <a href="https://crate.io/docs/support/" target="_blank">supported</a> by a Crate Technology Gmbh.
 
-*   [Installing Crate on DCOS][1]
+*   [Installing Crate on DC/OS][1]
 *   [Usage Examples][2]
 *   [Uninstalling Crate][3]
 
-## <a name="install"></a>Installing Crate on DCOS
+## <a name="install"></a>Installing Crate on DC/OS
 
 Prerequisite
 :   The DC/OS CLI must be [installed][4].

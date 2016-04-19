@@ -1,6 +1,6 @@
 ---
 UID: 56f9844662592
-post_title: 'Step 2: Configure and install DCOS'
+post_title: 'Step 2: Configure and install DC/OS'
 post_excerpt: ""
 layout: page
 published: true
@@ -30,7 +30,7 @@ Choose your DC/OS installation method:
 
 # <a name="ssh"></a>Using SSH to distribute DC/OS across your nodes
 
-**Prerequisite:** If your SSH key has a passphrase, you must decrypt your SSH key before installing DCOS. For information on how to decrypt your SSH key, see [these instructions][3].
+**Prerequisite:** If your SSH key has a passphrase, you must decrypt your SSH key before installing DC/OS. For information on how to decrypt your SSH key, see [these instructions][3].
 
 ### <a name="config-json"></a>4\.1 Configure your cluster
 
@@ -106,7 +106,7 @@ In this step you create a YAML configuration file that is customized for your en
     
     :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
         
-        *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
+        *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
     
     **log_directory**
     
@@ -133,7 +133,7 @@ In this step you create a YAML configuration file that is customized for your en
         $ cp <path-to-key> genconf/ssh_key && chmod 0600 genconf/ssh_key
         
 
-### <a name="install-bash"></a>4\.2 Install DCOS
+### <a name="install-bash"></a>4\.2 Install DC/OS
 
 In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS onto your cluster. With this installation method you create a bootstrap server that uses your SSH key and connects to every node to automate the deployment.
 
@@ -148,7 +148,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
 
 <!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh -->
 
-To install DCOS:
+To install DC/OS:
 
 1.  Download and save the DC/OS setup file, `dcos_generate_config.sh`, to the home directory on your bootstrap node. This file is used to create your customized DC/OS build file.
     
@@ -201,8 +201,8 @@ To install DCOS:
         Running preflight checks
         Creating directories under /etc/mesosphere
         Creating role file for master
-        Configuring DCOS
-        Setting and starting DCOS
+        Configuring DC/OS
+        Setting and starting DC/OS
         
         Cleaning up temp directory /opt/dcos_install_tmp
         
@@ -277,13 +277,13 @@ In this step you create a YAML configuration file that is customized for your en
     
     :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
         
-        *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
+        *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
     
     For more configuration examples and all available options, see the [configuration file options][4].
 
 2.  Save as `genconf/config.yaml`.
 
-## <a name="install-bash"></a>4\.2 Install DCOS
+## <a name="install-bash"></a>4\.2 Install DC/OS
 
 In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS onto your cluster. With this method you package the DC/OS distribution yourself and connect to every server manually and run the commands.
 
@@ -302,7 +302,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
 
 <!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
 
-<!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh --> To install DCOS:
+<!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh --> To install DC/OS:
 
 1.  Download and save the DC/OS setup file, `dcos_generate_config.sh`, to the root directory on your bootstrap node. This file is used to create your customized DC/OS build file.
     

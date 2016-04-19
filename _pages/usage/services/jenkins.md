@@ -14,9 +14,9 @@ Jenkins is a continuous integration and continuous delivery application. You can
 
 Jenkins on DC/OS allows you to scale your Jenkins cluster by dynamically creating and destroying Jenkins agents as demand increases or decreases and enables you to avoid the statically partitioned infrastructure typical of other Jenkins clusters.
 
-To use Jenkins on DCOS, you must provide a mount point to a shared file system on each of your DC/OS agents. There are a number of existing shared file system solutions, including NFS, HDFS (plus its NFS gateway), Ceph and more. The following instructions use NFS as the example.
+To use Jenkins on DC/OS, you must provide a mount point to a shared file system on each of your DC/OS agents. There are a number of existing shared file system solutions, including NFS, HDFS (plus its NFS gateway), Ceph and more. The following instructions use NFS as the example.
 
-## Installing Jenkins on DCOS
+## Installing Jenkins on DC/OS
 
 #### Prerequisites
 
@@ -43,7 +43,7 @@ To use Jenkins on DCOS, you must provide a mount point to a shared file system o
         $ dcos package install jenkins --options=options.json
         
     
-    The first time Jenkins runs, it populates the directory on your NFS share with a basic Jenkins configuration and a small set of plugins. If Marathon needs to restart the task on a different host, the container automatically mounts your existing data directory, including job configurations, build history and installed plugins. For future versions of DCOS, we are planning add support for other distributed file systems and leverage the persistence primitives available in recent versions of Mesos.
+    The first time Jenkins runs, it populates the directory on your NFS share with a basic Jenkins configuration and a small set of plugins. If Marathon needs to restart the task on a different host, the container automatically mounts your existing data directory, including job configurations, build history and installed plugins. For future versions of DC/OS, we are planning add support for other distributed file systems and leverage the persistence primitives available in recent versions of Mesos.
 
 3.  Verify that Jenkins is installed and healthy.
     
@@ -56,7 +56,7 @@ To use Jenkins on DCOS, you must provide a mount point to a shared file system o
 
 4.  Open a browser and navigate to the Jenkins web interface at `http://<hostname>/service/jenkins`.
 
-## Uninstalling Jenkins on DCOS
+## Uninstalling Jenkins on DC/OS
 
 1.  From the DC/OS CLI, uninstall Jenkins:
     

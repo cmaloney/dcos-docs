@@ -10,13 +10,13 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The DC/OS uses Marathon to manage the processes and services and is the "init system" for the DCOS. Marathon starts and monitors your applications and services, automatically healing failures.
+The DC/OS uses Marathon to manage the processes and services and is the "init system" for the DC/OS. Marathon starts and monitors your applications and services, automatically healing failures.
 
 A native Marathon instance is installed as a part of the DC/OS installation. After DC/OS has been started, you can manage the native Marathon instance through the web interface at `<hostname>/marathon` or from the DC/OS CLI with the `dcos marathon` command.
 
 You can create additional Marathon instances for specific users by using the instructions below.
 
-# <a name="install"></a>Installing a Marathon instance on DCOS
+# <a name="install"></a>Installing a Marathon instance on DC/OS
 
 **Prerequisite**
 
