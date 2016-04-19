@@ -11,7 +11,10 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6e3dcd827ccf509ccdb4f2c10dd408bbb7aacdf5
 The framework cleaner docker image, `mesosphere/janitor`, uses cluster-internal endpoints for interacting with DCOS services, avoiding the need to authenticate itself.
 
 # Run the Script
