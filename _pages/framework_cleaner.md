@@ -35,15 +35,11 @@ Connect to the leader and start the script:
 
 1. Open an SSH session to the cluster leader.
 
-```
-your-machine$ dcos node ssh --master-proxy --leader
-```
+    your-machine$ dcos node ssh --master-proxy --leader
 
 1. Run the `mesosphere/janitor` image with the role, principal, and zookeeper nodes that were configured for your service:
 
-```
-leader$ docker run mesosphere/janitor /janitor.py -r sample-role -p sample-principal -z sample-zk
-```
+    leader$ docker run mesosphere/janitor /janitor.py -r sample-role -p sample-principal -z sample-zk
 
 # Run from Marathon
 
@@ -85,44 +81,40 @@ To view the script's outcome, go to Mesos (http://your-cluster.com/mesos) and lo
 
 Here's an example of the output for a successful run for a Cassandra installation:
 
-```
 your-machine$ dcos node ssh --master-proxy --leader
 
-leader-node$ docker run mesosphere/janitor /janitor.py -r cassandra_role -p cassandra_principal -z cassandra
-[... docker download ...]
-Master: http://leader.mesos:5050/master/ Exhibitor: http://leader.mesos:8181/ Role: cassandra_role Principal: cassandra_principal ZK Path: cassandra
-
-Destroying volumes...
-Mesos version: 0.28.1 => 28
-Found 1 volume(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S5, deleting...
-200 
-Found 1 volume(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S4, deleting...
-200 
-No reserved resources for any role on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S3
-No reserved resources for any role on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S2
-Found 1 volume(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S1, deleting...
-200 
-No reserved resources for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S0. Known roles are: [slave_public]
-
-Unreserving resources...
-Found 4 resource(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S5, deleting...
-200 
-Found 4 resource(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S4, deleting...
-200 
-No reserved resources for any role on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S3
-No reserved resources for any role on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S2
-Found 4 resource(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S1, deleting...
-200 
-No reserved resources for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S0. Known roles are: [slave_public]
-
-Deleting zk node...
-Successfully deleted znode 'cassandra' (code=200), if znode existed.
-Cleanup completed successfully.
-```
+    leader-node$ docker run mesosphere/janitor /janitor.py -r cassandra_role -p cassandra_principal -z cassandra
+    [... docker download ...]
+    Master: http://leader.mesos:5050/master/ Exhibitor: http://leader.mesos:8181/ Role: cassandra_role Principal: cassandra_principal ZK Path: cassandra
+    
+    Destroying volumes...
+    Mesos version: 0.28.1 => 28
+    Found 1 volume(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S5, deleting...
+    200 
+    Found 1 volume(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S4, deleting...
+    200 
+    No reserved resources for any role on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S3
+    No reserved resources for any role on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S2
+    Found 1 volume(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S1, deleting...
+    200 
+    No reserved resources for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S0. Known roles are: [slave_public]
+    
+    Unreserving resources...
+    Found 4 resource(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S5, deleting...
+    200 
+    Found 4 resource(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S4, deleting...
+    200 
+    No reserved resources for any role on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S3
+    No reserved resources for any role on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S2
+    Found 4 resource(s) for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S1, deleting...
+    200 
+    No reserved resources for role 'cassandra_role' on slave 3ce447e3-2894-4c61-bd0f-be97e4d99ee9-S0. Known roles are: [slave_public]
+    
+    Deleting zk node...
+    Successfully deleted znode 'cassandra' (code=200), if znode existed.
+    Cleanup completed successfully.
 
 If you run the script via Marathon, you will also see the following output:
 
-```
-Deleting self from Marathon to avoid run loop: /janitor
-Successfully deleted self from marathon (code=200): /janitor
-```
+    Deleting self from Marathon to avoid run loop: /janitor
+    Successfully deleted self from marathon (code=200): /janitor
