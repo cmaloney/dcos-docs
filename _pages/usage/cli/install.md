@@ -45,7 +45,7 @@ The easiest way to install the DCOS CLI is by clicking the signpost icon in the 
 
 3.  Download the DCOS CLI install script to your new directory:
     
-        $ curl -O https://downloads.mesosphere.io/dcos-cli/install.sh
+        $ curl -O https://downloads.dcos.io/dcos-cli/install.sh
         
 
 4.  Run the DCOS CLI install script, where `<installdir>` is the DCOS installation directory and `<hosturl>` is the hostname of your master node prefixed with `http://`:
@@ -171,7 +171,7 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
     
     If you are running Windows 10, or if you are running an earlier version of Windows and have manually installed the `wget` software package, you can alternatively download the Powershell script directly from within Powershell:
     
-        PS C:\dcos\> wget https://downloads.mesosphere.io/dcos-cli/install.ps1 -OutFile install.ps1
+        PS C:\dcos\> wget https://downloads.dcos.io/dcos-cli/install.ps1 -OutFile install.ps1
         
 
 4.  Change the default security policy of your Powershell to allow the install script to run:
@@ -236,4 +236,4 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
  [1]: #linux
  [2]: #windows
  [3]: http://git-scm.com/download/mac
- [4]: https://downloads.mesosphere.io/dcos-cli/install.ps1
+ [4]: https://downloads.dcos.io/dcos-cli/install.ps1
