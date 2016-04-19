@@ -144,9 +144,9 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 *   A `genconf/config.yaml` file that is optimized for automatic distribution of DCOS across your nodes with SSH.
 *   A `genconf/ip-detect` script.
 
-<!-- Early access URL: https://downloads.mesosphere.com/dcos/EarlyAccess/dcos_generate_config.sh -->
+<!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
 
-<!-- Stable URL: https://downloads.mesosphere.com/dcos/stable/dcos_generate_config.sh -->
+<!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh -->
 
 To install DCOS:
 
@@ -300,9 +300,9 @@ In this step you create a custom DCOS build file on your bootstrap node and then
     
     For more information, see <a href="https://hub.docker.com/_/nginx/" target="_blank">DockerHub nginx</a> documentation.
 
-<!-- Early access URL: https://downloads.mesosphere.com/dcos/EarlyAccess/dcos_generate_config.sh -->
+<!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
 
-<!-- Stable URL: https://downloads.mesosphere.com/dcos/stable/dcos_generate_config.sh --> To install DCOS:
+<!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh --> To install DCOS:
 
 1.  Download and save the DCOS setup file, `dcos_generate_config.sh`, to the root directory on your bootstrap node. This file is used to create your customized DCOS build file.
     

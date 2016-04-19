@@ -35,6 +35,6 @@ You can downgrade an existing DCOS CLI installation to an older version.
 2.  Install the legacy version of the DCOS CLI, where <public-master-ip> is the public IP of your master node:
     
         mkdir -p dcos && cd dcos && 
-          curl -O https://downloads.mesosphere.com/dcos-cli/install-legacy.sh && 
+          curl -O https://downloads.dcos.io/dcos-cli/install-legacy.sh && 
           bash ./install-legacy.sh . <public-master-ip> && 
           source ./bin/env-setup

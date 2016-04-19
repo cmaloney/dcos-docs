@@ -136,9 +136,9 @@ In this step you create a custom DCOS build file on your bootstrap node and then
 *   A `genconf/config.yaml` file that is optimized for [manual distribution of DCOS across your nodes][3].
 *   A `genconf/ip-detect` script.
 
-<!-- Early access URL: https://downloads.mesosphere.com/dcos/EarlyAccess/dcos_generate_config.sh -->
+<!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
 
-<!-- Stable URL: https://downloads.mesosphere.com/dcos/stable/dcos_generate_config.sh --> To install DCOS:
+<!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh --> To install DCOS:
 
 1.  From the bootstrap node, run the DCOS installer shell script to generate a customized DCOS build file. The setup script extracts a Docker container that uses the generic DCOS install files to create customized DCOS build files for your cluster. The build files are output to `./genconf/serve/`.
     

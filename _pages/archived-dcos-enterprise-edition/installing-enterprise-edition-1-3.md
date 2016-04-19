@@ -230,9 +230,9 @@ In this step you create a custom DCOS build file on your workstation and then in
 
 **Tip:** If something goes wrong and you need to rerun your setup, use these cluster cleanup instructions.
 
-<!-- Early access URL: https://downloads.mesosphere.com/dcos/EarlyAccess/dcos_generate_config.sh -->
+<!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
 
-<!-- Stable URL: https://downloads.mesosphere.com/dcos/stable/dcos_generate_config.sh -->
+<!-- Stable URL: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh -->
 
 1.  Download and save the DCOS setup file, `dcos_generate_config.sh`, to the `dcos` directory on your workstation. This file is used to create your customized DCOS build file.
     
