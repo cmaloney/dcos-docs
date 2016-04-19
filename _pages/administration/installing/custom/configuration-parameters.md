@@ -148,6 +148,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
     bootstrap_url: file:///tmp/dcos
     cluster_name: s3-example
     exhibitor_storage_backend: aws_s3
+    exhibitor_explicit_keys: 'true'
     log_directory: /genconf/logs
     master_discovery: static
     master_list:
