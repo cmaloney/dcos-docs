@@ -17,17 +17,17 @@ There are two ways to run the framework cleaner script. The preferred method is 
 # Configuration
 
 The script takes the following flags:
-- `-r`: The role of the resources to be deleted
-- `-p`: The principal of the resources to be deleted
-- `-z`: The configuration zookeeper node to be deleted
+* `-r`: The role of the resources to be deleted
+* `-p`: The principal of the resources to be deleted
+* `-z`: The configuration zookeeper node to be deleted
 
 These are some examples of default configurations (these will vary depending on selected task name, etc):
-    - Cassandra:
-            - Default: `-r cassandra_role -p cassandra_principal -z cassandra`
-            - Custom name: `-r <name>_role -p <name>_principal -z <name>`
-    - Kafka:
-            - Default: `-r kafka-role -p kafka-principal -z kafka`
-            - Custom name: `-r <name>-role -p <name>-principal -z <name>`
+* Cassandra:
+    * Default: `-r cassandra_role -p cassandra_principal -z cassandra`
+    * Custom name: `-r <name>_role -p <name>_principal -z <name>`
+* Kafka:
+    * Default: `-r kafka-role -p kafka-principal -z kafka`
+    * Custom name: `-r <name>-role -p <name>-principal -z <name>`
 
 # Run from the DC/OS CLI
 
