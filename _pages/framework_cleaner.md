@@ -23,11 +23,11 @@ The script takes the following flags:
 
 These are some examples of default configurations (these will vary depending on selected task name, etc):
     - Cassandra:
-      - Default: `-r cassandra_role -p cassandra_principal -z cassandra`
-      - Custom name: `-r <name>_role -p <name>_principal -z <name>`
+        - Default: `-r cassandra_role -p cassandra_principal -z cassandra`
+        - Custom name: `-r <name>_role -p <name>_principal -z <name>`
     - Kafka:
-      - Default: `-r kafka-role -p kafka-principal -z kafka`
-      - Custom name: `-r <name>-role -p <name>-principal -z <name>`
+        - Default: `-r kafka-role -p kafka-principal -z kafka`
+        - Custom name: `-r <name>-role -p <name>-principal -z <name>`
 
 # Run from the DC/OS CLI
 
@@ -43,7 +43,7 @@ Connect to the leader and start the script:
 
 # Run from Marathon
 
-Enter the following as a marathon task (JSON Mode enabled). Replace the values passed to `-r`/`-p`/`-z` according to what needs to be cleaned up.
+From the Marathon web interface, use the JSON editor to add the following as a Marathon task. Replace the values passed to `-r`/`-p`/`-z` according to what needs to be cleaned up.
 
     {
       "id": "janitor",
@@ -81,7 +81,7 @@ To view the script's outcome, go to Mesos (http://your-cluster.com/mesos) and lo
 
 Here's an example of the output for a successful run for a Cassandra installation:
 
-your-machine$ dcos node ssh --master-proxy --leader
+    your-machine$ dcos node ssh --master-proxy --leader
 
     leader-node$ docker run mesosphere/janitor /janitor.py -r cassandra_role -p cassandra_principal -z cassandra
     [... docker download ...]
