@@ -22,12 +22,12 @@ The script takes the following flags:
 - `-z`: The configuration zookeeper node to be deleted
 
 These are some examples of default configurations (these will vary depending on selected task name, etc):
-- Cassandra:
-  - Default: `-r cassandra_role -p cassandra_principal -z cassandra`
-  - Custom name: `-r <name>_role -p <name>_principal -z <name>`
-- Kafka:
-  - Default: `-r kafka-role -p kafka-principal -z kafka`
-  - Custom name: `-r <name>-role -p <name>-principal -z <name>`
+    - Cassandra:
+      - Default: `-r cassandra_role -p cassandra_principal -z cassandra`
+      - Custom name: `-r <name>_role -p <name>_principal -z <name>`
+    - Kafka:
+      - Default: `-r kafka-role -p kafka-principal -z kafka`
+      - Custom name: `-r <name>-role -p <name>-principal -z <name>`
 
 # Run from the DC/OS CLI
 
@@ -35,11 +35,11 @@ Connect to the leader and start the script:
 
 1. Open an SSH session to the cluster leader.
 
-    your-machine$ dcos node ssh --master-proxy --leader
+        your-machine$ dcos node ssh --master-proxy --leader
 
 1. Run the `mesosphere/janitor` image with the role, principal, and zookeeper nodes that were configured for your service:
 
-    leader$ docker run mesosphere/janitor /janitor.py -r sample-role -p sample-principal -z sample-zk
+        leader$ docker run mesosphere/janitor /janitor.py -r sample-role -p sample-principal -z sample-zk
 
 # Run from Marathon
 
