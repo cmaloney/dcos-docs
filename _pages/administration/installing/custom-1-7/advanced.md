@@ -169,7 +169,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
         $ sudo docker run -d -p <your-port>:80 -v $PWD/genconf/serve:/usr/share/nginx/html:ro nginx
         
 
-4.  <A name="MasterInstall"></A> Run these commands on each of your master nodes in succession to install DC/OS using your custom build file.
+4.  <A name="masterinstall"></A> Run these commands on each of your master nodes in succession to install DC/OS using your custom build file.
     
     **Tip:** Although there is no actual harm to your cluster, DC/OS may issue error messages until all of your master nodes are configured.
     
@@ -193,7 +193,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
             $ sudo bash dcos_install.sh master
             
 
-5.  Run these commands on each of your agent nodes to install DC/OS using your custom build file.
+5.  <A name="slaveinstall"></A> Run these commands on each of your agent nodes to install DC/OS using your custom build file.
     
     1.  SSH to your agent nodes:
         
