@@ -285,6 +285,10 @@ Before installing DC/OS, you must ensure that your bootstrap node has the follow
 
 Download and save the DC/OS setup file to your bootstrap node. This file is used to create your customized DC/OS build file. Contact your sales representative or <a href="mailto:sales@mesosphere.com">sales@mesosphere.com</a> to obtain the DC/OS setup file.
 
+### Disable SELinux 
+
+    $ setenforce 0
+
 ### Docker Nginx (advanced installer)
 
 For advanced install only, install the Docker Nginx image with this command:
