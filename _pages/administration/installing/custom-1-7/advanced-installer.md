@@ -111,15 +111,9 @@ In this step you create a YAML configuration file that is customized for your en
 
 2.  Create a configuration file and save as `genconf/config.yaml`.  You can use this template to get started. 
 
-    The template specifies 5 agent nodes, 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][1].
->>>>>>> removed exhibitor_storage_backend from example config
-    
-        agent_list:
-        - <agent-private-ip-1>
-        - <agent-private-ip-2>
-        - <agent-private-ip-3>
-        - <agent-private-ip-4>
-        - <agent-private-ip-5>
+    The template specifies 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][1].
+
+
         bootstrap_url: http://<bootstrap_public_ip>:80      
         cluster_name: '<cluster-name>'
         master_discovery: static 
