@@ -108,7 +108,7 @@ In this step you create a YAML configuration file that is customized for your en
 
 2.  Create a configuration file and save as `genconf/config.yaml`.
     
-    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][2].
+    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][2].
     
         agent_list:
         - <agent-private-ip-1>
@@ -119,9 +119,6 @@ In this step you create a YAML configuration file that is customized for your en
         # Use this bootstrap_url value unless you have moved the DC/OS installer assets.   
         bootstrap_url: file:///opt/dcos_install_tmp
         cluster_name: <cluster-name>
-        exhibitor_storage_backend: zookeeper
-        exhibitor_zk_hosts: <host1>:2181,<host2>:2181,<host2>:2181
-        exhibitor_zk_path: /dcos
         master_discovery: static 
         master_list:
         - <master-private-ip-1>

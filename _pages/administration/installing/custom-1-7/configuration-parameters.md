@@ -28,6 +28,42 @@ This parameter specifies the name of your cluster.
 
 ### exhibitor_storage_backend
 
+This parameter specifies the type of storage backend to use for Exhibitor. You can use internal DC/OS storage (`static`) or specify an external storage system (`zookeeper`, `aws_s3`, and `shared_filesystem`) for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation. 
+
+*   `exhibitor_storage_backend: static`
+    This option specifies that the Exhibitor storage backend is managed internally within your cluster. This is the default value.
+*   `exhibitor_storage_backend: zookeeper`
+    This option specifies a ZooKeeper instance for shared storage. If you use a ZooKeeper instance to bootstrap Exhibitor, this ZooKeeper instance must be separate from your DC/OS cluster. You must have at least 3 ZooKeeper instances running at all times for high availability. If you specify `zookeeper`, you must also specify these parameters. 
+    *   **exhibitor_zk_hosts**
+        This parameter specifies a comma-separated list of one or more ZooKeeper node IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this ZooKeeper cluster to orchestrate it's configuration. Multiple ZooKeeper instances are recommended for failover in production environments.
+    *   **exhibitor_zk_path**
+        This parameter specifies the filepath that Exhibitor uses to store data, including the `zoo.cfg` file.
+*   `exhibitor_storage_backend: aws_s3`
+    This option specifies an Amazon Simple Storage Service (S3) bucket for shared storage. If you specify `aws_s3`, you must also specify these parameters: 
+    *  **aws_access_key_id**
+       This parameter specifies AWS key ID.
+    *  **aws_region**
+       This parameter specifies AWS region for your S3 bucket.
+    *  **aws_secret_access_key**
+       This parameter specifies AWS secret access key.
+    *  **exhibitor_explicit_keys**
+       This parameter specifies whether you are using AWS API keys to grant Exhibitor access to S3. 
+        * `exhibitor_explicit_keys: 'true'`
+           If you're  using AWS API keys to manually grant Exhibitor access.
+        *  `exhibitor_explicit_keys: 'false'`
+           If you're using AWS Identity and Access Management (IAM) to grant Exhibitor access to s3.
+    *  **s3_bucket**
+       This parameter specifies name of your S3 bucket.
+    *  **s3_prefix**
+       This parameter specifies S3 prefix to be used within your S3 bucket to be used by Exhibitor.
+       
+*   `exhibitor_storage_backend: shared_filesystem`
+    This option specifies a Network File System (NFS) mount for shared storage. If you specify `shared_filesystem`, you must also specify this parameter: 
+    *  **exhibitor_fs_config_dir**
+       This parameter specifies the absolute path to the folder that Exhibitor uses to coordinate its configuration. This should be a directory inside of a Network File System (NFS) mount. For example, if every master has `/fserv` mounted via NFS, set as `exhibitor_fs_config_dir: /fserv/dcos-exhibitor`.
+       
+       **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DC/OS cluster will not start.
+
 This parameter specifies the type of storage backend to use for Exhibitor. You can use internal DC/OS storage (`static`) or specify an external storage system (`zookeeper`, `aws_s3`, and `shared_filesystem`) for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation.
 
 *   `exhibitor_storage_backend: static` This option specifies that the Exhibitor storage backend is managed internally within your cluster.
@@ -147,7 +183,7 @@ This parameter specifies the allowable amount of time, in seconds, for an action
 
 # <a name="examples1"></a>Example Configurations
 
-#### DC/OS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, and static master list specified.
+#### DC/OS cluster with 3 masters, 5 agents, static master list specified.
 
     agent_list:
     - <agent-private-ip-1>
@@ -157,9 +193,6 @@ This parameter specifies the allowable amount of time, in seconds, for an action
     - <agent-private-ip-5>
     bootstrap_url: 'file:///opt/dcos_install_tmp'
     cluster_name: '<cluster-name>'
-    exhibitor_storage_backend: zookeeper
-    exhibitor_zk_hosts: <host1>:<port1>
-    exhibitor_zk_path: /dcos
     log_directory: /genconf/logs
     master_discovery: static 
     master_list:

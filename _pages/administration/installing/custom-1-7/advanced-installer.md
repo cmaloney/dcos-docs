@@ -109,9 +109,10 @@ In this step you create a YAML configuration file that is customized for your en
         $6$rounds=656000$v55tdnlMGNoSEgYH$1JAznj58MR.Bft2wd05KviSUUfZe45nsYsjlEl84w34pp48A9U2GoKzlycm3g6MBmg4cQW9k7iY4tpZdkWy9t1
         
 
-2.  Create a configuration file and save as `genconf/config.yaml`. You can use this template to get started.
-    
-    The template specifies 5 agent nodes, 3 Mesos masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][2].
+2.  Create a configuration file and save as `genconf/config.yaml`.  You can use this template to get started. 
+
+    The template specifies 5 agent nodes, 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][1].
+>>>>>>> removed exhibitor_storage_backend from example config
     
         agent_list:
         - <agent-private-ip-1>
@@ -121,9 +122,6 @@ In this step you create a YAML configuration file that is customized for your en
         - <agent-private-ip-5>
         bootstrap_url: http://<bootstrap_public_ip>:80      
         cluster_name: '<cluster-name>'
-        exhibitor_storage_backend: zookeeper
-        exhibitor_zk_hosts: <host1>:2181,<host2>:2181,<host3>:2181
-        exhibitor_zk_path: /dcos
         master_discovery: static 
         master_list:
         - <master-private-ip-1>
