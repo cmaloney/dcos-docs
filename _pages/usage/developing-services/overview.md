@@ -12,7 +12,7 @@ hide_from_related: false
 ---
 # <a name="universe"></a>Package Repositories
 
-The DC/OS Universe contains all services that are installable DC/OS. For more information on DC/OS Universe, see the [GitHub Universe repository][1].
+The DC/OS Universe contains all of the services that are installable DC/OS. For more information on DC/OS Universe, see the [GitHub Universe repository][1].
 
 All services in the package repositories are required to meet a certain standard as defined by Mesosphere. For details on submitting a DC/OS service, see [Contributing a package][2].
 
