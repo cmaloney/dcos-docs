@@ -24,6 +24,9 @@ The DC/OS installation creates these folders:
 
 *   Various units prefixed with `dcos` in `/etc/systemd/system`
     :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
+    
+## Prerequisites
+Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom-1-7/system-requirements/).
 
 # Create an IP detection script
 

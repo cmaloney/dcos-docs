@@ -28,6 +28,9 @@ The DC/OS installation creates these folders:
 *   Various units prefixed with `dcos` in `/etc/systemd/system`
     :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
 
+## Prerequisites
+Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom-1-7/system-requirements/).
+
 # Create an IP detection script
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.

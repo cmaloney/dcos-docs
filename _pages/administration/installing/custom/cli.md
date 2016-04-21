@@ -20,6 +20,9 @@ To use the automated command-line installation method:
 *   Cluster nodes must have SSH enabled and ports open from the bootstrap node
 *   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH 
 
+## Prerequisites
+Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom/system-requirements/).
+
 # Create an IP detection script
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
