@@ -17,6 +17,9 @@ This installation method requires:
 *   The bootstrap node must be network accessible from the cluster nodes 
 *   The bootstrap node must have the HTTP(S) ports open from the cluster nodes
 
+## Prerequisites
+Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom/system-requirements/).
+
 # Create an IP detection script
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.

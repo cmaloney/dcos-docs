@@ -1,2 +1,2 @@
-# wp-gh-test
+# DCOS DOCS ENTERPRISE
 Integrate a GitHub with WordPress

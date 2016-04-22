@@ -22,6 +22,9 @@ To use the automated GUI installation method:
 *   Cluster nodes must have SSH enabled and ports open from the bootstrap node
 *   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH
 
+## Prerequisites
+Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom/system-requirements/).
+
 # Install DC/OS
 
 **Important:** Encrypted SSH keys are not supported.

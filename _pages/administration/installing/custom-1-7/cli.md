@@ -24,6 +24,9 @@ The DC/OS installation creates these folders:
 
 *   Various units prefixed with `dcos` in `/etc/systemd/system`
     :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
+    
+## Prerequisites
+Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom-1-7/system-requirements/).
 
 # Create an IP detection script
 
@@ -70,7 +73,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             #!/usr/bin/env bash
             set -o nounset -o errexit
             export PATH=/usr/sbin:/usr/bin:$PATH
-            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
+            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | head -1)
             
     
     *   #### Use the network route to the Mesos master
@@ -84,7 +87,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             
             MASTER_IP=172.28.128.3
             
-            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
+            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | tail -1)
             
 
 # <a name="config-json"></a>Create a configuration file
@@ -108,7 +111,7 @@ In this step you create a YAML configuration file that is customized for your en
 
 2.  Create a configuration file and save as `genconf/config.yaml`.
     
-    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][2].
+    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][2].
     
         agent_list:
         - <agent-private-ip-1>
@@ -119,9 +122,6 @@ In this step you create a YAML configuration file that is customized for your en
         # Use this bootstrap_url value unless you have moved the DC/OS installer assets.   
         bootstrap_url: file:///opt/dcos_install_tmp
         cluster_name: <cluster-name>
-        exhibitor_storage_backend: zookeeper
-        exhibitor_zk_hosts: <host1>:2181,<host2>:2181,<host2>:2181
-        exhibitor_zk_path: /dcos
         master_discovery: static 
         master_list:
         - <master-private-ip-1>

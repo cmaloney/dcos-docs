@@ -20,7 +20,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
 
 *   Python, pip, and virtualenv must be installed for the DC/OS [CLI][1]. pip must be configured to pull packages from PyPI or your private PyPI, if applicable.
 *   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050.
-    
+
 ## Cluster nodes
 
 The cluster nodes are designated Mesos masters and agents during installation.
@@ -49,11 +49,24 @@ Here are the master node hardware requirements.
       Nodes: 3<br />OS: Enterprise Linux 7 kernel 3.10.0-327 or CoreOS Stable<br />Processor: 4 cores<br />Memory: 32 GB RAM<br />Hard disk space: 120 GB
     </td>
   </tr>
+  
   <tr>
-   <td colspan="2">
-    <p>There are many mixed workloads on the masters, for example Mesos replicated log and Zookeeper. Some of these require fsync()ing every so often, and this can generate a lot of very expensive random I/O. We recommend the following: <ul><li>Solid-state drive (SSD)</li><li>RAID controllers with a BBU</li><li>RAID controller cache configured in writeback mode</li></ul></p>
+    <td colspan="2">
+      <p>
+        There are many mixed workloads on the masters, for example Mesos replicated log and Zookeeper. Some of these require fsync()ing every so often, and this can generate a lot of very expensive random I/O. We recommend the following: <ul>
+          <li>
+            Solid-state drive (SSD)
+          </li>
+          <li>
+            RAID controllers with a BBU
+          </li>
+          <li>
+            RAID controller cache configured in writeback mode
+          </li>
+        </ul>
+      </p>
     </td>
-    </tr>
+  </tr>
 </table>
 
 ### Agent nodes
@@ -91,13 +104,14 @@ Here are the agent node hardware requirements.
 </ul>
 
 *   Your Linux distribution must be running the latest version. You can update CentOS with this command:
-        
+    
         $ sudo yum upgrade -y
+        
 
 *   On RHEL 7 and CentOS 7, firewalld must be stopped and disabled. It is a known <a href="https://github.com/docker/docker/issues/16137" target="_blank">Docker issue</a> that firewalld interacts poorly with Docker. For more information, see the <a href="https://docs.docker.com/v1.6/installation/centos/#firewalld" target="_blank">Docker CentOS firewalld</a> documentation.
-
+    
         $ sudo systemctl stop firewalld && sudo systemctl disable firewalld
-
+        
 
 ### Port Configuration
 
@@ -129,7 +143,7 @@ Here are the agent node hardware requirements.
         </td>
       </tr>
     </table>
-    
+
 *   These ports must be open for communication from the agent nodes to the master nodes.
     
     <table class="table">
@@ -223,7 +237,7 @@ Here are the agent node hardware requirements.
         </td>
       </tr>
     </table>
-    
+
 # Software Prerequisites
 
 ## All Nodes
@@ -266,9 +280,10 @@ Your bootstrap and cluster nodes must have Docker version 1.9 or greater install
               sudo systemctl enable docker
             
         
-        This can take a few minutes. This is what the end of the process should look like: 
+        This can take a few minutes. This is what the end of the process should look like:
         
             Complete! Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+            
     
     You can test that your Docker build is properly installed with this command:
     
@@ -283,7 +298,11 @@ Before installing DC/OS, you must ensure that your bootstrap node has the follow
 
 ### DC/OS setup file
 
-Download and save the DC/OS setup file to your bootstrap node. This file is used to create your customized DC/OS build file. Contact your sales representative or <a href="mailto:sales@mesosphere.com">sales@mesosphere.com</a> to obtain the DC/OS setup file.
+Download and save the DC/OS setup file to your bootstrap node. This file is used to create your customized DC/OS build file. Contact your sales representative or <sales@mesosphere.com> to obtain the DC/OS setup file.
+
+### Disable SELinux 
+
+    $ setenforce 0
 
 ### Docker Nginx (advanced installer)
 
@@ -292,7 +311,7 @@ For advanced install only, install the Docker Nginx image with this command:
     $ sudo docker pull nginx
     
 
-## Cluster nodes 
+## Cluster nodes
 
 For advanced install only, your cluster nodes must have the following prerequisites. The cluster nodes are designated as Mesos masters and agents during installation.
 
@@ -322,6 +341,5 @@ On each of your cluster nodes, use the following command to:
         
     
     **Tip:** It may take a few minutes for your node to come back online after reboot.
-        
 
  [1]: /usage/cli/
