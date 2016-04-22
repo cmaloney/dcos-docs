@@ -25,8 +25,8 @@ The script takes the following flags:
 These are some examples of default configurations (these will vary depending on selected task name, etc):
 
 * Cassandra:
-    * Default: `-r cassandra_role -p cassandra_principal -z cassandra`
-    * Custom name: `-r <name>_role -p <name>_principal -z <name>`
+    * Default: `-r cassandra-role -p cassandra-principal -z cassandra`
+    * Custom name: `-r <name>-role -p <name>-principal -z <name>`
 * Kafka:
     * Default: `-r kafka-role -p kafka-principal -z kafka`
     * Custom name: `-r <name>-role -p <name>-principal -z <name>`
