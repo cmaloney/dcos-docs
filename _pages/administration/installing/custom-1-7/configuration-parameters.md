@@ -228,7 +228,7 @@ This parameter specifies the allowable amount of time, in seconds, for an action
     - <master-private-ip-3>
     process_timeout: 120
     resolvers:
-    - 0.10.5.1
+    - 10.10.5.1
     - 10.10.6.1
     roles: slave_public
     ssh_key_path: /genconf/ssh-key
