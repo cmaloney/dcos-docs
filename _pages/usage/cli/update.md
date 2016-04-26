@@ -25,7 +25,7 @@ You can upgrade an existing DC/OS CLI installation to the latest build.
 
 You can downgrade an existing DC/OS CLI installation to an older version.
 
-**Tip:** Downgrading is necessary if you are running an older version of DC/OS and want to reinstall the DC/OS CLI.
+**Tip:** Downgrading is necessary if you are using DC/OS 1.6.0 or earlier.
 
 1.  Delete your DC/OS CLI installation directories:
     
