@@ -39,6 +39,8 @@ DCOS Cassandra provides the following features:
 
 *   [DCOS Spark][2]
 
+<a name="getting-started"></a>
+
 # Getting Started
 
 ## Quick Start
@@ -299,6 +301,8 @@ Then, use the [framework cleaner script][9] to remove your Cassandra instance fr
 *   `framework-role` is `<service-name>-role`.
 *   `framework-principle` is `<service-name>-principal`.
 *   `zk_path` is `<name>`.
+
+<a name="configuring"></a>
 
 # Configuring
 
@@ -1587,6 +1591,8 @@ The code snippet below demonstrates how to connect the CQL driver to the cluster
     }
     
 
+<a name="managing"></a>
+
 # Managing
 
 ## Add a Node
@@ -1978,6 +1984,8 @@ Check the status of the restore:
     $ dcos cassandra --name=<service-name> restore status
     
 
+<a name="troubleshooting"></a>
+
 # Troubleshooting
 
 ## Configuration Update Errors
@@ -2044,6 +2052,8 @@ The DCOS Cassandra Service is resilient to temporary node failures. However, if 
     
 
 This will replace the node with a new node of the same name running on a different server. The new node will take over the token range owned by its predecessor. After replacing a failed node, you should run [Cleanup]
+
+<a name="api-reference"></a>
 
 # API Reference
 
@@ -2193,6 +2203,8 @@ Check status of the restore:
 
     $ curl -X -H "Authorization:token=<auth_token>" <dcos_url>/service/cassandra/v1/restore/status
     
+
+<a name="limitations"></a>
 
 # Limitations
 
