@@ -1,7 +1,14 @@
 ---
+UID: 572100f791921
 post_title: Security and Authentication
+post_excerpt: ""
 layout: page
 published: true
+menu_order: 0
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
 You can enable authorization and authentication in your datacenter with DC/OS Enterprise Edition. Authentication is managed through the DC/OS web interface. Authorization is defined by access control lists (ACLs). The Admin Router enforces access control.
 
