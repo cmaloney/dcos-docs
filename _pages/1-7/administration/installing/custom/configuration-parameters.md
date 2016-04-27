@@ -138,6 +138,14 @@ This required parameter specifies the hashed superuser password. The `superuser_
 
 This required parameter specifies the Admin username. For more information, see <a href="https://docs.mesosphere.com/administration/security-and-authentication/managing-authorization/" target="_blank">Managing Authorization and Authentication</a>.
 
+### telemetry_enabled
+This parameter specifies whether to enable sharing of anonymous data for your cluster. 
+
+- `telemetry_enabled: 'true'` Enable anonymous data sharing. This is the default value.
+- `telemetry_enabled: 'false'` Disable anonymous data sharing.
+
+If you’ve already installed your cluster and would like to disable this in-place, you can go through an upgrade <!-- link? --> with the same parameter set.
+
 ## Networking
 
 ### <a name="dns-search"></a>dns_search
