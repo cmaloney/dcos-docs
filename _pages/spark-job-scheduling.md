@@ -25,7 +25,9 @@ Spark on Mesos supports two "modes" of operation: coarse-grained mode and fine-g
 *   **Number of Executors**: `spark.cores.max` / `spark.executor.cores`. Executors are brought up until `spark.cores.max` is reached. Executors survive for duration of the job.
 *   **Executors per agent**: Multiple
 
-**Note:** We recommend you set `spark.cores.max`. If you do not, your Spark job may consume all available resources in your cluster, resulting in unhappy peers.
+Notes:
+
+*   We highly recommend you set `spark.cores.max`. If you do not, your Spark job may consume all available resources in your cluster, resulting in unhappy peers.
 
 # Fine-grained mode
 
