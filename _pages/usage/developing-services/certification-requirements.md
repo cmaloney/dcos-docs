@@ -1,22 +1,22 @@
 ---
-UID: 5704049d246ea
-post_title: DCOS Service Certification Criteria
+UID: 57163eb05da0f
+post_title: DC/OS Service Certification Criteria
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 0
+menu_order: 2
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: true
-hide_from_related: true
+hide_from_navigation: false
+hide_from_related: false
 ---
-A **Certified** DCOS Service:
+A **Certified** DC/OS Service:
 
-*   Has been verified by Mesosphere as correctly integrating with DCOS, however it makes no guarantees regarding the production worthiness of the underlying service. 
+*   Has been verified by Mesosphere as correctly integrating with DC/OS, however it makes no guarantees regarding the production worthiness of the underlying service. 
 *   Has been verified by Mesosphere as meeting best practices for Mesos framework implementation.
-*   Is regularly tested automatically by Mesosphere against all currently supported versions of DCOS.
+*   Is regularly tested automatically by Mesosphere against all currently supported versions of DC/OS.
 
-**Disclaimer** Mesosphere makes no guarantee of the correctness, performance or stability of Certified DCOS Services. Mesosphere does not provide support for Certified DCOS Services; It is the responsibility of the Service creator (see requirement 22).
+**Disclaimer** Mesosphere makes no guarantee of the correctness, performance or stability of Certified DC/OS Services. Mesosphere does not provide support for Certified DC/OS Services; It is the responsibility of the Service creator (see requirement 22).
 
 # Certification Requirements
 
@@ -36,7 +36,7 @@ A scheduler must persist its FrameworkID in order to re-register with the same i
 
 ### 03\. Scheduler MUST recover from process termination.
 
-If a scheduler is terminated for any reason, the Service must be able to recover. The services are launched under an instance of Marathon in DCOS providing the first level of fault tolerance. However the recovery time is dependent on the download size of reprovisioning the service and the startup time of the scheduler.
+If a scheduler is terminated for any reason, the Service must be able to recover. The services are launched under an instance of Marathon in DC/OS providing the first level of fault tolerance. However the recovery time is dependent on the download size of reprovisioning the service and the startup time of the scheduler.
 
 For reduced latency and more fine grained control, we can run multiple scheduler instances via Marathon, coordinated by e.g. ZooKeeper. ZooKeeper is used to perform leader election in the event that the currently leading instance fails. This requires the scheduler author to develop when logic for managing the leader and leader election.
 
@@ -69,7 +69,7 @@ You CAN rely on the local installation of:
 *   Docker
 *   ulimit = infinity
 
-A common situation is the use of Java and the need for a JRE. The JRE is not provided by DCOS. If your Service requires a JRE, you must ship one with your package. The CDN backed url example below shows how to use a JRE with a Java framework.
+A common situation is the use of Java and the need for a JRE. The JRE is not provided by DC/OS. If your Service requires a JRE, you must ship one with your package. The CDN backed url example below shows how to use a JRE with a Java framework.
 
 Dependencies can be provided via:
 
@@ -87,11 +87,11 @@ The configuration of the framework role must be possible at installation. This i
 
 ### 11\. Scheduler MUST provide framework webui_url for admin UIs or service end-points that control the framework.
 
-In cases when a Service has a web interface that is useful to the DCOS end user, the Service MUST make that URL available using framework webui_url when registering with the Mesos master.
+In cases when a Service has a web interface that is useful to the DC/OS end user, the Service MUST make that URL available using framework webui_url when registering with the Mesos master.
 
 The webui_url may also be used for a RESTful service endpoint to control the framework. This is the preferred approach if also implementing a CLI.
 
-The DCOS GUI uses this value to create ‘clickable’ Service names for the end user. When providing a UI, it is important to recognize that the assets of the UI must be relative paths (and not absolute).
+The DC/OS GUI uses this value to create ‘clickable’ Service names for the end user. When providing a UI, it is important to recognize that the assets of the UI must be relative paths (and not absolute).
 
 The webui_url will be proxied by the Admin Router at a URL created passed on the convention /service/.
 
@@ -169,7 +169,7 @@ The Service MUST have documentation for the following users:
     *   How to use the functionality and UIs of your Service.
     *   A template for end user documentation for repositories hosted on GitHub is provided in the dcos-service-docs project. 
 *   An API developer. How to code against the APIs exposed by your Service.
-*   The DCOS operator. 
+*   The DC/OS operator. 
     *   How to install and maintain your Service.
     *   How to monitor and troubleshoot your Service. 
         *   Including detailed explanation of how health checks are implemented and how to resolve unhealthy states.

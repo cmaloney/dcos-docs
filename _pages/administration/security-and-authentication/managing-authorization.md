@@ -113,13 +113,14 @@ To manage groups:
     
     1.  From the **Groups** tab, click **New Group**.
     2.  Type in the group name and click **Create**.
-    3.  Select the group name and add Members and Permissions and click **Close**. <a href="/wp-content/uploads/2016/02/auth-enable-define-group.gif" rel="attachment wp-att-3501"><img src="/wp-content/uploads/2016/02/auth-enable-define-group-800x509.gif" alt="auth-enable-define-group" width="800" height="509" class="alignnone size-large wp-image-3501" /></a> 
+    3.  Select the group name and add Members and Permissions and click **Close**. <a href="/wp-content/uploads/2016/02/auth-enable-define-group.gif" rel="attachment wp-att-3501"><img src="/wp-content/uploads/2016/02/auth-enable-define-group-800x509.gif" alt="auth-enable-define-group" width="800" height="509" class="alignnone size-large wp-image-3501" /></a>
         *   **Members** Defines the users that are in the group.
         *   **Permissions** Defines the installed DC/OS services and components.
     ### Add users to a group
     
     1.  From the **Users** tab, select the user name and click **Actions -> Add to Group**. <a href="/wp-content/uploads/2016/02/auth-enable-add-user-group.gif" rel="attachment wp-att-3499"><img src="/wp-content/uploads/2016/02/auth-enable-add-user-group-800x509.gif" alt="auth-enable-add-user-group" width="800" height="509" class="alignnone size-large wp-image-3499" /></a>
     2.  Choose the group and click **Add**. 
+    
     ### Delete users from group
     
     1.  From the **Users** tab, select the user name and click **Actions -> Delete from Group**.
@@ -132,27 +133,25 @@ To manage groups:
     
     1.  From the **Groups** tab, select the group to open.
     2.  Modify and click **Close**.
-
+    
+    
 # Examples
 
 ## User access to Chronos
-
 In this example, user access is granted to Chronos to an existing user named Ted:
 
-1.  Click on the **System** and then the **Organization** tab.
+1.  Click on the **System** and then the **Organization** tab. 
 
-2.  Click **Users** and select Ted.
+1.  Click **Users** and select Ted.
 
-3.  From the **Permissions** tab click **Add Service** -> **Chronos**.
+1.  From the **Permissions** tab click **Add Service** -> **Chronos**.
+
+    ![Add Chronos](/assets/images/auth-enable-ex-chronos-user.gif)
     
-    ![Add Chronos][2]
-
-4.  Click **Close** to save these changes.
-
-5.  Go to the Services tab and copy the URL for the Chronos service, for example `http:<public-master-IP>/#/services/ui/chronos`, and send to Ted. Ted can click this link to access the Chronos.
+1.  Click **Close** to save these changes.
     
-    ![alt text][3]
+1.  Go to the Services tab and copy the URL for the Chronos service, for example `http:<public-master-IP>/#/services/ui/chronos`, and send to Ted. Ted can click this link to access the Chronos. 
+
+    ![alt text](/assets/images/auth-enable-chronos-example4.gif)
 
  [1]: https://en.wikipedia.org/wiki/STARTTLS
- [2]: /assets/images/auth-enable-ex-chronos-user.gif
- [3]: /assets/images/auth-enable-chronos-example4.gif

@@ -24,12 +24,12 @@ With this tutorial you will learn:
 
 **Prerequisites:**
 
-*   A DC/OS cluster created by using the [AWS CloudFormation][1] templates with at least 4 [private agents][2] and 1 [public agent][2].
-*   The public IP address of your DC/OS [public agent][3].
+*   A DC/OS cluster created by using the [AWS CloudFormation](/administration/installing/cloud/) templates with at least 4 [private agents][1] and 1 [public agent][1].
+*   The public IP address of your DC/OS [public agent][2].
 
 # Add the Cassandra database
 
-The [Cassandra][4] database is used on the back end to store the Oinker app data. Cassandra is installed with a single-command with the DC/OS CLI as a DC/OS service.
+The [Cassandra][3] database is used on the back end to store the Oinker app data. Cassandra is installed with a single-command with the DC/OS CLI as a DC/OS service.
 
 1.  From your terminal, install the Cassandra DC/OS service with this single command:
     
@@ -44,7 +44,7 @@ The [Cassandra][4] database is used on the back end to store the Oinker app data
 
 # Install the Marathon load balancer
 
-In this step you install the Marathon load balancer. The Marathon load balancer (marathon-lb) is a supplementary service discovery tool that can work in conjunction with native Mesos DNS. For more information, see the [Marathon Load Balancer][5] GitHub repository.
+In this step you install the Marathon load balancer. The Marathon load balancer (marathon-lb) is a supplementary service discovery tool that can work in conjunction with native Mesos DNS. For more information, see the [Marathon Load Balancer][4] GitHub repository.
 
 **Important:** Do not install Marathon Load Balancer until the Cassandra DC/OS service is installed and shows status of Healthy in the DC/OS web interface.
 
@@ -53,7 +53,7 @@ In this step you install the Marathon load balancer. The Marathon load balancer 
         $ dcos package install marathon-lb
         
 
-2.  Verify that the Marathon load balancer is up and running. Use your public agent node IP and navigate to `http://<public slave ip>:9090/haproxy?stats`. You’ll see a statistics report page like this:
+3.  Verify that the Marathon load balancer is up and running. Use your public agent node IP and navigate to `http://<public slave ip>:9090/haproxy?stats`. You’ll see a statistics report page like this:
     
     <a href="/wp-content/uploads/2015/12/lb2.jpg" rel="attachment wp-att-2820"><img src="/wp-content/uploads/2015/12/lb2.jpg" alt="lb2" width="628" height="440" class="alignnone size-full wp-image-2820" /></a>
     
@@ -61,7 +61,7 @@ In this step you install the Marathon load balancer. The Marathon load balancer 
 
 # Deploy the containerized app
 
-In this step you deploy the Oinker containerized app. For more information, see the [Oinker][6] GitHub repository.
+In this step you deploy the Oinker containerized app. For more information, see the [Oinker][5] GitHub repository.
 
 **Important:** Do not install the Oinker app until the Cassandra DC/OS service is installed and shows status of Healthy in the DC/OS web interface.
 
@@ -141,7 +141,7 @@ In this step you deploy the Oinker containerized app. For more information, see 
         
         <a href="/wp-content/uploads/2015/12/ec2-health-check.png" rel="attachment wp-att-2826"><img src="/wp-content/uploads/2015/12/ec2-health-check.png" alt="ec2-health-check" width="916" height="223" class="alignnone size-full wp-image-2826" /></a>
 
-**Tip:** Mesos DNS generates a hostname for your internal Marathon LB. You can access internal services this command. You must be [SSH'd into your cluster][7].
+**Tip:** Mesos DNS generates a hostname for your internal Marathon LB. You can access internal services this command. You must be [SSH'd into your cluster][6].
 
     $ curl http://marathon-lb.marathon.mesos:10000/
     
@@ -150,7 +150,7 @@ In this step you deploy the Oinker containerized app. For more information, see 
 
 Your containerized Oinker app is now available on a DC/OS public node and the ELB is able to route traffic to HAProxy.
 
-Service discovery is natively built-in to DC/OS through Mesos-DNS. The Cassandra service is assigned the name `cassandra-dcos-node.cassandra.dcos.mesos` and the Oinker app definition includes this value. DC/OS applications and services discover the IP addresses and ports of other applications by making DNS queries or by making HTTP requests through a REST API. For more information about service discovery, see [Service Discovery with Mesos-DNS][8].
+Service discovery is natively built-in to DC/OS through Mesos-DNS. The Cassandra service is assigned the name `cassandra-dcos-node.cassandra.dcos.mesos` and the Oinker app definition includes this value. DC/OS applications and services discover the IP addresses and ports of other applications by making DNS queries or by making HTTP requests through a REST API. For more information about service discovery, see [Service Discovery with Mesos-DNS][7].
 
 1.  Find the public ELB DNS name and enter into your browser. To do this, you’ll need to get the public ELB **DNS Name** from the Description tab in the EC2 Management Console. In this example, my public DNS name is `joel-ht5s-PublicSl-WPOWMR3C5291-2090420787.us-west-2.elb.amazonaws.com`.
     
@@ -177,11 +177,10 @@ In this step you can see the load balancer in action by removing or adding nodes
     
         $ dcos marathon app update oinker-with-marathon-lb instances=4
 
- [1]: /administration/installing/cloud/
- [2]: /overview/concepts/
- [3]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
- [4]: /usage/services/cassandra/
- [5]: https://github.com/mesosphere/marathon-lb
- [6]: https://github.com/mesosphere/oinker
- [7]: /administration/sshcluster/
- [8]: /usage/service-discovery/
+ [1]: /overview/concepts/
+ [2]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
+ [3]: /usage/services/cassandra/
+ [4]: https://github.com/mesosphere/marathon-lb
+ [5]: https://github.com/mesosphere/oinker
+ [6]: /administration/sshcluster/
+ [7]: /usage/service-discovery/

@@ -10,20 +10,21 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-DC/OS agent nodes can be designated as [public][1] or [private][2] during [advanced][3] or [cloud][4] installations. Public agent nodes provide public access to your DC/OS applications. By default apps are launched on private agent nodes. To launch an app on a public node, you must create a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter specified.
 
-1.  Install DC/OS and DC/OS CLI by using the [advanced installation][3] or [cloud installation][4] instructions. You must declare at least one agent node as public.
-    
+DC/OS agent nodes can be designated as [public](/overview/concepts/#public) or [private](/overview/concepts/#private) during [advanced](/administration/installing/custom/) or [cloud](/administration/installing/cloud/) installations. Public agent nodes provide public access to your DC/OS applications. By default apps are launched on private agent nodes. To launch an app on a public node, you must create a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter specified.
+
+
+1.  Install DC/OS and DC/OS CLI by using the [advanced installation](/administration/installing/custom/) or [cloud installation](/administration/installing/cloud/) instructions. You must declare at least one agent node as public. 
+
     For example, with advanced installation you can designate an agent node with this command:
-    
+
         $ sudo bash dcos_install.sh slave_public
         
-    
     For example, with the AWS cloud installation, you can specify a public agent node with the `PublicSlaveInstanceCount` box:
-    
-    ![alt text][5]
-
-2.  Create a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter specified. For example:
+   
+    ![alt text](/assets/images/dcos-aws-step2c.png)
+        
+1.  Create a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter specified. For example:
     
         {
             "id": "/product/service/myApp",
@@ -42,26 +43,21 @@ DC/OS agent nodes can be designated as [public][1] or [private][2] during [advan
             "cpus": 0.1,
             "mem": 64
         }
-        
-    
-    For more information about the `acceptedResourceRoles` parameter, see the Marathon REST API [documentation][6].
 
-3.  Add the your app to Marathon by using this command:
+    For more information about the `acceptedResourceRoles` parameter, see the Marathon REST API [documentation](https://mesosphere.github.io/marathon/docs/rest-api.html). 
     
+1.  Add the your app to Marathon by using this command:
+        
         $ dcos marathon app add myApp.json
         
-    
     If this is added successfully, there is no output.
-
-4.  Verify that the app is added:
+        
+1.  Verify that the app is added:
     
         $ dcos marathon app list
         ID      MEM  CPUS  TASKS  HEALTH  DEPLOYMENT  CONTAINER  CMD                        
         /nginx   64  0.1    0/1    ---      scale       DOCKER   None
 
- [1]: /overview/concepts/#public
- [2]: /overview/concepts/#private
- [3]: /administration/installing/custom/
- [4]: /administration/installing/cloud/
- [5]: /assets/images/dcos-aws-step2c.png
- [6]: https://mesosphere.github.io/marathon/docs/rest-api.html
+ [1]: /tutorials/containerized-app/
+ [3]: /administration/installing/
+ [4]: /usage/cli/install/

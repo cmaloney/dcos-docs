@@ -19,8 +19,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
 1 node with 2 Cores, 16 GB RAM, 60 GB HDD. This is the node where DCOS installation is run. This bootstrap node must also have:
 
 *   Python, pip, and virtualenv must be installed for the DCOS [CLI][1]. pip must be configured to pull packages from PyPI or your private PyPI, if applicable.
-*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. </ul> 
-    </li> </ul></li> </ul>
+*   A High-availability (HA) load balancer, such as HAProxy to balance the following TCP ports to all master nodes: 80, 443, 8080, 8181, 2181, 5050. </ul> </li> </ul></li> </ul>
     
     ## Cluster nodes
     
@@ -294,72 +293,70 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
         Do not use use Docker `devicemapper` storage driver for loopback. For more information, see <a href="https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/" target="_blank">Docker and the Device Mapper storage driver</a>.
     
     ## Bootstrap node
+
+The bootstrap node is a permanent part of your cluster and is required for DCOS recovery. The leader state and leader election of your Mesos masters is maintained in Exhibitor ZooKeeper.
+
+Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
+
+### DCOS setup file
+
+Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or [sales@mesosphere.com][2] to obtain the DCOS setup file.
+
+### Shared external storage for Exhibitor
+
+Shared external storage is required to bootstrap the Exhibitor service. Exhibitor automatically configures your ZooKeeper installation on the master nodes during DCOS installation. ZooKeeper is a high-performance coordination service for distributed applications. Exhibitor is a supervisor for ZooKeeper and requires a dedicated amount of storage space that is highly available.
+
+The shared external storage mechanism can be another ZooKeeper instance, an Amazon S3 bucket, or a Network File System (NFS) mount. Temporary outages while the cluster is running are acceptable, but shared storage should generally be up and running to support replacing failed masters.
+
+For testing purposes, you can quickly start a single temporary instance of ZooKeeper in a Docker container with this command.
+
+    $ sudo docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 -v /var/zookeeper/dcos:/tmp/zookeeper --name=dcos_int_zk jplock/zookeeper
     
-    </li> </ul>
+
+If you’ve run the `usermod` Docker command, you might have to log out and then back in to your bootstrap node before starting Zookeeper.
+
+**Important:** If you use a ZooKeeper instance to bootstrap Exhibitor, this ZooKeeper instance must be separate from your DCOS cluster. You must have at least 3 ZooKeeper instances running at all times for high availability.
+
+For more information about how to configure external shared storage, see the [exhibitor_storage_backend][3] configuration parameter.
+
+### Docker Nginx
+
+Install the Docker Nginx image:
+
+    $ sudo docker pull nginx
     
-    The bootstrap node is a permanent part of your cluster and is required for DCOS recovery. The leader state and leader election of your Mesos masters is maintained in Exhibitor ZooKeeper.
+
+## Cluster nodes
+
+    For advanced install only, your cluster nodes must have the following prerequisites. The cluster nodes are designated as Mesos masters and agents during installation.
     
-    Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
+
+### Data compression (advanced installer)
+
+You must have the <a href="http://www.info-zip.org/UnZip.html" target="_blank">UnZip</a>, <a href="https://www.gnu.org/software/tar/" target="_blank">GNU tar</a>, and <a href="http://tukaani.org/xz/" target="_blank">XZ Utils</a> data compression utilities installed on your cluster nodes.
+
+To install these utilities on CentOS7 and RHEL7:
+
+    $ sudo yum install -y tar xz unzip curl ipset
     
-    ### DCOS setup file
+
+### Cluster permissions (advanced installer)
+
+On each of your cluster nodes, use the following command to:
+
+*   Disable SELinux or set it to permissive mode.
+*   Add nogroup to each of your Mesos masters and agents.</li> 
+*   Disable IPV6. For more information see <a href="https://wiki.centos.org/FAQ/CentOS7#head-8984faf811faccca74c7bcdd74de7467f2fcd8ee" target="_blank">How do I disable IPv6</a>.</li> 
+*   Reboot your cluster for the changes to take affect</p> 
     
-    Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or [sales@mesosphere.com][2] to obtain the DCOS setup file.
-    
-    ### Shared external storage for Exhibitor
-    
-    Shared external storage is required to bootstrap the Exhibitor service. Exhibitor automatically configures your ZooKeeper installation on the master nodes during DCOS installation. ZooKeeper is a high-performance coordination service for distributed applications. Exhibitor is a supervisor for ZooKeeper and requires a dedicated amount of storage space that is highly available.
-    
-    The shared external storage mechanism can be another ZooKeeper instance, an Amazon S3 bucket, or a Network File System (NFS) mount. Temporary outages while the cluster is running are acceptable, but shared storage should generally be up and running to support replacing failed masters.
-    
-    For testing purposes, you can quickly start a single temporary instance of ZooKeeper in a Docker container with this command.
-    
-        $ sudo docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 -v /var/zookeeper/dcos:/tmp/zookeeper --name=dcos_int_zk jplock/zookeeper
+        $ sudo sed -i s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config &&
+        sudo groupadd nogroup &&
+        sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 &&
+        sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 &&
+        sudo reboot
         
-    
-    If you’ve run the `usermod` Docker command, you might have to log out and then back in to your bootstrap node before starting Zookeeper.
-    
-    **Important:** If you use a ZooKeeper instance to bootstrap Exhibitor, this ZooKeeper instance must be separate from your DCOS cluster. You must have at least 3 ZooKeeper instances running at all times for high availability.
-    
-    For more information about how to configure external shared storage, see the [exhibitor_storage_backend][3] configuration parameter.
-    
-    ### Docker Nginx
-    
-    Install the Docker Nginx image:
-    
-        $ sudo docker pull nginx
-        
-    
-    ## Cluster nodes
-    
-        For advanced install only, your cluster nodes must have the following prerequisites. The cluster nodes are designated as Mesos masters and agents during installation.
-        
-    
-    ### Data compression (advanced installer)
-    
-    You must have the <a href="http://www.info-zip.org/UnZip.html" target="_blank">UnZip</a>, <a href="https://www.gnu.org/software/tar/" target="_blank">GNU tar</a>, and <a href="http://tukaani.org/xz/" target="_blank">XZ Utils</a> data compression utilities installed on your cluster nodes.
-    
-    To install these utilities on CentOS7 and RHEL7:
-    
-        $ sudo yum install -y tar xz unzip curl ipset
-        
-    
-    ### Cluster permissions (advanced installer)
-    
-    On each of your cluster nodes, use the following command to:
-    
-    *   Disable SELinux or set it to permissive mode.
-    *   Add nogroup to each of your Mesos masters and agents.</li> 
-    *   Disable IPV6. For more information see <a href="https://wiki.centos.org/FAQ/CentOS7#head-8984faf811faccca74c7bcdd74de7467f2fcd8ee" target="_blank">How do I disable IPv6</a>.</li> 
-    *   Reboot your cluster for the changes to take affect</p> 
-        
-            $ sudo sed -i s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config &&
-            sudo groupadd nogroup &&
-            sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 &&
-            sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 &&
-            sudo reboot
-            
-    
-    **Tip:** It may take a few minutes for your node to come back online after reboot.
+
+**Tip:** It may take a few minutes for your node to come back online after reboot.
 
  [1]: /usage/cli/
  [2]: http://sales@mesosphere.com

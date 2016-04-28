@@ -18,14 +18,13 @@ This installation method requires:
 *   The bootstrap node must have the HTTP(S) ports open from the cluster nodes
 
 ## Prerequisites
-
-Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
+Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom/system-requirements/).
 
 # Create an IP detection script
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
 
-**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][2].
+**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][1].
 
 1.  Create a directory named `genconf` on your bootstrap node and navigate to it.
     
@@ -66,7 +65,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             #!/usr/bin/env bash
             set -o nounset -o errexit
             export PATH=/usr/sbin:/usr/bin:$PATH
-            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | head -1)
+            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
             
     
     *   #### Use the network route to the Mesos master
@@ -80,7 +79,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             
             MASTER_IP=172.28.128.3
             
-            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | tail -1)
+            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
             
 
 # <a name="config-json"></a>Configure your cluster
@@ -104,7 +103,7 @@ In this step you create a YAML configuration file that is customized for your en
 
 2.  Create a configuration file and save as `genconf/config.yaml`.
     
-    You can use this template to get started. This template specifies 5 agent nodes, 3 masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][2].
+    You can use this template to get started. This template specifies 5 agent nodes, 3 masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][1].
     
         agent_list:
         - <agent-private-ip-1>
@@ -133,11 +132,11 @@ In this step you create a YAML configuration file that is customized for your en
 
 In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS onto your cluster. With this method you package the DC/OS distribution yourself and connect to every server manually and run the commands.
 
-**Tip:** If something goes wrong and you want to rerun your setup, use these cluster [cleanup instructions][3].
+**Tip:** If something goes wrong and you want to rerun your setup, use these cluster [cleanup instructions][2].
 
 **Prerequisites**
 
-*   A `genconf/config.yaml` file that is optimized for [manual distribution of DC/OS across your nodes][4].
+*   A `genconf/config.yaml` file that is optimized for [manual distribution of DC/OS across your nodes][3].
 *   A `genconf/ip-detect` script.
 
 <!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
@@ -208,7 +207,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
             $ curl -O http://<bootstrap-ip>:<your_port>/dcos_install.sh
             
     
-    4.  Run this command to install DC/OS on your agent nodes. You must designate your agent nodes as [public][5] or [private][6].
+    4.  Run this command to install DC/OS on your agent nodes. You must designate your agent nodes as [public][4] or [private][5].
         
         *   Private agent nodes:
         <pre>$ sudo bash dcos_install.sh slave</pre>
@@ -241,7 +240,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
 
 ### Next Steps
 
-Now you can [assign user roles][7].
+Now you can [assign user roles][6].
 
 ### Uninstalling DC/OS
 
@@ -249,10 +248,9 @@ Now you can [assign user roles][7].
     
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
 
- [1]: /administration/installing/custom/system-requirements/
- [2]: /administration/installing/custom/configuration-parameters/
- [3]: /administration/installing/custom/dcos-cleanup-script/
- [4]: /usage/cli/
- [5]: /overview/concepts/#public
- [6]: /overview/concepts/#private
- [7]: /administration/security-and-authentication/
+ [1]: /administration/installing/custom/configuration-parameters/
+ [2]: /administration/installing/custom/dcos-cleanup-script/
+ [3]: /usage/cli/
+ [4]: /overview/concepts/#public
+ [5]: /overview/concepts/#private
+ [6]: /administration/security-and-authentication/

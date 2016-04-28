@@ -12,9 +12,9 @@ hide_from_related: false
 ---
 You can make external calls to HTTP API endpoints in your DC/OS cluster.
 
-You must first obtain an authentication token and then include it in your HTTP request.
+You must first obtain an authentication token and then include it in your HTTP request. 
 
-By default authentication tokens expire after 5 days. You can view the expiration time in the ["exp" (Expiration Time) Claim][1] of the JSON Web Token (JWT). You can refresh your JWT by re-logging in to DC/OS.
+By default authentication tokens expire after 5 days. You can view the expiration time in the ["exp" (Expiration Time) Claim](https://tools.ietf.org/html/rfc7519#section-4.1.4) of the JSON Web Token (JWT). You can refresh your JWT by re-logging in to DC/OS.
 
 # Generate the authentication token
 
@@ -26,8 +26,8 @@ Log in with a POST request against `acs/api/v1/auth/login`.
 
 Specify the user ID (`<user-id>`), password (`<password>`), and external hostname (`<master-host-name>`):
 
-    $ curl --data '{"uid":"<user-id>", "password":"<your-password>"}' 
-        --header "Content-Type:application/json" 
+    $ curl --data '{"uid":"<user-id>", "password":"<your-password>"}' \
+        --header "Content-Type:application/json" \
         http://<master-host-name>/acs/api/v1/auth/login
     
 
@@ -52,5 +52,4 @@ For example, to access the Marathon API:
 For example, to access the Mesos API:
 
     $ curl --header "Authorization: token=<authtoken>" http://<master-host-name>/mesos/master/state.json
-
- [1]: https://tools.ietf.org/html/rfc7519#section-4.1.4
+    

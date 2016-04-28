@@ -93,7 +93,7 @@ This parameter specifies the Mesos master discovery method:
 
 *   **static** Use the Mesos agents to discover the masters by giving each agent a static list of master IPs. The masters must not change IP addresses, and if a master is replaced, the new master must take the old master's IP address. For example, `"master_discovery":"static"`.
     
-    *   **master_list** Specify a JSON-formatted list of your static master IP addresses. This must be specified in JSON list format. For example, `"master_list": "["172.17.10.101", "172.17.10.102", "172.17.10.103"]"`.
+    *   **master_list** Specify a JSON-formatted list of your static master IP addresses. This must be specified in JSON list format. For example, `"master_list": "[\"172.17.10.101\", \"172.17.10.102\", \"172.17.10.103\"]"`.
 
 *   **vrrp** Use keepalived with a VIP. You are required to maintain this VIP infrastructure. For example, `"master_discovery":"vrrp"`.
     
@@ -111,7 +111,7 @@ This parameter specifies the number of Mesos masters in your DC/OS cluster. For 
 
 # <a name="resolvers"></a>resolvers
 
-This required parameters specifies a JSON-formatted list of DNS resolvers for your DC/OS host nodes or accept the default value of `["8.8.8.8"]`. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, it is acceptable to set this to a public nameserver like Google or AWS. For example, `"resolvers": "["8.8.8.8", "8.8.4.4"]"`.
+This required parameters specifies a JSON-formatted list of DNS resolvers for your DC/OS host nodes or accept the default value of `[\"8.8.8.8\"]`. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, it is acceptable to set this to a public nameserver like Google or AWS. For example, `"resolvers": "[\"8.8.8.8\", \"8.8.4.4\"]"`.
 
     *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
     
@@ -146,7 +146,7 @@ This parameter specifies the priority of the role or accept the default value of
         "keepalived_interface":"eth1",
         "keepalived_pass":"$MY_STRONG_PASSWORD",
         "keepalived_virtual_ipaddress":"67.34.242.55",
-        "resolvers": "["8.8.8.8", "8.8.4.4"]",
+        "resolvers": "[\"8.8.8.8\", \"8.8.4.4\"]",
         "roles": "slave_public",
         "weights": "slave_public=1"
     }
@@ -160,7 +160,7 @@ This parameter specifies the priority of the role or accept the default value of
         "exhibitor_storage_backend": "shared_filesystem",
         "exhibitor_fs_config_dir": "/shared-mount",
         "bootstrap_url":"file:///tmp/dcos",
-        "resolvers": "["10.10.5.1", "10.10.6.1"]",
+        "resolvers": "[\"10.10.5.1\", \"10.10.6.1\"]",
         "roles": "slave_public",
         "weights": "slave_public=1"
     }
@@ -178,7 +178,7 @@ This parameter specifies the priority of the role or accept the default value of
         "s3_bucket": "mybucket",
         "s3_prefix": "s3-example",
         "bootstrap_url":"file:///tmp/dcos",
-        "resolvers": "["169.254.169.253"]",
+        "resolvers": "[\"169.254.169.253\"]",
         "roles": "slave_public",
         "weights": "slave_public=1"
     }

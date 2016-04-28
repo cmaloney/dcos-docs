@@ -36,11 +36,11 @@ For each Master node in your DC/OS cluster:
     
         #!/bin/sh
         
-        exec journalctl --since=now -f 
-            -u dcos-exhibitor.service 
-            -u dcos-marathon.service 
-            -u dcos-mesos-dns.service 
-            -u dcos-mesos-master.service 
+        exec journalctl --since=now -f \
+            -u dcos-exhibitor.service \
+            -u dcos-marathon.service \
+            -u dcos-mesos-dns.service \
+            -u dcos-mesos-master.service \
             -u dcos-nginx.service
         
 
@@ -51,8 +51,8 @@ For each Master node in your DC/OS cluster:
 
 3.  Add the script as an input to the forwarder:
     
-        "$SPLUNK_HOME/bin/splunk" add exec 
-            -source "$SPLUNK_HOME/bin/scripts/journald-master.sh" 
+        "$SPLUNK_HOME/bin/splunk" add exec \
+            -source "$SPLUNK_HOME/bin/scripts/journald-master.sh" \
             -interval 0
         
 
@@ -64,8 +64,8 @@ For each agent node in your DC/OS cluster:
     
         #!/bin/sh
         
-        exec journalctl --since=now -f 
-            -u dcos-mesos-slave.service 
+        exec journalctl --since=now -f \
+            -u dcos-mesos-slave.service \
             -u dcos-mesos-slave-public.service
         
 
@@ -76,14 +76,14 @@ For each agent node in your DC/OS cluster:
 
 3.  Add the script as an input to the forwarder:
     
-        "$SPLUNK_HOME/bin/splunk" add exec 
-            -source "$SPLUNK_HOME/bin/scripts/journald-agent.sh" 
+        "$SPLUNK_HOME/bin/splunk" add exec \
+            -source "$SPLUNK_HOME/bin/scripts/journald-agent.sh" \
             -interval 0
         
 
 4.  Add the task logs as inputs to the forwarder:
     
-        "$SPLUNK_HOME/bin/splunk" add monitor '/var/lib/mesos/slave' 
+        "$SPLUNK_HOME/bin/splunk" add monitor '/var/lib/mesos/slave' \
             -whitelist '/stdout$|/stderr$'
         
 

@@ -104,7 +104,7 @@ In this step you create a YAML configuration file that is customized for your en
     
     **resolvers**
     
-    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (``) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
+    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
         
         *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
     
@@ -171,7 +171,7 @@ To install DC/OS:
 
 3.  Run this command on your DC/OS setup file to fix a known issue. This command inserts an argument into the `docker run` command for the container which sets an environment variable for `$TERM`.
     
-        $ sed -i.bak "s/docker run -i/docker run -i -e "TERM=linux"/g" dcos_generate_config.sh
+        $ sed -i.bak "s/docker run -i/docker run -i -e \"TERM=linux\"/g" dcos_generate_config.sh
         
 
 4.  Run a preflight script to validate that your cluster is installable.
@@ -275,7 +275,7 @@ In this step you create a YAML configuration file that is customized for your en
     
     **resolvers**
     
-    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (``) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
+    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
         
         *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
     
@@ -319,7 +319,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
 
 2.  Run this command on your DC/OS setup file to fix a known issue. This command inserts an argument into the `docker run` command for the container which sets an environment variable for `$TERM`.
     
-        sed -i.bak "s/docker run -i/docker run -i -e "TERM=linux"/g" dcos_generate_config.sh
+        sed -i.bak "s/docker run -i/docker run -i -e \"TERM=linux\"/g" dcos_generate_config.sh
         
 
 3.  From your root directory, run the DC/OS installer shell script on your bootstrapping master nodes to generate a customized DC/OS build. The setup script extracts a Docker container that uses the generic DC/OS install files to create customized DC/OS build files for your cluster. The build files are output to `./genconf/serve/`.

@@ -14,4 +14,4 @@ The DC/OS Enterprise Edition is installed in your environment by using a dynamic
 
 The DC/OS installation process requires a cluster of nodes to install DC/OS onto and a single node to run the DC/OS installation from.
 
-Contact your sales representative or <sales@mesosphere.io> to obtain the DC/OS setup file.
+Contact your sales representative or <a href="mailto:sales@mesosphere.io">sales@mesosphere.io</a> to obtain the DC/OS setup file.

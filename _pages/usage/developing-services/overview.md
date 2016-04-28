@@ -151,7 +151,9 @@ Run the package repository scripts in numerical order. If a script passes you ca
 
 4.  Run the `3-validate-index.sh` script to validate the `index.json` file.
 
-For more information about the JSON files, see the [Universe Readme][1] page. <!-- ### <a name="dcoscli"></a>DC/OS CLI The command.json schema access the service endpoint Developer notes: There currently is no support for service dependencies over riding the framework-name (service endpoint)? -->
+For more information about the JSON files, see the [Universe Readme][1] page. <!-- ### 
+
+<a name="dcoscli"></a>DC/OS CLI The command.json schema access the service endpoint Developer notes: There currently is no support for service dependencies over riding the framework-name (service endpoint)? -->
 
  [1]: https://github.com/mesosphere/universe
  [2]: https://github.com/mesosphere/universe#contributing-a-package
