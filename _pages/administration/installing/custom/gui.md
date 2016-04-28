@@ -23,7 +23,8 @@ To use the automated GUI installation method:
 *   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH
 
 ## Prerequisites
-Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom/system-requirements/).
+
+Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
 
 # Install DC/OS
 
@@ -66,10 +67,10 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
     :   Specify a publicly accessible proxy IP address to one of your master nodes. If you don't have a proxy or already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DC/OS web interface on the master node after DC/OS is installed.
     
     **SSH Username**
-    :   Specify the SSH username, for example `centos`. 
+    :   Specify the SSH username, for example `centos`.
     
     **SSH Listening Port**
-    :   Specify the port to SSH to, for example `22`. 
+    :   Specify the port to SSH to, for example `22`.
     
     **SSH Key**
     :   Specify the private SSH key with access to your master IPs.
@@ -95,7 +96,7 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
     
     :   Specify a comma-separated list of DNS resolvers for your DC/OS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`).
         
-        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][1].
+        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][2].
     
     **IP Detect Script**
     
@@ -103,7 +104,7 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
         
         **Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be wiped and reinstalled.
 
-5.  Click **Run Pre-Flight**. The preflight script installs the cluster [prerequisites][2] and validates that your cluster is installable. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
+5.  Click **Run Pre-Flight**. The preflight script installs the cluster [prerequisites][3] and validates that your cluster is installable. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
     **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
     
@@ -130,7 +131,7 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
 
 9.  Enter your administrator username and password.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-auth2.png" rel="attachment wp-att-3341"><img src="/wp-content/uploads/2016/02/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-3341" /></a>
+    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-auth2.png" rel="attachment wp-att-4823"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-4823" /></a>
     
     You are done!
     
@@ -138,12 +139,12 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
 
 ## Next Steps
 
-Now you can [assign user roles][3].
+Now you can [assign user roles][4].
 
 ### Uninstalling DC/OS
 
 1.  From the bootstrap node, enter this command:
-
+    
         $ sudo bash dcos_generate_config.sh --uninstall
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
         ====> EXECUTING UNINSTALL
@@ -157,6 +158,7 @@ Now you can [assign user roles][3].
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /usage/service-discovery/
- [2]: /administration/installing/custom/advanced/#scrollNav-2
- [3]: /administration/security-and-authentication/managing-authorization/
+ [1]: /administration/installing/custom/system-requirements/
+ [2]: /usage/service-discovery/
+ [3]: /administration/installing/custom/advanced/#scrollNav-2
+ [4]: /administration/security-and-authentication/managing-authorization/
