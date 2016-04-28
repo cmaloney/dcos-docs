@@ -1,3 +1,9 @@
+---
+post_title: Job Scheduling 
+layout: page
+published: true
+---
+
 This document is a simple overview of material described in greater
 detail in the Apache Spark documentation [here][1] and [here][2].
 

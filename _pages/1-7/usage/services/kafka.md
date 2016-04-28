@@ -1,51 +1,8 @@
-DC/OS Kafka Service Guide
-======================
-
-[Overview](#overview)
-- [Benefits](#benefits)
-- [Features](#features)
-- [Related Services](#related-services)
-
-[Getting Started](#getting-started)
-- [Quick Start](#quick-start)
-
-[Install and Customize](#install-and-customize)
-- [Default Installation](#default-installation)
-- [Minimal Installation](#minimal-installation)
-- [Custom Installation](#custom-installation)
-- [Multiple Kafka cluster installation](#multiple-kafka-cluster-installation)
-- [Uninstall](#uninstall)
-
-[Configuring](#configuring)
-- [Changing Configuration at Runtime](#changing-configuration-at-runtime)
-- [Configuration Options](#configuration-options)
-
-[Connecting Clients](#connecting-clients)
-- [Using the DC/OS CLI](#using-the-dcos-cli)
-- [Using the REST API](#using-the-rest-api)
-- [REST API Authentication](#rest-api-authentication)
-- [Connection Info Response](#connection-info-response)
-- [Configuring the Kafka Client Library](#configuring-the-kafka-client-library)
-- [Configuring the Kafka Test Scripts](#configuring-the-kafka-test-scripts)
-
-[Managing](#managing)
-- [Add a Broker](#add-a-broker)
-- [Upgrade Software](#upgrade-software)
-
-[Troubleshooting](#troubleshooting)
-- [Configuration Update Errors](#configuration-update-errors)
-- [Replacing a Permanently Failed Server](#replacing-a-permanently-failed-server)
-
-[API Reference](#api-reference)
-- [Connection Information](#connection-information)
-- [Broker Operations](#broker-operations)
-- [Topic Operations](#topic-operations)
-- [Config History](#config-history)
-- [Config Updates](#config-updates)
-
-[Limitations](#limitations)
-- [Configurations](#configurations)
-- [Brokers](#brokers)
+---
+post_title: Kafka 
+layout: page
+published: true
+---
 
 # Overview
 
