@@ -25,14 +25,14 @@ You can upgrade an existing DC/OS CLI installation to the latest build.
 
 You can downgrade an existing DC/OS CLI installation to an older version.
 
-**Tip:** Downgrading is necessary if you are using DC/OS 1.6.0 or earlier.
+**Tip:** Downgrading is necessary if you are running an older version of DC/OS and want to reinstall the DC/OS CLI.
 
 1.  Delete your DC/OS CLI installation directories:
     
         $ sudo rm -rf dcos && rm -rf ~/.dcos
         
 
-2.  Install the legacy version of the DC/OS CLI, where <public-master-ip> is the public IP of your master node:
+2.  Install the legacy version of the DC/OS CLI, where is the public IP of your master node:
     
         mkdir -p dcos && cd dcos && 
           curl -O https://downloads.dcos.io/dcos-cli/install-legacy.sh && 

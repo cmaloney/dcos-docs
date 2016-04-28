@@ -182,7 +182,7 @@ To create a script for IP address discovery:
         #!/usr/bin/env bash
         set -o nounset -o errexit
         export PATH=/usr/sbin:/usr/bin:$PATH
-        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
+        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | head -1)
         
 
 *   #### Use the network route to the Mesos master
@@ -196,7 +196,7 @@ To create a script for IP address discovery:
         
         MASTER_IP=172.28.128.3
         
-        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
+        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | tail -1)
         
 
 # <a name="config-json"></a>Step 3: Configure your cluster
@@ -212,8 +212,8 @@ In this step you create a JSON configuration file that is customized for your en
            "exhibitor_zk_hosts": "<host1>:<port1>",
            "exhibitor_zk_path": "/dcos",
            "master_discovery":"static",
-           "master_list": "[\"<master-ip-1>\",\"<master-ip-2>\",\"<master-ip-3>\"]",
-           "resolvers": "[\"<dns-resolver-1>\"]"
+           "master_list": "["<master-ip-1>","<master-ip-2>","<master-ip-3>"]",
+           "resolvers": "["<dns-resolver-1>"]"
         }
         
 
@@ -225,9 +225,9 @@ In this step you create a JSON configuration file that is customized for your en
     
     **exhibitor_zk_hosts** Specify a comma-separated list of one or more Zookeeper node IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this Zookeeper cluster to orchestrate it's configuration.
     
-    **master_list** Specify a JSON-formatted list of your static master IP addresses. This must be specified in JSON list format. You must include the escape characters (`\`) as shown in the template.
+    **master_list** Specify a JSON-formatted list of your static master IP addresses. This must be specified in JSON list format. You must include the escape characters (``) as shown in the template.
     
-    **<a name="resolvers"></a>resolvers** Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
+    **<a name="resolvers"></a>resolvers** Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (``) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
     
     *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
 

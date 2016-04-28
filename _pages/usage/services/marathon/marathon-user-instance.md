@@ -14,7 +14,7 @@ A native Marathon instance is installed as a part of the DC/OS installation. Thi
 
 The Mesosphere Universe package repository in DC/OS makes it easy to deploy a user instance of Marathon via the Universe web UI.
 
-![Marathon in Universe](/assets/images/mom-screen-0.png)
+![Marathon in Universe][1]
 
 You'll also see how to add a Marathon user instance via the DC/OS CLI.
 
@@ -22,16 +22,15 @@ You'll also see how to add a Marathon user instance via the DC/OS CLI.
 
 From the Universe page, locate the Marathon package and click Install Package.
 
-![Install Dialog](/assets/images/mom-screen-1.png)
+![Install Dialog][2]
 
-Click Advanced Installation to edit advanced settings before proceeding. Once the Marathon instance starts, you will see it on the Services page. From there, you can launch its web UI and deploy your applications. [Read more about Mesosphere Universe](https://dcos.io).
-
+Click Advanced Installation to edit advanced settings before proceeding. Once the Marathon instance starts, you will see it on the Services page. From there, you can launch its web UI and deploy your applications. [Read more about Mesosphere Universe][3].
 
 ## Deploy via the CLI
 
 Prerequisite
 
-:   [Install the DC/OS CLI][1]
+:   [Install the DC/OS CLI][4]
 
 1.  Create a JSON configuration file, specify `marathon-alice` as the framework name, and save as `newuser.json`:
     
@@ -70,7 +69,10 @@ Prerequisite
 
 ### Next Steps
 
-After you have your Marathon instance up and running, you can try [Deploying a Containerized App on a Public Node][2].
+After you have your Marathon instance up and running, you can try [Deploying a Containerized App on a Public Node][5].
 
- [1]: /usage/cli/install/
- [2]: /usage/tutorials/containerized-app/
+ [1]: /assets/images/mom-screen-0.png
+ [2]: /assets/images/mom-screen-1.png
+ [3]: https://dcos.io
+ [4]: /usage/cli/install/
+ [5]: /usage/tutorials/containerized-app/

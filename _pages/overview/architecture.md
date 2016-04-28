@@ -38,7 +38,7 @@ ZooKeeper is a high-performance coordination service that manages the DC/OS serv
 
 ### Admin router
 
-The [admin router](https://github.com/mesosphere/adminrouter-public) is an open source Nginx configuration created by Mesosphere that provides central authentication and proxy to DC/OS services within the cluster.
+The [admin router][2] is an open source Nginx configuration created by Mesosphere that provides central authentication and proxy to DC/OS services within the cluster.
 
 # DC/OS agent nodes
 
@@ -46,17 +46,18 @@ The DC/OS private agent nodes run the deployed apps and services. The optional D
 
 ### Mesos agent process
 
-The `mesos-slave` process offers up available resources on a node to the Mesos masters. The agent node also accepts schedule requests from the master and invokes an executor to launch a task. For more information, see the [Mesos Slave Configuration][2] documentation.
+The `mesos-slave` process offers up available resources on a node to the Mesos masters. The agent node also accepts schedule requests from the master and invokes an executor to launch a task. For more information, see the [Mesos Slave Configuration][3] documentation.
 
 ### Mesos containerizer
 
-The Mesos Containerizer provides lightweight containerization and resource isolation of executors using Linux-specific functionality such as cgroups and namespaces. For more information, see the [Mesos Containerizer][3] documentation.
+The Mesos Containerizer provides lightweight containerization and resource isolation of executors using Linux-specific functionality such as cgroups and namespaces. For more information, see the [Mesos Containerizer][4] documentation.
 
 ### Docker container
 
-The Mesos Docker Containerizer provides support for launching tasks that contain Docker images. For more information, see the [Docker Containerizer][4] documentation.
+The Mesos Docker Containerizer provides support for launching tasks that contain Docker images. For more information, see the [Docker Containerizer][5] documentation.
 
  [1]: https://open.mesosphere.com/reference/mesos-master/
- [2]: https://open.mesosphere.com/reference/mesos-slave/
- [3]: http://mesos.apache.org/documentation/latest/containerizer/
- [4]: http://mesos.apache.org/documentation/latest/docker-containerizer/
+ [2]: https://github.com/mesosphere/adminrouter-public
+ [3]: https://open.mesosphere.com/reference/mesos-slave/
+ [4]: http://mesos.apache.org/documentation/latest/containerizer/
+ [5]: http://mesos.apache.org/documentation/latest/docker-containerizer/

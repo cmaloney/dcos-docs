@@ -32,7 +32,7 @@ To install Crate using the DC/OS CLI:
         $ dcos package install crate
         
 
-3.  Verify that Crate is successfully installed and running:
+2.  Verify that Crate is successfully installed and running:
     
     *   From the DC/OS CLI:
         
@@ -46,24 +46,24 @@ To install Crate using the DC/OS CLI:
 
 After installing, only a single Crate task is running on the DC/OS cluster. To launch the Crate cluster you must use the Framework API and have enough resources to add Crate instances.
 
-*   [Launching/Resizing the Cluster][6]
-*   [Shutting Down the Cluster][7]
-*   [Installing Multiple Crate Clusters][8]
+*   [Launching/Resizing the Cluster][5]
+*   [Shutting Down the Cluster][6]
+*   [Installing Multiple Crate Clusters][7]
 
 ### <a name="launch"></a>Launching and Resizing the Cluster
 
-**Prerequisite:** You must [SSH into the agent node][9] that is running the Crate service.
+**Prerequisite:** You must [SSH into the agent node][8] that is running the Crate service.
 
 To launch instances, POST the number of desired instances to the `/resize` endpoint:
 
-    $ curl -X POST localhost:4040/cluster/resize \
-          -H "Content-Type: application/json" \
+    $ curl -X POST localhost:4040/cluster/resize 
+          -H "Content-Type: application/json" 
           -d '{"instances": 3}'
     
 
 ### <a name="shutdown"></a>Shutting Down the Cluster
 
-**Prerequisite:** You must [SSH into the agent node][9] that is running the Crate service.
+**Prerequisite:** You must [SSH into the agent node][8] that is running the Crate service.
 
 1.  To shut down the cluster, POST to the `/shutdown` endpoint:
     
@@ -76,7 +76,7 @@ To launch instances, POST the number of desired instances to the `/resize` endpo
 
 A single instance of the Crate framework can only run a single Crate cluster. To install multiple Crate clusters, specify unique framework names for each cluster in your options file.
 
-**Prerequisite:** You must [SSH into the agent node][9] that is running the Crate service.
+**Prerequisite:** You must [SSH into the agent node][8] that is running the Crate service.
 
 1.  Add `crate.framework-name` and `crate.cluster-name` to your options file. You must use a unique name for each cluster and set each framwork API port to a unique and available port (default is 4040). This is not exposed but is required to route the DC/OS endpoints to the correct framework instance.
     
@@ -109,7 +109,7 @@ A single instance of the Crate framework can only run a single Crate cluster. To
         $ dcos package uninstall crate --app-id /crate-2
         
 
-2.  Open the Zookeeper Exhibitor web interface at `<hostname>/exhibitor`, where `<hostname>` is the [Mesos Master hostname][10].
+2.  Open the Zookeeper Exhibitor web interface at `<hostname>/exhibitor`, where `<hostname>` is the [Mesos Master hostname][9].
     
     1.  Click on **Explorer** tab and select the desired app folder (`crate`) and click **Modify** at the bottom of the explorer.
         
@@ -119,26 +119,25 @@ A single instance of the Crate framework can only run a single Crate cluster. To
     
     3.  Click **OK** to confirm your deletion.
 
-3.  Optional: Clear your data directories. By default the Crate DC/OS Service data and log directories are written into the Mesos task sandbox. The Mesos task sandbox is automatically purged periodically. You can change this by setting the `crate.data-directory` option when you install the Crate DC/OS Service. You can find more information about how to use custom, persistent data paths in the [Crate framework documentation][11].
+3.  Optional: Clear your data directories. By default the Crate DC/OS Service data and log directories are written into the Mesos task sandbox. The Mesos task sandbox is automatically purged periodically. You can change this by setting the `crate.data-directory` option when you install the Crate DC/OS Service. You can find more information about how to use custom, persistent data paths in the [Crate framework documentation][10].
 
 ## Links
 
 Crate is <a href="https://crate.io/docs/support/" target="_blank">supported</a> by a Crate Technology Gmbh. For information about Crate enterprise edition, see <a href="https://crate.io/enterprise/" target="_blank">https://crate.io/enterprise/</a> or contact <sales@crate.io>.
 
 *   <https://crate.io>
-*   [Framework Documentation][12]
-*   [Crate Documentation][13]
+*   [Framework Documentation][11]
+*   [Crate Documentation][12]
 
  [1]: #install
  [2]: #usage
  [3]: #uninstall
  [4]: /usage/cli/install/
- [5]: /usage/services/repo/
- [6]: #launch
- [7]: #shutdown
- [8]: #multiple
- [9]: /administration/sshcluster/
- [10]: /administration/installing/cloud/aws#launchdcos
- [11]: https://github.com/crate/crate-mesos-framework#persistent-data-paths
- [12]: https://github.com/crate/crate-mesos-framework/blob/master/README.rst
- [13]: https://crate.io/docs
+ [5]: #launch
+ [6]: #shutdown
+ [7]: #multiple
+ [8]: /administration/sshcluster/
+ [9]: /administration/installing/cloud/aws#launchdcos
+ [10]: https://github.com/crate/crate-mesos-framework#persistent-data-paths
+ [11]: https://github.com/crate/crate-mesos-framework/blob/master/README.rst
+ [12]: https://crate.io/docs

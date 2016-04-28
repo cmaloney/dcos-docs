@@ -118,7 +118,7 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
 
 3.  Run the script.
     
-        PS C:\> python get-pip.py
+        PS C:> python get-pip.py
         
 
 #### Installing Git
@@ -141,7 +141,7 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
 
 2.  Install `virtualenv`:
     
-        PS C:\> pip install virtualenv
+        PS C:> pip install virtualenv
         
     
     **Tip:** You can safely ignore any Python "Insecure Platform" warnings. For more information, see <a href="https://virtualenv.pypa.io/en/latest/installation.html" target="_blank">https://virtualenv.pypa.io/en/latest/installation.html</a>.
@@ -152,10 +152,10 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
 
 2.  From the command line, create a new directory named `dcos` (it can be located wherever you wish) and change your working directory to it.
     
-        PS C:\> md dcos
+        PS C:> md dcos
         
         
-        Directory: C:\
+        Directory: C:
         
         
         Mode                LastWriteTime         Length Name
@@ -163,20 +163,20 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
         d-----        1/29/2016   2:33 PM                dcos
         
         
-        PS C:\> cd dcos
-        PS C:\dcos>
+        PS C:> cd dcos
+        PS C:dcos>
         
 
 3.  Download the DC/OS CLI Powershell install script [by clicking here][4]. Save the script to the `dcos` directory.
     
     If you are running Windows 10, or if you are running an earlier version of Windows and have manually installed the `wget` software package, you can alternatively download the Powershell script directly from within Powershell:
     
-        PS C:\dcos\> wget https://downloads.dcos.io/dcos-cli/install.ps1 -OutFile install.ps1
+        PS C:dcos> wget https://downloads.dcos.io/dcos-cli/install.ps1 -OutFile install.ps1
         
 
 4.  Change the default security policy of your Powershell to allow the install script to run:
     
-        PS C:\dcos> set-executionpolicy Unrestricted -Scope Process
+        PS C:dcos> set-executionpolicy Unrestricted -Scope Process
         
         Execution Policy Change
         The execution policy helps protect you from scripts that you do not trust. 
@@ -190,12 +190,12 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
 
 5.  Run the DC/OS CLI install script, where `<installdir>` is the DC/OS installation directory and `<hosturl>` is the hostname of your master node prefixed with `http://`:
     
-        PS C:\dcos\> .\install.ps1 <install_dir> <hosturl>
+        PS C:dcos> .install.ps1 <install_dir> <hosturl>
         
     
     For example, if the hostname of your AWS master node is `dcos-ab-1234.us-west-2.elb.amazonaws.com`:
     
-        PS C:\dcos\> .\install.ps1 . http://dcos-ab-1234.us-west-2.elb.amazonaws.com
+        PS C:dcos> .install.ps1 . http://dcos-ab-1234.us-west-2.elb.amazonaws.com
         
     
     **Tip:** You might receive a security warning. It is safe to ignore this warning and allow the script to run:
@@ -203,7 +203,7 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
         Security Warning
         Run only scripts that you trust. While scripts from the Internet can
         be useful, this script can potentially harm your computer. Do you
-        want to run C:\dcos\install.ps1?
+        want to run C:dcosinstall.ps1?
         [D] Do not run  [R] Run once  [S] Suspend  [?] Help (default is "D"): R
         
 
@@ -211,7 +211,7 @@ Pip is included with Python, but you must upgrade pip for it to work properly wi
 
 7.  Follow the on-screen DC/OS CLI instructions to add the `dcos` command to your PATH and complete installation:
     
-        PS C:\dcos\> & .activate.ps1; dcos help
+        PS C:dcos> & .activate.ps1; dcos help
         
     
     You can now use the CLI.

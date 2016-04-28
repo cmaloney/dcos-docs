@@ -43,6 +43,7 @@ These instructions explain how to set up an SSH connection to your DC/OS cluster
             
                 $ dcos node ssh --master-proxy --leader
                 
+            
             **Tip:** The default user is `core`. If you are using CentOS, enter:
             
                 $ dcos node ssh --master-proxy --leader --user=centos
@@ -147,5 +148,3 @@ To install these programs, download the Windows installer <a href="http://www.ch
  [2]: #unix
  [3]: #windows
  [4]: /administration/installing/cloud/aws/#create
- 
-

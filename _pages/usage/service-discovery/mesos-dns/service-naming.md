@@ -88,7 +88,7 @@ On a DC/OS cluster, ports are offered by agent nodes in the same way as other re
 
 The following table shows the rules that govern SRV generation:
 
-<table class="table" style="width: 400px !important;">
+<table class="table" style="width: 400px !important">
   <thead>
     <tr>
       <th>

@@ -231,7 +231,7 @@ DC/OS uses Mesos-DNS for internal service discovery. While the .mesos domain can
           </td>
           
           <td class="confluenceTd">
-            IP Address of the Mesos Agent that Mesos-DNS is running on (<em>see DC/OS Configuration, <a href="#four">Step 4</a>, <mesos_agent></em>).
+            IP Address of the Mesos Agent that Mesos-DNS is running on (<em>see DC/OS Configuration, <a href="#four">Step 4</a>, </em>).
           </td>
         </tr>
       </tbody>

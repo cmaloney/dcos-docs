@@ -16,13 +16,13 @@ hide_from_related: false
   </h1>
 </div>
 
-* This page contains information about Apache Mesos release candidate (RC) builds. For official releases, see the [releases][1] page. For nightly builds, see the [mesos-nightly][2] page. *
+*   This page contains information about Apache Mesos release candidate (RC) builds. For official releases, see the [releases][1] page. For nightly builds, see the [mesos-nightly][2] page. *
 
 ### All Release Candidates
 
 {% for package in site.data.download_rc_versions %} {% if package.name == "mesos" %} {% assign releases = package.releases | sort:"name" | reverse%} {% for rel in releases %}
 
-#### [Apache Mesos {{ rel.name }}][3]    <small>released {{ rel.timestamp | date_to_string }} </small> 
+#### \[Apache Mesos {{ rel.name }}\]\[3\]    <small>released {{ rel.timestamp | date_to_string }} </small>
 
 {% endfor %} {% endif %} {% endfor %}
 
@@ -65,18 +65,19 @@ hide_from_related: false
 
 ### The Source
 
-Apache Mesos is an open source project, and its source is available from the [Mesos Downloads ➦][4] page.
+Apache Mesos is an open source project, and its source is available from the [Mesos Downloads ➦][3] page.
 
 ### Installation Tips
 
-*   On many systems, you'll need to ensure `libjvm.so` is on the linker path so that Mesos can find it when it starts. If you have only one JVM installed in the default location, one can approach the problem with a [small shell script][5]. If you have a better idea about how to do this, please contact `support@mesosphere.io` and we'll try to implement it.
+*   On many systems, you'll need to ensure `libjvm.so` is on the linker path so that Mesos can find it when it starts. If you have only one JVM installed in the default location, one can approach the problem with a [small shell script][4]. If you have a better idea about how to do this, please contact `support@mesosphere.io` and we'll try to implement it.
 
 *   Configure Mesos to talk to Zookeeper by overwriting `/etc/mesos/zk`.
 
 *   Mesos loads many configuration settings via environment variables, which can be set in `/etc/defaults/mesos`, `/etc/defaults/mesos-master` and `/etc/defaults/mesos-slave`.
+    
+    [3]: #apache-mesos-{{ rel.name }} "Show packages for Apache Mesos {{ rel.name }}"
 
  [1]: /downloads/mesos/
  [2]: /downloads/mesos-nightly/
- [3]: #apache-mesos-{{ rel.name }} "Show packages for Apache Mesos {{ rel.name }}"
- [4]: https://mesos.apache.org/downloads/
- [5]: https://gist.github.com/solidsnack/7569266
+ [3]: https://mesos.apache.org/downloads/
+ [4]: https://gist.github.com/solidsnack/7569266

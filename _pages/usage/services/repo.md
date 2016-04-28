@@ -17,7 +17,7 @@ hide_from_related: false
 DC/OS services can be installed on your cluster with a single command from the DC/OS CLI:
 
     $ dcos package install <service-name>
-
+    
 
 ## Search for Packages
 
@@ -26,7 +26,7 @@ If you're looking for big data packages, use:
     $ dcos package search "big data"
     NAME VERSION FRAMEWORK SOURCE DESCRIPTION
     spark 1.4.0-SNAPSHOT True https://github.com/mesosphere/universe/archive/version-1.x.zip Spark is a fast and general cluster computing system for Big Data
-
+    
 
 ## List Repositories
 
@@ -36,14 +36,14 @@ See which package repositories are currently configured:
 
     $ dcos package repo list
     Universe: https://universe.mesosphere.com/repo
-
+    
 
 ## Add a Repository
 
 Add a repo with the name `your-repo` and the repo archive URL `https://yourcompany/archive/stuff.zip`:
 
     $ dcos package repo add your-repo https://yourcompany/archive/stuff.zip
-
+    
 
 ## Remove a Repository
 

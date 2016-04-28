@@ -32,10 +32,11 @@ To create a VIP:
     **Tip:** Select **JSON Mode** to edit your application directly in JSON.
     
     For more information on port configuration, see the [ports documentation][1].
-    
+
 3.  From inside the cluster, you will be able to use your VIP directly. You can SSH into the cluster and run this command to see it work:
     
         curl 1.1.1.1:5000
+        
 
 ## Assigning Multiple VIPs to Your App
 

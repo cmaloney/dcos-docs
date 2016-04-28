@@ -70,7 +70,7 @@ In order to login to Docker Hub, the job needs to know the username, password, a
 
 A published Docker image also requires a namespace. On Docker Hub, this may be the user’s username or an organization the user is a member. For this job, the username will be reused as the target namespace.
 
-From the “Add build step” drop-down list, select "Execute Shell" option and populate with the script below. *Note:* Change <ACCOUNT EMAIL>.
+From the “Add build step” drop-down list, select "Execute Shell" option and populate with the script below. *Note:* Change .
 
 ## Script:
 

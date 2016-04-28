@@ -35,29 +35,16 @@ hide_from_related: false
         --version
             Print version information.
     
+
 # dcos auth
 
-Description:
-    Authenticate to DC/OS cluster.
+Description: Authenticate to DC/OS cluster.
 
-Usage:
-    dcos auth --info
-    dcos auth login
-    dcos auth logout
+Usage: dcos auth --info dcos auth login dcos auth logout
 
-Commands:
-    login
-        Login to your DC/OS Cluster.
-    logout
-        Logout of your DC/OS Cluster.
+Commands: login Login to your DC/OS Cluster. logout Logout of your DC/OS Cluster.
 
-Options:
-    -h, --help
-        Print usage.
-    --info
-        Print a short description of this subcommand.
-    --version
-        Print version information.
+Options: -h, --help Print usage. --info Print a short description of this subcommand. --version Print version information.
 
 # dcos config
 

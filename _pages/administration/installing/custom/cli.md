@@ -21,13 +21,14 @@ To use the automated command-line installation method:
 *   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH 
 
 ## Prerequisites
-Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom/system-requirements/).
+
+Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
 
 # Create an IP detection script
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
 
-**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][1].
+**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][2].
 
 1.  Create a directory named `genconf` on your bootstrap node and navigate to it.
     
@@ -68,7 +69,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             #!/usr/bin/env bash
             set -o nounset -o errexit
             export PATH=/usr/sbin:/usr/bin:$PATH
-            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
+            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | head -1)
             
     
     *   #### Use the network route to the Mesos master
@@ -82,7 +83,8 @@ In this step you create an IP detect script to broadcast the IP address of each 
             
             MASTER_IP=172.28.128.3
             
-            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
+            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | tail -1)
+            
 
 # Configure and Install DC/OS
 
@@ -111,9 +113,9 @@ In this step you create a YAML configuration file that is customized for your en
         $6$rounds=656000$v55tdnlMGNoSEgYH$1JAznj58MR.Bft2wd05KviSUUfZe45nsYsjlEl84w34pp48A9U2GoKzlycm3g6MBmg4cQW9k7iY4tpZdkWy9t1   
         
 
-2.  Create a configuration file and save as `genconf/config.yaml`. 
+2.  Create a configuration file and save as `genconf/config.yaml`.
     
-    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][1].
+    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][2].
     
         agent_list:
         - <agent-private-ip-1>
@@ -141,9 +143,9 @@ In this step you create a YAML configuration file that is customized for your en
         superuser_username: <username>
         
     
-    **Important:** You cannot use an NFS mount for Exhibitor storage with the automated command line installation method. To use an NFS mount for Exhibitor storage (`exhibitor_storage_backend: shared_filesystem`), you must use the [Manual command line installation method][2].
+    **Important:** You cannot use an NFS mount for Exhibitor storage with the automated command line installation method. To use an NFS mount for Exhibitor storage (`exhibitor_storage_backend: shared_filesystem`), you must use the [Manual command line installation method][3].
 
-3.  Copy your private SSH key to `genconf/ssh_key`. For more information, see the [ssh_key_path][1] parameter.
+3.  Copy your private SSH key to `genconf/ssh_key`. For more information, see the [ssh_key_path][2] parameter.
     
         $ cp <path-to-key> genconf/ssh_key && chmod 0600 genconf/ssh_key
         
@@ -213,7 +215,7 @@ To install DC/OS:
         │   ├── ip-detect     
         
 
-2.  <a name="two"></a>Install the cluster prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For a full list of cluster prerequisites, see this [documentation][3].
+2.  <a name="two"></a>Install the cluster prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For a full list of cluster prerequisites, see this [documentation][4].
     
         $ sudo bash dcos_generate_config.ee.sh --install-prereqs
         
@@ -319,7 +321,7 @@ To install DC/OS:
 
 ### Add DC/OS users
 
-You can assign user roles and grant access to DC/OS services. For more information, see the [documentation][4].
+You can assign user roles and grant access to DC/OS services. For more information, see the [documentation][5].
 
 ### Add agent nodes
 
@@ -327,10 +329,10 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
 
 **Prerequisite:**
 
-*   The agent nodes must meet the [hardware][5] and [software][6] prerequisites.
+*   The agent nodes must meet the [hardware][6] and [software][7] prerequisites.
 
-1.  Update the `config.yaml` file with the additional agent nodes. For parameters descriptions and configuration examples, see the [documentation][1].
-2.  Run the installation steps beginning with [installing the cluster][7] prerequisites:
+1.  Update the `config.yaml` file with the additional agent nodes. For parameters descriptions and configuration examples, see the [documentation][2].
+2.  Run the installation steps beginning with [installing the cluster][8] prerequisites:
     
         $ sudo bash dcos_generate_config.ee.sh --install-prereqs
         
@@ -344,10 +346,11 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         18:17:14:: 
         18:17:14:: ====> 10.10.0.160:22 FAILED
         
+
 ### Uninstalling DC/OS
 
 1.  From the bootstrap node, enter this command:
-
+    
         $ sudo bash dcos_generate_config.sh --uninstall
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
         ====> EXECUTING UNINSTALL
@@ -361,10 +364,11 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /administration/installing/custom/configuration-parameters/
- [2]: /administration/installing/custom/advanced/
- [3]: /administration/installing/custom/advanced/#scrollNav-2
- [4]: /administration/security-and-authentication/managing-authorization/
- [5]: #hardware
- [6]: #software
- [7]: #two
+ [1]: /administration/installing/custom/system-requirements/
+ [2]: /administration/installing/custom/configuration-parameters/
+ [3]: /administration/installing/custom/advanced/
+ [4]: /administration/installing/custom/advanced/#scrollNav-2
+ [5]: /administration/security-and-authentication/managing-authorization/
+ [6]: #hardware
+ [7]: #software
+ [8]: #two

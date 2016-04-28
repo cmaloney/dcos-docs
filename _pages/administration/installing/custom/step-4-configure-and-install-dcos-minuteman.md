@@ -196,7 +196,7 @@ In this step you create a YAML configuration file that is customized for your en
     
     **resolvers**
     
-    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
+    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (``) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
         
         *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
     
@@ -378,7 +378,7 @@ In this step you create a YAML configuration file that is customized for your en
     
     **resolvers**
     
-    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (`\`) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
+    :   Specify a JSON-formatted list of DNS servers for your DC/OS host nodes. You must include the escape characters (``) as shown in the template. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them.
         
         *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
     

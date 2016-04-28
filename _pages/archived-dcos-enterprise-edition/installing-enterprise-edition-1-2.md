@@ -134,7 +134,7 @@ In this step you create an <span class="caps">IP</span> detect script to broadca
         #!/usr/bin/env bash
         set -o nounset -o errexit
         export PATH=/usr/sbin:/usr/bin:$PATH
-        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
+        echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | head -1)
         
 
 *   #### Use the network route to the Mesos master {#use-the-network-route-to-the-mesos-master}
@@ -148,7 +148,7 @@ In this step you create an <span class="caps">IP</span> detect script to broadca
         
         MASTER_IP=172.28.128.3
         
-        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
+        echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | tail -1)
         
 
 * * *
@@ -170,7 +170,7 @@ Here is an example configuration, where the cluster name is `fs-example`, the nu
         "exhibitor_fs_config_dir": "/shared-mount",
         "repository_url":"file:///tmp/dcos",
         "bootstrap_url":"file:///tmp/dcos",
-        "resolvers": "[\"10.10.5.1\", \"10.10.6.1\"]",
+        "resolvers": "["10.10.5.1", "10.10.6.1"]",
         "master_lb": "10.10.20.1",
         "roles": "slave_public",
         "weights": "slave_public=1"

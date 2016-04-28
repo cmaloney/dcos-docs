@@ -16,7 +16,7 @@ hide_from_related: false
   </h1>
 </div>
 
-* This page contains information about acquiring nightly builds for Apache Mesos. For official releases, see the [releases][1] page. For release candidate builds, see the [mesos-rc][2] page. *
+*   This page contains information about acquiring nightly builds for Apache Mesos. For official releases, see the [releases][1] page. For release candidate builds, see the [mesos-rc][2] page. *
 
 Mesosphere has official package repositories which connect directly to the native package management tools of your favorite Linux distribution — namely apt-get and yum — to install Mesos on top of the most common Linux distributions (RedHat, CentOS, Ubuntu and Debian).
 
