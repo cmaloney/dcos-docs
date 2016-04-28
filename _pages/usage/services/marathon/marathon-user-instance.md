@@ -35,9 +35,8 @@ Prerequisite
 
 1.  Create a JSON configuration file, specify `marathon-alice` as the framework name, and save as `newuser.json`:
     
-        {"marathon": {"framework-name": "marathon-alice" }}
-        
-    
+        {"service": {"name": "marathon-alice" }}
+
     **Tip:** You must create separate JSON configuration files for each Marathon instance.
 
 2.  From the DC/OS CLI, enter this command to install the Marathon instance:
