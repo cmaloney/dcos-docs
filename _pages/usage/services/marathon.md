@@ -10,53 +10,95 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The DC/OS uses Marathon to manage the processes and services and is the "init system" for the DC/OS. Marathon starts and monitors your applications and services, automatically healing failures.
 
-A native Marathon instance is installed as a part of the DC/OS installation. After DC/OS has been started, you can manage the native Marathon instance through the web interface at `<hostname>/marathon` or from the DC/OS CLI with the `dcos marathon` command.
+Mesosphere Enterprise DC/OS uses Marathon to manage the processes and services and is the "init system" for the DC/OS. Marathon starts and monitors your applications and services, automatically healing failures.
 
-You can create additional Marathon instances for specific users by using the instructions below.
+A native Marathon instance is installed as a part of DC/OS installation. After DC/OS has started, you can manage the native Marathon instance through the web interface at `<hostname>/marathon` or from the DC/OS CLI with the `dcos marathon` command.
 
-# <a name="install"></a>Installing a Marathon instance on DC/OS
+You can also create additional Marathon instances for specific users. 
+
+# Install a Single Additional Marathon instance
 
 **Prerequisite**
 
 *   The DC/OS CLI must be [installed][1].
 
-1.  Install a Marathon instance:
-    
-    *   To install a single Marathon instance, enter this command from the DC/OS CLI:
+1. Enter this command from the DC/OS CLI:
         
             $ dcos package install marathon
-            
+
+By default the DC/OS service name is `marathon-user`. <a href="/wp-content/uploads/2015/12/marathontask.png" rel="attachment wp-att-1410"><img src="/wp-content/uploads/2015/12/marathontask.png" alt="marathontask" width="709" height="44" class="alignnone size-full wp-image-1410" /></a>
+                
+1. In the DC/OS web interface, click the **System** tab, select **Organization**, and then **Groups**.
+
+1. Click the `Superuser group`, then **Advanced ACLs**.
+
+1. Add the following two rules:
+
+<table class="table">
+  <tr>
+    <th>Resource</th>
+    <th>Permissions</th>
+  </tr>
+  <tr>
+    <td>dcos:service:marathon:marathon-user:services/</td>
+    <td>full</td>
+  </tr>
+  <tr>
+  	 <td>dcos:service:marathon:marathon-user:admin/</td>
+  	 <td>full</td>
+  </tr>
+</table>
+
+Then, click **Add Rule**.
+
+1. Close the `Superuser group` panel. Click the **Services** tab, then choose your Marathon service name to navigate to the web interface. For more information, see [Deploying Multiple Marathon Instances][2]. <!-- I guess this file needs to change, too -->
         
-        By default the DC/OS Service name is `marathon-user`. <a href="/wp-content/uploads/2015/12/marathontask.png" rel="attachment wp-att-1410"><img src="/wp-content/uploads/2015/12/marathontask.png" alt="marathontask" width="709" height="44" class="alignnone size-full wp-image-1410" /></a>
-    
-    *   To install multiple Marathon instances:
-        
-        1.  Create a custom JSON configuration file that includes this entry where `<name>` is the unique Marathon instance name:
+# Install Multiple Additional Marathon Instances
+
+**Prerequisite**
+
+*   The DC/OS CLI must be [installed][1].      
+
+1.  Create a custom JSON configuration file that includes this entry where `<name>` is the unique Marathon instance name:
             
                  {"marathon": {"framework-name": "marathon-<name>" }}
                 
-            
-            **Tip:** You must create a separate JSON configuration file for each Marathon instance.
+**Note:** You must create a separate JSON configuration file for each Marathon instance.
         
-        2.  From the DC/OS CLI, enter this command:
+1. From the DC/OS CLI, enter this command:
             
                  $ dcos package install --options=<config-file>.json marathon
-                
-        
-        3.  From the DC/OS web interface **Services** tab, click on your Marathon service name to navigate to the web interface. For more information, see [Deploying Multiple Marathon Instances][2].
 
-# <a name="uninstall"></a>Uninstalling a Marathon Instance
+1. In the DC/OS web interface, open the ACL editor add the rules for group `superusers` for each of your new Marathon instances:
+
+<table class="table">
+  <tr>
+    <th>Resource</th>
+    <th>Permissions</th>
+  </tr>
+  <tr>
+    <td>dcos:service:marathon:<service-name>:services/</td>
+    <td>full</td>
+  </tr>
+  <tr>
+  	 <td>dcos:service:marathon:<service-name>:admin/</td>
+  	 <td>full</td>
+  </tr>
+</table>
+                
+1. Click the **Services** tab, the choose one of your Marathon service names in order to navigate to the web interface. For more information, see [Deploying Multiple Marathon Instances][2]. <!-- I guess this file needs to change, too -->
+
+# Uninstalling a Marathon Instance
 
 1.  From the DC/OS CLI, enter this command:
-    
-        $ dcos package uninstall marathon
+<!-- ask matthias veit for the flag to uninstall a particular instance, or check the doc above, or install the CLI and see what commands are available. Is uninstall the same for enterprise and OSS? -->
+        $ dcos package uninstall --app-id=<name> marathon
         
 
 2.  Open the Zookeeper Exhibitor web interface at `<hostname>/exhibitor`, where `<hostname>` is the [Mesos Master hostname][3].
     
-    1.  Click on the **Explorer** tab and navigate to the `universe/<marathon-user>` folder.
+    1.  Click on the **Explorer** tab and navigate to the `universe/<service-name>` folder.
         
         **Important:** Do not delete the `marathon` folder. This is the native DC/OS Marathon instance.
         
