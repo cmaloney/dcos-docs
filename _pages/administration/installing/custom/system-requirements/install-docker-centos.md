@@ -30,70 +30,62 @@ These instructions show how to use Docker with OverlayFS on CentOS 7.
 
 1.  Upgrade CentOS to 7.2:
     
-    `bash
-$ sudo yum upgrade --assumeyes --tolerant
-$ sudo yum update --assumeyes`
+        $ sudo yum upgrade --assumeyes --tolerant
+        $ sudo yum update --assumeyes`
 
 2.  Verify that the kernel is at least 3.10:
     
-    `$ uname -r
-3.10.0-327.10.1.el7.x86_64`
+        $ uname -r 3.10.0-327.10.1.el7.x86_64
 
 3.  Enable OverlayFS:
     
-    `bash
-$ sudo tee /etc/modules-load.d/overlay.conf <<-'EOF'
-overlay
-EOF`
+        $ sudo tee /etc/modules-load.d/overlay.conf <<-'EOF'
+        overlay
+        EOF`
 
 4.  Reboot to reload kernel modules:
-    
-    `bash
-$ reboot`
+
+        $ reboot
 
 5.  Verify that OverlayFS is enabled:
     
-    `bash
-$ lsmod | grep overlay
-overlay`
+        $ lsmod | grep overlay
+        overlay
 
 6.  Configure yum to use the Docker yum repo:
     
-    `bash
-$ sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
-[dockerrepo]
-name=Docker Repository
-baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
-enabled=1
-gpgcheck=1
-gpgkey=https://yum.dockerproject.org/gpg
-EOF`
+        $ sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
+        [dockerrepo]
+        name=Docker Repository
+        baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+        enabled=1
+        gpgcheck=1
+        gpgkey=https://yum.dockerproject.org/gpg
+        EOF
 
 7.  Configure systemd to run the Docker Daemon with OverlayFS:
     
-    `bash
-$ sudo mkdir -p /etc/systemd/system/docker.service.d && sudo tee /etc/systemd/system/docker.service.d/override.conf <<- EOF
-[Service]
-ExecStart=
-ExecStart=/usr/bin/docker daemon --storage-driver=overlay -H fd://
-EOF`
+
+        $ sudo mkdir -p /etc/systemd/system/docker.service.d && sudo tee /etc/systemd/system/docker.service.d/override.conf <<- EOF
+        [Service]
+        ExecStart=
+        ExecStart=/usr/bin/docker daemon --storage-driver=overlay -H fd://
+        EOF
 
 8.  Install the Docker engine, daemon, and service:
     
-    `bash
-$ sudo yum install --assumeyes --tolerant docker-engine
-$ sudo systemctl start docker
-$ sudo systemctl enable docker`
+        $ sudo yum install --assumeyes --tolerant docker-engine
+        $ sudo systemctl start docker
+        $ sudo systemctl enable docker
     
     When the process completes, you should see:
     
-    `Complete!
-Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.`
+        Complete!
+        Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
 
 9.  Test that Docker is properly installed:
     
-    `bash
-$ sudo docker ps`
+        $ sudo docker ps
 
 For more generic Docker requirements, see [System Requirements: Docker][1].
 
