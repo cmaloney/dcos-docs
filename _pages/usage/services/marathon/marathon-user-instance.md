@@ -35,13 +35,13 @@ Prerequisite
 
 1.  Create a JSON configuration file, specify `marathon-alice` as the framework name, and save as `newuser.json`:
     
-        {"service": {"name": "marathon-alice" }}
+        {"marathon": {"framework-name": "marathon-alice" }}
 
     **Tip:** You must create separate JSON configuration files for each Marathon instance.
 
 2.  From the DC/OS CLI, enter this command to install the Marathon instance:
     
-        $ dcos package install --options=newuser.json marathon
+        $ dcos package install marathon --options="newuser.json"
         
 
 3.  From the DC/OS web interface **Services** tab, click on the **marathon-alice** service name to navigate to the Marathon web interface.
