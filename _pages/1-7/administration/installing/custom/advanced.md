@@ -1,5 +1,4 @@
 ---
-UID: 5703eac617d56
 post_title: Advanced Installer
 post_excerpt: ""
 layout: page
