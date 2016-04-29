@@ -7,8 +7,8 @@ published: true
 menu_order: 100
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: true
-hide_from_related: true
+hide_from_navigation: false
+hide_from_related: false
 ---
 Monitoring the health of all the pieces that make up DC/OS is vital to datacenter operators and for troubleshoooting hard-to-diagnose bugs. You can monitor the health of your cluster components from the DC/OS UI component health page. The component health page displays information from the system health API, which monitors the core DC/OS components. <!-- In the future we're hoping to expand the usage of the system health API to other metrics as well as exposing a plugins-style architecture to allow operators to customize system health monitoring. -->
 
