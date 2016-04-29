@@ -41,7 +41,7 @@ Prerequisite
 
 2.  From the DC/OS CLI, enter this command to install the Marathon instance:
     
-        $ dcos package install --options=newuser.json marathon
+        $ dcos package install marathon --options="newuser.json"
         
 
 3.  From the DC/OS web interface **Services** tab, click on the **marathon-alice** service name to navigate to the Marathon web interface.
