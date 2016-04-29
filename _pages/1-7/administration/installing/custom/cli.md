@@ -1,5 +1,4 @@
 ---
-UID: 5708121e3f1ae
 post_title: CLI Installer
 post_excerpt: ""
 layout: page
