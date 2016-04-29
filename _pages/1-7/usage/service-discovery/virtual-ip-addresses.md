@@ -7,8 +7,8 @@ published: true
 menu_order: 100
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: true
-hide_from_related: true
+hide_from_navigation: false
+hide_from_related: false
 ---
 DC/OS can map traffic from a single Virtual IP (VIP) to multiple IP addresses and ports.
 
@@ -32,10 +32,11 @@ To create a VIP:
     **Tip:** Select **JSON Mode** to edit your application directly in JSON.
     
     For more information on port configuration, see the [ports documentation][1].
-    
+
 3.  From inside the cluster, you will be able to use your VIP directly. You can SSH into the cluster and run this command to see it work:
     
         curl 1.1.1.1:5000
+        
 
 ## Assigning Multiple VIPs to Your App
 
