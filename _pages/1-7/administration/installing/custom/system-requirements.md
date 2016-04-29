@@ -1,4 +1,5 @@
 ---
+UID: 57239b25e21fc
 post_title: System Requirements
 post_excerpt: ""
 layout: page
@@ -245,19 +246,19 @@ Here are the agent node hardware requirements.
 
 **Requirements**
 
-* Docker 1.7 or greater must be installed on all bootstrap and cluster nodes.
+*   Docker 1.7 or greater must be installed on all bootstrap and cluster nodes.
 
 **Recommendations**
 
-* Docker 1.9 or greater is recommended <a href="https://github.com/docker/docker/issues/9718" target="_blank">for stability reasons</a>.
+*   Docker 1.9 or greater is recommended <a href="https://github.com/docker/docker/issues/9718" target="_blank">for stability reasons</a>.
 
-* Do not use Docker `devicemapper` storage driver in `loop-lvm` mode. For more information, see [Docker and the Device Mapper storage driver](https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/).
+*   Do not use Docker `devicemapper` storage driver in `loop-lvm` mode. For more information, see [Docker and the Device Mapper storage driver][2].
 
-* Prefer `OverlayFS` or `devicemapper` in `direct-lvm` mode when choosing a production storage driver. For more information, see Docker's <a href="https://docs.docker.com/engine/userguide/storagedriver/selectadriver/" target="_blank">Select a Storage Driver</a>.
+*   Prefer `OverlayFS` or `devicemapper` in `direct-lvm` mode when choosing a production storage driver. For more information, see Docker's <a href="https://docs.docker.com/engine/userguide/storagedriver/selectadriver/" target="_blank">Select a Storage Driver</a>.
 
-* Manage Docker on CentOS with systemd. systemd handles starting Docker on boot and restarting it when it crashes.
+*   Manage Docker on CentOS with systemd. systemd handles starting Docker on boot and restarting it when it crashes.
 
-* Run Docker commands as the root user (with `sudo`) or as a user in the <a href="https://docs.docker.com/engine/installation/linux/centos/#create-a-docker-group" target="_blank">docker user group</a>.
+*   Run Docker commands as the root user (with `sudo`) or as a user in the <a href="https://docs.docker.com/engine/installation/linux/centos/#create-a-docker-group" target="_blank">docker user group</a>.
 
 **Distribution-Specific Installation**
 
@@ -265,7 +266,8 @@ Each Linux distribution requires Docker to be installed in a specific way:
 
 *   **CoreOS** - Comes with Docker pre-installed and pre-configured.
 *   **RHEL** - Install Docker by using a subscription channel. For more information, see <a href="https://access.redhat.com/articles/881893" target="_blank">Docker Formatted Container Images on Red Hat Systems</a>. <!-- $ curl -sSL https://get.docker.com | sudo sh -->
-*   **CentOS** - [Install Docker from Docker's yum repository][2].
+
+*   **CentOS** - \[Install Docker from Docker's yum repository\]\[2\].
 
 For more more information, see Docker's <a href="http://docs.docker.com/engine/installation/" target="_blank">distribution-specific installation instructions</a>.
 
@@ -277,9 +279,10 @@ Before installing DC/OS, you must ensure that your bootstrap node has the follow
 
 Download and save the DC/OS setup file to your bootstrap node. This file is used to create your customized DC/OS build file. Contact your sales representative or <sales@mesosphere.com> to obtain the DC/OS setup file.
 
-### Disable SELinux 
+### Disable SELinux
 
     $ setenforce 0
+    
 
 ### Docker Nginx (advanced installer)
 
@@ -320,3 +323,4 @@ On each of your cluster nodes, use the following command to:
     **Tip:** It may take a few minutes for your node to come back online after reboot.
 
  [1]: /usage/cli/
+ [2]: https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/

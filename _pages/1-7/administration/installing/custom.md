@@ -1,4 +1,5 @@
 ---
+UID: 57239b256176a
 post_title: Installing Enterprise DC/OS
 post_excerpt: ""
 layout: page
@@ -15,4 +16,3 @@ You can use the automated GUI or CLI installer, or advanced installer.
 
 *   The automated GUI or CLI installer is optimized for new users who are installing to existing virtual or physical machines, on-premises, or in the cloud. The automated installer provides a guided experience for bootstrapping a DC/OS cluster.
 *   The advanced installer is optimized for installing DC/OS to existing virtual or physical machines, on-premises or in the cloud. The advanced installer provides a scriptable, automatable interface to integrate with your preferred configuration management system.
-
