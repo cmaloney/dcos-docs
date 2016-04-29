@@ -1,5 +1,4 @@
 ---
-UID: 56f98445b7c81
 post_title: Installing Enterprise DC/OS
 post_excerpt: ""
 layout: page
