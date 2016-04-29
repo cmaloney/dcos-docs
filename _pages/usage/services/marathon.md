@@ -62,7 +62,7 @@ Then, click **Add Rule**.
 
 1.  Create a custom JSON configuration file that includes this entry where `<name>` is the unique Marathon instance name:
             
-                 {"marathon": {"framework-name": "marathon-<name>" }}
+                 {"service": {"name": "marathon-<name>" }}
                 
 **Note:** You must create a separate JSON configuration file for each Marathon instance.
         
