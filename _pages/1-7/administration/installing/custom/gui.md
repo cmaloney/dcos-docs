@@ -1,4 +1,5 @@
 ---
+UID: 57239a7dd608a
 post_title: GUI Installer
 post_excerpt: ""
 layout: page
@@ -24,8 +25,9 @@ The DC/OS installation creates these folders:
 *   Various units prefixed with `dcos` in `/etc/systemd/system`
     :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
     
- ## Prerequisites
- Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom-1-7/system-requirements/).
+    ## Prerequisites
+    
+    Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
 
 # Install DC/OS
 
@@ -52,7 +54,7 @@ The DC/OS installation creates these folders:
 
 4.  Specify your Deployment and DC/OS Environment settings:
     
-    ![alt text][1]
+    ![alt text][2]
     
     ### Deployment Settings
     
@@ -89,7 +91,7 @@ The DC/OS installation creates these folders:
     
     :   Specify a comma-separated list of DNS resolvers for your DC/OS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`).
         
-        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][2].
+        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][3].
     
     **IP Detect Script**
     
@@ -97,7 +99,7 @@ The DC/OS installation creates these folders:
         
         **Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be wiped and reinstalled.
 
-5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the scripted installer [prerequisites][3]. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
+5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the scripted installer [prerequisites][4]. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
     
     **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
     
@@ -122,15 +124,15 @@ The DC/OS installation creates these folders:
 
 9.  Enter your administrator username and password.
     
-    ![alt text][4]
+    ![alt text][5]
     
     You are done!
     
-    ![alt text][5]
+    ![alt text][6]
 
 ## Next Steps
 
-Now you can [assign user roles][6].
+Now you can [assign user roles][7].
 
 ### Uninstalling DC/OS
 
@@ -149,9 +151,10 @@ Now you can [assign user roles][6].
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /assets/images/gui-installer-setup-ee.gif
- [2]: /usage/service-discovery/
- [3]: /scripted-installer/system-requirements/#scrollNav-2
- [4]: /assets/images/ui-installer-auth-1-7.gif
- [5]: /assets/images/dashboard-ee.gif
- [6]: /administration/security-and-authentication/managing-authorization/
+ [1]: /administration/installing/custom-1-7/system-requirements/
+ [2]: /assets/images/gui-installer-setup-ee.gif
+ [3]: /usage/service-discovery/
+ [4]: /scripted-installer/system-requirements/#scrollNav-2
+ [5]: /assets/images/ui-installer-auth-1-7.gif
+ [6]: /assets/images/dashboard-ee.gif
+ [7]: /administration/security-and-authentication/managing-authorization/

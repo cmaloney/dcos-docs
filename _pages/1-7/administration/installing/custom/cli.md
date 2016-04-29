@@ -1,4 +1,5 @@
 ---
+UID: 57239a7d93459
 post_title: CLI Installer
 post_excerpt: ""
 layout: page
@@ -23,15 +24,16 @@ The DC/OS installation creates these folders:
 
 *   Various units prefixed with `dcos` in `/etc/systemd/system`
     :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
-    
+
 ## Prerequisites
-Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom-1-7/system-requirements/).
+
+Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
 
 # Create an IP detection script
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
 
-**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][1].
+**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][2].
 
 1.  Create a directory named `genconf` on your bootstrap node and navigate to it.
     
@@ -110,7 +112,7 @@ In this step you create a YAML configuration file that is customized for your en
 
 2.  Create a configuration file and save as `genconf/config.yaml`.
     
-    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][2].
+    You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][3].
     
         agent_list:
         - <agent-private-ip-1>
@@ -135,9 +137,9 @@ In this step you create a YAML configuration file that is customized for your en
         superuser_username: <username>
         
     
-    **Important:** You cannot use an NFS mount for Exhibitor storage with the automated command line installation method. To use an NFS mount for Exhibitor storage (`exhibitor_storage_backend: shared_filesystem`), you must use the [Manual command line installation method][3].
+    **Important:** You cannot use an NFS mount for Exhibitor storage with the automated command line installation method. To use an NFS mount for Exhibitor storage (`exhibitor_storage_backend: shared_filesystem`), you must use the [Manual command line installation method][4].
 
-3.  Copy your private SSH key to `genconf/ssh_key`. For more information, see the [ssh_key_path][2] parameter.
+3.  Copy your private SSH key to `genconf/ssh_key`. For more information, see the [ssh_key_path][3] parameter.
     
         $ cp <path-to-key> genconf/ssh_key && chmod 0600 genconf/ssh_key
         
@@ -207,7 +209,7 @@ To install DC/OS:
         │   ├── ip-detect     
         
 
-2.  <a name="two"></a>Install the cluster prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For a full list of cluster prerequisites, see this [documentation][4].
+2.  <a name="two"></a>Install the cluster prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For a full list of cluster prerequisites, see this [documentation][5].
     
         $ sudo bash dcos_generate_config.ee.sh --install-prereqs
         
@@ -291,7 +293,7 @@ To install DC/OS:
     
     **Tip:** This process can take about 10 minutes. During this time you will see the Master nodes become visible on the Exhibitor consoles and come online, eventually showing a green light.
     
-    ![alt text][5]
+    ![alt text][6]
     
     When the status icons are green, you can access the DC/OS web interface.
 
@@ -301,17 +303,17 @@ To install DC/OS:
 
 9.  Enter your administrator username and password and Click **Log In To DC/OS**.
     
-    ![alt text][6]
+    ![alt text][7]
     
     You are done!
     
-    ![alt text][7]
+    ![alt text][8]
 
 # Next Steps
 
 ### Add DC/OS users
 
-You can assign user roles and grant access to DC/OS services. For more information, see the [documentation][8].
+You can assign user roles and grant access to DC/OS services. For more information, see the [documentation][9].
 
 ### Add more agent nodes
 
@@ -319,10 +321,10 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
 
 **Prerequisite:**
 
-*   The agent nodes must meet the [hardware][9] and [software][10] prerequisites.
+*   The agent nodes must meet the [hardware][10] and [software][11] prerequisites.
 
-1.  Update the `config.yaml` file with the additional agent nodes. For parameters descriptions and configuration examples, see the [documentation][2].
-2.  Run the installation steps beginning with [installing the cluster][11] prerequisites:
+1.  Update the `config.yaml` file with the additional agent nodes. For parameters descriptions and configuration examples, see the [documentation][3].
+2.  Run the installation steps beginning with [installing the cluster][12] prerequisites:
     
         $ sudo bash dcos_generate_config.ee.sh --install-prereqs
         
@@ -354,14 +356,15 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /concepts/installing/custom/dcos-cleanup-script/
- [2]: /concepts/installing/custom/configuration-parameters/
- [3]: /concepts/installing/custom/advanced/
- [4]: /concepts/installing/custom/advanced/#scrollNav-2
- [5]: /assets/images/chef-zk-status.png
- [6]: /assets/images/gui-installer-login-ee.gif
- [7]: /assets/images/ui-dashboard-ee.png
- [8]: /administration/security-and-authentication/managing-authorization/
- [9]: #hardware
- [10]: #software
- [11]: #two
+ [1]: /administration/installing/custom-1-7/system-requirements/
+ [2]: /concepts/installing/custom/dcos-cleanup-script/
+ [3]: /concepts/installing/custom/configuration-parameters/
+ [4]: /concepts/installing/custom/advanced/
+ [5]: /concepts/installing/custom/advanced/#scrollNav-2
+ [6]: /assets/images/chef-zk-status.png
+ [7]: /assets/images/gui-installer-login-ee.gif
+ [8]: /assets/images/ui-dashboard-ee.png
+ [9]: /administration/security-and-authentication/managing-authorization/
+ [10]: #hardware
+ [11]: #software
+ [12]: #two
