@@ -4,23 +4,30 @@ layout: page
 published: true
 ---
 
+After installing DC/OS, you can designate private agent nodes as public. By default, agent nodes are designated as private during [GUI](/administration/installing/custom/gui/) or [CLI](/administration/installing/custom/cli/) installation. 
 
-You can determine the agent node type by running this command from your terminal:
+You can determine if your agent is public or private by running this command from DC/OS CLI:
 
-    curl -s http://<agent-public-ip>:5051/state | awk 'match($0,"default_role"){print substr($0,RSTART-1,29)}’ 
+    $ $ curl -skSL -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)mesos/master/slaves | jq '.slaves[] | .reserved_resources' | grep slave_public | wc -l
+
+An output of 1 means that you have a public agent. And output of 0 means that you do not have a public agent. For example, this query indicates no public agent:
+
+    $ curl -skSL -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)mesos/master/slaves | jq '.slaves[] | .reserved_resources' | grep slave_public | wc -l
+    curl: (6) Could not resolve host: 52.39.210.95mesos
+           0
+
     
-Public agent shows “default_role”:”slave_public”. Private agent shows as “default_role”:”slave_public”.
-
-
 **Prerequisites:**
 
-- You have completed DC/OS installation and have deployed a private agent node. 
-- 
+- DC/OS is installed and you have deployed a private agent node. 
 
+1.  From your bootstrap node, copy the `genconf/serve` directory to your workstation. 
 
-1.  From your bootstrap node, copy the `genconf/serve` directory to the agent node that you want to convert to public and run this command. <!-- do you need SSH access to your agent? -->
+        $ scp <ssh-username>@<agent-ip>:/path/to/install ~/
+        
+1.  Copy the directory to your private agent node.
 
-        $ scp -r ./genconf/serve <agent-private-ip>:/opt/dcos_install_tmp/
+        scp ~/install core@$AGENT:/dcos_install_tmp
 
 1.  SSH to your agent node: 
 
@@ -35,6 +42,24 @@ Public agent shows “default_role”:”slave_public”. Private agent shows as
 1.  Remove the old directory structures on the agent node.
           
         sudo rm -rf /opt/mesosphere /var/lib/mesos
+        
+1.  Indicate that you want this mesos agent node to have the Mesos role `slave_public`:
+
+        $ mkdir -p /var/lib/dcos/
+        
+        $ echo "MESOS_DEFAULT_ROLE=slave_public" > /var/lib/dcos/mesos-slave-common
+        
+1.  Install the new agent software as a public agent node:
+
+        $ sudo bash /opt/dcos_install_tmp/dcos_install.sh slave_public
+        
+1.  Verify that your agent node is publicby running this command from DC/OS CLI. 
+
+        $ curl -skSL -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)mesos/master/slaves | jq '.slaves[] | .reserved_resources' | grep slave_public | wc -l
+    
+    You should see an output of `1` to indicate public.
+    
+    
 
 
   # Run the following commands on the agent node that you want to be public (after you complete the GUI Installer procedure):
