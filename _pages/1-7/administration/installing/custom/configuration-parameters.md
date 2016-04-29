@@ -35,7 +35,7 @@ This parameter specifies the type of storage backend to use for Exhibitor. You c
     *   **exhibitor_zk_hosts** This parameter specifies a comma-separated list of one or more ZooKeeper node IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this ZooKeeper cluster to orchestrate it's configuration. Multiple ZooKeeper instances are recommended for failover in production environments.
     *   **exhibitor_zk_path** This parameter specifies the filepath that Exhibitor uses to store data, including the `zoo.cfg` file.
 
-*   `exhibitor_storage_backend: aws_s3` This option specifies an Amazon Simple Storage Service (S3) bucket for shared storage. If you specify `aws_s3`, you must also specify these parameters:
+*   `exhibitor_storage_backend: aws_s3` This option specifies an Amazon Simple Storage Service (S3) bucket for shared storage. If you specify `aws_s3`, you must also specify these parameters. 
     
     *   **aws_access_key_id** This parameter specifies AWS key ID.
     *   **aws_region** This parameter specifies AWS region for your S3 bucket.
@@ -45,6 +45,8 @@ This parameter specifies the type of storage backend to use for Exhibitor. You c
         *   `exhibitor_explicit_keys: 'false'` If you're using AWS Identity and Access Management (IAM) to grant Exhibitor access to s3.
     *   **s3_bucket** This parameter specifies name of your S3 bucket.
     *   **s3_prefix** This parameter specifies S3 prefix to be used within your S3 bucket to be used by Exhibitor.
+    
+    **Tip:** AWS EC2 Classic is not supported. 
 
 *   `exhibitor_storage_backend: shared_filesystem` This option specifies a Network File System (NFS) mount for shared storage. If you specify `shared_filesystem`, you must also specify this parameter:
     
