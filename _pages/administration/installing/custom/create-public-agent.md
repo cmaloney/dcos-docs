@@ -7,7 +7,7 @@ published: true
 
 You can determine the agent node type by running this command from your terminal:
 
-    curl -s http://$PUB_NODE:5051/state | awk 'match($0,"default_role"){print substr($0,RSTART-1,29)}’ 
+    curl -s http://<agent-public-ip>:5051/state | awk 'match($0,"default_role"){print substr($0,RSTART-1,29)}’ 
     
 Public agent shows “default_role”:”slave_public”. Private agent shows as “default_role”:”slave_public”.
 
@@ -18,7 +18,9 @@ Public agent shows “default_role”:”slave_public”. Private agent shows as
 - 
 
 
-1.  From your bootstrap node, copy the `genconf/serve` directory to the agent node that you want to convert to public and run this command.
+1.  From your bootstrap node, copy the `genconf/serve` directory to the agent node that you want to convert to public and run this command. <!-- do you need SSH access to your agent? -->
+
+        $ scp -r ./genconf/serve <agent-private-ip>:/opt/dcos_install_tmp/
 
 1.  SSH to your agent node: 
 
