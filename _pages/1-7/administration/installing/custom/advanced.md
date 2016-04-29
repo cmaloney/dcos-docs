@@ -1,4 +1,5 @@
 ---
+UID: 572398ae320f2
 post_title: Advanced Installer
 post_excerpt: ""
 layout: page
@@ -28,13 +29,14 @@ The DC/OS installation creates these folders:
     :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
 
 ## Prerequisites
-Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom-1-7/system-requirements/).
+
+Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
 
 # Create an IP detection script
 
 In this step you create an IP detect script to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
 
-**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][1].
+**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][2].
 
 1.  Create a directory named `genconf` on your bootstrap node and navigate to it.
     
@@ -111,11 +113,10 @@ In this step you create a YAML configuration file that is customized for your en
         $6$rounds=656000$v55tdnlMGNoSEgYH$1JAznj58MR.Bft2wd05KviSUUfZe45nsYsjlEl84w34pp48A9U2GoKzlycm3g6MBmg4cQW9k7iY4tpZdkWy9t1
         
 
-2.  Create a configuration file and save as `genconf/config.yaml`.  You can use this template to get started. 
-
-    The template specifies 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][1].
-
-
+2.  Create a configuration file and save as `genconf/config.yaml`. You can use this template to get started.
+    
+    The template specifies 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][2].
+    
         bootstrap_url: http://<bootstrap_public_ip>:80      
         cluster_name: '<cluster-name>'
         master_discovery: static 
@@ -134,7 +135,7 @@ In this step you create a YAML configuration file that is customized for your en
 
 In this step you create a custom DC/OS build file on your bootstrap node and then install DC/OS onto your cluster. With this method you package the DC/OS distribution yourself and connect to every server manually and run the commands.
 
-**Tip:** If something goes wrong and you want to rerun your setup, use these cluster [cleanup instructions][1].
+**Tip:** If something goes wrong and you want to rerun your setup, use these cluster [cleanup instructions][2].
 
 **Prerequisites**
 
@@ -247,8 +248,8 @@ Now you can [assign user roles][8].
     
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
 
- [1]: /administration/installing/custom/dcos-cleanup-script/
- [2]: /installing-enterprise-edition-1-7/configuration-parameters/
+ [1]: /administration/installing/custom-1-7/system-requirements/
+ [2]: /administration/installing/custom/dcos-cleanup-script/
  [3]: /overview/concepts/#public
  [4]: /overview/concepts/#private
  [5]: /assets/images/chef-zk-status.png
