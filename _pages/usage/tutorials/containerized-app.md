@@ -98,7 +98,7 @@ In this step you deploy the Oinker containerized app. For more information, see 
             }],
             "labels":{
                 "HAPROXY_GROUP":"external",
-                "HAPROXY_0_VHOST":"<your-elb-hostname>"
+                "HAPROXY_0_VHOST":"<your-elb-hostname>",
                 "HAPROXY_0_PORT": "80"
             },
             "cmd": "until rake cassandra:setup; do sleep 5; done && rails server",
