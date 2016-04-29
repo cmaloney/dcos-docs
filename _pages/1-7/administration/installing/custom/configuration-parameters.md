@@ -1,4 +1,5 @@
 ---
+UID: 57239d8b40b9b
 post_title: Configuration parameters
 post_excerpt: ""
 layout: page
@@ -27,41 +28,29 @@ This parameter specifies the name of your cluster.
 
 ### exhibitor_storage_backend
 
-This parameter specifies the type of storage backend to use for Exhibitor. You can use internal DC/OS storage (`static`) or specify an external storage system (`zookeeper`, `aws_s3`, and `shared_filesystem`) for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation. 
+This parameter specifies the type of storage backend to use for Exhibitor. You can use internal DC/OS storage (`static`) or specify an external storage system (`zookeeper`, `aws_s3`, and `shared_filesystem`) for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation.
 
-*   `exhibitor_storage_backend: static`
-    This option specifies that the Exhibitor storage backend is managed internally within your cluster. This is the default value.
-*   `exhibitor_storage_backend: zookeeper`
-    This option specifies a ZooKeeper instance for shared storage. If you use a ZooKeeper instance to bootstrap Exhibitor, this ZooKeeper instance must be separate from your DC/OS cluster. You must have at least 3 ZooKeeper instances running at all times for high availability. If you specify `zookeeper`, you must also specify these parameters. 
-    *   **exhibitor_zk_hosts**
-        This parameter specifies a comma-separated list of one or more ZooKeeper node IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this ZooKeeper cluster to orchestrate it's configuration. Multiple ZooKeeper instances are recommended for failover in production environments.
-    *   **exhibitor_zk_path**
-        This parameter specifies the filepath that Exhibitor uses to store data, including the `zoo.cfg` file.
-*   `exhibitor_storage_backend: aws_s3`
-    This option specifies an Amazon Simple Storage Service (S3) bucket for shared storage. If you specify `aws_s3`, you must also specify these parameters: 
-    *  **aws_access_key_id**
-       This parameter specifies AWS key ID.
-    *  **aws_region**
-       This parameter specifies AWS region for your S3 bucket.
-    *  **aws_secret_access_key**
-       This parameter specifies AWS secret access key.
-    *  **exhibitor_explicit_keys**
-       This parameter specifies whether you are using AWS API keys to grant Exhibitor access to S3. 
-        * `exhibitor_explicit_keys: 'true'`
-           If you're  using AWS API keys to manually grant Exhibitor access.
-        *  `exhibitor_explicit_keys: 'false'`
-           If you're using AWS Identity and Access Management (IAM) to grant Exhibitor access to s3.
-    *  **s3_bucket**
-       This parameter specifies name of your S3 bucket.
-    *  **s3_prefix**
-       This parameter specifies S3 prefix to be used within your S3 bucket to be used by Exhibitor.
-       
-*   `exhibitor_storage_backend: shared_filesystem`
-    This option specifies a Network File System (NFS) mount for shared storage. If you specify `shared_filesystem`, you must also specify this parameter: 
-    *  **exhibitor_fs_config_dir**
-       This parameter specifies the absolute path to the folder that Exhibitor uses to coordinate its configuration. This should be a directory inside of a Network File System (NFS) mount. For example, if every master has `/fserv` mounted via NFS, set as `exhibitor_fs_config_dir: /fserv/dcos-exhibitor`.
-       
-       **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DC/OS cluster will not start.
+*   `exhibitor_storage_backend: static` This option specifies that the Exhibitor storage backend is managed internally within your cluster. This is the default value.
+*   `exhibitor_storage_backend: zookeeper` This option specifies a ZooKeeper instance for shared storage. If you use a ZooKeeper instance to bootstrap Exhibitor, this ZooKeeper instance must be separate from your DC/OS cluster. You must have at least 3 ZooKeeper instances running at all times for high availability. If you specify `zookeeper`, you must also specify these parameters. 
+    *   **exhibitor_zk_hosts** This parameter specifies a comma-separated list of one or more ZooKeeper node IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this ZooKeeper cluster to orchestrate it's configuration. Multiple ZooKeeper instances are recommended for failover in production environments.
+    *   **exhibitor_zk_path** This parameter specifies the filepath that Exhibitor uses to store data, including the `zoo.cfg` file.
+
+*   `exhibitor_storage_backend: aws_s3` This option specifies an Amazon Simple Storage Service (S3) bucket for shared storage. If you specify `aws_s3`, you must also specify these parameters:
+    
+    *   **aws_access_key_id** This parameter specifies AWS key ID.
+    *   **aws_region** This parameter specifies AWS region for your S3 bucket.
+    *   **aws_secret_access_key** This parameter specifies AWS secret access key.
+    *   **exhibitor_explicit_keys** This parameter specifies whether you are using AWS API keys to grant Exhibitor access to S3. 
+        *   `exhibitor_explicit_keys: 'true'` If you're using AWS API keys to manually grant Exhibitor access.
+        *   `exhibitor_explicit_keys: 'false'` If you're using AWS Identity and Access Management (IAM) to grant Exhibitor access to s3.
+    *   **s3_bucket** This parameter specifies name of your S3 bucket.
+    *   **s3_prefix** This parameter specifies S3 prefix to be used within your S3 bucket to be used by Exhibitor.
+
+*   `exhibitor_storage_backend: shared_filesystem` This option specifies a Network File System (NFS) mount for shared storage. If you specify `shared_filesystem`, you must also specify this parameter:
+    
+    *   **exhibitor_fs_config_dir** This parameter specifies the absolute path to the folder that Exhibitor uses to coordinate its configuration. This should be a directory inside of a Network File System (NFS) mount. For example, if every master has `/fserv` mounted via NFS, set as `exhibitor_fs_config_dir: /fserv/dcos-exhibitor`.
+        
+        **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DC/OS cluster will not start.
 
 This parameter specifies the type of storage backend to use for Exhibitor. You can use internal DC/OS storage (`static`) or specify an external storage system (`zookeeper`, `aws_s3`, and `shared_filesystem`) for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation.
 
@@ -138,10 +127,11 @@ This required parameter specifies the hashed superuser password. The `superuser_
 This required parameter specifies the Admin username. For more information, see <a href="https://docs.mesosphere.com/administration/security-and-authentication/managing-authorization/" target="_blank">Managing Authorization and Authentication</a>.
 
 ### telemetry_enabled
-This parameter specifies whether to enable sharing of anonymous data for your cluster. 
 
-- `telemetry_enabled: 'true'` Enable anonymous data sharing. This is the default value.
-- `telemetry_enabled: 'false'` Disable anonymous data sharing.
+This parameter specifies whether to enable sharing of anonymous data for your cluster.
+
+*   `telemetry_enabled: 'true'` Enable anonymous data sharing. This is the default value.
+*   `telemetry_enabled: 'false'` Disable anonymous data sharing.
 
 If you’ve already installed your cluster and would like to disable this in-place, you can go through an upgrade <!-- link? --> with the same parameter set.
 
@@ -182,12 +172,9 @@ This parameter specifies the path to the installer host logs from the SSH proces
 
 This parameter specifies the allowable amount of time, in seconds, for an action to begin after the process forks. This parameter is not the complete process time. The default value is 120 seconds.
 
-**Tip:** If have a slower network environment, consider changing to `process_timeout: 600`. <!-- ### 
+**Tip:** If have a slower network environment, consider changing to `process_timeout: 600`. <!-- ### <a name="roles"></a>roles This parameter specifies the Mesos roles to delegate to a node. For more information, see <a href="https://open.mesosphere.com/reference/mesos-master/#roles" target="_blank">Mesos roles</a>. The available options are \`slave_public\`, \` master \`, and \`slave\`. * \`roles: slave_public\` Runs the public agent node. This is the default value. * \`roles: master\` Runs the master node. * \`roles: slave\` Runs the private agent node. --> <!-- ### 
 
-<a name="roles"></a>roles This parameter specifies the Mesos roles to delegate to a node. For more information, see <a href="https://open.mesosphere.com/reference/mesos-master/#roles" target="_blank">Mesos roles</a>. The available options are \`slave_public\`, \` master \`, and \`slave\`. * \`roles: slave_public\` Runs the public agent node. This is the default value. * \`roles: master\` Runs the master node. * \`roles: slave\` Runs the private agent node. -->
-
-<!-- ### <a name="weights"></a>weights This parameter specifies the priority of the role. For more information, see <a href="https://open.mesosphere.com/reference/mesos-master/#weights" target="_blank">Mesos weights</a>. -->
-
+<a name="weights"></a>weights This parameter specifies the priority of the role. For more information, see <a href="https://open.mesosphere.com/reference/mesos-master/#weights" target="_blank">Mesos weights</a>. --> 
 # <a name="examples1"></a>Example Configurations
 
 #### DC/OS cluster with 3 masters, 5 agents, static master list specified.
