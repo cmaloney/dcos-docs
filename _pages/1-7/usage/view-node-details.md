@@ -7,16 +7,16 @@ published: true
 menu_order: 34
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: true
-hide_from_related: true
+hide_from_navigation: false
+hide_from_related: false
 ---
 You can get a detailed view of which nodes in your cluster are running which service.
 
-**Prerequisites:**  
+**Prerequisites:**
 
-* <a href="https://docs.mesosphere.com/concepts/installing/">DC/OS and DC/OS CLI</a> are installed
+*   [DC/OS and DC/OS CLI][1] are installed
 
-1.  SSH into your [master node][1].
+1.  SSH into your [master node][2].
 
 2.  Run this command from your master node to view the node details:
     
@@ -125,4 +125,5 @@ You can get a detailed view of which nodes in your cluster are running which ser
              }
             ]
 
- [1]: /administration/sshcluster/
+ [1]: https://docs.mesosphere.com/concepts/installing/
+ [2]: /administration/sshcluster/
