@@ -16,7 +16,10 @@ You can determine the count of public agents in your cluster by running the foll
 
 1. DC/OS is installed and you have deployed at least one private agent node.
 
-### For machines that are currently private agents:
+### Converting private agents to public:
+
+**The following steps must be taken on a machine that is currently a DC/OS node. If this node is currently running tasks, those tasks will be terminated in this process.**
+
 1.  Uninstall the current DC/OS software on the agent node.
 
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall
@@ -27,18 +30,24 @@ You can determine the count of public agents in your cluster by running the foll
 
         $ sudo rm -rf /opt/mesosphere /var/lib/mesos
 
+1.  Restart the machine.
+
+        $sudo reboot
+        
 ### Install DC/OS
 
 1.  Copy the `dcos-install.tar` file created in the GUI or CLI installation method to the machine that will be a public agent.
 
-        $ ssh $ROOT_USER@$AGENT "sudo mkdir -p /opt/dcos_install_tmp && scp ~/dcos-install.tar $ROOT_USER@$AGENT:/opt/dcos_install_tmp/dcos-install.tar
+        $ ssh $USER@$AGENT "sudo mkdir -p /opt/dcos_install_tmp"
+        $ scp ~/dcos-install.tar $ROOT_USER@$AGENT:~/dcos-install.tar
 
 1.  SSH to the machine:
 
-        $ ssh $ROOT_USER@$AGENT
+        $ ssh $USER@$AGENT
 
 1.  Install DC/OS as a public agent:
 
+        $ sudo mv ~/dcos-install.tar /opt/dcos_install_tmp
         $ sudo bash /opt/dcos_install_tmp/dcos_install.sh slave_public
 
 1.  Verify that your new agent node is public by running this command from DC/OS CLI.
