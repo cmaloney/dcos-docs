@@ -313,7 +313,7 @@ To install DC/OS:
 
     <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-auth2.png" rel="attachment wp-att-4823"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-4823" /></a>
 
-10. Archive your installer files for safe-keeping. You'll need this archive to make new agents, including the [public agent][4].
+10. Archive your installer files for safe-keeping. You'll need this archive to make new agents, including the [public agent][9].
 
             # <Ctrl-C> to exit installer
             $ cd genconf/serve
@@ -353,6 +353,9 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         18:17:14::
         18:17:14:: ====> 10.10.0.160:22 FAILED
 
+### Add a public agent
+
+1.  Follow the instructions at [Create a public agent][4] to add a public agent to your cluster.
 
 ### Uninstalling DC/OS
 
@@ -379,3 +382,4 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
  [6]: #hardware
  [7]: #software
  [8]: #two
+ [4]: /administration/installing/custom/create-public-agent/

@@ -139,14 +139,14 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
         $ cd genconf/serve
         $ sudo tar cf dcos-install.tar *
         # Move the dcos-install.tar file to a safe place
-    
+
     You are done!
 
     <a href="/wp-content/uploads/2016/02/ui-dashboard-ee.png" rel="attachment wp-att-3343"><img src="/wp-content/uploads/2016/02/ui-dashboard-ee-800x538.png" alt="ui-dashboard-ee" width="800" height="538" class="alignnone size-large wp-image-3343" /></a>
 
 ## Next Steps
 
-Now you can [assign user roles][5].
+Now you can [assign user roles][5] or [create a public agent][4]
 
 ### Uninstalling DC/OS
 
