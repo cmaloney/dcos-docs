@@ -1,7 +1,14 @@
 ---
-post_title: Converting a Private Node to Public  
+UID: 56f98447aaf69
+post_title: Creating a Public Agent
+post_excerpt: ""
 layout: page
 published: true
+menu_order: 205
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
 
 In DC/OS, we distinguish between agents that are accessible from the cloud and those which are not with the notion of "public agents". By default, agent nodes are designated as private during [GUI](/administration/installing/custom/gui/) or [CLI](/administration/installing/custom/cli/) installation.
@@ -33,7 +40,7 @@ You can determine the count of public agents in your cluster by running the foll
 1.  Restart the machine.
 
         $sudo reboot
-        
+
 ### Install DC/OS
 
 1.  Copy the `dcos-install.tar` file created in the GUI or CLI installation method to the machine that will be a public agent.
