@@ -330,9 +330,9 @@ To install DC/OS:
 
 You can assign user roles and grant access to DC/OS services. For more information, see the [documentation][5].
 
-### Add agent nodes. If you need to create a public agent, see [Creating a public agent][9]
+### Add agent nodes.
 
-After DC/OS is installed and deployed across your cluster, you can add more agent nodes.
+After DC/OS is installed and deployed across your cluster, you can add more agent nodes. If you need to create a public agent, see [Creating a public agent][9]
 
 **Prerequisite:**
 
