@@ -1,19 +1,12 @@
 ---
-UID: 56f98447aaf69
 post_title: Creating a Public Agent
-post_excerpt: ""
 layout: page
 published: true
-menu_order: 205
-page_options_require_authentication: false
-page_options_show_link_unauthenticated: false
-hide_from_navigation: false
-hide_from_related: false
 ---
 
-In DC/OS, we distinguish between agents that are accessible from the cloud and those which are not with the notion of "public agents". By default, agent nodes are designated as private during [GUI](/administration/installing/custom/gui/) or [CLI](/administration/installing/custom/cli/) installation.
+After installing DC/OS, you can designate private agent nodes as public. By default, agent nodes are designated as private during [GUI](/administration/installing/custom/gui/) or [CLI](/administration/installing/custom/cli/) installation.
 
-You can determine the count of public agents in your cluster by running the following command. A result of 0 means that you do not have a public agent, as shown below:
+You can determine how many public agent nodes are in your cluster by running the following command. A result of 0 means that you do not have a public agent:
 
     $ curl -skSL -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)/mesos/master/slaves | jq '.slaves[] | .reserved_resources' | grep slave_public | wc -l
            0
@@ -21,11 +14,11 @@ You can determine the count of public agents in your cluster by running the foll
 
 ### Prerequisites:
 
-1. DC/OS is installed and you have deployed at least one private agent node.
+- DC/OS is installed and you have deployed at least one private agent node.
+- These steps must be performed on a machine that is configured as a DC/OS node. 
+- Any tasks that are running on the node will be terminated during this conversion process.
 
-### Converting private agents to public:
-
-**The following steps must be taken on a machine that is currently a DC/OS node. If this node is currently running tasks, those tasks will be terminated in this process.**
+### Uninstall the DC/OS private agent software
 
 1.  Uninstall the current DC/OS software on the agent node.
 
@@ -41,9 +34,9 @@ You can determine the count of public agents in your cluster by running the foll
 
         $sudo reboot
 
-### Install DC/OS
+### Install DC/OS and convert to a public agent node
 
-1.  Copy the `dcos-install.tar` file created in the GUI or CLI installation method to the machine that will be a public agent.
+1.  Copy the `dcos-install.tar` file to the node that that is being converted to a public agent. This `.tar` file is created during the GUI or CLI installation method.
 
         $ ssh $USER@$AGENT "sudo mkdir -p /opt/dcos_install_tmp"
         $ scp ~/dcos-install.tar $ROOT_USER@$AGENT:~/dcos-install.tar
