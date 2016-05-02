@@ -31,7 +31,7 @@ By default the DC/OS service name is `marathon-user`. <a href="/wp-content/uploa
                 
 1. In the DC/OS web interface, click the **System** tab, select **Organization**, and then **Groups**.
 
-1. Click the `Superuser group`, then **Advanced ACLs**.
+1. Click the `Superuser group`, then **Advanced ACLs**. [More information about advanced ACLs](https://docs.mesosphere.com/1-7/administration/security-and-authentication/advanced-acl/).
 
 1. Add the following two rules:
 
@@ -52,7 +52,7 @@ By default the DC/OS service name is `marathon-user`. <a href="/wp-content/uploa
 
 Then, click **Add Rule**.
 
-1. Close the `Superuser group` panel. Click the **Services** tab, then choose your Marathon service name to navigate to the web interface. For more information, see [Deploying Multiple Marathon Instances][2]. <!-- I guess this file needs to change, too -->
+1. Close the `Superuser group` panel. Click the **Services** tab, then choose your Marathon service name to navigate to the web interface. For more information, see [Deploying Multiple Marathon Instances][2].
         
 # Install Multiple Additional Marathon Instances
 
@@ -70,7 +70,7 @@ Then, click **Add Rule**.
             
                  $ dcos package install --options=<config-file>.json marathon
 
-1. In the DC/OS web interface, open the ACL editor add the rules for group `superusers` for each of your new Marathon instances:
+1. In the DC/OS web interface, open the ACL editor add the rules for group `superusers` for each of your new Marathon instances. [More information about advanced ACLs](https://docs.mesosphere.com/1-7/administration/security-and-authentication/advanced-acl/).
 
 <table class="table">
   <tr>
@@ -86,13 +86,15 @@ Then, click **Add Rule**.
   	 <td>full</td>
   </tr>
 </table>
-                
-1. Click the **Services** tab, the choose one of your Marathon service names in order to navigate to the web interface. For more information, see [Deploying Multiple Marathon Instances][2]. <!-- I guess this file needs to change, too -->
+
+Then, click **Add Rule**.
+
+1. Click the **Services** tab, the choose one of your Marathon service names in order to navigate to the web interface. For more information, see [Deploying Multiple Marathon Instances][2].
 
 # Uninstalling a Marathon Instance
 
 1.  From the DC/OS CLI, enter this command:
-<!-- ask matthias veit for the flag to uninstall a particular instance, or check the doc above, or install the CLI and see what commands are available. Is uninstall the same for enterprise and OSS? -->
+
         $ dcos package uninstall --app-id=<name> marathon
         
 
