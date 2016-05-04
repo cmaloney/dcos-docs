@@ -49,7 +49,7 @@ These instructions show how to use Docker with OverlayFS on CentOS 7.
 
 4.  Reboot to reload kernel modules:
     
-        $ reboot
+        $ sudo reboot
         
 
 5.  Verify that OverlayFS is enabled:
