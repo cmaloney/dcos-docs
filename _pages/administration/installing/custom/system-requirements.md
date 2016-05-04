@@ -110,7 +110,7 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
     
     *   On RHEL 7 and CentOS 7, firewalld must be stopped and disabled. It is a known <a href="https://github.com/docker/docker/issues/16137" target="_blank">Docker issue</a> that firewalld interacts poorly with Docker. For more information, see the <a href="https://docs.docker.com/v1.6/installation/centos/#firewalld" target="_blank">Docker CentOS firewalld</a> documentation.
         
-            $ sudo systemctl stop firewalld && sudo systemctl disable firewalld</pre>
+            $ sudo systemctl stop firewalld && sudo systemctl disable firewalld
             
     
     ### Port Configuration
@@ -246,19 +246,19 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
     
     **Requirements**
     
-    * Docker 1.7 or greater must be installed on all bootstrap and cluster nodes.
+    *   Docker 1.7 or greater must be installed on all bootstrap and cluster nodes.
     
     **Recommendations**
     
-    * Docker 1.9 or greater is recommended <a href="https://github.com/docker/docker/issues/9718" target="_blank">for stability reasons</a>.
+    *   Docker 1.9 or greater is recommended <a href="https://github.com/docker/docker/issues/9718" target="_blank">for stability reasons</a>.
     
-    * Do not use Docker `devicemapper` storage driver in `loop-lvm` mode. For more information, see [Docker and the Device Mapper storage driver](https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/).
+    *   Do not use Docker `devicemapper` storage driver in `loop-lvm` mode. For more information, see [Docker and the Device Mapper storage driver][2].
     
-    * Prefer `OverlayFS` or `devicemapper` in `direct-lvm` mode when choosing a production storage driver. For more information, see Docker's <a href="https://docs.docker.com/engine/userguide/storagedriver/selectadriver/" target="_blank">Select a Storage Driver</a>.
+    *   Prefer `OverlayFS` or `devicemapper` in `direct-lvm` mode when choosing a production storage driver. For more information, see Docker's <a href="https://docs.docker.com/engine/userguide/storagedriver/selectadriver/" target="_blank">Select a Storage Driver</a>.
     
-    * Manage Docker on CentOS with systemd. systemd handles starting Docker on boot and restarting it when it crashes.
+    *   Manage Docker on CentOS with systemd. systemd handles starting Docker on boot and restarting it when it crashes.
     
-    * Run Docker commands as the root user (with `sudo`) or as a user in the <a href="https://docs.docker.com/engine/installation/linux/centos/#create-a-docker-group" target="_blank">docker user group</a>.
+    *   Run Docker commands as the root user (with `sudo`) or as a user in the <a href="https://docs.docker.com/engine/installation/linux/centos/#create-a-docker-group" target="_blank">docker user group</a>.
     
     **Distribution-Specific Installation**
     
@@ -266,76 +266,80 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
     
     *   **CoreOS** - Comes with Docker pre-installed and pre-configured.
     *   **RHEL** - Install Docker by using a subscription channel. For more information, see <a href="https://access.redhat.com/articles/881893" target="_blank">Docker Formatted Container Images on Red Hat Systems</a>. <!-- $ curl -sSL https://get.docker.com | sudo sh -->
-    *   **CentOS** - [Install Docker from Docker's yum repository][2].
+    
+    *   **CentOS** - [Install Docker from Docker's yum repository][3].
     
     For more more information, see Docker's <a href="http://docs.docker.com/engine/installation/" target="_blank">distribution-specific installation instructions</a>.
     
     ## Bootstrap node
-
-The bootstrap node is a permanent part of your cluster and is required for DCOS recovery. The leader state and leader election of your Mesos masters is maintained in Exhibitor ZooKeeper.
-
-Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
-
-### DCOS setup file
-
-Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or [sales@mesosphere.com][2] to obtain the DCOS setup file.
-
-### Shared external storage for Exhibitor
-
-Shared external storage is required to bootstrap the Exhibitor service. Exhibitor automatically configures your ZooKeeper installation on the master nodes during DCOS installation. ZooKeeper is a high-performance coordination service for distributed applications. Exhibitor is a supervisor for ZooKeeper and requires a dedicated amount of storage space that is highly available.
-
-The shared external storage mechanism can be another ZooKeeper instance, an Amazon S3 bucket, or a Network File System (NFS) mount. Temporary outages while the cluster is running are acceptable, but shared storage should generally be up and running to support replacing failed masters.
-
-For testing purposes, you can quickly start a single temporary instance of ZooKeeper in a Docker container with this command.
-
-    $ sudo docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 -v /var/zookeeper/dcos:/tmp/zookeeper --name=dcos_int_zk jplock/zookeeper
     
-
-If you’ve run the `usermod` Docker command, you might have to log out and then back in to your bootstrap node before starting Zookeeper.
-
-**Important:** If you use a ZooKeeper instance to bootstrap Exhibitor, this ZooKeeper instance must be separate from your DCOS cluster. You must have at least 3 ZooKeeper instances running at all times for high availability.
-
-For more information about how to configure external shared storage, see the [exhibitor_storage_backend][3] configuration parameter.
-
-### Docker Nginx
-
-Install the Docker Nginx image:
-
-    $ sudo docker pull nginx
+    </li> </ul>
     
-
-## Cluster nodes
-
-    For advanced install only, your cluster nodes must have the following prerequisites. The cluster nodes are designated as Mesos masters and agents during installation.
+    The bootstrap node is a permanent part of your cluster and is required for DCOS recovery. The leader state and leader election of your Mesos masters is maintained in Exhibitor ZooKeeper.
     
-
-### Data compression (advanced installer)
-
-You must have the <a href="http://www.info-zip.org/UnZip.html" target="_blank">UnZip</a>, <a href="https://www.gnu.org/software/tar/" target="_blank">GNU tar</a>, and <a href="http://tukaani.org/xz/" target="_blank">XZ Utils</a> data compression utilities installed on your cluster nodes.
-
-To install these utilities on CentOS7 and RHEL7:
-
-    $ sudo yum install -y tar xz unzip curl ipset
+    Before installing DCOS, you must ensure that your bootstrap node has the following prerequisites.
     
-
-### Cluster permissions (advanced installer)
-
-On each of your cluster nodes, use the following command to:
-
-*   Disable SELinux or set it to permissive mode.
-*   Add nogroup to each of your Mesos masters and agents.</li> 
-*   Disable IPV6. For more information see <a href="https://wiki.centos.org/FAQ/CentOS7#head-8984faf811faccca74c7bcdd74de7467f2fcd8ee" target="_blank">How do I disable IPv6</a>.</li> 
-*   Reboot your cluster for the changes to take affect</p> 
+    ### DCOS setup file
     
-        $ sudo sed -i s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config &&
-        sudo groupadd nogroup &&
-        sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 &&
-        sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 &&
-        sudo reboot
+    Download and save the DCOS setup file to your bootstrap node. This file is used to create your customized DCOS build file. Contact your sales representative or [sales@mesosphere.com][3] to obtain the DCOS setup file.
+    
+    ### Shared external storage for Exhibitor
+    
+    Shared external storage is required to bootstrap the Exhibitor service. Exhibitor automatically configures your ZooKeeper installation on the master nodes during DCOS installation. ZooKeeper is a high-performance coordination service for distributed applications. Exhibitor is a supervisor for ZooKeeper and requires a dedicated amount of storage space that is highly available.
+    
+    The shared external storage mechanism can be another ZooKeeper instance, an Amazon S3 bucket, or a Network File System (NFS) mount. Temporary outages while the cluster is running are acceptable, but shared storage should generally be up and running to support replacing failed masters.
+    
+    For testing purposes, you can quickly start a single temporary instance of ZooKeeper in a Docker container with this command.
+    
+        $ sudo docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 -v /var/zookeeper/dcos:/tmp/zookeeper --name=dcos_int_zk jplock/zookeeper
         
-
-**Tip:** It may take a few minutes for your node to come back online after reboot.
+    
+    If you’ve run the `usermod` Docker command, you might have to log out and then back in to your bootstrap node before starting Zookeeper.
+    
+    **Important:** If you use a ZooKeeper instance to bootstrap Exhibitor, this ZooKeeper instance must be separate from your DCOS cluster. You must have at least 3 ZooKeeper instances running at all times for high availability.
+    
+    For more information about how to configure external shared storage, see the [exhibitor_storage_backend][4] configuration parameter.
+    
+    ### Docker Nginx
+    
+    Install the Docker Nginx image:
+    
+        $ sudo docker pull nginx
+        
+    
+    ## Cluster nodes
+    
+        For advanced install only, your cluster nodes must have the following prerequisites. The cluster nodes are designated as Mesos masters and agents during installation.
+        
+    
+    ### Data compression (advanced installer)
+    
+    You must have the <a href="http://www.info-zip.org/UnZip.html" target="_blank">UnZip</a>, <a href="https://www.gnu.org/software/tar/" target="_blank">GNU tar</a>, and <a href="http://tukaani.org/xz/" target="_blank">XZ Utils</a> data compression utilities installed on your cluster nodes.
+    
+    To install these utilities on CentOS7 and RHEL7:
+    
+        $ sudo yum install -y tar xz unzip curl ipset
+        
+    
+    ### Cluster permissions (advanced installer)
+    
+    On each of your cluster nodes, use the following command to:
+    
+    *   Disable SELinux or set it to permissive mode.
+    *   Add nogroup to each of your Mesos masters and agents.</li> 
+    *   Disable IPV6. For more information see <a href="https://wiki.centos.org/FAQ/CentOS7#head-8984faf811faccca74c7bcdd74de7467f2fcd8ee" target="_blank">How do I disable IPv6</a>.</li> 
+    *   Reboot your cluster for the changes to take affect</p> 
+        
+            $ sudo sed -i s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config &&
+            sudo groupadd nogroup &&
+            sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 &&
+            sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 &&
+            sudo reboot
+            
+    
+    **Tip:** It may take a few minutes for your node to come back online after reboot.
 
  [1]: /usage/cli/
- [2]: http://sales@mesosphere.com
- [3]: https://docs.mesosphere.com/getting-started/installing/installing-enterprise-edition/configuration-parameters/
+ [2]: https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/
+ [3]: http://sales@mesosphere.com
+ [4]: https://docs.mesosphere.com/getting-started/installing/installing-enterprise-edition/configuration-parameters/
