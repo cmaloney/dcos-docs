@@ -31,7 +31,7 @@ These instructions show how to use Docker with OverlayFS on CentOS 7.
 1.  Upgrade CentOS to 7.2:
     
         $ sudo yum upgrade --assumeyes --tolerant
-        $ sudo yum update --assumeyes`
+        $ sudo yum update --assumeyes
         
 
 2.  Verify that the kernel is at least 3.10:
