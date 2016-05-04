@@ -36,7 +36,8 @@ These instructions show how to use Docker with OverlayFS on CentOS 7.
 
 2.  Verify that the kernel is at least 3.10:
     
-        $ uname -r 3.10.0-327.10.1.el7.x86_64
+        $ uname -r 
+          3.10.0-327.10.1.el7.x86_64
         
 
 3.  Enable OverlayFS:
