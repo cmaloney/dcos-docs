@@ -47,9 +47,9 @@ dispatcher and the history server
 # Quick Start
 
 1.  Install DC/OS Spark via the DC/OS CLI:
-
+        ```
         $ dcos package install spark
-
+        ```
 1.  Run a Spark job:
 
     	```
