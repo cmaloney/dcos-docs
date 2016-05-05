@@ -61,17 +61,13 @@ dispatcher and the history server
 
 1.  Install DC/OS Spark via the DC/OS CLI:
 
-    ```
-    $ dcos package install spark
-    ```
+        $ dcos package install spark
 
-2.  Run a Spark job:
+1.  Run a Spark job:
 
-    ```
-    $ dcos spark run --submit-args="--class org.apache.spark.examples.SparkPi http://downloads.mesosphere.com.s3.amazonaws.com/assets/spark/spark-examples_2.10-1.4.0-SNAPSHOT.jar 30"
-    ```
+        $ dcos spark run --submit-args="--class org.apache.spark.examples.SparkPi http://downloads.mesosphere.com.s3.amazonaws.com/assets/spark/spark-examples_2.10-1.4.0-SNAPSHOT.jar 30"
 
-3.  View your job:
+1.  View your job:
 
     Visit the Spark cluster dispatcher at
 `http://<dcos-url>/service/spark/` to view the status of your job.
@@ -85,9 +81,7 @@ CLI. This command installs the dispatcher, and, optionally, the
 history server. See [Custom Installation][7] to install the history
 server.
 
-```
-$ dcos package install spark
-```
+    $ dcos package install spark
 
 Monitor the deployment at `http://<dcos-url>/marathon`. Once it is
 complete, visit Spark at `http://<dcos-url>/service/spark/`.
@@ -101,19 +95,15 @@ JSON options file and passing it to `dcos package install --options`.
 For example, to install the history server, create a file called
 `options.json`:
 
-```
-{
-  "history-server": {
-    "enabled": true
-  }
-}
-```
+    {
+      "history-server": {
+        "enabled": true
+      }
+    }
 
 Then, install Spark with your custom configuration:
 
-```
-$ dcos package install --options=options.json spark
-```
+    $ dcos package install --options=options.json spark
 
 Run the following command to see all configuration options:
 
