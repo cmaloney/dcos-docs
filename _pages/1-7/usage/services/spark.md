@@ -50,13 +50,13 @@ dispatcher and the history server
 
         $ dcos package install spark
 
-2.  Run a Spark job:
+1.  Run a Spark job:
 
-    ```
-    $ dcos spark run --submit-args="--class org.apache.spark.examples.SparkPi http://downloads.mesosphere.com.s3.amazonaws.com/assets/spark/spark-examples_2.10-1.4.0-SNAPSHOT.jar 30"
-    ```
+    	```
+    	$ dcos spark run --submit-args="--class org.apache.spark.examples.SparkPi http://downloads.mesosphere.com.s3.amazonaws.com/assets/spark/spark-examples_2.10-1.4.0-SNAPSHOT.jar 30"
+    	```
 
-3.  View your job:
+1.  View your job:
 
     Visit the Spark cluster dispatcher at
 `http://<dcos-url>/service/spark/` to view the status of your job.
