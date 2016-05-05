@@ -324,4 +324,4 @@ On each of your cluster nodes, use the following command to:
 
  [1]: /usage/cli/
  [2]: https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/
- [3]: /administration/installing/custom/system-requirements/install-docker-centos/
+ [3]: /administration/installing/custom/install-docker-centos/
