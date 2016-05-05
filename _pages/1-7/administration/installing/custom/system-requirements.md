@@ -4,7 +4,7 @@ post_title: System Requirements
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 1
+menu_order: 0
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
@@ -324,4 +324,4 @@ On each of your cluster nodes, use the following command to:
 
  [1]: /usage/cli/
  [2]: https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/
- [3]: /administration/installing/custom/install-docker-centos/
+ [3]: /1.7/administration/installing/custom/install-docker-centos/
