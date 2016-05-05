@@ -3,7 +3,7 @@ post_title: Install Docker on CentOS
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 0
+menu_order: 2
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
