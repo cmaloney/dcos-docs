@@ -327,13 +327,10 @@ You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes
     
     *   Disable SELinux or set it to permissive mode.
     *   Add nogroup to each of your Mesos masters and agents.</li> 
-    *   Disable IPV6. For more information see <a href="https://wiki.centos.org/FAQ/CentOS7#head-8984faf811faccca74c7bcdd74de7467f2fcd8ee" target="_blank">How do I disable IPv6</a>.</li> 
     *   Reboot your cluster for the changes to take affect</p> 
         
             $ sudo sed -i s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config &&
             sudo groupadd nogroup &&
-            sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 &&
-            sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 &&
             sudo reboot
             
     
