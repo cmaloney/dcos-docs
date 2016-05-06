@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-Apache Zeppelin is an interactive analytics notebook compatible with
+Apache Zeppelin is an interactive analytics notebook compatible with 
 several backends, including [DC/OS Spark][1].
 
 DC/OS Zeppelin bundles Apache Zeppelin with the DC/OS Spark
