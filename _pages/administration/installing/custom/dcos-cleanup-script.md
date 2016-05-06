@@ -16,3 +16,6 @@ To run the DC/OS cleanup script:
 
     $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall
     $ sudo rm -rf /opt/mesosphere
+    
+
+**Tip:** This doesn't completely wipe out everything on the host.
