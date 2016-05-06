@@ -1,5 +1,4 @@
 ---
-UID: 572d03c0394e6
 post_title: Spark
 post_excerpt: ""
 layout: page
