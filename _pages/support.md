@@ -14,8 +14,6 @@ We welcome any questions or feedback that you might have about Mesosphere DC/OS 
 
 *   A public [Slack community][1] channel.
 
-*   A private Intercom chat session is embedded in the DC/OS web interface. Click the chat icon in the bottom-left side of the page to start an Intercom chat with a member of the Mesosphere team.
-
 *   To submit documentation feedback, send an email directly to [support@mesosphere.com][2].
 
 ### <a name="dcosfaq"></a>FAQ and Support
