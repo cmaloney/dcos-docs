@@ -1,5 +1,4 @@
 ---
-UID: 572d08782593c
 post_title: Spark
 layout: page
 published: true
