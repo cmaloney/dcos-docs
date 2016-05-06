@@ -1,5 +1,4 @@
 ---
-UID: 572d0a721c2e4
 post_title: Fault Tolerance
 post_excerpt: ""
 layout: page
