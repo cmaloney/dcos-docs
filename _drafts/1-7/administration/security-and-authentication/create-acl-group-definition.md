@@ -1,6 +1,14 @@
 ---
+UID: 5730f2ce9a30e
 post_title: Creating ACL Group Definitions
+post_excerpt: ""
+layout: post
+published: false
 menu_order: 0
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
 You can define fine-grained access to applications that are running in DC/OS by defining advanced ACL groups. Advanced ACL groups can provide multi-tenancy by isolating application teams, and individual users. You can also control customized access to applications, for example read-only access. This access is administered on the backend by Admin Router and the native Marathon instance.
 

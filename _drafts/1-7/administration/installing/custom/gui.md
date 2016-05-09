@@ -1,6 +1,14 @@
 ---
+UID: 5730f2ce685ee
 post_title: GUI Installer
+post_excerpt: ""
+layout: post
+published: false
 menu_order: 2
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
 The automated GUI installer provides a simple graphical interface that guides you through the installation of DC/OS. The automated installer provides a basic installation that is suitable for demonstrations and POCs. Only a subset of the configuration options are available with the GUI method. This is the fastest way to get started with DC/OS.
 
