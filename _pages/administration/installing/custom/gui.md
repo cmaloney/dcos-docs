@@ -149,7 +149,7 @@ It is recommended that you save your DC/OS installer file immediately after inst
 
 1.  From your bootstrap node, navigate to the `genconf/serve` directory and package the contents as `dcos-install.tar`:
 
-    ```bash
+    ```
     # <Ctrl-C> to exit installer
     $ cd genconf/serve
     $ sudo tar cf dcos-install.tar *
@@ -157,7 +157,7 @@ It is recommended that you save your DC/OS installer file immediately after inst
 
 1.  Copy the `dcos-install.tar` file to another location for backup. For example, you can use Secure Copy (scp) to copy `dcos-install.tar` to your home directory:
 
-    ```bash
+    ```
     $ exit
     $ scp -i $username@$node-ip:~/genconf/serve/dcos-install.tar ~
     ```
