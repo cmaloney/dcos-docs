@@ -42,7 +42,7 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
         16:36:09 root:: Starting server ('0.0.0.0', 9000)
 
 
-    **Tip:** You can add the verbose (`-v`) flag to see the debug output:
+    *Tip:* You can add the verbose (`-v`) flag to see the debug output:
 
         $ sudo bash dcos_generate_config.ee.sh --web -v
 
@@ -58,55 +58,55 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
     ### Deployment Settings
 
     **Master Private IP List**
-    :   Specify a comma-separated list of your internal static master IP addresses.
+    Specify a comma-separated list of your internal static master IP addresses.
 
     **Agent Private IP List**
-    :   Specify a comma-separated list of your internal static agent IP addresses.
+    Specify a comma-separated list of your internal static agent IP addresses.
 
     **Master Public IP**
-    :   Specify a publicly accessible proxy IP address to one of your master nodes. If you don't have a proxy or already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DC/OS web interface on the master node after DC/OS is installed.
+    Specify a publicly accessible proxy IP address to one of your master nodes. If you don't have a proxy or already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DC/OS web interface on the master node after DC/OS is installed.
 
     **SSH Username**
-    :   Specify the SSH username, for example `centos`.
+    Specify the SSH username, for example `centos`.
 
     **SSH Listening Port**
-    :   Specify the port to SSH to, for example `22`.
+    Specify the port to SSH to, for example `22`.
 
     **SSH Key**
-    :   Specify the private SSH key with access to your master IPs.
+    Specify the private SSH key with access to your master IPs.
 
     ### DC/OS Environment Settings
 
     **Username**
-    :   Specify the administrator username. This username is required for using DC/OS.
+    Specify the administrator username. This username is required for using DC/OS.
 
     **Password**
-    :   Specify the administrator password. This password is required for using DC/OS.
+    Specify the administrator password. This password is required for using DC/OS.
 
     **ZooKeeper for Exhibitor Private IP**
 
-    :   Specify a comma-separated list of one or more ZooKeeper host IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this ZooKeeper cluster to orchestrate its configuration.
+    Specify a comma-separated list of one or more ZooKeeper host IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this ZooKeeper cluster to orchestrate its configuration.
 
-        **Important:** Multiple ZooKeeper instances are recommended for failover in production environments.
+    **Important:** Multiple ZooKeeper instances are recommended for failover in production environments.
 
     **ZooKeeper for Exhibitor Port**
-    :   Specify the ZooKeeper port. For example, `2181`.
+    Specify the ZooKeeper port. For example, `2181`.
 
     **Upstream DNS Servers**
 
-    :   Specify a comma-separated list of DNS resolvers for your DC/OS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`).
+    Specify a comma-separated list of DNS resolvers for your DC/OS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`).
 
-        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][2].
+    *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][2].
 
     **IP Detect Script**
 
-    :   Choose an IP detect script from the dropdown to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
+    Choose an IP detect script from the dropdown to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
 
-        **Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be wiped and reinstalled.
+    *Important:* The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be wiped and reinstalled.
 
 5.  Click **Run Pre-Flight**. The preflight script installs the cluster [prerequisites][3] and validates that your cluster is installable. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
 
-    **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
+    *Important:* If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
 
     *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
     *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
@@ -117,13 +117,13 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
 
     <a href="/wp-content/uploads/2016/02/ui-installer-deploy1.png" rel="attachment wp-att-3195"><img src="/wp-content/uploads/2016/02/ui-installer-deploy1.png" alt="ui-installer-deploy1" width="628" height="406" class="alignnone size-full wp-image-3195" /></a>
 
-    **Tip:** This step might take a few minutes, depending on the size of your cluster.
+    *Tip:* This step might take a few minutes, depending on the size of your cluster.
 
 7.  Click **Run Post-Flight**. If errors any errors are found, fix and then click **Retry**.
 
     <a href="/wp-content/uploads/2016/02/ui-installer-post-flight1.png" rel="attachment wp-att-3196"><img src="/wp-content/uploads/2016/02/ui-installer-post-flight1.png" alt="ui-installer-post-flight1" width="623" height="366" class="alignnone size-full wp-image-3196" /></a>
 
-    **Tip:** You can click **Download Logs** to view your logs locally.
+    *Tip:* You can click **Download Logs** to view your logs locally.
 
 8.  Click **Log In To DC/OS**.
 
@@ -143,6 +143,24 @@ Before installing DC/OS, your cluster must have the software and hardware [requi
     You are done!
 
     <a href="/wp-content/uploads/2016/02/ui-dashboard-ee.png" rel="attachment wp-att-3343"><img src="/wp-content/uploads/2016/02/ui-dashboard-ee-800x538.png" alt="ui-dashboard-ee" width="800" height="538" class="alignnone size-large wp-image-3343" /></a>
+    
+# <a name="backup"></a>(Optional) Backup your DC/OS installer files
+It is recommended that you save your DC/OS installer file immediately after installation completes and before you start using DC/OS. These installer files can be used to add more agent nodes to your cluster, including the [public agent][4] node.
+
+1.  From your bootstrap node, navigate to the `genconf/serve` directory and package the contents as `dcos-install.tar`:
+
+    ```bash
+    # <Ctrl-C> to exit installer
+    $ cd genconf/serve
+    $ sudo tar cf dcos-install.tar *
+    ```
+
+1.  Copy the `dcos-install.tar` file to another location for backup. For example, you can use Secure Copy (scp) to copy `dcos-install.tar` to your home directory:
+
+    ```bash
+    $ exit
+    $ scp -i $username@$node-ip:~/genconf/serve/dcos-install.tar ~
+    ```
 
 ## Next Steps
 
