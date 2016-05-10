@@ -117,6 +117,8 @@ In this step you create a YAML configuration file that is customized for your en
     
     The template specifies 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][2].
     
+    **Tip:** If Google DNS is not available in your country, you can replace the Google DNS servers `8.8.8.8` and `8.8.4.4` with your local DNS servers.
+    
         bootstrap_url: http://<bootstrap_public_ip>:80      
         cluster_name: '<cluster-name>'
         master_discovery: static 

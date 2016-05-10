@@ -114,6 +114,8 @@ In this step you create a YAML configuration file that is customized for your en
     
     You can use this template to get started. This template specifies 3 Mesos masters, 5 Mesos agents, static master discovery list, and SSH configuration specified. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][3].
     
+    **Tip:** If Google DNS is not available in your country, you can replace the Google DNS servers `8.8.8.8` and `8.8.4.4` with your local DNS servers.
+    
         agent_list:
         - <agent-private-ip-1>
         - <agent-private-ip-2>
