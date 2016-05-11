@@ -27,7 +27,7 @@ To create a VIP:
     
 ![Ports in Marathon UI](/assets/images/ui-marathon-ports.png)
 
-1.  Enter the Port, Protocol, Name, and VIP address. Enter the VIP in <IP>:<PORT> format.
+1.  Enter the Port, Protocol, Name, and VIP address. Enter the VIP in `<IP>:<PORT>` format.
     
     **Tip:** Select **JSON Mode** to edit your application directly in JSON.
     
