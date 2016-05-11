@@ -79,6 +79,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
 
 #### DC/OS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, and static master list specified.
 
+    ---
     agent_list:
     - <agent-private-ip-1>
     - <agent-private-ip-2>
@@ -107,6 +108,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
 
 #### <a name="shared"></a>DC/OS cluster with 3 masters, an Exhibitor/Zookeeper shared filesystem storage backend, Internal DNS
 
+    ---
     agent_list:
     - <agent-private-ip-1>
     - <agent-private-ip-2>
@@ -136,6 +138,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
 
 #### <a name="aws"></a>DC/OS Cluster with 3 masters, an Exhibitor/Zookeeper backed by an AWS S3 bucket, AWS DNS, and a public agent node
 
+    ---
     agent_list:
     - <agent-private-ip-1>
     - <agent-private-ip-2>
@@ -169,6 +172,7 @@ These configuration parameters are specified in [YAML][1] format in your config.
 
 #### <a name="zk"></a>DC/OS cluster with 3 masters, an Exhibitor/Zookeeper backed by Zookeeper, VRRP master discovery, public agent node, and Google DNS
 
+    ---
     agent_list:
     - <agent-private-ip-1>
     - <agent-private-ip-2>
