@@ -25,22 +25,22 @@ To create a VIP:
     *   To create a new application, click **Create Application** and select the **Ports and Service Discovery** menu option. 
     *   To edit an existing application, select your application and click the **Configuration** tab, then click **Edit**. You can then select the **Ports and Service Discovery** menu option. 
     
-    <a href="/wp-content/uploads/2016/03/ui-marathon-ports.gif" rel="attachment wp-att-4169"><img src="/wp-content/uploads/2016/03/ui-marathon-ports-800x406.gif" alt="ui-marathon-ports" width="800" height="406" class="alignnone size-large wp-image-4169" /></a>
+![Ports in Marathon UI](/assets/images/ui-marathon-ports.png)
 
-2.  Enter the Port, Protocol, Name, and VIP address.
+1.  Enter the Port, Protocol, Name, and VIP address. Enter the VIP in `<IP>:<PORT>` format.
     
     **Tip:** Select **JSON Mode** to edit your application directly in JSON.
     
     For more information on port configuration, see the [ports documentation][1].
 
-3.  From inside the cluster, you will be able to use your VIP directly. You can SSH into the cluster and run this command to see it work:
+1.  From inside the cluster, you will be able to use your VIP directly. You can SSH into the cluster and run this command to see it work:
     
         curl 1.1.1.1:5000
         
 
 ## Assigning Multiple VIPs to Your App
 
-To assign multiple VIPs to your application, switch to JSON mode and add the additional VIPs to your `portDefinitions`. In this example, the additional VIP added is `"VIP_1": "111.2.1.23:5050"`:
+To assign multiple VIPs to your application, switch to JSON mode and add the additional VIPs to your `portDefinitions`. In this example, the additional VIP added is `"VIP_1": "111.2.1.23:8080"`:
 
     {
       "id": null,
@@ -58,8 +58,8 @@ To assign multiple VIPs to your application, switch to JSON mode and add the add
           "protocol": "tcp",
           "name": "test",
           "labels": {
-            "VIP_0": "111.2.1.23",
-            "VIP_1": "111.2.1.23:5050"
+            "VIP_0": "111.2.1.23:80",
+            "VIP_1": "111.2.1.23:8080"
           }
         },
         {
