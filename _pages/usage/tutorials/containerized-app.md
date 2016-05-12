@@ -178,7 +178,7 @@ In this step you can see the load balancer in action by removing or adding nodes
         $ dcos marathon app update oinker-with-marathon-lb instances=4
 
  [1]: /overview/concepts/
- [2]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
+ [2]: /administration/managing-a-dcos-cluster-in-aws/#scaling
  [3]: /usage/services/cassandra/
  [4]: https://github.com/mesosphere/marathon-lb
  [5]: https://github.com/mesosphere/oinker

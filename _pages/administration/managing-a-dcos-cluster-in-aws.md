@@ -24,7 +24,7 @@ To find your your public node IP:
     
     **Tip:** You might have to refresh your browser to see your deployed app.
 
-# Scaling an AWS cluster
+# <a name="scaling"></a>Scaling an AWS cluster
 
 The DC/OS AWS CloudFormation template is optimized to run the DC/OS, but you might want to change the number of agent nodes based on your needs.
 
