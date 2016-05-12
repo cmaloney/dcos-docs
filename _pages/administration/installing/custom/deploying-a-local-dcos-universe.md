@@ -7,7 +7,7 @@ published: true
 menu_order: 205
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: false
+hide_from_navigation: true
 hide_from_related: false
 ---
 Follow these instructions to download and configure a local <a href="http://mesosphere.github.io/universe/" target="_blank">DC/OS Universe</a>. After downloading the Universe components, you can install and run DC/OS services on a datacenter without internet access.
@@ -45,7 +45,7 @@ To install the DC/OS local Universe:
             $ docker run -d -p 5000:5000 --restart=always --name registry registry:2
             $ docker load < dcos-services/docker-images.tar # This will take a long time.
             $ for img in $(docker images | awk '{ print $1 ":" $2 }' | grep mesos); do
-                img_tag=$(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1):5000/$img
+                img_tag=$(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | head -1):5000/$img
                 docker tag $img $img_tag
                 docker push $img_tag
               done
