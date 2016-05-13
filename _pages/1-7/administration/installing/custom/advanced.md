@@ -250,7 +250,7 @@ Now you can [assign user roles][8].
     
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
 
- [1]: /administration/installing/custom-1-7/system-requirements/
+ [1]: /1-7/administration/installing/custom/system-requirements/
  [2]: /administration/installing/custom/uninstall/
  [3]: /overview/concepts/#public
  [4]: /overview/concepts/#private
