@@ -1,6 +1,6 @@
 ---
 UID: 56f9a5595fa87
-post_title: Viewing DC/OS Registered Apps
+post_title: Viewing node details
 post_excerpt: ""
 layout: page
 published: true
@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-You can get a detailed view of which nodes in your cluster are running which service.
+You can get a comprehensive list of the apps being run on your DC/OS cluster nodes. 
 
 **Prerequisites:**
 
@@ -20,12 +20,11 @@ You can get a detailed view of which nodes in your cluster are running which ser
 
 2.  Run this command from your master node to view the node details:
     
-          $ curl http://master.mesos/mesos_dns/v1/enumerate
-        
+          $ curl http://master.mesos:8123/v1/enumerate
     
     In this example Kafka and Chronos are installed:
     
-          $ curl http://master.mesos/mesos_dns/v1/enumerate
+          $ curl http://master.mesos:8123/v1/enumerate
           {
             "frameworks": [
              {
