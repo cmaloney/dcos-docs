@@ -359,10 +359,10 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         ====> END OF SUMMARY FOR uninstall_dcos
 
  [1]: /administration/installing/custom-1-7/system-requirements/
- [2]: /concepts/installing/custom/uninstall/
- [3]: /concepts/installing/custom/configuration-parameters/
- [4]: /concepts/installing/custom/advanced/
- [5]: /concepts/installing/custom/advanced/#scrollNav-2
+ [2]: /administration/installing/custom/uninstall/
+ [3]: /administration/installing/custom/configuration-parameters/
+ [4]: /administration/installing/custom/advanced/
+ [5]: /administration/installing/custom/advanced/#scrollNav-2
  [6]: /assets/images/chef-zk-status.png
  [7]: /assets/images/gui-installer-login-ee.gif
  [8]: /assets/images/ui-dashboard-ee.png
