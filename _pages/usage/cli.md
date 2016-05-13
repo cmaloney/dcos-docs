@@ -114,4 +114,4 @@ For more information about security and authentication, see the [documentation][
 
     dcos config set core.token <token>
 
- [1]: /administration/security-and-authentication/
+ [1]: /administration/security/

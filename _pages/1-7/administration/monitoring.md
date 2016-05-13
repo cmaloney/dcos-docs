@@ -208,7 +208,7 @@ If you have any problems, you can check if the diagnostics service is running by
  [3]: https://dl.dropboxusercontent.com/u/77193293/systemHealthScreens/sys_unhealthy.png
  [4]: https://www.freedesktop.org/wiki/Software/systemd/
  [5]: http://erlang.org/doc/man/epmd.html
- [6]: /administration/security-and-authentication/
+ [6]: /administration/security/
  [7]: /1.7usage/service-discovery/load-balancing/
  [8]: /overview/concepts/#private
  [9]: /overview/concepts/#public

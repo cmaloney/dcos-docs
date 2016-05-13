@@ -366,7 +366,7 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
  [6]: /assets/images/chef-zk-status.png
  [7]: /assets/images/gui-installer-login-ee.gif
  [8]: /assets/images/ui-dashboard-ee.png
- [9]: /administration/security-and-authentication/managing-authorization/
+ [9]: /administration/security/managing-authorization/
  [10]: #hardware
  [11]: #software
  [12]: #two

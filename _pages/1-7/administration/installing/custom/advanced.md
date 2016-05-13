@@ -257,4 +257,4 @@ Now you can [assign user roles][8].
  [5]: /assets/images/chef-zk-status.png
  [6]: /assets/images/ui-installer-auth2.png
  [7]: /assets/images/ui-dashboard-ee.png
- [8]: /administration/security-and-authentication/
+ [8]: /administration/security/

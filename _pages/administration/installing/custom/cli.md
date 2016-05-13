@@ -392,7 +392,7 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
  [2]: /administration/installing/custom/configuration-parameters/
  [3]: /administration/installing/custom/advanced/
  [4]: /administration/installing/custom/advanced/#scrollNav-2
- [5]: /administration/security-and-authentication/managing-authorization/
+ [5]: /administration/security/managing-authorization/
  [6]: #hardware
  [7]: #software
  [8]: #two

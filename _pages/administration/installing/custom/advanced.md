@@ -255,4 +255,4 @@ Now you can [assign user roles][6].
  [3]: /usage/cli/
  [4]: /overview/concepts/#public
  [5]: /overview/concepts/#private
- [6]: /administration/security-and-authentication/
+ [6]: /administration/security/
