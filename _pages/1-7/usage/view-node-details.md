@@ -125,5 +125,5 @@ You can get a detailed view of which nodes in your cluster are running which ser
              }
             ]
 
- [1]: https://docs.mesosphere.com/concepts/installing/
+ [1]: https://docs.mesosphere.com/administration/installing/
  [2]: /administration/sshcluster/

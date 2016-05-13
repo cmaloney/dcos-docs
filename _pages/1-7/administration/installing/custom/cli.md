@@ -185,7 +185,7 @@ You can view all of the automated command line installer options with the `--hel
       --test                Performs tests on the dcos_installer application
     
 
-**Tip:** If something goes wrong and you want to rerun your setup, use these cluster <a href="/administration/installing/custom/dcos-cleanup-script/" target="_blank">cleanup instructions</a>.
+**Tip:** If something goes wrong and you want to rerun your setup, use these cluster <a href="/administration/installing/custom/uninstall/" target="_blank">cleanup instructions</a>.
 
 To install DC/OS:
 
@@ -359,10 +359,10 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         ====> END OF SUMMARY FOR uninstall_dcos
 
  [1]: /administration/installing/custom-1-7/system-requirements/
- [2]: /concepts/installing/custom/dcos-cleanup-script/
- [3]: /concepts/installing/custom/configuration-parameters/
- [4]: /concepts/installing/custom/advanced/
- [5]: /concepts/installing/custom/advanced/#scrollNav-2
+ [2]: /administration/installing/custom/uninstall/
+ [3]: /administration/installing/custom/configuration-parameters/
+ [4]: /administration/installing/custom/advanced/
+ [5]: /administration/installing/custom/advanced/#scrollNav-2
  [6]: /assets/images/chef-zk-status.png
  [7]: /assets/images/gui-installer-login-ee.gif
  [8]: /assets/images/ui-dashboard-ee.png

@@ -251,7 +251,7 @@ Now you can [assign user roles][6].
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
 
  [1]: /administration/installing/custom/configuration-parameters/
- [2]: /administration/installing/custom/dcos-cleanup-script/
+ [2]: /administration/installing/custom/uninstall/
  [3]: /usage/cli/
  [4]: /overview/concepts/#public
  [5]: /overview/concepts/#private
