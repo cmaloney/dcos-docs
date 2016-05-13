@@ -1,14 +1,8 @@
 ---
-UID: 56f984477b877
 post_title: Uninstall
-post_excerpt: ""
 layout: page
 published: true
-menu_order: 209
-page_options_require_authentication: false
-page_options_show_link_unauthenticated: false
-hide_from_navigation: false
-hide_from_related: false
+menu_order: 10
 ---
 
 You can uninstall DC/OS from each node individually or from all nodes at once.
