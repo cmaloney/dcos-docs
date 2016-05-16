@@ -18,7 +18,8 @@ You can assign a VIP to your application by using the DC/OS Marathon web interfa
 
 *   A pool of VIP addresses that are unique to your application.
 
-To create a VIP:
+
+## Creating a VIP
 
 1.  From the DC/OS web interface, click on the **Services** tab and select **marathon**.
     
@@ -70,5 +71,20 @@ To assign multiple VIPs to your application, switch to JSON mode and add the add
         }
       ]
     }
+    
+## Monitoring network health
+
+You can monitor the health of your VIPs from the **Network** tab on the DC/OS web interface. 
+
+You can click on VIPs to see a detailed view. 
+
+-  The **Successes and Failures per Minute** graph shows the number of successful and failed tasks over the past minute.
+   ![VIP details Successes and Failures per Minute](/assets/images/network-2.png)  
+- The Connection Latency per Minute graph shows the connection latency over the past hour.
+  ![VIP details connection latency over the past hour](/assets/images/network-3.png)
+  
+You can click on individual backends to see VIP client details as well.
+![VIP details backend](/assets/images/network-4.png)
+
 
  [1]: http://mesosphere.github.io/marathon/docs/ports.html
