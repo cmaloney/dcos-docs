@@ -41,7 +41,7 @@ You specify an external volume in the app definition of your Marathon app. [Lear
         "type": "MESOS",
         "volumes": [
           {
-            "containerPath": "tmp/test-rexray-volume",
+            "containerPath": "test-rexray-volume",
             "external": {
               "size": 100,
               "name": "my-test-vol",
