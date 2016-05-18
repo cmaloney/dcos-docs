@@ -26,7 +26,7 @@ The `mesos-master` process orchestrates tasks that are run on agent nodes. The M
 
 ### Mesos DNS
 
-Mesos DNS provides service discovery within the cluster. Mesos DNS allows applications and services that are running on Mesos to find each other by using the domain name system (DNS), similar to how services discover each other throughout the Internet.
+Mesos DNS provides service discovery within the cluster. Mesos DNS allows applications and services that are running on Mesos to find each other by using the domain name system (DNS), similar to how services discover each other throughout the internet.
 
 ### DC/OS Marathon
 
