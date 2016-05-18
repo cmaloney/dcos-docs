@@ -127,7 +127,7 @@ Runs keepalived to make a VRRP load balancer that can be used to access the mast
 
 ### Layer 4 Load Balancer
 
-The DC/OS Layer 4 Load Balancer that enables multi-tier microservices architectures. For more information, see the [documentation][7].<!-- dcos-minuteman.service/ -->
+The DC/OS Layer 4 Load Balancer enables multi-tier microservices architectures. For more information, see the [documentation][7].<!-- dcos-minuteman.service/ -->
 
 ### Logrotate
 
@@ -209,7 +209,7 @@ If you have any problems, you can check if the diagnostics service is running by
  [4]: https://www.freedesktop.org/wiki/Software/systemd/
  [5]: http://erlang.org/doc/man/epmd.html
  [6]: /administration/security/
- [7]: /1.7usage/service-discovery/load-balancing/
+ [7]: /1.7/usage/service-discovery/load-balancing/
  [8]: /overview/concepts/#private
  [9]: /overview/concepts/#public
  [10]: http://mesos.apache.org/documentation/latest/persistent-volume/
