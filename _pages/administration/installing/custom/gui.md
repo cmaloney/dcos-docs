@@ -1,171 +1,143 @@
 ---
-UID: 56f98445e31c9
-post_title: GUI
+UID: 57239a7dd608a
+post_title: GUI Installer
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 1
+menu_order: 2
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The automated GUI installation method provides a simple graphical interface that guides you through the installation of DC/OS Enterprise Edition.
+The automated GUI installer provides a simple graphical interface that guides you through the installation of DC/OS. The automated installer provides a basic installation that is suitable for demonstrations and POCs. Only a subset of the configuration options are available with the GUI method. This is the fastest way to get started with DC/OS.
 
 This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.
 
-**Important:** This installation method supports a minimal DC/OS configuration set that includes ZooKeeper for shared storage and a static master list, and publicly accessible master IP addresses.
+The DC/OS installation creates these folders:
 
-To use the automated GUI installation method:
+*   `/opt/mesosphere`
+    :   Contains all the DC/OS binaries, libraries, cluster configuration. Do not modify.
 
-*   Cluster nodes must be network accessible from the bootstrap node
-*   Cluster nodes must have SSH enabled and ports open from the bootstrap node
-*   The bootstrap node must have an unencrypted SSH key that can be used to authenticate with the cluster nodes over SSH
+*   `/etc/systemd/system/dcos.target.wants`
+    :   Contains the systemd services which start the things that make up systemd. They must live outside of `/opt/mesosphere` because of systemd constraints.
 
-## Prerequisites
-
-Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
+*   Various units prefixed with `dcos` in `/etc/systemd/system`
+    :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
+    
+    ## Prerequisites
+    
+    Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
 
 # Install DC/OS
 
-**Important:** Encrypted SSH keys are not supported.
-
-1.  From your terminal, start the DC/OS installer with this command. This terminal will show output from the installer until the installer is terminated.
-
+1.  From your terminal, start the DC/OS GUI installer with this command.
+    
         $ sudo bash dcos_generate_config.ee.sh --web
-
-
+        
+    
     Here is an example of the output.
-
+    
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
         16:36:09 dcos_installer.action_lib.prettyprint:: ====> Starting DC/OS installer in web mode
         16:36:09 root:: Starting server ('0.0.0.0', 9000)
-
-
-    *Tip:* You can add the verbose (`-v`) flag to see the debug output:
-
+        
+    
+    **Tip:** You can add the verbose (`-v`) flag to see the debug output:
+    
         $ sudo bash dcos_generate_config.ee.sh --web -v
-
+        
 
 2.  Launch the DC/OS web installer in your browser at: `http://<bootstrap-node-public-ip>:9000`.
 
-3.  Click **Begin Installation**.
-
-    <a href="/wp-content/uploads/2016/02/ui-installer-begin.png" rel="attachment wp-att-3190"><img src="/wp-content/uploads/2016/02/ui-installer-begin-800x510.png" alt="ui-installer-begin" width="800" height="510" class="alignnone size-large wp-image-3190" /></a>
+3.  Click **Begin Installation**. <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-begin-ee.gif" rel="attachment wp-att-4820"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-begin-ee-800x439.gif" alt="gui-installer-begin-ee" width="800" height="439" class="alignnone size-large wp-image-4820" /></a>
 
 4.  Specify your Deployment and DC/OS Environment settings:
-
+    
+    ![alt text][2]
+    
     ### Deployment Settings
-
+    
     **Master Private IP List**
-    Specify a comma-separated list of your internal static master IP addresses.
-
+    :   Specify a comma-separated list of your internal static master IP addresses.
+    
     **Agent Private IP List**
-    Specify a comma-separated list of your internal static agent IP addresses.
-
+    :   Specify a comma-separated list of your internal static agent IP addresses.
+    
     **Master Public IP**
-    Specify a publicly accessible proxy IP address to one of your master nodes. If you don't have a proxy or already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DC/OS web interface on the master node after DC/OS is installed.
-
+    :   Specify a publicly accessible proxy IP address to one of your master nodes. If you don't have a proxy or already have access to the network where you are deploying this cluster, you can use one of the master IP's that you specified in the master list. This proxy IP address is used to access the DC/OS web interface on the master node after DC/OS is installed.
+    
     **SSH Username**
-    Specify the SSH username, for example `centos`.
-
+    :   Specify the SSH username, for example `centos`.
+    
     **SSH Listening Port**
-    Specify the port to SSH to, for example `22`.
-
-    **SSH Key**
-    Specify the private SSH key with access to your master IPs.
-
+    :   Specify the port to SSH to, for example `22`.
+    
+    **Private SSH Key**
+    :   Specify the private SSH key with access to your master IPs.
+    
+    **Customer ID**
+    :   Specify the 30-character UUID that was given to you by the Mesosphere customer representative.
+    
     ### DC/OS Environment Settings
-
-    **Username**
-    Specify the administrator username. This username is required for using DC/OS.
-
-    **Password**
-    Specify the administrator password. This password is required for using DC/OS.
-
-    **ZooKeeper for Exhibitor Private IP**
-
-    Specify a comma-separated list of one or more ZooKeeper host IP addresses to use for configuring the internal Exhibitor instances. Exhibitor uses this ZooKeeper cluster to orchestrate its configuration.
-
-    **Important:** Multiple ZooKeeper instances are recommended for failover in production environments.
-
-    **ZooKeeper for Exhibitor Port**
-    Specify the ZooKeeper port. For example, `2181`.
-
+    
+    **Username (Enterprise)**
+    :   Specify the administrator username. This username is required for using DC/OS. This feature is only available in DC/OS Enterprise.
+    
+    **Password (Enterprise)**
+    :   Specify the administrator password. This password is required for using DC/OS. This feature is only available in DC/OS Enterprise.
+    
     **Upstream DNS Servers**
-
-    Specify a comma-separated list of DNS resolvers for your DC/OS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`). If Google DNS is not available in your country, you can replace the Google DNS servers `8.8.8.8` and `8.8.4.4` with your local DNS servers.
-
-    *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][2].
-
+    
+    :   Specify a comma-separated list of DNS resolvers for your DC/OS cluster nodes. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, you can set this to a public nameserver like Google or AWS. In the example file above, the <a href="https://developers.google.com/speed/public-dns/docs/using" target="_blank">Google Public DNS IP addresses (IPv4)</a> are specified (`8.8.8.8` and `8.8.4.4`). If Google DNS is not available in your country, you can replace the Google DNS servers `8.8.8.8` and `8.8.4.4` with your local DNS servers.
+        
+        *Caution:* If you set this parameter incorrectly you will have to reinstall DC/OS. For more information about service discovery, see this [documentation][3].
+    
     **IP Detect Script**
+    
+    :   Choose an IP detect script from the dropdown to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
+        
+        **Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be wiped and reinstalled.
 
-    Choose an IP detect script from the dropdown to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
-
-    *Important:* The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be wiped and reinstalled.
-
-5.  Click **Run Pre-Flight**. The preflight script installs the cluster [prerequisites][3] and validates that your cluster is installable. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
-
-    *Important:* If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
-
+5.  Click **Run Pre-Flight**. The preflight script installs the cluster prerequisites and validates that your cluster is installable. For a list of cluster prerequisites, see the [prerequisites][/administration/installing/custom/system-requirements/]. This step can take up to 15 minutes to complete. If errors any errors are found, fix and then click **Retry**.
+    
+    **Important:** If you exit your GUI installation before launching DC/OS, you must do this before reinstalling:
+    
     *   SSH to each node in your cluster and run `rm -rf /opt/mesosphere`.
     *   SSH to your bootstrap master node and run `rm -rf /var/lib/zookeeper`
 
-    <a href="/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" rel="attachment wp-att-3197"><img src="/wp-content/uploads/2016/02/ui-installer-pre-flight1.png" alt="ui-installer-pre-flight1" width="626" height="405" class="alignnone size-full wp-image-3197" /></a>
-
 6.  Click **Deploy** to install DC/OS on your cluster. If errors any errors are found, fix and then click **Retry**.
-
-    <a href="/wp-content/uploads/2016/02/ui-installer-deploy1.png" rel="attachment wp-att-3195"><img src="/wp-content/uploads/2016/02/ui-installer-deploy1.png" alt="ui-installer-deploy1" width="628" height="406" class="alignnone size-full wp-image-3195" /></a>
-
-    *Tip:* This step might take a few minutes, depending on the size of your cluster.
+    
+    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-deploy1.png" rel="attachment wp-att-4822"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-deploy1.png" alt="ui-installer-deploy1" width="628" height="406" class="alignnone size-full wp-image-4822" /></a>
+    
+    **Tip:** This step might take a few minutes, depending on the size of your cluster.
 
 7.  Click **Run Post-Flight**. If errors any errors are found, fix and then click **Retry**.
-
-    <a href="/wp-content/uploads/2016/02/ui-installer-post-flight1.png" rel="attachment wp-att-3196"><img src="/wp-content/uploads/2016/02/ui-installer-post-flight1.png" alt="ui-installer-post-flight1" width="623" height="366" class="alignnone size-full wp-image-3196" /></a>
-
-    *Tip:* You can click **Download Logs** to view your logs locally.
+    
+    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-post-flight1.png" rel="attachment wp-att-4821"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-post-flight1.png" alt="ui-installer-post-flight1" width="623" height="366" class="alignnone size-full wp-image-4821" /></a>
+    
+    **Tip:** You can click **Download Logs** to view your logs locally.
 
 8.  Click **Log In To DC/OS**.
-
-    <a href="/wp-content/uploads/2016/02/ui-installer-success1.png" rel="attachment wp-att-3198"><img src="/wp-content/uploads/2016/02/ui-installer-success1.png" alt="ui-installer-success1" width="625" height="404" class="alignnone size-full wp-image-3198" /></a>
+    
+    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-success-ee.gif" rel="attachment wp-att-4815"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/gui-installer-success-ee-800x442.gif" alt="gui-installer-success-ee" width="800" height="442" class="alignnone size-large wp-image-4815" /></a>
 
 9.  Enter your administrator username and password.
-
-    <a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-auth2.png" rel="attachment wp-att-4823"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-4823" /></a>
-
-10. Archive your installer files for safe-keeping. You'll need this archive to make new agents, including the [public agent][4].
-
-        # <Ctrl-C> to exit installer
-        $ cd genconf/serve
-        $ sudo tar cf dcos-install.tar *
-        # Move the dcos-install.tar file to a safe place
-
-    You are done!
-
-    <a href="/wp-content/uploads/2016/02/ui-dashboard-ee.png" rel="attachment wp-att-3343"><img src="/wp-content/uploads/2016/02/ui-dashboard-ee-800x538.png" alt="ui-dashboard-ee" width="800" height="538" class="alignnone size-large wp-image-3343" /></a>
     
-# <a name="backup"></a>(Optional) Backup your DC/OS installer files
-It is recommended that you save your DC/OS installer file immediately after installation completes and before you start using DC/OS. These installer files can be used to add more agent nodes to your cluster, including the [public agent][4] node.
-
-1.  From your bootstrap node, navigate to the `genconf/serve` directory and package the contents as `dcos-install.tar`:
-
-        # <Ctrl-C> to exit installer
-        $ cd genconf/serve
-        $ sudo tar cf dcos-install.tar *
-
-1.  Copy the `dcos-install.tar` file to another location for backup. For example, you can use Secure Copy (scp) to copy `dcos-install.tar` to your home directory:
-
-        $ exit
-        $ scp -i $username@$node-ip:~/genconf/serve/dcos-install.tar ~
+    ![alt text][5]
+    
+    You are done!
+    
+    ![alt text][6]
 
 ## Next Steps
 
-Now you can [assign user roles][5] or [create a public agent][4]
+Now you can [assign user roles][7].
 
 ### Uninstalling DC/OS
 
 1.  From the bootstrap node, enter this command:
-
+    
         $ sudo bash dcos_generate_config.sh --uninstall
         Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/genconf
         ====> EXECUTING UNINSTALL
@@ -179,8 +151,10 @@ Now you can [assign user roles][5] or [create a public agent][4]
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /administration/installing/custom/system-requirements/
- [2]: /usage/service-discovery/
- [3]: /administration/installing/custom/advanced/#scrollNav-2
- [4]: /administration/installing/custom/create-public-agent/
- [5]: /administration/security/managing-authorization/
+ [1]: /1-7/administration/installing/custom/system-requirements/
+ [2]: /assets/images/gui-installer-setup-ee.gif
+ [3]: /usage/service-discovery/
+ [4]: /1-7/administration/installing/custom/system-requirements/#scrollNav-2
+ [5]: /assets/images/ui-installer-auth-1-7.gif
+ [6]: /assets/images/dashboard-ee.gif
+ [7]: /administration/security/managing-authorization/

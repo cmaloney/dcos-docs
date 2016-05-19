@@ -1,24 +1,36 @@
 ---
-UID: 56f984460d9b0
-post_title: Advanced
+UID: 572398ae320f2
+post_title: Advanced Installer
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 3
+menu_order: 4
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-With the advanced installer, you package the DC/OS distribution yourself and connect to every node manually to run the DC/OS installation commands. This installation method is recommended if you don't have SSH access to your cluster or if you want to integrate with an existing system.
+With this installation method, you package the DC/OS distribution yourself and connect to every node manually to run the DC/OS installation commands. This installation method is recommended if you want to integrate with an existing system or if you don’t have SSH access to your cluster.
 
-This installation method requires:
+The advanced installer requires:
 
-*   The bootstrap node must be network accessible from the cluster nodes 
-*   The bootstrap node must have the HTTP(S) ports open from the cluster nodes
+*   The bootstrap node must be network accessible from the cluster nodes.
+*   The bootstrap node must have the HTTP(S) ports open from the cluster nodes.
+
+The DC/OS installation creates these folders:
+
+*   `/opt/mesosphere`
+    :   Contains all the DC/OS binaries, libraries, cluster configuration. Do not modify.
+
+*   `/etc/systemd/system/dcos.target.wants`
+    :   Contains the systemd services which start the things that make up systemd. They must live outside of `/opt/mesosphere` because of systemd constraints.
+
+*   Various units prefixed with `dcos` in `/etc/systemd/system`
+    :   Copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.
 
 ## Prerequisites
-Before installing DC/OS, your cluster must have the software and hardware [requirements](/administration/installing/custom/system-requirements/).
+
+Before installing DC/OS, your cluster must have the software and hardware [requirements][1].
 
 # Create an IP detection script
 
@@ -65,7 +77,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             #!/usr/bin/env bash
             set -o nounset -o errexit
             export PATH=/usr/sbin:/usr/bin:$PATH
-            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
+            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | head -1)
             
     
     *   #### Use the network route to the Mesos master
@@ -79,14 +91,14 @@ In this step you create an IP detect script to broadcast the IP address of each 
             
             MASTER_IP=172.28.128.3
             
-            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
+            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | tail -1)
             
 
-# <a name="config-json"></a>Configure your cluster
+# <a name="configuration"></a>Create a configuration file
 
 In this step you create a YAML configuration file that is customized for your environment. DC/OS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
 
-1.  From the bootstrap node, run this command to create a hashed password for superuser authentication, where `<superuser_password>` is the superuser password. Use the hashed password key for the `superuser_password_hash` parameter in your `config.yaml` file.
+1.  From the bootstrap node, run this command to create a hashed password for superuser authentication, where `<superuser_password>` is the superuser password. Save the hashed password key for use in the `superuser_password_hash` parameter in your `config.yaml` file.
     
         $ sudo bash dcos_generate_config.ee.sh --hash-password <superuser_password>
         
@@ -101,23 +113,14 @@ In this step you create a YAML configuration file that is customized for your en
         $6$rounds=656000$v55tdnlMGNoSEgYH$1JAznj58MR.Bft2wd05KviSUUfZe45nsYsjlEl84w34pp48A9U2GoKzlycm3g6MBmg4cQW9k7iY4tpZdkWy9t1
         
 
-2.  Create a configuration file and save as `genconf/config.yaml`.
+2.  Create a configuration file and save as `genconf/config.yaml`. You can use this template to get started.
     
-    You can use this template to get started. This template specifies 5 agent nodes, 3 masters, 3 ZooKeeper instances for Exhibitor storage, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, you should add `dns_search` to your `config.yaml` file. For parameters descriptions and configuration examples, see the [documentation][1].
+    The template specifies 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][2].
     
     **Tip:** If Google DNS is not available in your country, you can replace the Google DNS servers `8.8.8.8` and `8.8.4.4` with your local DNS servers.
     
-        agent_list:
-        - <agent-private-ip-1>
-        - <agent-private-ip-2>
-        - <agent-private-ip-3>
-        - <agent-private-ip-4>
-        - <agent-private-ip-5>
-        bootstrap_url: http://<bootstrap_public_ip>:80       
+        bootstrap_url: http://<bootstrap_public_ip>:80      
         cluster_name: '<cluster-name>'
-        exhibitor_storage_backend: zookeeper
-        exhibitor_zk_hosts: <host1>:2181,<host2>:2181,<host3>:2181
-        exhibitor_zk_path: /dcos
         master_discovery: static 
         master_list:
         - <master-private-ip-1>
@@ -129,6 +132,27 @@ In this step you create a YAML configuration file that is customized for your en
         superuser_password_hash: <hashed-password>
         superuser_username: <username>
         
+3.  Optional: if you are using external volumes:
+ 
+    - Specify the [`rexray_config_method`](/administration/installing/custom/configuration-parameters/#rexray-config) parameter in your `genconf/config.yaml` file. For example: 
+
+            rexray_config_method: file
+            rexray_config_filename: path/to/rexray.yaml
+
+      **Tip:** The `rexray_config_filename` path must be relative to your `genconf` directory.
+      
+    - Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. For example, here is a `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
+      
+              rexray:
+                loglevel: info
+                storageDrivers:
+                  - ec2
+                volume:
+                  unmount:
+                    ignoreusedcount: true
+                    
+    For more information, see the external volumes [documentation](/1-7/usage/services/marathon/external-volumes/).
+
 
 # <a name="install-bash"></a>Install DC/OS
 
@@ -138,7 +162,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
 
 **Prerequisites**
 
-*   A `genconf/config.yaml` file that is optimized for [manual distribution of DC/OS across your nodes][3].
+*   A `genconf/config.yaml` file that is optimized for manual distribution of DC/OS across your nodes.
 *   A `genconf/ip-detect` script.
 
 <!-- Early access URL: https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh -->
@@ -168,7 +192,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
         $ sudo docker run -d -p <your-port>:80 -v $PWD/genconf/serve:/usr/share/nginx/html:ro nginx
         
 
-4.  Run these commands on each of your master nodes in succession to install DC/OS using your custom build file.
+4.  <A name="masterinstall"></A> Run these commands on each of your master nodes in succession to install DC/OS using your custom build file.
     
     **Tip:** Although there is no actual harm to your cluster, DC/OS may issue error messages until all of your master nodes are configured.
     
@@ -192,7 +216,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
             $ sudo bash dcos_install.sh master
             
 
-5.  Run these commands on each of your agent nodes to install DC/OS using your custom build file.
+5.  <A name="slaveinstall"></A> Run these commands on each of your agent nodes to install DC/OS using your custom build file.
     
     1.  SSH to your agent nodes:
         
@@ -209,40 +233,37 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
             $ curl -O http://<bootstrap-ip>:<your_port>/dcos_install.sh
             
     
-    4.  Run this command to install DC/OS on your agent nodes. You must designate your agent nodes as [public][4] or [private][5].
+    4.  Run this command to install DC/OS on your agent nodes. You must designate your agent nodes as [public][3] or [private][4].
         
         *   Private agent nodes:
-        <pre>$ sudo bash dcos_install.sh slave</pre>
-    
-    *   Public agent nodes:
+            
+            <pre>$ sudo bash dcos_install.sh slave</pre>
         
-        <pre>$ sudo bash dcos_install.sh slave_public</pre>
+        *   Public agent nodes:
+            
+            <pre>$ sudo bash dcos_install.sh slave_public</pre>
 
 6.  Monitor Exhibitor and wait for it to converge at `http://<master-ip>:8181/exhibitor/v1/ui/index.html`.
     
     **Tip:** This process can take about 10 minutes. During this time you will see the Master nodes become visible on the Exhibitor consoles and come online, eventually showing a green light.
     
-    <a href="/wp-content/uploads/2015/12/chef-zk-status.png" rel="attachment wp-att-2112"><img src="/wp-content/uploads/2015/12/chef-zk-status.png" alt="chef-zk-status" width="551" height="467" class="alignnone size-full wp-image-2112" /></a>
+    ![alt text][5]
     
     When the status icons are green, you can access the DC/OS web interface.
 
 7.  Launch the DC/OS web interface at: `http://<master-node-public-ip>/`.
 
-8.  Click **Log In To DC/OS**.
+8.  Enter your administrator username and password.
     
-    <a href="/wp-content/uploads/2016/02/ui-installer-success1.png" rel="attachment wp-att-3198"><img src="/wp-content/uploads/2016/02/ui-installer-success1.png" alt="ui-installer-success1" width="625" height="404" class="alignnone size-full wp-image-3198" /></a>
-
-9.  Enter your administrator username and password.
-    
-    <a href="/wp-content/uploads/2016/02/ui-installer-auth2.png" rel="attachment wp-att-3341"><img src="/wp-content/uploads/2016/02/ui-installer-auth2-800x513.png" alt="ui-installer-auth2" width="800" height="513" class="alignnone size-large wp-image-3341" /></a>
+    ![alt text][6]
     
     You are done!
     
-    <a href="/wp-content/uploads/2016/02/ui-dashboard-ee.png" rel="attachment wp-att-3343"><img src="/wp-content/uploads/2016/02/ui-dashboard-ee-800x538.png" alt="ui-dashboard-ee" width="800" height="538" class="alignnone size-large wp-image-3343" /></a>
+    ![alt text][7]
 
 ### Next Steps
 
-Now you can [assign user roles][6].
+Now you can [assign user roles][8].
 
 ### Uninstalling DC/OS
 
@@ -250,9 +271,11 @@ Now you can [assign user roles][6].
     
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
 
- [1]: /administration/installing/custom/configuration-parameters/
+ [1]: /1-7/administration/installing/custom/system-requirements/
  [2]: /administration/installing/custom/uninstall/
- [3]: /usage/cli/
- [4]: /overview/concepts/#public
- [5]: /overview/concepts/#private
- [6]: /administration/security/
+ [3]: /overview/concepts/#public
+ [4]: /overview/concepts/#private
+ [5]: /assets/images/chef-zk-status.png
+ [6]: /assets/images/ui-installer-auth2.png
+ [7]: /assets/images/ui-dashboard-ee.png
+ [8]: /administration/security/
