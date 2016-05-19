@@ -31,7 +31,7 @@ By default the DC/OS service name is `marathon-user`. <a href="/wp-content/uploa
                 
 1. In the DC/OS web interface, click the **System** tab, select **Organization**, and then **Groups**.
 
-1. Click the `Superuser group`, then **Advanced ACLs**. [More information about advanced ACLs](https://docs.mesosphere.com/1-7/administration/security-and-authentication/advanced-acl/).
+1. Click the `Superuser group`, then **Advanced ACLs**. [More information about advanced ACLs](https://docs.mesosphere.com/administration/security-and-authentication/advanced-acl/).
 
 1. Add the following two rules:
 
@@ -70,7 +70,7 @@ Then, click **Add Rule**.
             
                  $ dcos package install --options=<config-file>.json marathon
 
-1. In the DC/OS web interface, open the ACL editor add the rules for group `superusers` for each of your new Marathon instances. [More information about advanced ACLs](https://docs.mesosphere.com/1-7/administration/security-and-authentication/advanced-acl/).
+1. In the DC/OS web interface, open the ACL editor add the rules for group `superusers` for each of your new Marathon instances. [More information about advanced ACLs](https://docs.mesosphere.com/administration/security-and-authentication/advanced-acl/).
 
 <table class="table">
   <tr>
