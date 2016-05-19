@@ -32,25 +32,27 @@ To manage users:
         
         <a href="/wp-content/uploads/2016/02/auth-enable-add-user2-1.gif" rel="attachment wp-att-3494"><img src="/wp-content/uploads/2016/02/auth-enable-add-user2-1-800x507.gif" alt="auth-enable-add-user2" width="800" height="507" class="alignnone size-large wp-image-3494" /></a>
     
-    ### Import remote users
+    ### Add or Import remote users
     
-    **Disclaimer:** This is an alpha feature and is meant for testing purposes only.
-    
-    To provide external user access to DC/OS, you can authenticate users that are defined in an LDAP 3 (RFC 4510) registry. You can then provide users with a single sign-on (SSO), granting them access the authorized services in your DC/OS datacenter. You cannot create new LDAP users in DC/OS, but they can be imported.
+    To provide external user access to DCOS, you can authenticate users that are defined in an LDAP 3 (RFC 4510) registry. You can then provide users with a single sign-on (SSO), granting them access the authorized services in your DCOS datacenter.
     
     When a user logs in and provides an LDAP user name and password, that information is used to connect to an LDAP server and authenticate a user. If successful, the DC/OS authentication issues a session credential with the user’s distinguished name.
     
     LDAP users are uniquely identified by distinguished names (DN). To authenticate a user, a full DN and password are required. You can also use a DN template to allow users to enter a partial DN name. The partial name consists of the portion of their DN name that is unique to their accounts. The DN template converts the partial DN name to a full DN.
     
-    1.  Click on the **Settings** -> **Organization** -> **External Directory** tab.
+    1.  Click on the **System** -> **Organization** -> **External Directory** tab.
         
         1.  Click **Add Directory**.
             
-            <a href="/wp-content/uploads/2016/02/auth-ldap.gif" rel="attachment wp-att-3790"><img src="/wp-content/uploads/2016/02/auth-ldap-800x484.gif" alt="auth-ldap" width="800" height="484" class="alignnone size-large wp-image-3790" /></a>
+            ![ldap user pane](/assets/images/auth-add-ldap-user.gif)
             
             **Host** Specify the hostname or IP address.
             
             **Port** Specify the port to use.
+            
+            **Lookup Username** Specify the username.
+            
+            **Lookup Password** Specify the password.
             
             **Distinguished Name Template** Specify the template to use for translating a username to a distinguished name. The distinguished name template is a static string that contains the `%(username)s` substring, which is replaced with the name the user provides when logging in. The template structure depends on your directory setup. Here's an example:
             
