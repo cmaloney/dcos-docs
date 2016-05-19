@@ -1,6 +1,6 @@
 ---
 UID: 56f9844593827
-post_title: Archived DCOS Enterprise Edition
+post_title: Archived DC/OS Enterprise Edition
 post_excerpt: ""
 layout: page
 published: true
@@ -10,4 +10,4 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: true
 ---
-You can access installation instructions for past versions of DCOS.
+You can access installation instructions for past versions of DC/OS.

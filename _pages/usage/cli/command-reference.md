@@ -13,7 +13,7 @@ hide_from_related: false
 # dcos
 
     Description:
-        The Mesosphere Datacenter Operating System (DCOS) spans all of the machines in
+        The Mesosphere Datacenter Operating System (DC/OS) spans all of the machines in
     your datacenter or cloud and treats them as a single, shared set of resources.
     
     Usage:
@@ -35,11 +35,34 @@ hide_from_related: false
         --version
             Print version information.
     
+# dcos auth
+
+    Description:
+        Authenticate to DC/OS cluster.
+    
+    Usage:
+        dcos auth --info
+        dcos auth login
+        dcos auth logout
+    
+    Commands:
+        login
+            Login to your DC/OS Cluster.
+        logout
+            Logout of your DC/OS Cluster.
+    
+    Options:
+        -h, --help
+            Print usage.
+        --info
+            Print a short description of this subcommand.
+        --version
+            Print version information.
 
 # dcos config
 
     Description:
-        Manage the DCOS configuration file.
+        Manage the DC/OS configuration file.
     
     Usage:
         dcos config --info
@@ -50,9 +73,9 @@ hide_from_related: false
     
     Commands:
         set
-            Add or set a DCOS configuration property.
+            Add or set a DC/OS configuration property.
         show
-            Print the DCOS configuration file contents.
+            Print the DC/OS configuration file contents.
         unset
             Remove a property from the configuration file.
         validate
@@ -77,7 +100,7 @@ hide_from_related: false
 # dcos help
 
     Description:
-        Display help information about DCOS.
+        Display help information about DC/OS.
     
     Usage:
         dcos help
@@ -104,7 +127,7 @@ hide_from_related: false
 # dcos marathon
 
     Description:
-        Deploy and manage applications to DCOS.
+        Deploy and manage applications to DC/OS.
     
     Usage:
         dcos marathon --config-schema
@@ -136,7 +159,7 @@ hide_from_related: false
     
     Commands:
         about
-            Print info.json for DCOS Marathon.
+            Print info.json for DC/OS Marathon.
         app add
             Add an application.
         app list
@@ -246,7 +269,7 @@ hide_from_related: false
 # dcos node
 
     Description:
-        Administer and manage DCOS cluster nodes.
+        Administer and manage DC/OS cluster nodes.
     
     Usage:
         dcos node --info
@@ -262,7 +285,7 @@ hide_from_related: false
         log
             Prints the Mesos logs for the leading master node, agent nodes, or both.
         ssh
-            Establish an SSH connection to the master or agent nodes of your DCOS
+            Establish an SSH connection to the master or agent nodes of your DC/OS
             cluster.
     
     Options:
@@ -284,7 +307,7 @@ hide_from_related: false
             Deprecated. Please use `--leader`.
         --master-proxy
             Proxy the SSH connection through a master node. This can be useful when
-            accessing DCOS from a separate network. For example, in the default AWS
+            accessing DC/OS from a separate network. For example, in the default AWS
             configuration, the private slaves are unreachable from the public
             internet. You can access them using this option, which will first hop
             from the publicly available master.
@@ -306,7 +329,7 @@ By default, `dcos node ssh` connects to the private IP of the node, which is onl
 # dcos package
 
     Description:
-        Install and manage software packages from the a DCOS package repository.
+        Install and manage software packages from the a DC/OS package repository.
     
     Usage:
         dcos package --config-schema
@@ -336,13 +359,13 @@ By default, `dcos node ssh` connects to the private IP of the node, which is onl
         install
             Install a package.
         list
-            Print a list of the installed DCOS packages.
+            Print a list of the installed DC/OS packages.
         search
             Search the package repository.
         repo add
-            Add a package repository to DCOS.
+            Add a package repository to DC/OS.
         repo remove
-            Remove a package repository from DCOS.
+            Remove a package repository from DC/OS.
         repo list
             Print the package repository sources. Possible sources include a local
             file, HTTPS, and Git.
@@ -389,7 +412,7 @@ By default, `dcos node ssh` connects to the private IP of the node, which is onl
     
     Positional Arguments:
         <package-name>
-            Name of the DCOS package in the package repository.
+            Name of the DC/OS package in the package repository.
         <query>
             Pattern to use for searching the package repository.  You can use
             complete or partial values.
@@ -403,7 +426,7 @@ By default, `dcos node ssh` connects to the private IP of the node, which is onl
 # dcos service
 
     Description:
-        Manage DCOS services.
+        Manage DC/OS services.
     
     Usage:
         dcos service --info
@@ -435,7 +458,7 @@ By default, `dcos node ssh` connects to the private IP of the node, which is onl
         --info
             Print a short description of this subcommand.
         --json
-            Print JSON-formatted list of DCOS services.
+            Print JSON-formatted list of DC/OS services.
         --lines=N
             Print the last N lines, where 10 is the default.
         --ssh-config-file=<path>
@@ -448,17 +471,17 @@ By default, `dcos node ssh` connects to the private IP of the node, which is onl
         <file>
             The service log filename for the Mesos sandbox. The default is stdout.
         <service>
-            The DCOS Service name.
+            The DC/OS Service name.
         <service-id>
-            The DCOS Service ID.
+            The DC/OS Service ID.
     
 
-**Important:** To view the native DCOS Marathon logs by using the `dcos service log marathon` command, you must be on the same network or connected by VPN to your cluster. For more information, see [Accessing native DCOS Marathon logs][1].
+**Important:** To view the native DC/OS Marathon logs by using the `dcos service log marathon` command, you must be on the same network or connected by VPN to your cluster. For more information, see [Accessing native DC/OS Marathon logs][1].
 
 # dcos task
 
     Description:
-        Manage DCOS tasks.
+        Manage DC/OS tasks.
     
     Usage:
         dcos task --info

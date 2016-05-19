@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The [DCOS CLI][1] Marathon plugin allows you to easily view and update the configuration of existing applications.
+The [DC/OS CLI][1] Marathon plugin allows you to easily view and update the configuration of existing applications.
 
 # Update an Environment Variable
 
@@ -26,7 +26,7 @@ The [Marathon `env` variable][2] can be updated by specifying a JSON string in a
         dcos marathon app show test-app | jq '.env'
         
 
-# Update all Environment Variable
+# Update all Environment Variables
 
 The [Marathon `env` variable][1] can also be updated by specifying a JSON file in a command argument.
 

@@ -10,9 +10,9 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: true
 ---
-In this step you create an IP detect script on your bootstrap node to broadcast the IP address of each node across the cluster. Each node in a DCOS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DCOS is started on the node.
+In this step you create an IP detect script on your bootstrap node to broadcast the IP address of each node across the cluster. Each node in a DC/OS cluster has a unique IP address that is used to communicate between nodes in the cluster. The IP detect script prints the unique IPv4 address of a node to STDOUT each time DC/OS is started on the node.
 
-**Important:** The IP address of a node must not change after DCOS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][1].
+**Important:** The IP address of a node must not change after DC/OS is installed on the node. For example, the IP address must not change when a node is rebooted or if the DHCP lease is renewed. If the IP address of a node does change, the node must be [wiped and reinstalled][1].
 
 1.  From your home directory, create a directory named `genconf` on your bootstrap node and navigate to it.
     
@@ -41,7 +41,7 @@ In this step you create an IP detect script on your bootstrap node to broadcast 
             # Uses the GCE metadata server to get the node's internal
             # ipv4 address
             
-            curl -fsSl -H "Metadata-Flavor: Google" http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/ip
+            curl -fsSL -H "Metadata-Flavor: Google" http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/ip
             
     
     *   #### Use the IP address of an existing interface
@@ -53,7 +53,7 @@ In this step you create an IP detect script on your bootstrap node to broadcast 
             #!/usr/bin/env bash
             set -o nounset -o errexit
             export PATH=/usr/sbin:/usr/bin:$PATH
-            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+            echo $(ip addr show eth0 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | head -1)
             
     
     *   #### Use the network route to the Mesos master
@@ -67,12 +67,12 @@ In this step you create an IP detect script on your bootstrap node to broadcast 
             
             MASTER_IP=172.28.128.3
             
-            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | tail -1)
+            echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}&#92;.[0-9]{1,3}' | tail -1)
             
 
 ## Next step
 
-[Configure and install DCOS][2]
+[Configure and install DC/OS][2]
 
- [1]: /administration/installing/custom/dcos-cleanup-script/
+ [1]: /administration/installing/custom/uninstall/
  [2]: /archived-dcos-enterprise-edition/installing-enterprise-edition-1-5/configure-and-install-dcos/

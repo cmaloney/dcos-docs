@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-Here are the DCOS cluster configuration parameters. The DCOS build uses these parameters to create a customized install.
+Here are the DC/OS cluster configuration parameters. The DC/OS build uses these parameters to create a customized install.
 
 #### Top-level parameters
 
@@ -32,7 +32,7 @@ Here are the DCOS cluster configuration parameters. The DCOS build uses these pa
 
 <a name="bootstrap-url"></a>bootstrap_url <!-- optional -->
 
-: This parameter specifies the location for the DCOS installer to store the customized DCOS build files. This location can be local (`"bootstrap_url":"file:///tmp/dcos"`) or hosted (`http://<your-web-server>`).
+: This parameter specifies the location for the DC/OS installer to store the customized DC/OS build files. This location can be local (`"bootstrap_url":"file:///tmp/dcos"`) or hosted (`http://<your-web-server>`).
 
 <a name="cluster-name"></a>cluster_name
 
@@ -44,7 +44,7 @@ Here are the DCOS cluster configuration parameters. The DCOS build uses these pa
 
 <a name="exhibitor-storage"></a>exhibitor_storage_backend
 
-:   This parameter specifies the name of Exhibitor storage backend. During DCOS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DCOS installation. The available options are `zookeeper`, `aws_s3`, and `shared_filesystem`:
+:   This parameter specifies the name of Exhibitor storage backend. During DC/OS installation, a storage system is required for configuring and orchestrating Zookeeper with Exhibitor on the master nodes. Exhibitor automatically configures your Zookeeper installation on the master nodes during your DC/OS installation. The available options are `zookeeper`, `aws_s3`, and `shared_filesystem`:
 
 *   zookeeper
     :   *   exhibitor_zk_hosts
@@ -85,7 +85,7 @@ Here are the DCOS cluster configuration parameters. The DCOS build uses these pa
         
         *   exhibitor_fs_config_dir : This parameter specifies the absolute path to the folder that Exhibitor uses to coordinate its configuration. This should be a directory inside of a Network File System (NFS) mount. For example, if every master has `/fserv` mounted via NFS, set as `"exhibitor_fs_config_dir": "/fserv/dcos-exhibitor"`.
         
-        **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DCOS cluster will not start.
+        **Important:** With `shared_filesystem`, all masters must must have the NFS volume mounted and `exhibitor_fs_config_dir` must be inside of it. If any of your servers are missing the mount, the DC/OS cluster will not start.
         
         Here is a shared_filesystem example:
         
@@ -127,11 +127,11 @@ Here are the DCOS cluster configuration parameters. The DCOS build uses these pa
 
 <a name="num-masters2"></a>num_masters
 
-:   This parameter specifies the number of Mesos masters in your DCOS cluster. For example, `"num_masters": 3`.
+:   This parameter specifies the number of Mesos masters in your DC/OS cluster. For example, `"num_masters": 3`.
 
 <a name="resolvers"></a>resolvers
 
-:   This required parameters specifies a JSON-formatted list of DNS resolvers for your DCOS host nodes or accept the default value of `[\"8.8.8.8\"]`. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, it is acceptable to set this to a public nameserver like Google or AWS. For example, `"resolvers": "[\"8.8.8.8\", \"8.8.4.4\"]"`.
+:   This required parameters specifies a JSON-formatted list of DNS resolvers for your DC/OS host nodes or accept the default value of `[\"8.8.8.8\"]`. Set this parameter to the most authoritative nameservers that you have. If you want to resolve internal hostnames, set it to a nameserver that can resolve them. If you have no internal hostnames to resolve, it is acceptable to set this to a public nameserver like Google or AWS. For example, `"resolvers": "[\"8.8.8.8\", \"8.8.4.4\"]"`.
     
     *Caution:* If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DCOS.
 
@@ -151,7 +151,7 @@ For more information, see <a href="https://open.mesosphere.com/reference/mesos-m
 
 ## <a name="examples"></a>Example JSON configuration files
 
-#### <a name="zk"></a>DCOS cluster with 3 masters, Exhibitor/Zookeeper backed by another Zookeeper instance, Google DNS
+#### <a name="zk"></a>DC/OS cluster with 3 masters, Exhibitor/Zookeeper backed by another Zookeeper instance, Google DNS
 
     {
         "cluster_name": "zk-example",
@@ -171,7 +171,7 @@ For more information, see <a href="https://open.mesosphere.com/reference/mesos-m
     }
     
 
-#### <a name="shared"></a>DCOS cluster with 3 masters, Exhibitor/Zookeeper backed by a shared filesystem mount, Internal DNS
+#### <a name="shared"></a>DC/OS cluster with 3 masters, Exhibitor/Zookeeper backed by a shared filesystem mount, Internal DNS
 
     {
         "cluster_name": "fs-example",
@@ -185,7 +185,7 @@ For more information, see <a href="https://open.mesosphere.com/reference/mesos-m
     }
     
 
-#### <a name="aws"></a>DCOS Cluster with 3 masters, Exhibitor/Zookeeper backed by an AWS S3 bucket, and AWS DNS
+#### <a name="aws"></a>DC/OS Cluster with 3 masters, Exhibitor/Zookeeper backed by an AWS S3 bucket, and AWS DNS
 
     {
         "cluster_name": "s3-example",

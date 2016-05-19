@@ -12,17 +12,17 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: true
 ---
-Authorization and authentication is managed in the DCOS web interface.
+Authorization and authentication is managed in the DC/OS web interface.
 
 You can authorize individual users and groups of users. You can grant access to users who are local or remote to your datacenter. You must be an Administrator to manage users or groups.
 
 # User Management
 
-Users are granted access to DCOS and installed services by an administrator. A default administrator user named `Bootstrap superuser` is created and added to the group named `Superuser group` during installation. The Superuser group has access to all DCOS components and is where DCOS administrator access is defined. Only members of the Superuser group have access to the DCOS web interface.
+Users are granted access to DC/OS and installed services by an administrator. A default administrator user named `Bootstrap superuser` is created and added to the group named `Superuser group` during installation. The Superuser group has access to all DC/OS components and is where DC/OS administrator access is defined. Only members of the Superuser group have access to the DC/OS web interface.
 
 To manage users:
 
-1.  Launch the DCOS web interface and login with your Admin username and password.
+1.  Launch the DC/OS web interface and login with your Admin username and password.
 
 2.  Click on the **Settings** -> **Users** tab and choose your action.
     
@@ -36,7 +36,7 @@ To manage users:
     
     To provide external user access to DCOS, you can authenticate users that are defined in an LDAP 3 (RFC 4510) registry. You can then provide users with a single sign-on (SSO), granting them access the authorized services in your DCOS datacenter.
     
-    When a user logs in and provides an LDAP user name and password, that information is used to connect to an LDAP server and authenticate a user. If successful, the DCOS authentication issues a session credential with the user’s distinguished name.
+    When a user logs in and provides an LDAP user name and password, that information is used to connect to an LDAP server and authenticate a user. If successful, the DC/OS authentication issues a session credential with the user’s distinguished name.
     
     LDAP users are uniquely identified by distinguished names (DN). To authenticate a user, a full DN and password are required. You can also use a DN template to allow users to enter a partial DN name. The partial name consists of the portion of their DN name that is unique to their accounts. The DN template converts the partial DN name to a full DN.
     
@@ -72,7 +72,7 @@ To manage users:
     3.  Remote users are not shown in the **User** tab until an initial remote user login is attempted. To add the remote user to the user list:
         
         1.  Click on your administrator username in the lower left corner and select **Sign Out**.
-        2.  Log in to the DCOS web interface by using the remote user credentials. The initial remote user login will appear to fail, but will have added the remote user to the DCOS ACL. 
+        2.  Log in to the DC/OS web interface by using the remote user credentials. The initial remote user login will appear to fail, but will have added the remote user to the DC/OS ACL. 
         3.  login with your Admin username and password and the remote user is now shown. 
     ### Modify users
     
@@ -87,13 +87,13 @@ To manage users:
     
     To switch users, you must log out of the current user and then back in as the new user.
     
-    *   To log out of the DCOS web interface, click on your username in the lower left corner and select **Sign Out**.
+    *   To log out of the DC/OS web interface, click on your username in the lower left corner and select **Sign Out**.
         
         <a href="/wp-content/uploads/2016/02/auth-enable-logout-user.gif" rel="attachment wp-att-3533"><img src="/wp-content/uploads/2016/02/auth-enable-logout-user-800x430.gif" alt="auth-enable-logout-user" width="800" height="430" class="alignnone size-large wp-image-3533" /></a>
         
         You can now log in as another user.
     
-    *   To log out of the DCOS CLI, enter the this command:
+    *   To log out of the DC/OS CLI, enter the this command:
         
             $ dcos config unset core.dcos_acs_token
             Removed [core.dcos_acs_token]
@@ -103,11 +103,11 @@ To manage users:
 
 # Group management
 
-Groups are comprised of a list of installed DCOS services that users are granted access to.
+Groups are comprised of a list of installed DC/OS services that users are granted access to.
 
 To manage groups:
 
-1.  Launch the DCOS web interface and login with your Admin username and password. The Administrator username and password are configured during DCOS installation. The Admin username is **Bootstrap superuser** and cannot be changed.
+1.  Launch the DC/OS web interface and login with your Admin username and password. The Administrator username and password are configured during DC/OS installation. The Admin username is **Bootstrap superuser** and cannot be changed.
 
 2.  Click on the **Settings** -> **Organization** tab and choose your action.
     
@@ -117,7 +117,7 @@ To manage groups:
     2.  Type in the group name and click **Create**.
     3.  Select the group name and add Members and Permissions and click **Close**. <a href="/wp-content/uploads/2016/02/auth-enable-define-group.gif" rel="attachment wp-att-3501"><img src="/wp-content/uploads/2016/02/auth-enable-define-group-800x509.gif" alt="auth-enable-define-group" width="800" height="509" class="alignnone size-large wp-image-3501" /></a>
         *   **Members** Defines the users that are in the group.
-        *   **Permissions** Defines the installed DCOS services and components.
+        *   **Permissions** Defines the installed DC/OS services and components.
     ### Add users to a group
     
     1.  From the **Users** tab, select the user name and click **Actions -> Add to Group**. <a href="/wp-content/uploads/2016/02/auth-enable-add-user-group.gif" rel="attachment wp-att-3499"><img src="/wp-content/uploads/2016/02/auth-enable-add-user-group-800x509.gif" alt="auth-enable-add-user-group" width="800" height="509" class="alignnone size-large wp-image-3499" /></a>

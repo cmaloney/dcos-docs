@@ -1,6 +1,6 @@
 ---
 UID: 56f9844ab482d
-post_title: Mesosphere DCOS Documentation
+post_title: Mesosphere DC/OS Documentation
 post_excerpt: ""
 layout: page
 published: true

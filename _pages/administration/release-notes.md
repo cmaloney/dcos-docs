@@ -10,4 +10,4 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The release notes provide a list of useful topics and links for Mesosphere DCOS versions.
+The release notes provide a list of useful topics and links for Mesosphere DC/OS versions.
