@@ -104,9 +104,7 @@ This parameter specifies the <a href="https://rexray.readthedocs.org/en/v0.3.2/u
  
     - `rexray_config_filename` The path of a REX-Ray configuration file. For example: 
     
-      ```
-      rexray_config_filename: genconf/rexray.yaml
-      ```
+          rexray_config_filename: genconf/rexray.yaml
 
 ## Security and Authentication
 
