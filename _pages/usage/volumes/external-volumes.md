@@ -1,15 +1,11 @@
 ---
-UID: 573df7227622a
-post_title: External Persistent Volumes in Marathon
-post_excerpt: ""
+post_title: External Volumes 
 layout: page
 published: true
-menu_order: 0
-page_options_require_authentication: false
-page_options_show_link_unauthenticated: false
-hide_from_navigation: false
-hide_from_related: false
 ---
+
+Use external volumes when fault-tolerance is crucial for your app. If a host fails, the native Marathon instance reschedules your app on another host, along with its associated data, without user intervention. External volumes also typically offer a larger amount of storage.
+
 **Important:** This feature is considered experimental: use it at your own risk. We might add, change, or delete any functionality described in this document.
 
 Marathon applications normally lose their state when they terminate and are relaunched. In some contexts, for instance, if your application uses MySQL, you’ll want your application to preserve its state. You can use an external storage service, such as Amazon's Elastic Block Store (EBS), to create a persistent volume that follows your application instance.
