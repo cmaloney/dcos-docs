@@ -160,7 +160,7 @@ In this step you create a YAML configuration file that is customized for your en
                   unmount:
                     ignoreusedcount: true
                     
-    For more information, see the external volumes [documentation](/1-7/usage/services/marathon/external-volumes/).
+    For more information, see the external volumes [documentation](/usage/services/marathon/external-volumes/).
 
 3.  Copy your private SSH key to `genconf/ssh_key`. For more information, see the [ssh_key_path][3] parameter.
     
@@ -380,11 +380,11 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /1-7/administration/installing/custom/system-requirements/
+ [1]: /administration/installing/custom/system-requirements/
  [2]: /administration/installing/custom/uninstall/
- [3]: /1-7/administration/installing/custom/configuration-parameters/
- [4]: /1-7/administration/installing/custom/advanced/
- [5]: /1-7/administration/installing/custom/advanced/#configuration
+ [3]: /administration/installing/custom/configuration-parameters/
+ [4]: /administration/installing/custom/advanced/
+ [5]: /administration/installing/custom/advanced/#configuration
  [6]: /assets/images/chef-zk-status.png
  [7]: /assets/images/gui-installer-login-ee.gif
  [8]: /assets/images/ui-dashboard-ee.png

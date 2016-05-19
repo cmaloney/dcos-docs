@@ -47,5 +47,5 @@ After a short period, "15" should be printed.
 
 **NOTE**: The first Spark job you run on a new DC/OS cluster may take some time as the docker images are being pulled down.
 
- [1]: https://docs.mesosphere.com/spark-1-7/
+ [1]: /usage/services/spark/
  [2]: https://zeppelin.incubator.apache.org/

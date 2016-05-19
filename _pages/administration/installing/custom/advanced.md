@@ -151,7 +151,7 @@ In this step you create a YAML configuration file that is customized for your en
                   unmount:
                     ignoreusedcount: true
                     
-    For more information, see the external volumes [documentation](/1-7/usage/services/marathon/external-volumes/).
+    For more information, see the external volumes [documentation](/usage/services/marathon/external-volumes/).
 
 
 # <a name="install-bash"></a>Install DC/OS
@@ -271,7 +271,7 @@ Now you can [assign user roles][8].
     
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
 
- [1]: /1-7/administration/installing/custom/system-requirements/
+ [1]: /administration/installing/custom/system-requirements/
  [2]: /administration/installing/custom/uninstall/
  [3]: /overview/concepts/#public
  [4]: /overview/concepts/#private
