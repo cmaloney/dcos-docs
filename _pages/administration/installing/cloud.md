@@ -5,7 +5,7 @@ published: true
 menu_order: 1
 ---
 
-Looking to install DC/OS on your cloud of choice? Look no further! You can use a template or use our advanced custom installer.
+Looking to install DC/OS on your cloud of choice? Look no further! You can use a template or use our advanced custom installer. 
 
 # Amazon Web Services
 
