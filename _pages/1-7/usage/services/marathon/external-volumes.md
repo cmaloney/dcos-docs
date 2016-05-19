@@ -18,11 +18,11 @@ An external storage service enables your apps to be more fault-tolerant. If a ho
 
 ## Specifying an External Volume
 
-If you are running Marathon on DC/OS, add the following to your `genconf/config.yml` file you use during DC/OS installation. [Learn more][2]. You can also test this functionality without DC/OS, by [starting here][3].
+To use external volumes with DC/OS, you must enable during installation. You must install DC/OS with the [CLI](/administration/installing/custom/cli/) or [Advanced](/administration/installing/custom/advanced/) installation method with these special configuration settings:
+    
+1.  Specify the `rexray_config_method` parameter in your `genconf/config.yaml` file.
 
-*   `rexray_config_method: file`
-
-*   `rexray_config_filename: /path/to/rexray.yaml`
+1.  Create a `genconf/rexray.yaml` file with your Rex-Ray configuration specified. <!-- Need an example. -->
 
 ## Scaling your App
 
