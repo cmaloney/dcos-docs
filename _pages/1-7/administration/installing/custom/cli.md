@@ -141,6 +141,27 @@ In this step you create a YAML configuration file that is customized for your en
     
     **Important:** You cannot use an NFS mount for Exhibitor storage with the automated command line installation method. To use an NFS mount for Exhibitor storage (`exhibitor_storage_backend: shared_filesystem`), you must use the [Manual command line installation method][4].
 
+1.  Optional: if you are using external volumes:
+ 
+    - Specify the [`rexray_config_method`](/administration/installing/custom/configuration-parameters/#rexray-config) parameter in your `genconf/config.yaml` file. For example: 
+
+            rexray_config_method: file
+            rexray_config_filename: path/to/rexray.yaml
+
+      **Tip:** The `rexray_config_filename` path must be relative to your `genconf` directory.
+      
+    - Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. For example, here is a `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
+      
+              rexray:
+                loglevel: info
+                storageDrivers:
+                  - ec2
+                volume:
+                  unmount:
+                    ignoreusedcount: true
+                    
+    For more information, see the external volumes [documentation](/1-7/usage/services/marathon/external-volumes/).
+
 3.  Copy your private SSH key to `genconf/ssh_key`. For more information, see the [ssh_key_path][3] parameter.
     
         $ cp <path-to-key> genconf/ssh_key && chmod 0600 genconf/ssh_key
@@ -359,15 +380,15 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /administration/installing/custom-1-7/system-requirements/
+ [1]: /1-7/administration/installing/custom/system-requirements/
  [2]: /administration/installing/custom/uninstall/
- [3]: /administration/installing/custom/configuration-parameters/
- [4]: /administration/installing/custom/advanced/
- [5]: /administration/installing/custom/advanced/#scrollNav-2
+ [3]: /1-7/administration/installing/custom/configuration-parameters/
+ [4]: /1-7/administration/installing/custom/advanced/
+ [5]: /1-7/administration/installing/custom/advanced/#configuration
  [6]: /assets/images/chef-zk-status.png
  [7]: /assets/images/gui-installer-login-ee.gif
  [8]: /assets/images/ui-dashboard-ee.png
- [9]: /administration/security-and-authentication/managing-authorization/
+ [9]: /administration/security/managing-authorization/
  [10]: #hardware
  [11]: #software
  [12]: #two

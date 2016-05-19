@@ -151,10 +151,10 @@ Now you can [assign user roles][7].
         2 out of 2 hosts successfully completed uninstall_dcos stage.
         ====> END OF SUMMARY FOR uninstall_dcos
 
- [1]: /administration/installing/custom-1-7/system-requirements/
+ [1]: /1-7/administration/installing/custom/system-requirements/
  [2]: /assets/images/gui-installer-setup-ee.gif
  [3]: /usage/service-discovery/
- [4]: /scripted-installer/system-requirements/#scrollNav-2
+ [4]: /1-7/administration/installing/custom/system-requirements/#scrollNav-2
  [5]: /assets/images/ui-installer-auth-1-7.gif
  [6]: /assets/images/dashboard-ee.gif
- [7]: /administration/security-and-authentication/managing-authorization/
+ [7]: /administration/security/managing-authorization/

@@ -3,6 +3,7 @@ UID: 5730e2aa18d49
 post_title: Creating a Public Agent
 post_excerpt: ""
 layout: page
+menu_order: 8
 published: true
 menu_order: 6
 page_options_require_authentication: false
@@ -27,10 +28,10 @@ These steps must be performed on a machine that is configured as a DC/OS node. A
 ### Uninstall the DC/OS private agent software
 
 1.  Uninstall the current DC/OS software on the agent node.
-    
-    $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall
-    $ sudo systemctl stop dcos-mesos-slave
-    $ sudo systemctl disable dcos-mesos-slave
+
+        $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall
+        $ sudo systemctl stop dcos-mesos-slave
+        $ sudo systemctl disable dcos-mesos-slave
 
 2.  Remove the old directory structures on the agent node.
     
