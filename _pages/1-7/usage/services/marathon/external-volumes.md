@@ -4,8 +4,8 @@ layout: page
 published: true
 ---
 
-**Important:** This feature is considered beta. Use this feature at your own risk. We might add, change, or delete any functionality described in this document.
-  This functionality is *disabled by default* but can be turned on by including `external_volumes` in the value of the `--enable_features` command-line flag.
+**Important:** This feature is considered experimental. Use this feature at your own risk. We might add, change, or delete any functionality described in this document.
+  This functionality is *disabled by default* but can be turned on by including `external_volumes` in the value of the `--enable_features` command-line flag with the [advanced installation](/administration/installing/custom/advanced/).
 
 Marathon applications normally lose their state when they terminate and are relaunched. In some contexts, for instance, if your application uses MySQL, you’ll want your application to preserve its state. You can use an external storage service, such as Amazon's Elastic Block Store (EBS), to create a persistent volume that follows your application instance.
 
