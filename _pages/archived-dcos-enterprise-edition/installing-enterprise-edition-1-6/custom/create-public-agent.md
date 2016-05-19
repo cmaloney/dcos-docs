@@ -1,8 +1,15 @@
 ---
+UID: 5730e2aa18d49
 post_title: Creating a Public Agent
+post_excerpt: ""
 layout: page
 menu_order: 8
 published: true
+menu_order: 6
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
 In DC/OS, agent nodes that are publicly accessible are designated as public and those that are not are designated as private. By default, agent nodes are designated as private during [GUI][1] or [CLI][2] installation.
 
