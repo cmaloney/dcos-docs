@@ -1,8 +1,6 @@
 ---
 UID: 56f9844652f54
-post_title: >
-  Managing Authorization and
-  Authentication
+post_title: Managing Authentication
 post_excerpt: ""
 layout: page
 published: true
@@ -15,6 +13,8 @@ hide_from_related: true
 Authorization and authentication is managed in the DC/OS web interface.
 
 You can authorize individual users and groups of users. You can grant access to users who are local or remote to your datacenter. You must be an Administrator to manage users or groups.
+
+The DC/OS user database is persisted in ZooKeeper by running on the master nodes in [znodes](https://zookeeper.apache.org/doc/r3.1.2/zookeeperProgrammers.html#sc_zkDataModel_znodes) under the path `/dcos/users`. Tokens that are sent to DC/OS in an HTTP Authorization header must be in this format: `token=<token>`. In future versions of DC/OS `Bearer <token>` will also be supported. 
 
 # User Management
 

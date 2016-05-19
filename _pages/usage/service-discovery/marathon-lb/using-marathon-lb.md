@@ -197,5 +197,5 @@ Now, if you navigate to the ELB public DNS address in your browser, you should s
 
  [1]: /administration/installing/
  [2]: /usage/cli/install/
- [3]: /administration/managing-a-dcos-cluster-in-aws/#scrollNav-1
+ [3]: /administration/managing-aws/#scaling
  [4]: /administration/sshcluster/

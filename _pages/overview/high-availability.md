@@ -10,9 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-This document discusses the high availability features in DC/OS and best practices for building highly available applications on DC/OS.
-
-## General concepts of high availability
+This topic discusses the high availability features in DC/OS and best practices for building highly available applications on DC/OS.
 
 ### Leader/follower architecture
 

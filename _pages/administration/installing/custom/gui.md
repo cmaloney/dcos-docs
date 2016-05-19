@@ -183,4 +183,4 @@ Now you can [assign user roles][5] or [create a public agent][4]
  [2]: /usage/service-discovery/
  [3]: /administration/installing/custom/advanced/#scrollNav-2
  [4]: /administration/installing/custom/create-public-agent/
- [5]: /administration/security-and-authentication/managing-authorization/
+ [5]: /administration/security/managing-authorization/

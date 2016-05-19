@@ -157,4 +157,4 @@ Now you can [assign user roles][7].
  [4]: /1-7/administration/installing/custom/system-requirements/#scrollNav-2
  [5]: /assets/images/ui-installer-auth-1-7.gif
  [6]: /assets/images/dashboard-ee.gif
- [7]: /administration/security-and-authentication/managing-authorization/
+ [7]: /administration/security/managing-authorization/

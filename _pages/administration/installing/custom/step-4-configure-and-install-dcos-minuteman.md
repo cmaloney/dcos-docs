@@ -517,5 +517,5 @@ Now you can [assign user roles][6].
  [3]: /administration/installing/custom/configuration-parameters/
  [4]: http://ipset.netfilter.org/
  [5]: http://mesos.apache.org/documentation/latest/containerizer/
- [6]: /administration/security-and-authentication/managing-authorization/
+ [6]: /administration/security/managing-authorization/
  [7]: /administration/installing/custom/uninstall/

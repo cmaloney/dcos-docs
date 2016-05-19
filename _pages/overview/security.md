@@ -1,6 +1,6 @@
 ---
 UID: 56f98449d6863
-post_title: Network Security
+post_title: Security
 post_excerpt: ""
 layout: page
 published: true
@@ -10,31 +10,68 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-The DC/OS provides the admin, private, and public security zones.
+This topic discusses some of the security features in DC/OS and best practices for deploying DC/OS securely.
 
-<a href="/wp-content/uploads/2015/12/security-zones-ce.jpg" rel="attachment wp-att-1583"><img src="/wp-content/uploads/2015/12/security-zones-ce-800x640.jpg" alt="security-zones-ce" width="800" height="640" class="alignnone size-large wp-image-1583" /></a>
+## General security concepts
 
-# Admin zone
+DC/OS is based on a Linux kernel and userspace. The same best practices for
+securing any Linux system apply to securing DC/OS, including setting correct
+file permissions, restricting root and normal user accounts, protecting
+network interfaces with iptables or other firewalls, and regularly applying
+updates from the Linux distribution used with DC/OS to ensure that system
+libraries, utilities and core services like systemd and OpenSSH are secure.
 
-The **admin** zone is accessible via HTTP/HTTPS and SSH connections, and provides access to your master nodes. It also provides proxy access to the other nodes in your cluster via URL routing. For security, you can configure a whitelist during [cluster creation][1] so that only specific IP address ranges are permitted to access the admin zone. 
+## Security Zones
 
-# Private zone
+At the highest level we can distinguish three security zones in a DC/OS
+deployment, namely the admin, private, and public security zones.
 
-The **private** zone is a non-routable network that is only accessible from the admin zone or through the edgerouter from the public zone. By default, deployed apps and services are run in the private zone.
+### Admin zone
 
-# Public zone
+The **admin** zone is accessible via HTTP/HTTPS and SSH connections, and
+provides access to the master nodes. It also provides reverse proxy access to
+the other nodes in the cluster via URL routing. For security, the DC/OS cloud
+template allows configuring a whitelist so that only specific IP address
+ranges are permitted to access the admin zone.
 
-The **public** zone is where publicly accessible applications are run. Generally, only a small number of agent nodes are run in this zone. The edge router can forward traffic to applications running in the private zone. 
+### Private zone
 
-The agent nodes in the public zone are labeled with a special role so that only specific tasks can be scheduled here. These agent nodes have both public and private IP addresses and only specific ports are open in the firewall.
+The **private** zone is a non-routable network that is only accessible from
+the admin zone or through the edge router from the public zone. Deployed
+services are run in the private zone. This zone is where the majority of agent
+nodes are run.
 
-<!-- add more details around public zone -->
+### Public zone
 
-# Limitations
+The optional **public** zone is where publicly accessible applications are
+run. Generally, only a small number of agent nodes are run in this zone. The
+edge router forwards traffic to applications running in the private zone.
 
-*   The DC/OS Community Edition does not provide authentication. Authentication is available in the <a href="https://mesosphere.com/product/#" target="_blank">DC/OS Enterprise Edition</a>. 
-*   The DC/OS CLI and web interface do not currently use an encrypted channel for communication. However, you can upload your own SSL certificate to the masters and change your CLI and web interface configuration to use HTTPS instead of HTTP.
-*   You must secure your cluster by using security rules. It is strongly recommended that you only allow internal traffic.
-*   If there is sensitive data in your cluster, follow standard cloud policies for accessing that data. Either set up a point to point VPN between your secure networks or run a VPN server inside your DC/OS cluster.
+The agent nodes in the public zone are labeled with a special role so that
+only specific tasks can be scheduled here. These agent nodes have both public
+and private IP addresses and only specific ports should be open in their
+iptables firewall.
 
- [1]: /administration/installing/
+### Typical AWS deployment
+
+A typical AWS deployment including AWS Load Balancers is shown below:
+
+![Security Zones](/assets/images/security-zones.jpg)
+
+## Admin Router
+
+Access to the admin zone is controlled by the Admin Router.
+
+HTTP requests incoming to your DC/OS cluster are proxied through the Admin
+Router (using [Nginx](http://nginx.org) with
+[OpenResty](https://openresty.org) at its core). The Admin Router denies
+access to most HTTP endpoints for unauthenticated requests. In order for a
+request to be authenticated, it needs to present a valid authentication token
+in its Authorization header. A token can be obtained by going through the
+authentication flow, as described in the next section.
+
+Authenticated users are authorized to perform arbitrary actions in their
+cluster. That is, there is currently no fine-grained access control in DC/OS
+besides having access or not having access to services.
+
+See the [Security Administrator's Guide]/administration/security/) for more information.

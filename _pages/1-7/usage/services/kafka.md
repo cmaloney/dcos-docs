@@ -1562,8 +1562,8 @@ The security features introduced in Apache Kafka 0.9 are not supported at this t
  [10]: #rest-api-authentication
  [11]: https://github.com/mesosphere/universe/tree/1-7ea/repo/packages/K/kafka/6
  [12]: #changing-configuration-in-flight
- [13]: https://docs.mesosphere.com/administration/security-and-authentication/
- [14]: https://docs.mesosphere.com/administration/security-and-authentication/auth-api/
+ [13]: https://docs.mesosphere.com/administration/security/
+ [14]: https://docs.mesosphere.com/administration/security/auth-api/
  [15]: https://cwiki.apache.org/confluence/display/KAFKA/System+Tools#SystemTools-GetOffsetShell
  [16]: #changing-configuration-at-runtime
  [17]: #configure-kafka-broker-properties
