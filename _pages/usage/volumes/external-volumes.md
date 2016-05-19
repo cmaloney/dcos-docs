@@ -2,6 +2,7 @@
 post_title: External Volumes 
 layout: page
 published: true
+menu_order: 10
 ---
 
 Use external volumes when fault-tolerance is crucial for your app. If a host fails, the native Marathon instance reschedules your app on another host, along with its associated data, without user intervention. External volumes also typically offer a larger amount of storage.
