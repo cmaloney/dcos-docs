@@ -8,7 +8,7 @@ menu_order: 205
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: true
-hide_from_related: false
+hide_from_related: true
 ---
 Follow these instructions to download and configure a local <a href="http://mesosphere.github.io/universe/" target="_blank">DC/OS Universe</a>. After downloading the Universe components, you can install and run DC/OS services on a datacenter without internet access.
 

@@ -94,6 +94,17 @@ This required parameter specifies the Mesos master discovery method. The availab
     *   **keepalived_pass** If you've set your `auth_type` to `PASS`, this parameter specifies the password that you set for `auth_pass` in your Keepalived configuration file.
     *   **keepalived_virtual_ipaddress** This parameter specifies the VIP in use by your Keepalived cluster. 
     *   **num_masters** This parameter specifies the number of Mesos masters in your DC/OS cluster. If `master_discovery: static`, do not use the `num_masters` parameter. 
+    
+### <a name="rexray-config"></a>rexray_config_method
+This parameter specifies the <a href="https://rexray.readthedocs.org/en/v0.3.2/user-guide/config/" target="_blank">REX-Ray</a> configuration method for enabling external persistent volumes in Marathon. REX-Ray is a storage orchestration engine. For more information, see the external persistent volumes [documentation](/usage/services/marathon/external-volumes/).
+
+- `rexray_config_method: empty` An empty REX-ray configuration. This is the default value.
+- `aws` A REX-Ray configuration that is set up for AWS EC2 (EBS) and AWS Identity and Access Management (IAM).
+- `rexray_config_method: file` Specify the path to a REX-Ray configuration file with `rexray_config_filename`.
+ 
+    - `rexray_config_filename` The path of a REX-Ray configuration file. For example: 
+    
+          rexray_config_filename: genconf/rexray.yaml
 
 ## Security and Authentication
 
