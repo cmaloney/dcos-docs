@@ -94,7 +94,7 @@ In this step you create an IP detect script to broadcast the IP address of each 
             echo $(/usr/sbin/ip route show to match 172.28.128.3 | grep -Eo '[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}&#092;.[0-9]{1,3}' | tail -1)
             
 
-# Create a configuration file
+# <a name="configuration"></a>Create a configuration file
 
 In this step you create a YAML configuration file that is customized for your environment. DC/OS uses this configuration file during installation to generate your cluster installation files. In these instructions we assume that you are using ZooKeeper for shared storage.
 
@@ -132,6 +132,27 @@ In this step you create a YAML configuration file that is customized for your en
         superuser_password_hash: <hashed-password>
         superuser_username: <username>
         
+3.  Optional: if you are using external volumes:
+ 
+    - Specify the [`rexray_config_method`](/administration/installing/custom/configuration-parameters/#rexray-config) parameter in your `genconf/config.yaml` file. For example: 
+
+            rexray_config_method: file
+            rexray_config_filename: path/to/rexray.yaml
+
+      **Tip:** The `rexray_config_filename` path must be relative to your `genconf` directory.
+      
+    - Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. For example, here is a `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
+      
+              rexray:
+                loglevel: info
+                storageDrivers:
+                  - ec2
+                volume:
+                  unmount:
+                    ignoreusedcount: true
+                    
+    For more information, see the external volumes [documentation](/1-7/usage/services/marathon/external-volumes/).
+
 
 # <a name="install-bash"></a>Install DC/OS
 
@@ -250,7 +271,7 @@ Now you can [assign user roles][8].
     
         $ sudo -i /opt/mesosphere/bin/pkgpanda uninstall && sudo rm -rf /opt/mesosphere
 
- [1]: /administration/installing/custom-1-7/system-requirements/
+ [1]: /1-7/administration/installing/custom/system-requirements/
  [2]: /administration/installing/custom/uninstall/
  [3]: /overview/concepts/#public
  [4]: /overview/concepts/#private

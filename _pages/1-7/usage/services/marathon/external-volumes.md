@@ -18,26 +18,7 @@ An external storage service enables your apps to be more fault-tolerant. If a ho
 
 ## Specifying an External Volume
 
-To use external volumes with DC/OS, you must enable them during installation.
-
-Install DC/OS using the [CLI](/administration/installing/custom/cli/) or [Advanced](/administration/installing/custom/advanced/) installation method with these special configuration settings:
-    
-1.  Specify the `rexray_config_method` parameter in your `genconf/config.yaml` file.
-
-        rexray_config_method: file
-        rexray_config_filename: path/to/rexray.yaml
-
-**Note:** The path you give for `rexray_config_filename` must be relative to your `genconf` directory.
-
-1.  Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. The following `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
-
-        rexray:
-          loglevel: info
-          storageDrivers:
-            - ec2
-          volume:
-            unmount:
-              ignoreusedcount: true
+To use external volumes with DC/OS, you must enable them during [CLI](/administration/installing/custom/cli/) or [Advanced](/administration/installing/custom/advanced/) installation. 
 
 ## Scaling your App
 
