@@ -10,7 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-**Important:** This feature is considered experimental. Use this feature at your own risk. We might add, change, or delete any functionality described in this document. This functionality is *disabled by default* but can be turned on by including `external_volumes` in the value of the `--enable_features` command-line flag with the [advanced installation][1].
+**Important:** This feature is considered experimental: use it at your own risk. We might add, change, or delete any functionality described in this document.
 
 Marathon applications normally lose their state when they terminate and are relaunched. In some contexts, for instance, if your application uses MySQL, you’ll want your application to preserve its state. You can use an external storage service, such as Amazon's Elastic Block Store (EBS), to create a persistent volume that follows your application instance.
 
@@ -18,11 +18,26 @@ An external storage service enables your apps to be more fault-tolerant. If a ho
 
 ## Specifying an External Volume
 
-If you are running Marathon on DC/OS, add the following to your `genconf/config.yml` file you use during DC/OS installation. [Learn more][2]. You can also test this functionality without DC/OS, by [starting here][3].
+To use external volumes with DC/OS, you must enable them during installation.
 
-*   `rexray_config_method: file`
+Install DC/OS using the [CLI](/administration/installing/custom/cli/) or [Advanced](/administration/installing/custom/advanced/) installation method with these special configuration settings:
+    
+1.  Specify the `rexray_config_method` parameter in your `genconf/config.yaml` file.
 
-*   `rexray_config_filename: /path/to/rexray.yaml`
+        rexray_config_method: file
+        rexray_config_filename: path/to/rexray.yaml
+
+**Note:** The path you give for `rexray_config_filename` must be relative to your `genconf` directory.
+
+1.  Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. The following `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
+
+        rexray:
+          loglevel: info
+          storageDrivers:
+            - ec2
+          volume:
+            unmount:
+              ignoreusedcount: true
 
 ## Scaling your App
 
@@ -63,10 +78,9 @@ You can specify an external volume in your Marathon app definition. [Learn more 
       }
     }
     
-
 In the app definition above:
 
-*   `containerPath` specifies where the volume is mounted inside the container. For Mesos external volumes, this must be a single-level path relative to the container; it cannot contain a forward slash (`/`). For Docker external volumes, this path must be absolute. For more information, see [the REX-Ray documentation on data directories][5].
+*   `containerPath` specifies where the volume is mounted inside the container. For Mesos external volumes, this must be a single-level path relative to the container; it cannot contain a forward slash (`/`). For more information, see [the REX-Ray documentation on data directories][5].
 
 *   `name` is the name that your volume driver uses to look up your volume. When your task is staged on an agent, the volume driver queries the storage service for a volume with this name. If one does not exist, it is [created implicitly][6]. Otherwise, the existing volume is reused.
 
@@ -79,12 +93,6 @@ In the app definition above:
 *   Volume parameters cannot be changed after you create the application.
     
     **Important:** Marathon will not launch apps with external volumes if `upgradeStrategy.minimumHealthCapacity` is greater than 0.5, or if `upgradeStrategy.maximumOverCapacity` does not equal 0.
-
-<a name="implicit-vol"></a>
-
-#### Implicit Volumes
-
-The default implicit volume size is 16 GB. If you are using the Mesos containerizer, you can modify this default for a particular volume by setting `volumes[x].external.size`. For the Mesos and Docker containerizers, you can modify the default size for all implicit volumes by [modifying the REX-Ray configuration][9].
 
 ### Using a Docker Container
 
@@ -120,9 +128,16 @@ Below is a sample app definition that uses a Docker container and specifies an e
         "maximumOverCapacity": 0
       }
     }
-    
 
-**Important:** The REX-Ray Docker Volume Driver is compatible with Docker 1.7 and above. For more information, refer to the [REX-Ray documentation][10].
+* The `containerPath` must be absolute for Docker containers.
+
+**Important:** The REX-Ray Docker Volume Driver is compatible with Docker 1.10 and above. For more information, refer to the [REX-Ray documentation][10].
+
+<a name="implicit-vol"></a>
+
+#### Implicit Volumes
+
+The default implicit volume size is 16 GB. If you are using the Mesos containerizer, you can modify this default for a particular volume by setting `volumes[x].external.size`. For the Mesos and Docker containerizers, you can modify the default size for all implicit volumes by [modifying the REX-Ray configuration][9].
 
 ### Potential Pitfalls
 
@@ -139,8 +154,6 @@ Below is a sample app definition that uses a Docker container and specifies an e
 *   Launch time might increase for applications that create volumes implicitly. The amount of the increase depends on several factors which include the size and type of the volume. Your storage provider's method of handling volumes can also influence launch time for implicitly created volumes.
 
 *   For troubleshooting external volumes, consult the agent or system logs. If you are using REX-Ray on DC/OS, you can also consult the systemd journal.
-
-For more information, see the [Apache Mesos documentation on persistent volumes][11].
 
  [1]: /administration/installing/custom/advanced/
  [2]: /administration/installing/custom/configuration-parameters/
