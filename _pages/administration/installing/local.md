@@ -2,6 +2,7 @@
 post_title: Install DC/OS with Vagrant
 layout: page
 published: true
+menu_order: 3
 ---
 
 This installation method uses Vagrant to create a cluster of virtual machines on your local machine that can be used for demos, development, and testing with DC/OS.
