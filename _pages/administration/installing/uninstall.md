@@ -9,7 +9,7 @@ You can uninstall DC/OS from each node individually or from all nodes at once.
 
 ## Uninstall all nodes
 
-You can completely uninstall DC/OS from all of your nodes by using this method. You must have installed DC/OS by using the CLI or GUI installer to use this method.
+You can completely uninstall DC/OS from all of your nodes by using this method. You must have installed DC/OS by using the CLI or GUI installer to use this method. 
    
 From your nodes with this command. From the bootstrap node, enter this command:
 
