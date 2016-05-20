@@ -1,10 +1,15 @@
 ---
+UID: 573e61ab8a40a
 post_title: User Management
+post_excerpt: ""
 layout: page
 published: true
 menu_order: 4
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 Users are granted access to DC/OS and installed services by another authorized user. A default administrator user named `Bootstrap superuser` is created and added to the group named `Superuser group` during installation. The Superuser group has access to all DC/OS components and is where DC/OS administrator access is defined. Only members of the Superuser group have access to the DC/OS web interface.
 
 # User management
@@ -33,7 +38,7 @@ To manage users:
         
         1.  Click **Add Directory**.
             
-            ![ldap user pane](/assets/images/auth-add-ldap-user.gif)
+            ![ldap user pane][1]
             
             **Host** Specify the hostname or IP address.
             
@@ -50,7 +55,7 @@ To manage users:
                 uid=%(username)s,ou=users,dc=example,dc=com
                 
             
-            **Connection options:** By default, a plain text connection is opened and then [STARTTLS][1] attempts to upgrade this plain text connection to an encrypted SSL/TLS connection. If this upgrade to encryption fails, the plain text connection continues. You can control this by choosing one of these options:
+            **Connection options:** By default, a plain text connection is opened and then \[STARTTLS\]\[1\] attempts to upgrade this plain text connection to an encrypted SSL/TLS connection. If this upgrade to encryption fails, the plain text connection continues. You can control this by choosing one of these options:
             
             *   **Use SSL/TLS socket for all connections** Use SSL/TLS socket for opening a connection.
             
@@ -89,7 +94,10 @@ To manage users:
             
         
         You can now log in as another user.
-        
+
 # Next steps
 
-For more information on security, check out [Security and Authentication](/administration/security/managing-authorization/).
+For more information on security, check out [Security and Authentication][2].
+
+ [1]: /assets/images/auth-add-ldap-user.gif
+ [2]: /administration/security/managing-authorization/
