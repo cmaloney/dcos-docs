@@ -1,5 +1,5 @@
 ---
-post_title: Design: Installation
+post_title: Design - Installation
 layout: page
 published: true
 menu_order: 4
