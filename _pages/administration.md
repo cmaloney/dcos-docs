@@ -10,3 +10,5 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
+
+This section covers the installation, administration, and management of DC/OS.
