@@ -1,7 +1,14 @@
 ---
+UID: 573e67818993b
 post_title: Advanced Installer
+post_excerpt: ""
 layout: page
 published: true
+menu_order: 0
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
 With this installation method, you package the DC/OS distribution yourself and connect to every node manually to run the DC/OS installation commands. This installation method is recommended if you want to integrate with an existing system or if you don’t have SSH access to your cluster.
 
@@ -108,7 +115,7 @@ In this step you create a YAML configuration file that is customized for your en
 
 2.  Create a configuration file and save as `genconf/config.yaml`. You can use this template to get started.
     
-    The template specifies 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation](/administration/installing/custom/configuration-parameters/).
+    The template specifies 3 Mesos masters, static master discovery list, and Google DNS resolvers. If your servers are installed with a domain name in your `/etc/resolv.conf`, add the `dns_search` parameter. For parameters descriptions and configuration examples, see the [documentation][2].
     
     **Tip:** If Google DNS is not available in your country, you can replace the Google DNS servers `8.8.8.8` and `8.8.4.4` with your local DNS servers.
     
@@ -125,17 +132,19 @@ In this step you create a YAML configuration file that is customized for your en
         superuser_password_hash: <hashed-password>
         superuser_username: <username>
         
-3.  Optional: if you are using external volumes:
- 
-    - Specify the [`rexray_config_method`](/administration/installing/custom/configuration-parameters/#rexray-config) parameter in your `genconf/config.yaml` file. For example: 
 
+3.  Optional: if you are using external volumes:
+    
+    *   Specify the [`rexray_config_method`][3] parameter in your `genconf/config.yaml` file. For example:
+        
             rexray_config_method: file
             rexray_config_filename: path/to/rexray.yaml
-
-      **Tip:** The `rexray_config_filename` path must be relative to your `genconf` directory.
-      
-    - Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. For example, here is a `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
-      
+            
+        
+        **Tip:** The `rexray_config_filename` path must be relative to your `genconf` directory.
+    
+    *   Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. For example, here is a `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation][4] for more information.
+        
               rexray:
                 loglevel: info
                 storageDrivers:
@@ -143,9 +152,9 @@ In this step you create a YAML configuration file that is customized for your en
                 volume:
                   unmount:
                     ignoreusedcount: true
-                    
-    For more information, see the external volumes [documentation](/usage/services/marathon/external-volumes/).
-
+            
+    
+    For more information, see the external volumes [documentation][5].
 
 # <a name="install-bash"></a>Install DC/OS
 
@@ -226,7 +235,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
             $ curl -O http://<bootstrap-ip>:<your_port>/dcos_install.sh
             
     
-    4.  Run this command to install DC/OS on your agent nodes. You must designate your agent nodes as [public][3] or [private][4].
+    4.  Run this command to install DC/OS on your agent nodes. You must designate your agent nodes as [public][6] or [private][7].
         
         *   Private agent nodes:
             
@@ -240,7 +249,7 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
     
     **Tip:** This process can take about 10 minutes. During this time you will see the Master nodes become visible on the Exhibitor consoles and come online, eventually showing a green light.
     
-    ![alt text][5]
+    ![alt text][8]
     
     When the status icons are green, you can access the DC/OS web interface.
 
@@ -248,15 +257,15 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
 
 8.  Enter your administrator username and password.
     
-    ![alt text][6]
+    ![alt text][9]
     
     You are done!
     
-    ![alt text][7]
+    ![alt text][10]
 
 ### Next Steps
 
-Now you can [assign user roles][8].
+Now you can [assign user roles][11].
 
 ### Uninstalling DC/OS
 
@@ -266,9 +275,12 @@ Now you can [assign user roles][8].
 
  [1]: /administration/installing/custom/system-requirements/
  [2]: /administration/installing/custom/uninstall/
- [3]: /overview/concepts/#public
- [4]: /overview/concepts/#private
- [5]: /assets/images/chef-zk-status.png
- [6]: /assets/images/ui-installer-auth2.png
- [7]: /assets/images/ui-dashboard-ee.png
- [8]: /administration/security/
+ [3]: /administration/installing/custom/configuration-parameters/#rexray-config
+ [4]: http://rexray.readthedocs.io/en/stable/user-guide/config/
+ [5]: /usage/services/marathon/external-volumes/
+ [6]: /overview/concepts/#public
+ [7]: /overview/concepts/#private
+ [8]: /assets/images/chef-zk-status.png
+ [9]: /assets/images/ui-installer-auth2.png
+ [10]: /assets/images/ui-dashboard-ee.png
+ [11]: /administration/security/
