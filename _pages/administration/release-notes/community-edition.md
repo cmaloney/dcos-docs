@@ -7,7 +7,7 @@ published: true
 menu_order: 108
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: false
-hide_from_related: false
+hide_from_navigation: true
+hide_from_related: true
 ---
 The release notes describe the DC/OS Community Edition (CE) updates.
