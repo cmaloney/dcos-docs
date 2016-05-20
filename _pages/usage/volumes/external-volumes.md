@@ -24,7 +24,7 @@ Install DC/OS using the [CLI](/administration/installing/custom/cli/) or [Advanc
         rexray_config_method: file
         rexray_config_filename: path/to/rexray.yaml
 
-**Note:** The path you give for `rexray_config_filename` must be relative to your `genconf` directory.
+    **Note:** The path you give for `rexray_config_filename` must be relative to your `genconf` directory.
 
 1.  If your cluster will be hosted on Amazon Web Services, assign an IAM role to your agent nodes with the following policy:
 
@@ -54,7 +54,7 @@ Install DC/OS using the [CLI](/administration/installing/custom/cli/) or [Advanc
             ]
         }
 
-Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/v0.3.3-rc1/user-guide/storage-providers/) for more information.
+    Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/v0.3.3-rc1/user-guide/storage-providers/) for more information.
 
 1.  Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. The following `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
 
