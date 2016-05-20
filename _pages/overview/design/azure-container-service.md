@@ -1,5 +1,5 @@
 ---
-post_title: DC/OS reference implementation: The Azure Container Service
+post_title: DC/OS reference implementation - The Azure Container Service
 layout: page
 published: true
 menu_order: 1
