@@ -1,10 +1,10 @@
 ---
 UID: 573e5cd5c1eab
-post_title: Logging
+post_title: User Management
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 0
+menu_order: 5
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
