@@ -1,5 +1,4 @@
 ---
-UID: 57224ad26b64e
 post_title: Cassandra
 post_excerpt: ""
 layout: page
