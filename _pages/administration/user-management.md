@@ -1,7 +1,8 @@
 ---
-post_title: Logging
+post_title: User Management
 layout: page
 published: true
+menu_order: 4
 ---
 
 Users are granted access to DC/OS and installed services by another authorized user. A default administrator user named `Bootstrap superuser` is created and added to the group named `Superuser group` during installation. The Superuser group has access to all DC/OS components and is where DC/OS administrator access is defined. Only members of the Superuser group have access to the DC/OS web interface.
