@@ -1,5 +1,5 @@
 ---
-post_title: Design: Distributed DNS
+post_title: Design - Distributed DNS
 layout: page
 published: true
 menu_order: 3
