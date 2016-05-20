@@ -4,7 +4,7 @@ post_title: Monitoring System Health
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 100
+menu_order: 6
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
