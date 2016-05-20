@@ -1,5 +1,4 @@
 ---
-UID: 57239d8b40b9b
 post_title: Configuration parameters
 post_excerpt: ""
 layout: page

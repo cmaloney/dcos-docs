@@ -1,5 +1,4 @@
 ---
-UID: 572b88b88022f
 post_title: Install Docker on CentOS
 post_excerpt: ""
 layout: page

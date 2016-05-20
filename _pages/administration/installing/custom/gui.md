@@ -1,5 +1,4 @@
 ---
-UID: 57239a7dd608a
 post_title: GUI Installer
 post_excerpt: ""
 layout: page
