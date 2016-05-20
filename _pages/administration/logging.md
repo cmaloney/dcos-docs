@@ -4,7 +4,7 @@ post_title: Logging
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 17
+menu_order: 4
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
 hide_from_navigation: false
@@ -14,31 +14,33 @@ DC/OS cluster nodes generate logs that contain diagnostic and status information
 
 ## Service and Task Logs
 
-If you're running something on top of DC/OS, you can get started right away by running this [DC/OS CLI][2] command: 
+If you're running something on top of DC/OS, you can get started right away by running this [DC/OS CLI][1] command:
 
     $ dcos task log --follow my-service-name
+    
 
-For more information about accessing your logs, see the service and task logs [documentation][1].
+For more information about accessing your logs, see the service and task logs [documentation][2].
 
 ## System Logs
 
 You can find which components are unhealthy in the DC/OS UI on the **System** tab.
 
-![system health](assets/images/ui-system-health-logging.gif)
+![system health][3]
 
-You can also aggregate your system logs by using ELK and Splunk. See our [ELK][3] and [Splunk][4] tutorials to get started.
+You can also aggregate your system logs by using ELK and Splunk. See our [ELK][4] and [Splunk][5] tutorials to get started.
 
-All of the DC/OS components use `systemd-journald` to store their logs. To access the DC/OS core component logs, [SSH into a node][5] and run this command to see all logs:
+All of the DC/OS components use `systemd-journald` to store their logs. To access the DC/OS core component logs, [SSH into a node][6] and run this command to see all logs:
 
     $ journalctl -u "dcos-*" -b
+    
 
-You can also view the logs for specific components by entering the component name: 
+You can also view the logs for specific components by entering the component name:
 
 **Admin Router**
-    
+
     journalctl -u dcos-nginx -b
-        
     
+
 **DC/OS Marathon**
 
     journalctl -u dcos-marathon -b
@@ -67,17 +69,19 @@ You can also view the logs for specific components by entering the component nam
 **ZooKeeper**
 
     journalctl -u dcos-exhibitor -b
+    
 
 ## Next Steps
 
-- [Service and Task logs][1]
-- Log Aggregation
+*   [Service and Task logs][2]
+*   Log Aggregation
+    
+    *   [ELK][4]
+    *   [Splunk][5]
 
-    - [ELK][3]
-    - [Splunk][4]
-
-[1]: /administration/logging/service-logs/
-[2]: /usage/cli/install/
-[3]: /administration/logging/elk/
-[4]: /administration/logging/splunk/
-[5]: /administration/sshcluster/
+ [1]: /usage/cli/install/
+ [2]: /administration/logging/service-logs/
+ [3]: assets/images/ui-system-health-logging.gif
+ [4]: /administration/logging/elk/
+ [5]: /administration/logging/splunk/
+ [6]: /administration/sshcluster/
