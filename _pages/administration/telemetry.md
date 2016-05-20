@@ -7,8 +7,8 @@ published: true
 menu_order: 0
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: true
-hide_from_related: true
+hide_from_navigation: false
+hide_from_related: false
 ---
 To continuously improve the DC/OS experience, we have included a telemetry component that reports anonymous usage data back to us. We use this data to monitor the reliability of core DC/OS components, installations, and to find out which features are most popular. There are two sections that have the telemetry component implemented:
 
