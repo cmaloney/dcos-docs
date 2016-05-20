@@ -1,5 +1,5 @@
 ---
-UID: 573e713b6365b
+UID: 573e716b5e919
 post_title: DigitalOcean DC/OS Installation Guide
 post_excerpt: ""
 layout: page
