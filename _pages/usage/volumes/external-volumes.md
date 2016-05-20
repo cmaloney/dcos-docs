@@ -54,6 +54,8 @@ Install DC/OS using the [CLI](/administration/installing/custom/cli/) or [Advanc
             ]
         }
 
+Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/v0.3.3-rc1/user-guide/storage-providers/) for more information.
+
 1.  Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. The following `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
 
         rexray:
