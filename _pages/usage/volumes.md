@@ -10,4 +10,4 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-You can create stateful applications using either local or external volumes.
+You can create stateful applications using either local or external volumes. 
