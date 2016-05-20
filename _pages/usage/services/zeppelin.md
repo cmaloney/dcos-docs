@@ -27,7 +27,7 @@ On DC/OS >= 1.7, you can now access Zeppelin at `http://<dcos_url>/service/zeppe
 
 ## Install on a public agent
 
-Alternately, you can deploy Zeppelin on a public agent by setting the `acceptedResourceRoles` field of the Marathon app to `["slave_public"]`. You can then access Zeppelin By combining the public IP address of the agent running Zeppelin with the `$PORT0` of its marathon app.
+Alternately, you can deploy Zeppelin on a public agent by setting the `acceptedResourceRoles` field of the Marathon app to `["slave_public"]`. You can then access Zeppelin by combining the public IP address of the agent running Zeppelin with the `$PORT0` of its marathon app.
 
 # Usage
 
