@@ -78,7 +78,7 @@ You can monitor the health of your VIPs from the **Network** tab on the DC/OS we
 
 You can click on VIPs to see a detailed view. 
 
-- The **Successes and Failures per Minute** graph shows the number of successful and failed tasks over the past minute.
+- The **Successes and Failures per Minute** graph shows the number of successful and failed tasks over the past minute. 
   ![VIP details Successes and Failures per Minute](/assets/images/network-2.png)  
 - The Connection Latency per Minute graph shows the connection latency over the past hour.
   ![VIP details connection latency over the past hour](/assets/images/network-3.png)
