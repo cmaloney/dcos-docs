@@ -1,10 +1,15 @@
 ---
-post_title: External Volumes 
+UID: 5743510e116df
+post_title: External Volumes
+post_excerpt: ""
 layout: page
 published: true
 menu_order: 10
+page_options_require_authentication: false
+page_options_show_link_unauthenticated: false
+hide_from_navigation: false
+hide_from_related: false
 ---
-
 Use external volumes when fault-tolerance is crucial for your app. If a host fails, the native Marathon instance reschedules your app on another host, along with its associated data, without user intervention. External volumes also typically offer a larger amount of storage.
 
 **Important:** This feature is considered experimental: use it at your own risk. We might add, change, or delete any functionality described in this document.
@@ -17,17 +22,18 @@ An external storage service enables your apps to be more fault-tolerant. If a ho
 
 To use external volumes with DC/OS, you must enable them during installation.
 
-Install DC/OS using the [CLI](/administration/installing/custom/cli/) or [Advanced](/administration/installing/custom/advanced/) installation method with these special configuration settings:
-    
-1.  Specify the `rexray_config_method` parameter in your `genconf/config.yaml` file.
+Install DC/OS using the [CLI][1] or [Advanced][2] installation method with these special configuration settings:
 
+1.  Specify the `rexray_config_method` parameter in your `genconf/config.yaml` file.
+    
         rexray_config_method: file
         rexray_config_filename: path/to/rexray.yaml
-
+        
+    
     **Note:** The path you give for `rexray_config_filename` must be relative to your `genconf` directory.
 
-1.  If your cluster will be hosted on Amazon Web Services, assign an IAM role to your agent nodes with the following policy:
-
+2.  If your cluster will be hosted on Amazon Web Services, assign an IAM role to your agent nodes with the following policy:
+    
         {
             "Version": "2012-10-17",
             "Statement": [
@@ -53,11 +59,12 @@ Install DC/OS using the [CLI](/administration/installing/custom/cli/) or [Advanc
                 }
             ]
         }
+        
+    
+    Consult the [REX-Ray documentation][3] for more information.
 
-    Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/v0.3.3-rc1/user-guide/storage-providers/) for more information.
-
-1.  Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. The following `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation](http://rexray.readthedocs.io/en/stable/user-guide/config/) for more information.
-
+3.  Create a `genconf/rexray.yaml` file with your REX-Ray configuration specified. The following `rexray.yaml` file is configured for Amazon's EBS. Consult the [REX-Ray documentation][4] for more information.
+    
         rexray:
           loglevel: info
           storageDrivers:
@@ -65,6 +72,7 @@ Install DC/OS using the [CLI](/administration/installing/custom/cli/) or [Advanc
           volume:
             unmount:
               ignoreusedcount: true
+        
 
 ## Scaling your App
 
@@ -76,7 +84,7 @@ If you scale your app down to 0 instances, the volume is detached from the agent
 
 ### Using a Mesos Container
 
-You can specify an external volume in your Marathon app definition. [Learn more about Marathon application definitions][4].
+You can specify an external volume in your Marathon app definition. [Learn more about Marathon application definitions][5].
 
     {
       "id": "hello",
@@ -105,15 +113,16 @@ You can specify an external volume in your Marathon app definition. [Learn more 
       }
     }
     
+
 In the app definition above:
 
-*   `containerPath` specifies where the volume is mounted inside the container. For Mesos external volumes, this must be a single-level path relative to the container; it cannot contain a forward slash (`/`). For more information, see [the REX-Ray documentation on data directories][5].
+*   `containerPath` specifies where the volume is mounted inside the container. For Mesos external volumes, this must be a single-level path relative to the container; it cannot contain a forward slash (`/`). For more information, see [the REX-Ray documentation on data directories][6].
 
-*   `name` is the name that your volume driver uses to look up your volume. When your task is staged on an agent, the volume driver queries the storage service for a volume with this name. If one does not exist, it is [created implicitly][6]. Otherwise, the existing volume is reused.
+*   `name` is the name that your volume driver uses to look up your volume. When your task is staged on an agent, the volume driver queries the storage service for a volume with this name. If one does not exist, it is [created implicitly][7]. Otherwise, the existing volume is reused.
 
-*   The `external.options["dvdi/driver"]` option specifies which Docker volume driver to use for storage. If you are running Marathon on DC/OS, this value is probably `rexray`. [Learn more about REX-Ray][7].
+*   The `external.options["dvdi/driver"]` option specifies which Docker volume driver to use for storage. If you are running Marathon on DC/OS, this value is probably `rexray`. [Learn more about REX-Ray][8].
 
-*   You can specify additional options with `container.volumes[x].external.options[optionName]`. The dvdi provider for Mesos containers uses `dvdcli`, which offers the options [documented here][8]. The availability of any option depends on your volume driver.
+*   You can specify additional options with `container.volumes[x].external.options[optionName]`. The dvdi provider for Mesos containers uses `dvdcli`, which offers the options [documented here][9]. The availability of any option depends on your volume driver.
 
 *   Create multiple volumes by adding additional items in the `container.volumes` array.
 
@@ -155,8 +164,9 @@ Below is a sample app definition that uses a Docker container and specifies an e
         "maximumOverCapacity": 0
       }
     }
+    
 
-* The `containerPath` must be absolute for Docker containers.
+*   The `containerPath` must be absolute for Docker containers.
 
 **Important:** The REX-Ray Docker Volume Driver is compatible with Docker 1.10 and above. For more information, refer to the [REX-Ray documentation][10].
 
@@ -164,7 +174,7 @@ Below is a sample app definition that uses a Docker container and specifies an e
 
 #### Implicit Volumes
 
-The default implicit volume size is 16 GB. If you are using the Mesos containerizer, you can modify this default for a particular volume by setting `volumes[x].external.size`. For the Mesos and Docker containerizers, you can modify the default size for all implicit volumes by [modifying the REX-Ray configuration][9].
+The default implicit volume size is 16 GB. If you are using the Mesos containerizer, you can modify this default for a particular volume by setting `volumes[x].external.size`. For the Mesos and Docker containerizers, you can modify the default size for all implicit volumes by [modifying the REX-Ray configuration][11].
 
 ### Potential Pitfalls
 
@@ -182,14 +192,14 @@ The default implicit volume size is 16 GB. If you are using the Mesos containeri
 
 *   For troubleshooting external volumes, consult the agent or system logs. If you are using REX-Ray on DC/OS, you can also consult the systemd journal.
 
- [1]: /administration/installing/custom/advanced/
- [2]: /administration/installing/custom/configuration-parameters/
- [3]: https://blog.emccode.com/2016/02/11/give-mesos-and-external-volumes-a-spin-with-playa-mesos/
- [4]: application-basics.html
- [5]: https://rexray.readthedocs.org/en/v0.3.2/user-guide/config/#data-directories
- [6]: #implicit-vol
- [7]: https://rexray.readthedocs.org/en/v0.3.2/user-guide/schedulers/
- [8]: https://github.com/emccode/dvdcli#extra-options
- [9]: https://github.com/emccode/rexray/blob/master/.docs/user-guide/config.md
+ [1]: /administration/installing/custom/cli/
+ [2]: /administration/installing/custom/advanced/
+ [3]: http://rexray.readthedocs.io/en/v0.3.3-rc1/user-guide/storage-providers/
+ [4]: http://rexray.readthedocs.io/en/stable/user-guide/config/
+ [5]: application-basics.html
+ [6]: https://rexray.readthedocs.org/en/v0.3.2/user-guide/config/#data-directories
+ [7]: #implicit-vol
+ [8]: https://rexray.readthedocs.org/en/v0.3.2/user-guide/schedulers/
+ [9]: https://github.com/emccode/dvdcli#extra-options
  [10]: https://rexray.readthedocs.org/en/v0.3.2/user-guide/schedulers/#docker-containerizer-with-marathon
- [11]: http://mesos.apache.org/documentation/latest/persistent-volume/
+ [11]: https://github.com/emccode/rexray/blob/master/.docs/user-guide/config.md
