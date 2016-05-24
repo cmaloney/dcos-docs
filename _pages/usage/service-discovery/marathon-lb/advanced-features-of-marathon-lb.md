@@ -76,7 +76,7 @@ To create a template for an individual app, modify the application definition. I
       }],
       "labels":{
         "HAPROXY_GROUP":"external",
-        "HAPROXY_0_BACKEND_HTTP_OPTIONS":"  option forwardfor\n  no option http-keep-alive\n      http-request set-header X-Forwarded-Port %[dst_port]\n  http-request add-header X-Forwarded-Proto https if { ssl_fc }\n"
+        "HAPROXY_0_BACKEND_HTTP_OPTIONS":"  option forwardfor\\n  no option http-keep-alive\\n      http-request set-header X-Forwarded-Port %[dst_port]\\n  http-request add-header X-Forwarded-Proto https if { ssl_fc }\\n"
       }
     }
     
