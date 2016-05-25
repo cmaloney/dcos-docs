@@ -118,6 +118,7 @@ Here are the agent node hardware requirements.
 *   Each node has Network Time Protocol (NTP) for clock synchronization enabled.
 *   Each node has ICMP enabled.
 *   Each node has TCP and UDP enabled port 53 for DNS.
+*   Each node has TCP and UDP enabled ports 32768-65535 inclusive for SDN/VIP
 *   All hostnames (FQDN and short hostnames) must be resolvable in DNS, both forward and reverse lookups must succeed. 
 *   These ports must be open for communication from the master nodes to the agent nodes:
     
