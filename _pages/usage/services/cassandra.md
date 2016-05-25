@@ -1977,10 +1977,10 @@ You can take a complete snapshot of your DCOS Cassandra ring and upload the arti
 
 To perform a backup to S3, enter the following command on the DC/OS CLI:
 
-    $ dcos cassandra --name=<service-name> backup start 
-        --backup_name=<backup-name> 
-        --external_location=s3://<bucket-name> 
-        --s3_access_key=<s3-access-key> 
+    $ dcos cassandra --name=<service-name> backup start \
+        --backup_name=<backup-name> \
+        --external_location=s3://<bucket-name> \
+        --s3_access_key=<s3-access-key> \
         --s3_secret_key=<s3-secret-key>
     
 
@@ -1988,19 +1988,19 @@ Check status of the backup:
 
     $ dcos cassandra --name=<service-name> backup status
     
-+#### Azure Backup
- +
- +To perform a backup to Azure, enter the following command on the DCOS CLI:
- +
- +```
- +$ dcos cassandra --name=<service-name> backup start \
- +    --backup_name=<backup-name> \
- +    --external_location=azure://<container> \
- +    --azure_account=<account_name> \
- +    --azure_key=<key>
- +```
- +
- +In order to upload to Azure, you need to specify the "azure://" protocol for the external location along with setting the Azure flags for Azure storage account and a secret key.
+#### Azure Backup
+
+To perform a backup to Azure, enter the following command on the DCOS CLI:
+
+```
+$ dcos cassandra --name=<service-name> backup start \
+    --backup_name=<backup-name> \
+    --external_location=azure://<container> \
+    --azure_account=<account_name> \
+    --azure_key=<key>
+```
+
+In order to upload to Azure, you need to specify the "azure://" protocol for the external location along with setting the Azure flags for Azure storage account and a secret key.
 
 Check status of the backup:
 
@@ -2014,10 +2014,10 @@ You can restore your DCOS Cassandra snapshots on a new Cassandra ring from S3 or
 
 To restore, enter the following command on the DC/OS CLI:
 
-    $ dcos cassandra --name=<service-name> restore start 
-        --backup_name=<backup-name> 
-        --external_location=s3://<bucket-name> 
-        --s3_access_key=<s3-access-key> 
+    $ dcos cassandra --name=<service-name> restore start \
+        --backup_name=<backup-name> \
+        --external_location=s3://<bucket-name> \
+        --s3_access_key=<s3-access-key> \
         --s3_secret_key=<s3-secret-key>
     
 
@@ -2027,17 +2027,17 @@ Check the status of the restore:
     
 #### Azure Restore
 
-+To restore, enter the following command on the DCOS CLI:
- +
- +```
- +$ dcos cassandra --name=<service-name> restore start \
- +    --backup_name=<backup-name> \
- +    --external_location=azure://<container-name> \
- +    --azure_account=<account_name> \
- +    --azure_key=<key>
- +```
- +
- +In order to restore from Azure, you need to specify the "azure://" protocol for the external location along with setting the Azure flags for Azure storage account and a secret key.
+To restore, enter the following command on the DCOS CLI:
+
+```
+$ dcos cassandra --name=<service-name> restore start \
+    --backup_name=<backup-name> \
+    --external_location=azure://<container-name> \
+    --azure_account=<account_name> \
+    --azure_key=<key>
+```
+
+In order to restore from Azure, you need to specify the "azure://" protocol for the external location along with setting the Azure flags for Azure storage account and a secret key.
 
 Check the status of the restore:
 
