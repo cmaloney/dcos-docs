@@ -1983,6 +1983,7 @@ To perform a backup to S3, enter the following command on the DC/OS CLI:
         --s3_access_key=<s3-access-key> \
         --s3_secret_key=<s3-secret-key>
     
+To upload to S3, you must specify the "s3://" protocol for the external location along with setting the S3 flags for access key and secret key.
 
 Check status of the backup:
 
@@ -2000,7 +2001,7 @@ $ dcos cassandra --name=<service-name> backup start \
     --azure_key=<key>
 ```
 
-In order to upload to Azure, you need to specify the "azure://" protocol for the external location along with setting the Azure flags for Azure storage account and a secret key.
+To upload to Azure, you must specify the "azure://" protocol for the external location along with setting the Azure flags for Azure storage account and a secret key.
 
 Check status of the backup:
 
@@ -2020,6 +2021,7 @@ To restore, enter the following command on the DC/OS CLI:
         --s3_access_key=<s3-access-key> \
         --s3_secret_key=<s3-secret-key>
     
+To restore from S3, you must specify the "s3://" protocol for the external location along with setting the S3 flags for access key and secret key.
 
 Check the status of the restore:
 
@@ -2037,7 +2039,7 @@ $ dcos cassandra --name=<service-name> restore start \
     --azure_key=<key>
 ```
 
-In order to restore from Azure, you need to specify the "azure://" protocol for the external location along with setting the Azure flags for Azure storage account and a secret key.
+To restore from Azure, you must specify the "azure://" protocol for the external location along with setting the Azure flags for Azure storage account and a secret key.
 
 Check the status of the restore:
 
