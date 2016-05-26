@@ -1,14 +1,14 @@
 ---
-UID: 57163eb05da0f
-post_title: DC/OS Service Certification Criteria
+UID: 5704049d246ea
+post_title: DCOS Service Certification Criteria
 post_excerpt: ""
 layout: page
 published: true
-menu_order: 2
+menu_order: 0
 page_options_require_authentication: false
 page_options_show_link_unauthenticated: false
-hide_from_navigation: false
-hide_from_related: false
+hide_from_navigation: true
+hide_from_related: true
 ---
 A **Certified** DC/OS Service:
 
