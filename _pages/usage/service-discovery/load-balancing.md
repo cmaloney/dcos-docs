@@ -32,46 +32,42 @@ If you would like to run a demo, you can configure a Marathon app as mentioned a
 #### Exposing it to the outside
 Prior to this, you had to run a complex proxy that would reconfigure based on the tasks running on the cluster. Fortunately, you no longer need to do this. Instead, you can have an incredible simple HAProxy configuration like so:
 
-```
-defaults
-  log global
-  mode  tcp
-  contimeout 50000000
-  clitimeout 50000000
-  srvtimeout 50000000
-
-listen appname 0.0.0.0:80
-    mode tcp
-    balance roundrobin
-    server mybackend 1.2.3.4:5000
-```
+    defaults
+      log global
+      mode  tcp
+      contimeout 50000000
+      clitimeout 50000000
+      srvtimeout 50000000
+    
+    listen appname 0.0.0.0:80
+        mode tcp
+        balance roundrobin
+        server mybackend 1.2.3.4:5000
 
 A Marathon app definition for this looks like:
 
-```
-{
-    "acceptedResourceRoles": [
-        "slave_public"
-    ],
-    "container": {
-        "docker": {
-            "image": "sargun/haproxy-demo:3",
-            "network": "HOST"
+    {
+        "acceptedResourceRoles": [
+            "slave_public"
+        ],
+        "container": {
+            "docker": {
+                "image": "sargun/haproxy-demo:3",
+                "network": "HOST"
+            },
+            "type": "DOCKER"
         },
-        "type": "DOCKER"
-    },
-    "cpus": 0.5,
-    "env": {
-        "CONFIGURL": "https://gist.githubusercontent.com/sargun/3037bdf8be077175e22c/raw/be172c88f4270d9dfe409114a3621a28d01294c3/gistfile1.txt"
-    },
-    "instances": 1,
-    "mem": 128,
-    "ports": [
-        80
-    ],
-    "requirePorts": true
-}
-```
+        "cpus": 0.5,
+        "env": {
+            "CONFIGURL": "https://gist.githubusercontent.com/sargun/3037bdf8be077175e22c/raw/be172c88f4270d9dfe409114a3621a28d01294c3/gistfile1.txt"
+        },
+        "instances": 1,
+        "mem": 128,
+        "ports": [
+            80
+        ],
+        "requirePorts": true
+    }
 
 This will run an HAProxy on the public agent, on port 80. If you'd like, you can make the number of instances equal to the number of public agents. Then, you can point your external load balancer at the pool of public agents on port 80. Adapting this would simply involve changing the backend entry, as well as the external port.
 
@@ -82,9 +78,8 @@ If the VIP address that's specified is used elsewhere in the network is can prov
 ### IPSet
 You must have the command ipset installed. If you do not, you may see an error like:
 
-```
-15:15:59.731 [error] Unknown response: {ok,"iptables v1.4.21: Set minuteman doesn't exist.\n\nTry `iptables -h' or 'iptables --help' for more information.\n"}
-```
+    15:15:59.731 [error] Unknown response: {ok,"iptables v1.4.21: Set minuteman doesn't exist.\n\nTry `iptables -h' or 'iptables --help' for more information.\n"}
+    
 ### Ports
 The ports 61420, and 61421 must be open for the load balancer to work correctly. Because the load balancer maintains a partial mesh, it needs to ensure that connectivity between nodes is unhindered.
 

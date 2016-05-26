@@ -24,7 +24,7 @@ You can assign a VIP to one of your services by following these steps. For some 
     *   To create a new application, click **Create Application** and select the **Ports and Service Discovery** menu option.
     *   To edit an existing application, select your application and click the **Configuration** tab, then click **Edit**. You can then select the **Ports and Service Discovery** menu option.
 
-    ![Marathon Ports](/assets/image/ui-marathon-ports.gif)
+    ![Marathon Ports](/assets/images/ui-marathon-ports.gif)
 
 2.  Enter the Port, Protocol, Name, and VIP address. Remember that a VIP includes the port, like `1.1.1.1:5000`.
 
