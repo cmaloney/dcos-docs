@@ -1,14 +1,8 @@
 ---
-UID: 57460536a2f62
 post_title: System Requirements
-post_excerpt: ""
 layout: page
 published: true
 menu_order: 0
-page_options_require_authentication: false
-page_options_show_link_unauthenticated: false
-hide_from_navigation: false
-hide_from_related: false
 ---
 # Hardware Prerequisites
 
