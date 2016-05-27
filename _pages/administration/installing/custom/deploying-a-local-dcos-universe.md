@@ -28,25 +28,26 @@ You can install and run DC/OS services on a datacenter without internet access w
         $ docker load < local-universe.tar.gz
         
 
-3.  Add the [`dcos-local-universe-http.service`][2] definition to each of your masters at `/etc/systemd/system/dcos-local-universe-http.service` and then start it.
+3.  Add the [dcos-local-universe-http.service][2] definition to each of your masters at `/etc/systemd/system/dcos-local-universe-http.service` and then start it.
     
         $ cp dcos-local-universe-http.service /etc/systemd/system/dcos-local-universe-http.service
         $ systemctl daemon-reload
         $ systemctl start dcos-local-universe-http
         
 
-4.  Add the [`dcos-local-universe-registry.service`][3] definition to each of your masters at `/etc/systemd/system/dcos-local-universe-registry.service` and then start it.
+4.  Add the [dcos-local-universe-registry.service][3] definition to each of your masters at `/etc/systemd/system/dcos-local-universe-registry.service` and then start it.
     
         $ cp dcos-local-universe-registry.service /etc/systemd/system/dcos-local-universe-registry.service
         $ systemctl daemon-reload
         $ systemctl start dcos-local-universe-registry
         
 
-5.  Remove the native DC/OS Universe repositories from the host that you have the DC/OS CLI installed on (alternatively, these can be removed from the DC/OS UI under **System** -> **Repositories**).
+5.  Remove the DC/OS Universe repository from a host that has the DC/OS CLI installed. The Universe repository is installed by default with the CLI.
+
+    **Tip:**  You can also remove repositories by clicking **System** -> **Repositories** in the DC/OS UI.
     
         $ dcos package repo remove Universe
         $ dcos package repo remove Universe-1.7
-        
 
 6.  Add the local repository by using the DC/OS CLI.
     
