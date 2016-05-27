@@ -1,6 +1,6 @@
 ---
 UID: 56f9ad68e48cc
-post_title: Monitoring System Health
+post_title: Monitoring
 post_excerpt: ""
 layout: page
 published: true
