@@ -17,7 +17,7 @@ You can install and run DC/OS services on a datacenter without internet access w
 *   DC/OS cluster
 *   8\.5 GB of disk space
 
-## Installing the default Universe packages
+# Installing the default Universe packages
 
 1.  Download the [local-universe][1] container to each of your masters.
     
@@ -76,7 +76,7 @@ You can install and run DC/OS services on a datacenter without internet access w
         
         By default, only the `selected` packages are bundled. If you'd like to get something else, use the build your own [instructions][4].
 
-## <a name="build"></a>Installing a selected set of Universe packages
+# <a name="build"></a>Installing a selected set of Universe packages
 
 With this method you build a `universe-base` container then compile the Universe container yourself. Both nginx and the Docker registry are bundled into the `universe-base` container.
 
