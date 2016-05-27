@@ -10,9 +10,7 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: true
 hide_from_related: true
 ---
-You can download and configure a local <a href="http://mesosphere.github.io/universe/" target="_blank">DC/OS Universe</a>. You can install and run DC/OS services on a datacenter without internet access with a local Universe.
-
-You can install a local Universe that includes the default packages (easiest), or select your own set of local Universe packages (advanced).
+You can install and run DC/OS services on a datacenter without internet access with a local Universe. You can install a local Universe that includes the default packages (easiest), or select your own set of local Universe packages (advanced).
 
 #### Prerequisites
 
@@ -31,13 +29,13 @@ You can install a local Universe that includes the default packages (easiest), o
 
         $ docker load < local-universe.tar.gz
 
-1.  Add the [`dcos-local-universe-http.service`](link) definition to each of your masters at `/etc/systemd/system/dcos-local-universe-http.service` and then start it.
+1.  Add the [`dcos-local-universe-http.service`](https://raw.githubusercontent.com/mesosphere/universe/version-2.x/local/dcos-local-universe-http.service) definition to each of your masters at `/etc/systemd/system/dcos-local-universe-http.service` and then start it.
 
         $ cp dcos-local-universe-http.service /etc/systemd/system/dcos-local-universe-http.service
         $ systemctl daemon-reload
         $ systemctl start dcos-local-universe-http
 
-1.  Add the [`dcos-local-universe-registry.service`](link) definition to each of your masters at `/etc/systemd/system/dcos-local-universe-registry.service` and then start it.
+1.  Add the [`dcos-local-universe-registry.service`](https://raw.githubusercontent.com/mesosphere/universe/version-2.x/local/dcos-local-universe-registry.service) definition to each of your masters at `/etc/systemd/system/dcos-local-universe-registry.service` and then start it.
 
         $ cp dcos-local-universe-registry.service /etc/systemd/system/dcos-local-universe-registry.service
         $ systemctl daemon-reload
