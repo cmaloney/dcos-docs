@@ -46,6 +46,7 @@ Marathon provides a number of [metrics](https://mesosphere.github.io/marathon/do
 -  `service.mesosphere.marathon.group.count` (gauge) This metric provides the number of groups that are defined. The number groups that are defined affects the performance of Marathon: the more groups that are defined, the lower the Marathon performance. 
 
 **Communication between Marathon and Mesos**
+
 If healthy, these metric should always be increasing. 
 
 -  `service.mesosphere.marathon.core.launcher.impl.OfferProcessorImpl.incomingOffers` This metric provides the number of offers that Mesos is receiving from Marathon.
@@ -58,7 +59,6 @@ Mesos provides a number of [metrics](http://mesos.apache.org/documentation/lates
 ### Master
 
 **These metrics should not increase over time**
-If healthy, these metrics should not be increasing. 
 
 -  `master/slave_reregistrations` (counter) This metric provides the number of agent re-registrations. Use this metric along with historical data to determine deviations and spikes of when a network partition occurs. If this number drastically increases, then the cluster has experienced an outage but has reconnected.
 -  `master/slave_removals` (counter) This metric provides the number of agents removed for various reasons, including maintenance. Use this metric to determine network partitions after a large number of agents have disconnected. If this number greatly deviates from the previous number, your system administrator should be notified (PagerDuty etc).
