@@ -29,36 +29,50 @@ You can install a local Universe that includes the default packages (easiest), o
 
 1.  Load the container into the local Docker instance on each of your master nodes:
 
-    	$ docker load < local-universe.tar.gz
+        $ docker load < local-universe.tar.gz
 
 1.  Add the [`dcos-local-universe-http.service`](link) definition to each of your masters at `/etc/systemd/system/dcos-local-universe-http.service` and then start it.
 
-    	$ cp dcos-local-universe-http.service /etc/systemd/system/dcos-local-universe-http.service
+        $ cp dcos-local-universe-http.service /etc/systemd/system/dcos-local-universe-http.service
         $ systemctl daemon-reload
         $ systemctl start dcos-local-universe-http
 
 1.  Add the [`dcos-local-universe-registry.service`](link) definition to each of your masters at `/etc/systemd/system/dcos-local-universe-registry.service` and then start it.
 
-    	$ cp dcos-local-universe-registry.service /etc/systemd/system/dcos-local-universe-registry.service
+        $ cp dcos-local-universe-registry.service /etc/systemd/system/dcos-local-universe-registry.service
         $ systemctl daemon-reload
         $ systemctl start dcos-local-universe-registry
 
 1.  Remove the native DC/OS Universe repositories from the host that you have the DC/OS CLI installed on (alternatively, these can be removed from the DC/OS UI under **System** -> **Repositories**).
 
-    	$ dcos package repo remove Universe
+        $ dcos package repo remove Universe
         $ dcos package repo remove Universe-1.7
 
 1.  Add the local repository by using the DC/OS CLI.
 
-    	$ dcos package repo add local-universe http://master.mesos:8082/universe.zip
+        $ dcos package repo add local-universe http://master.mesos:8082/universe.zip
 
 1.  To pull from this new repository, you must setup the Docker daemon on every agent to have a valid SSL certificate. To do this, on every agent in your cluster, run the following:
 
-    	$ mkdir -p /etc/docker/certs.d/master.mesos:5000
+        $ mkdir -p /etc/docker/certs.d/master.mesos:5000
         $ curl -o /etc/docker/certs.d/master.mesos:5000/ca.crt http://master.mesos:8082/certs/domain.crt
         $ systemctl restart docker
 
     **Tip:** You can use the instructions for insecure registries, instead of this step, however we don't recommend this.
+
+    ### FAQ
+    
+    - **I can't install CLI subcommands**
+    
+        Packages are hosted at `master.mesos:8082`. If you cannot resolve or connect to `master.mesos:8082` from your DC/OS CLI install, you cannot install CLI subcommands. If you can connect to port 8082 on your masters, add the IP for one of the masters to `/etc/hosts`.
+    
+    - **The images are broken**
+    
+        All Universe components are hosted inside of your cluster, including the images. The components are served up by `master.mesos:8082`. If you have connectivity to that IP, you can add it to `/etc/hosts` and get the images working.
+    
+    - **I don't see the package I was looking for**
+    
+        By default, only the `selected` packages are bundled. If you'd like to get something else, use the build your own [instructions](#build).
 
 
 ## <a name="build"></a>Installing a selected set of Universe packages
@@ -66,7 +80,7 @@ With this method you build a `universe-base` container then compile the Universe
 
 1.  Build the `universe-base` container:
 
-    	$ sudo make base
+        $ sudo make base
     	
     Now that you've built the `universe-base` container, you can create a `local-universe` container. 
 
@@ -74,19 +88,4 @@ With this method you build a `universe-base` container then compile the Universe
 
 1. Build your local Universe container:
 
-    	$ sudo make local-universe
-    	
-    	
-### FAQ
-
-- **I can't install CLI subcommands**
-
-    Packages are hosted at `master.mesos:8082`. If you cannot resolve or connect to `master.mesos:8082` from your DC/OS CLI install, you cannot install CLI subcommands. If you can connect to port 8082 on your masters, add the IP for one of the masters to `/etc/hosts`.
-
-- **The images are broken**
-
-    All Universe components are hosted inside of your cluster, including the images. The components are served up by `master.mesos:8082`. If you have connectivity to that IP, you can add it to `/etc/hosts` and get the images working.
-
-- **I don't see the package I was looking for**
-
-    By default, only the `selected` packages are bundled. If you'd like to get something else, use the build your own [instructions](#build).
+        $ sudo make local-universe
