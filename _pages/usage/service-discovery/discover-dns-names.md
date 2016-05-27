@@ -1,6 +1,6 @@
 ---
 UID: 56f9a5595fa87
-post_title: Viewing node details
+post_title: Discovering Service DNS Names
 post_excerpt: ""
 layout: page
 published: true
