@@ -91,7 +91,7 @@ Mesos provides a number of [metrics](http://mesos.apache.org/documentation/lates
 
 ## General
 
-- Marathon App Health for critical applications API endpoint: [https://mesosphere.github.io/marathon/docs/generated/api.html#v2_apps_get](https://mesosphere.github.io/marathon/docs/generated/api.html#v2_apps_get)
+- Check the Marathon App Health API [endpoint](https://mesosphere.github.io/marathon/docs/generated/api.html#v2_apps_get) for critical applications API endpoint.
 - Check for agents being shut down:
     - Tail /var/log/mesos warning logs and watch for `Shutting down`
     - Mesos endpoint that indicates how many agents have been shut down increases
