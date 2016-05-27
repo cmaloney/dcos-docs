@@ -10,14 +10,14 @@ page_options_show_link_unauthenticated: false
 hide_from_navigation: false
 hide_from_related: false
 ---
-Here are some recommendations for monitoring a DC/OS cluster. You can any monitoring tool with these recommendations. The endpoints listed below will help troubleshoot when issues occur.
+Here are some recommendations for monitoring a DC/OS cluster. You can use any monitoring tool with these recommendations. The endpoints listed below will help troubleshoot when issues occur.
 
 Your monitoring tools should leverage historic data points so that you can track changes and deviations. You should monitor your cluster when it is known to be in a healthy state as well as unhealthy. This will give you a baseline for what is “normal” in the DC/OS environment. With this historical data, you can fine tune your tools and set appropriate thresholds and conditions. When these thresholds are exceeded, you can send alerts to administrators.
 
 Mesos and Marathon have the metrics types gauge and counter.
 
 *   Gauges are metrics that provide the current state at the moment it was queried. 
-*   Counters have metrics that are additive and include past and present results.
+*   Counters have metrics that are additive and include past and present results. These metrics are not persisted across failover.
 
 Marathon has a timer metric that determines how long an event has taken place. Timer does not exist for Mesos observability metrics.
 
@@ -68,7 +68,9 @@ Mesos provides a number of [metrics][2] for monitoring. Here are the ones that a
 
 **These metrics should not increase over time**
 
-*   `master/slave_reregistrations` (counter) This metric provides the number of agent re-registrations. Use this metric along with historical data to determine deviations and spikes of when a network partition occurs. If this number drastically increases, then the cluster has experienced an outage but has reconnected.
+If these metrics increase, something is probably wrong.
+
+*   `master/slave_reregistrations` (counter) This metric provides the number of agent re-registrations and restarts. Use this metric along with historical data to determine deviations and spikes of when a network partition occurs. If this number drastically increases, then the cluster has experienced an outage but has reconnected.
 *   `master/slave_removals` (counter) This metric provides the number of agents removed for various reasons, including maintenance. Use this metric to determine network partitions after a large number of agents have disconnected. If this number greatly deviates from the previous number, your system administrator should be notified (PagerDuty etc).
 *   `master/tasks_error` (counter) This metric provides the number of invalid tasks.
 *   `master/tasks_failed` (counter) This metric provides the number of failed tasks.
@@ -107,7 +109,7 @@ Mesos provides a number of [metrics][2] for monitoring. Here are the ones that a
 *   Modify the `mesos-master` log rotation configuration to store the complete logs for at least one day.
     
     *   Make sure the master nodes have plenty of disk space.
-    *   Change the [logrotation][4] option from `rotate 7` to `maxage 14` or more. For example:
+    *   Change the `logrotation` option from `rotate 7` to `maxage 14` or more. For example:
         
             ...
             /var/log/mesos/* {
@@ -124,19 +126,8 @@ Mesos provides a number of [metrics][2] for monitoring. Here are the ones that a
             ...
             
 
-## Mesos basic alerts
-
-This section lists some examples of basic alerts that you can set up to detect abnormal situations in a cluster.
-
-*   `master/uptime_secs is low` indicates that the master has restarted.
-*   `master/uptime_secs < 60 for sustained periods of time` - indicates that the cluster has a flapping master node.
-*   `master/tasks_lost is increasing rapidly` - indicates that tasks in the cluster are disappearing. Possible causes include hardware failures, bugs in one of the frameworks, or bugs in Mesos.
-*   `master/slaves_active is low` - indicates that agents are having trouble connecting to the master.
-*   `master/cpus_percent > 0.9 for sustained periods of time` - indicates that the cluster CPU utilization is close to capacity.
-*   `master/mem_percent > 0.9 for sustained periods of time` - indicates that the cluster memory utilization is close to capacity.
-*   `master/elected is 0 for sustained periods of time` - a master is currently not elected.
+See the Apache Mesos [documentation](http://mesos.apache.org/documentation/latest/monitoring/) for Mesos basic alerts.
 
  [1]: https://mesosphere.github.io/marathon/docs/metrics.html
  [2]: http://mesos.apache.org/documentation/latest/monitoring/
  [3]: https://mesosphere.github.io/marathon/docs/generated/api.html#v2_apps_get
- [4]: https://github.com/mesosphere/dcos-image/blob/83994db0a6d567c690262e43b4081c97264f098a/packages/logrotate/build#L26
