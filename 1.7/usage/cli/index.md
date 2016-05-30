@@ -4,6 +4,7 @@ post_title: Command Line Interface
 menu_order: 0
 ---
 
+
 You can use the Mesosphere DC/OS command-line interface (CLI) to manage your cluster nodes, install DC/OS packages, inspect the cluster state, and administer the DC/OS service subcommands. You can install the CLI from the DC/OS web interface.
 
 To list available commands, either run `dcos` with no parameters or run `dcos help`:

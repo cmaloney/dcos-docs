@@ -4,6 +4,7 @@ post_title: Configuration parameters (1.4)
 menu_order: 0
 ---
 
+
 Here are the DC/OS cluster configuration parameters. The DC/OS build uses these parameters to create a customized install.
 
 # <a name="bootstrap-url"></a>bootstrap_url

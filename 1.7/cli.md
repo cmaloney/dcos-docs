@@ -1,8 +1,9 @@
 ---
 layout: page
 post_title: CLI Installer
-menu_order: 3
+menu_order: 0
 ---
+
 <p>The automated CLI installer provides a guided installation of DC/OS from the command line. With this method you can choose from the complete set of DC/OS configuration options.</p>
 
 <p>This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.</p>

@@ -3,6 +3,7 @@ layout: page
 post_title: Install DC/OS on Azure
 menu_order: 0
 ---
+
 <p>This document explains how to install DC/OS by using the Azure Marketplace.</p>
 
 <p>TIP: To get support on Azure Marketplace-related questions, join the Azure Marketplace <a href="http://join.marketplace.azure.com">Slack community</a>.</p>

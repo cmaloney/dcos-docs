@@ -4,6 +4,7 @@ post_title: Managing Authentication
 menu_order: 0
 ---
 
+
 Authorization and authentication is managed in the DC/OS web interface.
 
 You can authorize individual users and groups of users. You can grant access to users who are local or remote to your datacenter. You must be an Administrator to manage users or groups.

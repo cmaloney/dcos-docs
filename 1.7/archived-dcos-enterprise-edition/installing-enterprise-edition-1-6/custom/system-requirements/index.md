@@ -4,6 +4,7 @@ post_title: System Requirements
 menu_order: 0
 ---
 
+
 # Hardware Prerequisites
 
 You must have a single bootstrap node, Mesos master nodes, and Mesos agent nodes.

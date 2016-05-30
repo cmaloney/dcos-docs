@@ -4,6 +4,7 @@ post_title: Logging
 menu_order: 0
 ---
 
+
 DC/OS cluster nodes generate logs that contain diagnostic and status information for DC/OS core components and DC/OS services.
 
 ## Service and Task Logs

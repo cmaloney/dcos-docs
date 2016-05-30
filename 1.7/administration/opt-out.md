@@ -4,6 +4,7 @@ post_title: Opt-Out
 menu_order: 0
 ---
 
+
 ## Authentication
 
 You can opt-out of the DC/OS authentication by disabling it for your cluster. To disable authentication, add this parameter to your [`config.yaml`][1] file during installation (note this requires using the [CLI][2] or [advanced][3] installers):

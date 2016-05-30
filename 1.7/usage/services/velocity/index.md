@@ -4,6 +4,7 @@ post_title: Velocity
 menu_order: 0
 ---
 
+
 # Overview
 
 [Mesosphere Velocity][1] helps organizations accelerate application delivery by lowering the barriers to continuous integration and continuous delivery (CI/CD) for modern and traditional applications. Building upon capabilities in Mesosphere DC/OS, and with Jenkins at its core, Velocity provides scalable and reliable infrastructure for application lifecycle management. Velocity’s tight integration with Marathon provides an end-to-end solution that automates the full application lifecycle, including building, testing and deploying applications in production.

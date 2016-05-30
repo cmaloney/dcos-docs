@@ -1,8 +1,9 @@
 ---
 layout: page
 post_title: Local Volumes
-menu_order: 1
+menu_order: 0
 ---
+
 <p>Use local volumes when speed is crucial for your app, or when you have a performance-sensitive app that needs exclusive access to a disk.</p>
 
 <h3>Mount Disk Resources</h3>

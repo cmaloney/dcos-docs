@@ -4,6 +4,7 @@ post_title: DCOS Service Certification Criteria
 menu_order: 0
 ---
 
+
 A **Certified** DC/OS Service:
 
 *   Has been verified by Mesosphere as correctly integrating with DC/OS, however it makes no guarantees regarding the production worthiness of the underlying service. 

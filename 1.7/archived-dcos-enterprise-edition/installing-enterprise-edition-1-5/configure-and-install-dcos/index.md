@@ -4,6 +4,7 @@ post_title: 'Step 2: Configure and install DC/OS'
 menu_order: 0
 ---
 
+
 This topic provides instructions for installing DC/OS in your environment by using a customized Bash install script.
 
 The DC/OS installation creates these folders:

@@ -4,6 +4,7 @@ post_title: The Framework Cleaner Script
 menu_order: 0
 ---
 
+
 The framework cleaner docker image, `mesosphere/janitor`, simplifies the process of removing your service instance from Zookeeper and destroying all the data associated with it. `mesosphere/janitor` uses cluster-internal endpoints for interacting with DC/OS services, avoiding the need to authenticate itself.
 
 There are two ways to run the framework cleaner script. The preferred method is via the DC/OS CLI. If the CLI is unavailable, you can also run the image as a self-deleting Marathon task.

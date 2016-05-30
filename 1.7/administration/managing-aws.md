@@ -4,6 +4,7 @@ post_title: Managing AWS Clusters
 menu_order: 0
 ---
 
+
 # Finding your public node hostname
 
 The DC/OS AWS CloudFormation template creates 1 Mesos agent node in the [public zone][1].

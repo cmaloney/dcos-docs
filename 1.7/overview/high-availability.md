@@ -4,6 +4,7 @@ post_title: High Availability in DC/OS
 menu_order: 0
 ---
 
+
 This topic discusses the high availability features in DC/OS and best practices for building highly available applications on DC/OS.
 
 ### Leader/follower architecture

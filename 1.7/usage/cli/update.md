@@ -4,6 +4,7 @@ post_title: Updating the CLI
 menu_order: 0
 ---
 
+
 You can update the DC/OS CLI to the latest version or downgrade to an older version.
 
 # <a name="upgrade"></a>Upgrade the CLI

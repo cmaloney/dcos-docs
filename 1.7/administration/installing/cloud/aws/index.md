@@ -3,6 +3,7 @@ layout: page
 post_title: AWS DC/OS Installation Guide
 menu_order: 0
 ---
+
 <p>You can create a DC/OS cluster for Amazon Web Services (AWS) by using the DC/OS template on AWS CloudFormation.</p>
 
 <p>Depending on the DC/OS services that you install, you might have to modify the DC/OS templates to suit your needs. For more information, see <a href="/administration/managing-aws/">Scaling the DC/OS cluster in AWS</a>.</p>

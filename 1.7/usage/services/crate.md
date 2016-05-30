@@ -4,6 +4,7 @@ post_title: Crate
 menu_order: 0
 ---
 
+
 **Disclaimer:** The Crate service is available at the alpha level and not recommended for Mesosphere DC/OS production systems.
 
 Crate is a distributed NoSQL database that you can use to query and compute data with SQL in real-time. It provides a distributed aggregation engine, native search, and super simple scalability. Crate's shared-nothing-architecture means it is optimized for distributed environments that allow horizontal scaling of applications.

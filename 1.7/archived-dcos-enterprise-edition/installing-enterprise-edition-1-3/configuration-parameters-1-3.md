@@ -4,6 +4,7 @@ post_title: Configuration Parameters (1.3)
 menu_order: 0
 ---
 
+
 Here are the DC/OS cluster configuration parameters. The DC/OS build uses these parameters to create a customized install.
 
 #### Top-level parameters

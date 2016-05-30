@@ -4,6 +4,7 @@ post_title: Advanced Features of marathon-lb
 menu_order: 0
 ---
 
+
 ## HAProxy configuration
 
 Marathon-lb works by automatically generating configuration for HAProxy and then reloading HAProxy as needed. Marathon-lb generates the HAProxy configuration based on application data available from the Marathon REST API. It can also subscribe to the Marathon Event Bus](https://mesosphere.github.io/marathon/docs/event-bus.html) for real-time updates. When an application starts, stops, relocates or has any change in health status, marathon-lb will automatically regenerate the HAProxy configuration and reload HAProxy.
@@ -70,7 +71,7 @@ To create a template for an individual app, modify the application definition. I
       }],
       "labels":{
         "HAPROXY_GROUP":"external",
-        "HAPROXY_0_BACKEND_HTTP_OPTIONS":"  option forwardfor\n  no option http-keep-alive\n      http-request set-header X-Forwarded-Port %[dst_port]\n  http-request add-header X-Forwarded-Proto https if { ssl_fc }\n"
+        "HAPROXY_0_BACKEND_HTTP_OPTIONS":"  option forwardforn  no option http-keep-aliven      http-request set-header X-Forwarded-Port %[dst_port]n  http-request add-header X-Forwarded-Proto https if { ssl_fc }n"
       }
     }
     

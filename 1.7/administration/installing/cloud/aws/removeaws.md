@@ -1,8 +1,9 @@
 ---
 layout: page
 post_title: Uninstalling on Amazon Web Services
-menu_order: 2
+menu_order: 0
 ---
+
 <p>You can uninstall DC/OS Community Edition from AWS with these instructions.</p>
 
 <p><strong>You will continue to be charged AWS fees if:</strong></p>

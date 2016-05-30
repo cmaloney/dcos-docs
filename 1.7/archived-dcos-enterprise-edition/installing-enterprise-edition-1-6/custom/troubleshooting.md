@@ -4,6 +4,7 @@ post_title: Troubleshooting
 menu_order: 0
 ---
 
+
 During DC/OS installation, each of the components will converge from a failing state to a running state in the logs.
 
 The DC/OS components come online in this sequence. <!-- Add example of clusters converging and show logs with ignorable errors; clean logs. Examples of common failures are harder to show, because this would be a bug. -->

@@ -4,6 +4,7 @@ post_title: Configuring the CLI
 menu_order: 0
 ---
 
+
 The DC/OS CLI configuration can be seen using the following command:
 
     $ dcos config show

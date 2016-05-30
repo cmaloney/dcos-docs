@@ -4,6 +4,7 @@ post_title: Authentication HTTP API Endpoint
 menu_order: 0
 ---
 
+
 You can make external calls to HTTP API endpoints in your DC/OS cluster.
 
 You must first obtain an authentication token and then include it in your HTTP request. 

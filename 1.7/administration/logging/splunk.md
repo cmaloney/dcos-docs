@@ -4,6 +4,7 @@ post_title: Log Management with Splunk
 menu_order: 0
 ---
 
+
 You can pipe system and application logs from a Mesosphere DC/OS cluster to your existing Splunk server.
 
 These instructions are based on Mesosphere [DC/OS 1.3][1] on CoreOS 766.4.0 and might differ substantially from other Linux distributions. This document does not explain how to setup and configure a Splunk server.

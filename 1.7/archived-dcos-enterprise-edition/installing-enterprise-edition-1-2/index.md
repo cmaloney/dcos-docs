@@ -4,6 +4,7 @@ post_title: Installing Enterprise Edition (1.2)
 menu_order: 0
 ---
 
+
 This topic provides instructions for installing <span class="caps">DC/OS</span> in your environment by using a customized Bash install script.
 
 The <span class="caps">DC/OS</span> installation creates these folders:

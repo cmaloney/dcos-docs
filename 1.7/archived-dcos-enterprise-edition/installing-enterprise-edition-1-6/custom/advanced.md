@@ -4,6 +4,7 @@ post_title: Advanced
 menu_order: 0
 ---
 
+
 With the advanced installer, you package the DC/OS distribution yourself and connect to every node manually to run the DC/OS installation commands. This installation method is recommended if you don't have SSH access to your cluster or if you want to integrate with an existing system.
 
 This installation method requires:

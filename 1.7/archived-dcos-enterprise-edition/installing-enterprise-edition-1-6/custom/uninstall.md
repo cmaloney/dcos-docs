@@ -5,6 +5,7 @@ menu_order: 0
 ---
 
 
+
 You can uninstall DC/OS from each node individually or from all nodes at once.
 
 ## Uninstall all nodes

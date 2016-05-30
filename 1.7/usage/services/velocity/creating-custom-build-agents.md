@@ -4,6 +4,7 @@ post_title: Creating Custom Build Agents
 menu_order: 0
 ---
 
+
 By default, Mesosphere DC/OS runs everything inside Docker containers in order to minimize dependencies on the underlying host operating system and to offer resilience in the event of a machine failure. When using Velocity, the underlying Mesos scheduler in DC/OS creates new Jenkins agents that run as Mesos tasks within a Docker container. User-configured builds are then run inside the same container.
 
 Since builds typically have steps that invoke the Docker utility, such as `docker build` or `docker push`, we provide the [mesosphere/jenkins-dind][1] Docker image and configure Velocity to use this by default. The `mesosphere/jenkins-dind` image also includes several other well-known tools. For a complete list, see the [Dockerfile][2].

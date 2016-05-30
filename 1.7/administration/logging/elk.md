@@ -4,6 +4,7 @@ post_title: Log Management with ELK
 menu_order: 0
 ---
 
+
 You can pipe system and application logs from a Mesosphere DC/OS cluster to your existing ElasticSearch, Logstash, and Kibana (ELK) server.
 
 **Prerequisites**

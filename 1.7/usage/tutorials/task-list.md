@@ -4,6 +4,7 @@ post_title: Listing Tasks
 menu_order: 0
 ---
 
+
 The [DC/OS CLI][1] allows you to easily view completed tasks.
 
 # Completed Tasks

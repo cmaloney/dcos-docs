@@ -4,6 +4,7 @@ post_title: Concepts
 menu_order: 0
 ---
 
+
 This page contains terms and definitions for the Mesosphere DC/OS.
 
 ### Admin router

@@ -6,6 +6,7 @@ post_title: >
 menu_order: 0
 ---
 
+
 We at Mesosphere know you care about how your personal information is used and shared, and we take your privacy seriously. Please read the following to learn more about our Privacy Policy. By using or accessing the Mesosphere DC/OS Community Edition in any manner, you acknowledge that you accept the practices and policies outlined in this Privacy Policy, and you hereby consent that we will collect, use, and share your information in the following ways.
 
 Remember that your use of Mesosphere DC/OS Community Edition is at all times subject to the DC/OS Community Edition License Agreement (the “Agreement”). Any conflicting provisions will be governed by the Agreement. Any terms we use in this Policy without defining them have the definitions given to them in the Agreement.

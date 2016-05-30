@@ -4,6 +4,7 @@ post_title: Discovering Service DNS Names
 menu_order: 0
 ---
 
+
 You can get a comprehensive list of the apps being run on your DC/OS cluster nodes.
 
 **Prerequisites:** [DC/OS and DC/OS CLI][1] are installed

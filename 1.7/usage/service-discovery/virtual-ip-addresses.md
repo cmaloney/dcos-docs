@@ -4,6 +4,7 @@ post_title: Using Virtual IP Addresses
 menu_order: 0
 ---
 
+
 DC/OS can map traffic from a single Virtual IP (VIP) to multiple IP addresses and ports.
 
 You can assign a VIP to your application by using the DC/OS Marathon web interface. The values you enter in these fields are translated into the appropriate `portMapping` entry in your application definition. Toggle to `JSON mode` as you create your app to see and edit your application definition.

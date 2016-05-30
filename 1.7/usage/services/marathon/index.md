@@ -5,6 +5,7 @@ menu_order: 0
 ---
 
 
+
 Mesosphere Enterprise DC/OS uses Marathon to manage the processes and services and is the "init system" for the DC/OS. Marathon starts and monitors your applications and services, automatically healing failures.
 
 A native Marathon instance is installed as a part of DC/OS installation. After DC/OS has started, you can manage the native Marathon instance through the web interface at `<hostname>/marathon` or from the DC/OS CLI with the `dcos marathon` command.

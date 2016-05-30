@@ -4,6 +4,7 @@ post_title: Components
 menu_order: 0
 ---
 
+
 The DC/OS core components are individual services that work together to provide a single datacenter operating system. The kernel of DC/OS is [Apache Mesos](http://mesos.apache.org/) but the DC/OS is actually made up of *many* more services, including a native Marathon instance to manage processes and installable services, and Mesos-DNS for service discovery.
 
 If you log into any host in the DC/OS cluster, you can view the currently running services by inspecting `/etc/systemd/system/dcos.target.wants/`.

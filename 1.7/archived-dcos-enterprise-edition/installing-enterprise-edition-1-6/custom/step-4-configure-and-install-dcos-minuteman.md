@@ -4,6 +4,7 @@ post_title: 'Step 4: Configure and install DC/OS (Minuteman)'
 menu_order: 0
 ---
 
+
 Choose your DC/OS installation method:
 
 *   [Using the GUI installer to install DC/OS][1]

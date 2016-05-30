@@ -4,6 +4,7 @@ post_title: Installing
 menu_order: 0
 ---
 
+
 # Local Installation
 
 For first-time users or developers looking to build services or modify DC/OS, the Vagrant installer provides a quick, free way to deploy a virtual cluster on a single machine. For more information, see the [dcos.io][1] documentation.

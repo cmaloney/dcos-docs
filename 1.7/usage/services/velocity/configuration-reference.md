@@ -4,6 +4,7 @@ post_title: Configuration Reference
 menu_order: 0
 ---
 
+
 Services on DC/OS are configured via a JSON file that is passed to the DC/OS CLI when installing a package. To configure Velocity, create a new JSON options file in your working directory. This file will contain options specific to your environment, such as the name of the framework (e.g. `velocity-team1`, `velocity-team2`, and so on), and the path to the NFS share where you want to save the Jenkins configuration and build data.
 
 # General options

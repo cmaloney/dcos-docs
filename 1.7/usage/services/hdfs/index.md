@@ -4,6 +4,7 @@ post_title: HDFS
 menu_order: 0
 ---
 
+
 HDFS can be used to store and distribute data across your entire Mesosphere DC/OS cluster.
 
 # <a name="hdfsinstall"></a>Installing HDFS on DC/OS

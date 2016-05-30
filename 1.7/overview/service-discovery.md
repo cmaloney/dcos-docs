@@ -1,8 +1,9 @@
 ---
 layout: page
 post_title: Service Discovery
-menu_order: 8
+menu_order: 0
 ---
+
 <p>There are two levels of service discovery in DC/OS: Mesos-DNS and VIPs. Mesos-DNS provides the namespace to all cluster hosts. VIPs enable clients to have a single configuration value.</p>
 
 <h1>Mesos-DNS</h1>

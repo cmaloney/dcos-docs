@@ -4,6 +4,7 @@ post_title: 'FAQ &#038; Troubleshooting'
 menu_order: 0
 ---
 
+
 # How can I check the Mesos-DNS version?
 
 You can check the Mesos-DNS version with `mesos-dns -version`.

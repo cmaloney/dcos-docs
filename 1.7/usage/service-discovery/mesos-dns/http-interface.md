@@ -4,6 +4,7 @@ post_title: HTTP Interface
 menu_order: 0
 ---
 
+
 Mesos-DNS implements a simple REST API for service discovery over HTTP:
 
 # <a name="get-version"></a>`GET /v1/version`

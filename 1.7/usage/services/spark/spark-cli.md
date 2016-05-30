@@ -4,6 +4,7 @@ post_title: Spark CLI
 menu_order: 0
 ---
 
+
 You can run and manage Spark jobs by using the [Spark CLI][1].
 
 `--help`, `-h`

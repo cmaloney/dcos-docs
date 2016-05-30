@@ -4,6 +4,7 @@ post_title: Configuration Parameters (1.2)
 menu_order: 0
 ---
 
+
 Here are the <span class="caps">DCOS</span> cluster configuration parameters. The <span class="caps">DCOS</span> build uses these parameters to create a customized install.
 
 # Parameters

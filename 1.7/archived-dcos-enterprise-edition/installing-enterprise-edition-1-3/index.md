@@ -4,6 +4,7 @@ post_title: Installing Enterprise Edition (1.3)
 menu_order: 0
 ---
 
+
 This topic provides instructions for installing DC/OS in your environment by using a customized Bash install script.
 
 The DC/OS installation creates these folders:

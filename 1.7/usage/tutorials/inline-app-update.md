@@ -4,6 +4,7 @@ post_title: Inline App Update
 menu_order: 0
 ---
 
+
 The [DC/OS CLI][1] Marathon plugin allows you to easily view and update the configuration of existing applications.
 
 # Update an Environment Variable

@@ -6,6 +6,7 @@ post_title: >
 menu_order: 0
 ---
 
+
 A Python application, marathon-autoscale.py, autoscales your Marathon application based on the utilization metrics Mesos reports.
 
 The application runs on any system that has Python 3 installed and has access to the Marathon server via HTTP TCP Port 80 and the Mesos Agent nodes over TCP port 5051. marathon-autoscale.py is intended to demonstrate what is possible when you run your applications on Marathon and Mesos. It periodically monitors the aggregate CPU and memory utilization for all the individual tasks running on the Mesos agents that make up the specified Marathon application. When the threshold you set for these metrics is reached, marathon-autoscale.py adds instances to the application based on the multiplier you specify.

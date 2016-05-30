@@ -4,6 +4,7 @@ post_title: CLI
 menu_order: 0
 ---
 
+
 The automated command line installation method provides a guided installation of DC/OS Enterprise Edition.
 
 This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.

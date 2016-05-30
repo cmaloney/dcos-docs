@@ -4,6 +4,7 @@ post_title: Installing the CLI
 menu_order: 0
 ---
 
+
 *   [Installing the DC/OS CLI on Unix, Linux, and OS X][1]
 *   [Installing the DC/OS CLI on Windows][2]
 

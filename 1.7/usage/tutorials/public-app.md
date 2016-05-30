@@ -5,6 +5,7 @@ menu_order: 0
 ---
 
 
+
 DC/OS agent nodes can be designated as [public](/overview/concepts/#public) or [private](/overview/concepts/#private) during [advanced](/administration/installing/custom/) or [cloud](/administration/installing/cloud/) installations. Public agent nodes provide public access to your DC/OS applications. By default apps are launched on private agent nodes. To launch an app on a public node, you must create a Marathon app definition with the `"acceptedResourceRoles":["slave_public"]` parameter specified.
 
 

@@ -4,6 +4,7 @@ post_title: Service Requirements Specification
 menu_order: 0
 ---
 
+
 **Disclaimer:** This document provides the DC/OS Service requirements, but is not the complete DC/OS service certification. For the complete DC/OS Service Specification, send an email to <a href="mailto:partnerships@mesosphere.io" target="_blank">partnerships@mesosphere.io</a>.
 
 This document is intended for a developer creating a Mesosphere DC/OS Service. It is assumed the you are familiar with <a href="http://mesos.apache.org/documentation/latest/app-framework-development-guide/" target="_blank">Mesos framework development</a>.

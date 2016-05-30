@@ -6,6 +6,7 @@ post_title: >
 menu_order: 0
 ---
 
+
 This is a guide to deploying applications on [Marathon][1] using [Velocity][2]. This guide will walk you through creating a new Jenkins job, publishing a docker container on source code changes, and deploying those changes to Marathon based on the [Application Definition][3] contained in the project’s `marathon.json` file.
 
 The rest of this document assumes the read has [a working Velocity installation][2] and permission to launch applications on Marathon.
