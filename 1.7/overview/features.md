@@ -1,11 +1,24 @@
 ---
-layout: page
 post_title: The Features of DC/OS
-menu_order: 0
+nav_title: Features
+menu_order: 3
 ---
-
-
 This is an overview of the features that make DC/OS more than the sum of its parts.
+
+- [High Resource Utilization](#high-resource-utilization)
+- [Mixed Workload Colocation](#mixed-workload-colocation)
+- [Container Orchestration](#container-orchestration)
+- [Extensible Resource Isolation](#extensible-resource-isolation)
+- [Stateful Storage Support](#stateful-storage-support)
+- [Public and Private Package Repositories](#public-and-private-package-repositories)
+- [Cloud-Agnostic Installer](#cloud-agnostic-installer)
+- [Web and Command Line Interfaces](#web-and-command-line-interfaces)
+- [Elastic Scalability](#elastic-scalability)
+- [High Availability](#high-availability)
+- [Zero Downtime Upgrades](#zero-downtime-upgrades)
+- [Integration-Tested Components](#integration-tested-components)
+- [Service Discovery and Load Balancing](#service-discovery-and-load-balancing)
+
 
 ## High Resource Utilization
 
@@ -15,7 +28,8 @@ Deciding where to run processes to best utilize cluster resources is hard, NP-ha
 
 DC/OS manages this problem by separating resource management from task scheduling. Mesos manages CPU, memory, disk, and GPU resources. Task placement is delegated to higher level schedulers that are more aware of their task's specific requirements and constraints. This model, known as two-level scheduling, enables multiple workloads to be colocated efficiently.
 
-# Mixed Workload Colocation
+
+## Mixed Workload Colocation
 
 DC/OS makes it easy to run all your computing tasks on the same hardware.
 
@@ -25,7 +39,8 @@ For other types of work, DC/OS makes it easy to select and install from a librar
 
 For complex custom workloads, you can even write your own scheduler to optimize and precisely control the scheduling logic for specific tasks.
 
-# Container Orchestration
+
+## Container Orchestration
 
 DC/OS provides easy-to-use container orchestration right out of the box.
 
@@ -33,15 +48,17 @@ Docker provides a great development experience, but trying to run Docker contain
 
 With Marathon, you have the ability to reach extreme scale, scheduling tens of thousands of tasks across thousands of nodes. You can use highly configurable declarative application definitions to enforce advanced placement constraints with node, cluster, and grouping affinities.
 
-# Extensible Resource Isolation
+
+## Extensible Resource Isolation
 
 DC/OS makes it possible to configure multiple resource isolation zones.
 
 Not all tasks have the same requirements. Some require maximum isolation for security or performance guarantees. Others are ephemeral, public, or easily restarted. And most are somewhere in between.
 
-The simplest isolation method is to just delegate to Docker. It’s trivial to run Docker containers on DC/OS, but Docker is a bit of a blunt instrument when it comes to isolation. The [Mesos containerizer][14] is much more flexible, with multiple independently configurable isolators, and pluggable custom isolators. The Mesos containerizer can even run Docker containers without being chained to the fragility of `dockerd`.
+The simplest isolation method is to just delegate to Docker. It’s trivial to run Docker containers on DC/OS, but Docker is a bit of a blunt instrument when it comes to isolation. The [Mesos containerizer](http://mesos.apache.org/documentation/latest/mesos-containerizer/) is much more flexible, with multiple independently configurable isolators, and pluggable custom isolators. The Mesos containerizer can even run Docker containers without being chained to the fragility of `dockerd`.
 
-# Stateful Storage Support
+
+## Stateful Storage Support
 
 DC/OS gives your services multiple persistent and ephemeral storage options.
 
@@ -53,7 +70,8 @@ Local ephemeral storage is the Mesos default for allocating temporary disk space
 
 Local persistent volumes bridge the gap and provide fast, persistent storage. If your service is replicating data already or your drives are RAID and backed up to nearline or tape drive, local volumes might give you enough fault tolerance without the speed tax.
 
-# Public and Private Package Repositories
+
+## Public and Private Package Repositories
 
 DC/OS makes it easy to install both community and proprietary packaged services.
 
@@ -61,7 +79,8 @@ The Mesosphere Universe Package Repository connects you with a library of open s
 
 DC/OS also supports installing from multiple package repositories: you can host your own private packages to be shared within your company or with your customers.
 
-# Cloud-Agnostic Installer
+
+## Cloud-Agnostic Installer
 
 The DC/OS Installer makes it easy to install DC/OS on any cluster of physical or virtual machines.
 
@@ -71,7 +90,8 @@ For users deploying to the public cloud, DC/OS offers several configurable cloud
 
 For the advanced user, the Advanced Installer provides a scriptable, automatable interface to integrate with your prefered configuration management system.
 
-# Web and Command Line Interfaces
+
+## Web and Command Line Interfaces
 
 The DC/OS web and command line interfaces make it easy to monitor and manage the cluster and its services.
 
@@ -79,7 +99,8 @@ The DC/OS web interface lets you monitor resource allocation, running services, 
 
 The DC/OS command line interface provides control of DC/OS from the comfort of a terminal. It’s powerful, yet easily scriptable, with handy plugins to interact with installed services.
 
-# Elastic Scalability
+
+## Elastic Scalability
 
 DC/OS gives you the power to easily scale your services up and down with the turn of a dial.
 
@@ -89,7 +110,8 @@ Vertical scaling is also supported in Marathon, allowing you to allocate more or
 
 Adding nodes to a DC/OS cluster is a snap too. The DC/OS Installer uses immutable artifacts that allow you to provision new nodes without having to recompile, reconfigure, or re-download component packages from flaky remote repositories.
 
-# High Availability
+
+## High Availability
 
 DC/OS is highly available and makes it easy for your services to be highly available too.
 
@@ -99,7 +121,8 @@ To achieve self-healing, DC/OS services are monitored by Marathon and restarted 
 
 To achieve fault tolerance, DC/OS can run in multiple master configurations. This provides not just system-level fault tolerance but also scheduler-level fault tolerance. DC/OS can even survive node failure during an upgrade with no loss of service.
 
-# Zero Downtime Upgrades
+
+## Zero Downtime Upgrades
 
 DC/OS provides automation for updating services and the systems with zero downtime.
 
@@ -107,29 +130,16 @@ DC/OS services running on Marathon can all be updated with rolling, blue-green, 
 
 DC/OS itself also supports zero-downtime upgrades with its powerful installer. Stay up-to-date with the latest open source components with a single combined update.
 
-# Integration-Tested Components
+
+## Integration-Tested Components
 
 DC/OS provides a well-tested set of open source components and bakes them all together with a single combined installer.
 
 Mixing and matching open source components can be a pain. You never know which versions will work together or what the side effects of their interactions will be. Let the Mesos experts handle it for you! Get to production quickly and focus on the quality of your products, not the stability of your platform.
 
-# Service Discovery and Load Balancing
+
+## Service Discovery and Load Balancing
 
 DC/OS includes several options for automating service discovery and load balancing.
 
 Distributed services create distributed problems, but you don't have to solve them all yourself. DC/OS includes automatic DNS endpoint generation, an API for service lookup, transport layer (L4) virtual IP proxying for high speed internal communication, and application layer (L7) load balancing for external-facing services.
-
- [1]: #high-resource-utilization
- [2]: #mixed-workload-colocation
- [3]: #container-orchestration
- [4]: #extensible-resource-isolation
- [5]: #stateful-storage-support
- [6]: #public-and-private-package-repositories
- [7]: #cloud-agnostic-installer
- [8]: #web-and-command-line-interfaces
- [9]: #elastic-scalability
- [10]: #high-availability
- [11]: #zero-downtime-upgrades
- [12]: #integration-tested-components
- [13]: #service-discovery-and-load-balancing
- [14]: http://mesos.apache.org/documentation/latest/mesos-containerizer/

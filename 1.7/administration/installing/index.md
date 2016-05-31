@@ -1,24 +1,31 @@
 ---
-layout: page
-post_title: Installing
-menu_order: 0
+post_title: Install a DC/OS cluster
+nav_title: Install
+menu_order: 1
 ---
 
+DC/OS can be installed on any cluster of physical or virtual machines.
 
-# Local Installation
+# [Local Installation][1]
 
-For first-time users or developers looking to build services or modify DC/OS, the Vagrant installer provides a quick, free way to deploy a virtual cluster on a single machine. For more information, see the [dcos.io][1] documentation.
+For first-time users or developers looking to build services or modify DC/OS, the [Vagrant installer][1] provides a quick, free way to deploy a virtual cluster on a single machine.
 
-# Cloud Provisioning
+# [Cloud Provisioning][6]
 
-For users deploying to the public cloud, DC/OS offers configurable cloud provisioning templates for AWS and Azure that manage a DC/OS installation on virtual machines. For more information, see the [dcos.io][2] documentation.
+For users deploying to the public cloud, DC/OS offers configurable cloud provisioning templates for [AWS][2] and [Azure][3] that will manage virtual machines and DC/OS installation.
 
-# Enterprise Installation
+DC/OS can be installed on other public and private clouds using the Datacenter Installation process, provided virtual machines and networks are created first.
 
-The DC/OS Enterprise Edition (EE) provides everything you need to run DC/OS at scale in production. You can run on premise, in a cloud environment, or in a hybrid environment using both cloud and on premise infrastructure.
+# [Custom Installation][7]
 
-For non-Enterprise DC/OS installations, see the [dcos.io][3] documentation.
+For new users installing to existing virtual or physical machines, on-premises or in the cloud, the [GUI Installer][4] provides a guided experience for bootstrapping a DC/OS cluster.
 
- [1]: https://dcos.io/docs/1.7/administration/installing/local/
- [2]: https://dcos.io/docs/1.7/administration/installing/cloud/
- [3]: https://dcos.io/latest/docs/administration/installing/
+For advanced users installing to existing virtual or physical machines, on-premises or in the cloud, the [Advanced Installer][5] provides a scriptable, automatable interface to integrate with your preferred configuration management system.
+
+[1]: local/
+[2]: cloud/aws/
+[3]: cloud/azure/
+[4]: custom/gui/
+[5]: custom/advanced/
+[6]: cloud/
+[7]: custom/

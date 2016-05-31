@@ -1,10 +1,8 @@
 ---
-layout: page
 post_title: HTTP Interface
-menu_order: 0
+post_excerpt: ""
+layout: docs.jade
 ---
-
-
 Mesos-DNS implements a simple REST API for service discovery over HTTP:
 
 # <a name="get-version"></a>`GET /v1/version`
@@ -16,7 +14,7 @@ Lists in JSON format the Mesos-DNS version and source code URL.
         "Service":"Mesos-DNS",
         "URL":"https://github.com/mesosphere/mesos-dns","Version":"0.1.1"
     }
-    
+
 
 # <a name="get-config"></a>`GET /v1/config`
 
@@ -39,7 +37,7 @@ Lists in JSON format the Mesos-DNS configuration parameters.
         "DnsOn":true,
         "HttpOn":true
     }
-    
+
 
 # <a name="get-hosts"></a>`GET /v1/hosts/{host}`
 
@@ -53,7 +51,7 @@ Lists in JSON format the IP addresses that correspond to a hostname. It is the e
         {"host":"nginx.marathon.mesos.","ip":"10.190.238.173"},
         {"host":"nginx.marathon.mesos.","ip":"10.156.230.230"}
     ]
-    
+
 
 # <a name="get-service"></a>`GET /v1/services/{service}`
 

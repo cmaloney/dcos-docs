@@ -1,21 +1,23 @@
 ---
-layout: page
 post_title: Support and Feedback
-menu_order: 0
+nav_title: Support
+menu_order: 5
 ---
 
+DC/OS is a free and open source project and community-supported product.
 
-We welcome any questions or feedback that you might have about Mesosphere DC/OS and documentation. To request help and submit feedback:
 
-*   A public [Slack community][1] channel.
+## Project Management
 
-*   To submit documentation feedback, send an email directly to [support@mesosphere.com][2].
+- [Issue Tracking](https://dcosjira.atlassian.net)
+- [Roadmap](/docs/1.7/overview/roadmap/)
 
-### <a name="dcosfaq"></a>FAQ and Support
+## Community Support
 
-*   The DC/OS Knowledge Base provides FAQs and in-depth support documentation from Mesosphere at <a href="http://help.mesosphere.com" target="_blank">http://help.mesosphere.com</a>.
+- [Slack](http://chat.dcos.io/)
+- [Stack Overflow](http://stackoverflow.com/questions/tagged/dcos)
 
-*   The Mesosphere community page provides an open-forum for questions and answers at <a href="http://stackoverflow.com/questions/tagged/mesosphere" target="_blank">ask.mesosphere.com</a>.
 
- [1]: http://chat.mesosphere.com
- [2]: mailto:support@mesosphere.com?subject=Documentation%20feedback
+# Professional Support
+
+- [Mesosphere, Inc](http://mesosphere.com)

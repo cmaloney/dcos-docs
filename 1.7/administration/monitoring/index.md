@@ -1,38 +1,35 @@
 ---
-layout: page
 post_title: Monitoring
-menu_order: 0
+menu_order: 4
 ---
 
-
-Monitoring the health of all the pieces that make up DC/OS is vital to datacenter operators and for troubleshoooting hard-to-diagnose bugs. You can monitor the health of your cluster components from the DC/OS UI component health page. The component health page displays information from the system health API, which monitors the core DC/OS components. <!-- In the future we're hoping to expand the usage of the system health API to other metrics as well as exposing a plugins-style architecture to allow operators to customize system health monitoring. -->
+Monitoring the health of all the pieces that make up DC/OS is vital to datacenter operators and for troubleshoooting hard-to-diagnose bugs. You can monitor the health of your cluster components from the DC/OS UI component health page. The component health page displays information from the system health API, which monitors the core DC/OS components.
 
 The component health page provides the health status of all DC/OS system components that are running in systemd. You can drill down by health status, host IP address, or specific systemd unit.
 
 ## Getting Started
-
 When you launch the DC/OS UI, you'll see the Component Health badge in the main DC/OS UI dashboard:
 
-<a href="https://docs.mesosphere.com/wp-content/uploads/2016/04/dashboard-ee.gif" rel="attachment wp-att-4810"><img src="https://docs.mesosphere.com/wp-content/uploads/2016/04/dashboard-ee-800x439.gif" alt="dashboard-ee" width="800" height="439" class="alignnone size-large wp-image-4810" /></a>
+![login](img/component-health-dashboard.png)
 
 You can click on the System page to go to the main system health user interface and sort by health.
 
-![sort][1]
+![sort](img/component-system-view.png)
 
 When a component isn't healthy, you can drill down on it, to view the nodes where the component is running:
 
-![view][2] <!-- FIXME -->
+![nodes](img/component-node-detail.png)
 
 You can debug more by clicking the node, where you'll be able to see the unhealthy component journald (log) output:
 
-![log][3] <!-- FIXME -->
+![output](img/component-node-output.png)
 
 ## Health States
 
 Possible health states are unhealthy and healthy. We infer this from codes 0 and 1.
 
-*   **Healthy** All cluster nodes are healthy. The units are loaded and not in the "active" or "inactive" state.
-*   **Unhealthy** One or more nodes have issues. The units are not loaded or are in the "active" or "inactive" state.
+- **Healthy** All cluster nodes are healthy. The units are loaded and not in the "active" or "inactive" state.
+- **Unhealthy** One or more nodes have issues. The units are not loaded or are in the "active" or "inactive" state.
 
 The system health API has four possible states: 0 - 3, OK; CRITICAL; WARNING; UNKNOWN. Future DC/OS iterations will leverage these codes to give more robust and detailed cluster health state information in the UI.
 
@@ -40,37 +37,41 @@ The system health API has four possible states: 0 - 3, OK; CRITICAL; WARNING; UN
 
 The system health endpoint is exposed at port 1050:
 
-    $ curl <host_ip>:1050/system/health/v1
-    
+```bash
+$ curl <host_ip>:1050/system/health/v1
+```
 
 ## Aggregation
 
 Aggregation of the cluster health endpoints is accomplished by the same diagnostics application, but is only run on the master nodes. You can explore this API further by making a few queries to any master in your cluster:
 
-    curl <master_ip>:1050/system/health/v1/units
-    curl <master_ip>:1050/system/health/v1/nodes
-    curl <master_ip>:1050/system/health/v1/report
-    
+```bash
+$ curl <master_ip>:1050/system/health/v1/units
+$ curl <master_ip>:1050/system/health/v1/nodes
+$ curl <master_ip>:1050/system/health/v1/report
+```
 
 The DC/OS user interface uses these aggregation endpoints to generate the data you explore in the system health console.
 
 ## Components
 
-What we refer to as components are in fact the [systemd units][4] that make up the core of the DC/OS application. These systemd 'components' are monitored by our internal diagnostics utility (dcos-diagnostics.service). This utility scans all the DC/OS units, and then exposes an HTTP API on each host.
+What we refer to as components are in fact the [systemd units](https://www.freedesktop.org/wiki/Software/systemd/) that make up the core of the DC/OS application. These systemd 'components' are monitored by our internal diagnostics utility (dcos-diagnostics.service). This utility scans all the DC/OS units, and then exposes an HTTP API on each host.
 
 You can query this HTTP API for any host in the cluster:
 
-`curl <host_ip>:1050/api/v1/health`
+```bash
+curl <host_ip>:1050/system/health/v1
+```
 
 Here is an explanation of the components shown in the UI.
 
 ### Admin Router
 
-The admin router is an open-source Nginx configuration created by Mesosphere that provides central authentication and proxy to DC/OS services within the cluster.<!-- dcos-adminrouter.service/ -->
+The Admin Router is an open-source Nginx configuration created by Mesosphere that provides central authentication and proxy to DC/OS services within the cluster.<!-- dcos-adminrouter.service/ -->
 
 ### Admin Router Reloader
 
-Restarts the Admin router Nginx server so that it can pick up new DNS resolutions, for example `master.mesos` and `leader.mesos`.<!-- dcos-adminrouter-reload.service/ -->
+Restarts the Admin Router Nginx server so that it can pick up new DNS resolutions, for example `master.mesos` and `leader.mesos`.<!-- dcos-adminrouter-reload.service/ -->
 
 ### Admin Router Reloader Timer
 
@@ -98,7 +99,7 @@ This service wakes up the DNS Dispatcher Watchdog every 5 minutes, to see if DC/
 
 ### Erlang Port Mapping Daemon
 
-This daemon acts as a name server on all hosts involved in distributed Erlang computations. For more information, see the [documentation][5]. <!-- dcos-epmd.service/ -->
+This daemon acts as a name server on all hosts involved in distributed Erlang computations. For more information, see the [documentation](http://erlang.org/doc/man/epmd.html). <!-- dcos-epmd.service/ -->
 
 ### Exhibitor
 
@@ -112,17 +113,12 @@ This is a service that helps the agent nodes locate the master nodes.<!-- dcos-g
 
 Periodically updates the systemd-resolved for Mesos DNS.<!-- dcos-gen-resolvconf.timer/ -->
 
-### Identity and Access Management
-
-Enterprise DC/OS access control service. For more information, see the [documentation][6].
-
 ### Keepalived
 
 Runs keepalived to make a VRRP load balancer that can be used to access the masters.<!-- dcos-keepalived.service/ -->
 
 ### Layer 4 Load Balancer
-
-The DC/OS Layer 4 Load Balancer enables multi-tier microservices architectures. For more information, see the [documentation][7].<!-- dcos-minuteman.service/ -->
+The DC/OS Layer 4 Load Balancer that enables multi-tier microservices architectures. For more information, see the [documentation](/docs/1.7/usage/service-discovery/load-balancing/).<!-- dcos-minuteman.service/ -->
 
 ### Logrotate
 
@@ -138,11 +134,11 @@ The DC/OS Marathon instance starts and monitors DC/OS applications and services.
 
 ### Mesos Agent
 
-The mesos-slave process for [private][8] agent nodes.<!-- dcos-mesos-slave.service/ -->
+The mesos-slave process for [private](/docs/1.7/overview/concepts/#private) agent nodes.<!-- dcos-mesos-slave.service/ -->
 
 ### Mesos Agent Public
 
-The mesos-slave process for [public][9] agent nodes.<!-- dcos-mesos-slave-public.service/ -->
+The mesos-slave process for [public](/docs/1.7/overview/concepts/#public) agent nodes.<!-- dcos-mesos-slave-public.service/ -->
 
 ### Mesos DNS
 
@@ -158,7 +154,7 @@ The mesos-master process orchestrates agent tasks.<!-- dcos-mesos-master.service
 
 ### Mesos Persistent Volume Discovery
 
-During DC/OS startup, this service connects to existing Mesos volume mounts on agent nodes. For more information on Mesos Persistent Volumes, see the [documentation][10]. <!-- dcos-vol-discovery-pub-agent.service/ -->
+During DC/OS startup, this service connects to existing Mesos volume mounts on agent nodes. For more information on Mesos Persistent Volumes, see the [documentation](http://mesos.apache.org/documentation/latest/persistent-volume/). <!-- dcos-vol-discovery-pub-agent.service/ -->
 
 ### Network Metrics Aggregator
 
@@ -190,21 +186,10 @@ You can sort system health by systemd unit. However, this search can bring up mi
 
 The system health API relies on Mesos-DNS to know about all the cluster hosts. It finds these hosts by combining a query from `mesos.master` A records as well as `leader.mesos:5050/slaves` to get the complete list of hosts in the cluster.
 
-This system has a known bug where an agent will not show up in the list returned from `leader.mesos:5050/slaves` if the Mesos slave service is not healthy. This means the system health API will not show this host.
+This system has a known bug where an agent will not show up in the list returned from `leader.mesos:5050/slaves` if the Mesos agent service is not healthy. This means the system health API will not show this host.
 
-If you experience this behavior it's most likely your Mesos slave service on the missing host is unhealthy.
+If you experience this behavior it's most likely your Mesos agent service on the missing host is unhealthy.
 
 ## Troubleshooting
 
 If you have any problems, you can check if the diagnostics service is running by SSH’ing to the Mesos leading master and checking the systemd status of the `dcos-ddt.service`.
-
- [1]: /assets/images/ui-system-health-ee.gif
- [2]: https://dl.dropboxusercontent.com/u/77193293/systemHealthScreens/sys_unhealthy_view.png
- [3]: https://dl.dropboxusercontent.com/u/77193293/systemHealthScreens/sys_unhealthy.png
- [4]: https://www.freedesktop.org/wiki/Software/systemd/
- [5]: http://erlang.org/doc/man/epmd.html
- [6]: /administration/security/
- [7]: /1.7/usage/service-discovery/load-balancing/
- [8]: /overview/concepts/#private
- [9]: /overview/concepts/#public
- [10]: http://mesos.apache.org/documentation/latest/persistent-volume/

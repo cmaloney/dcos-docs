@@ -1,9 +1,8 @@
 ---
-layout: page
-post_title: Web Interface
-menu_order: 0
+post_title: DC/OS Web Graphical User Interface
+nav_title: GUI
+menu_order: 1
 ---
-
 
 The DC/OS web interface provides a rich graphical view of your DC/OS cluster. With the web interface you can view the current state of your entire cluster and DC/OS services. The web interface is installed as a part of your DC/OS installation.
 
@@ -13,7 +12,7 @@ There are three major views in the DC/OS web interface: Dashboard, Services, and
 
 The dashboard is the home page of the DC/OS web interface and provides an overview of your DC/OS cluster.
 
-<a href="/wp-content/uploads/2015/12/ui-dashboard.gif" rel="attachment wp-att-4122"><img src="/wp-content/uploads/2015/12/ui-dashboard-800x431.gif" alt="ui-dashboard" width="800" height="431" class="alignnone size-large wp-image-4122" /></a>
+![Dashboard](../img/dcos-gui-1.7.png)
 
 From the dashboard you can easily monitor the health of your cluster.
 
@@ -33,7 +32,7 @@ From the dashboard you can easily monitor the health of your cluster.
 
 The Services page provides a comprehensive view of all of the services that you are running. You can view a graph that shows the allocation percentage rate for CPU, memory, or disk. You can filter services by health status or service name.
 
-<a href="/wp-content/uploads/2015/12/ui-services-1-7.gif" rel="attachment wp-att-4123"><img src="/wp-content/uploads/2015/12/ui-services-1-7-800x406.gif" alt="ui-services-1-7" width="800" height="406" class="alignnone size-large wp-image-4123" /></a>
+![Services](../img/dcos-services-1.7.png)
 
 By default all of your services are displayed, sorted by service name. You can also sort the services by health status, number of tasks, CPU, memory, or disk space allocated.
 
@@ -45,12 +44,28 @@ Clicking the service name opens the Services side panel, which provides CPU, mem
 
 The Nodes page provides a comprehensive view of all of the nodes that are used across your cluster. You can view a graph that shows the allocation percentage rate for CPU, memory, or disk.
 
-<a href="/wp-content/uploads/2015/12/ui-interface-nodes.gif" rel="attachment wp-att-4124"><img src="/wp-content/uploads/2015/12/ui-interface-nodes-800x429.gif" alt="ui-interface-nodes" width="800" height="429" class="alignnone size-large wp-image-4124" /></a>
+![Nodes](../img/dcos-nodes-1.7.png)
 
 By default all of your nodes are displayed in **List** view, sorted by hostname. You can filter nodes by service type or hostname. You can also sort the nodes by number of tasks or percentage of CPU, memory, or disk space allocated.
 
 You can switch to **Grid** view to see a "donuts" percentage visualization.
 
-<a href="/wp-content/uploads/2015/12/nodedonutsonly.png" rel="attachment wp-att-1129"><img src="/wp-content/uploads/2015/12/nodedonutsonly-600x163.png" alt="nodedonutsonly" width="300" height="82" class="alignnone size-medium wp-image-1129" /></a>
+![Nodes](../img/dcos-donuts-1.7.png)
 
 Clicking on a node opens the Nodes side panel, which provides CPU, memory, and disk usage graphs and lists all tasks on the node. Use the dropdown or a custom filter to sort tasks and click on details for more information. Click on a task listed on the Nodes side panel to see detailed information about the task’s CPU, memory, and disk usage and the task’s files and directory tree.
+
+# <a name="universe"></a>Universe
+
+The Universe page shows all of the available DC/OS services. You can install packages from the DC/OS Universe with a single click. The packages can be installed with defaults or customized directly in the web interface. 
+
+![universe](../img/ui-dashboard-universe.gif)
+
+# <a name="system"></a>System
+
+The System page provides access to the administration controls of DC/OS. From this page you can:
+ 
+- View the system health of your DC/OS components
+- Manage your DC/OS package repositories
+- Manage user access 
+
+![system](../img/ui-dashboard-system1.gif)

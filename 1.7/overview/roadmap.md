@@ -1,10 +1,8 @@
 ---
-layout: page
 post_title: DC/OS Roadmap
-menu_order: 0
+nav_title: Roadmap
+menu_order: 9
 ---
-
-
 
 This roadmap provides a high level overview of the themes that the DC/OS project is focusing on in the near, medium and long term.
 Please see the design docs and JIRAs for additional details on each item.
@@ -16,7 +14,7 @@ DC/OS consists of a number of components that each serve a specialized function.
 Every component has its own API, with different syntax, conventions, and endpoints.
 The Unified DC/OS API brings all of these together under one umbrella. It’s the “POSIX” of DC/OS.
 The initial focus will be on networking, and integrating the Marathon API.
-For more information, see the [Design doc](/overview/design/dcos-api/).
+For more information, see the [Design doc](/docs/1.7/overview/design/dcos-api/).
 
 ### Support for Container Network Interface
 The [Container Network Interface (CNI)](https://github.com/appc/cni) is a proposed standard for configuring network interfaces for Linux containers.
@@ -29,7 +27,7 @@ For more information, see the [Design doc](https://docs.google.com/document/d/1P
 ### Edge load balancing
 A Layer 7 On-ramp/Off-ramp with load balancing capabilities that routes incoming North-South web traffic to services running on DC/OS.
 For more information, see the [Design doc](https://docs.google.com/document/d/1G7Pj9cqRZjQkJz89E343067-InfDqW7RtcX94F4w_So/edit#heading=h.28ogyrx55sfi).
-This effort plans to integrate edge load balancing into the [DC/OS service discovery](/usage/service-discovery/) layer, without the need for individually managed HAProxy.
+This effort plans to integrate edge load balancing into the [DC/OS service discovery](/docs/1.7/usage/service-discovery/) layer, without the need for individually managed HAProxy.
 
 ### Pluggable External Volumes
 Support for pluggable external volume providers such as [REX-Ray](https://github.com/emccode/rexray), [Flocker](https://github.com/ClusterHQ/flocker), etc.

@@ -1,10 +1,7 @@
 ---
-layout: page
-post_title: DC/OS API
-menu_order: 0
+post_title: DC/OS API Design
+nav_title: API
 ---
-
-
 
 DC/OS consists of a number of components that each serve a specialized function.
 The Unified DC/OS API brings all of their APIs together under one umbrella. It’s the “POSIX” of DC/OS.

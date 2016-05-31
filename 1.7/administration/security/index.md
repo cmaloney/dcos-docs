@@ -1,14 +1,15 @@
 ---
-layout: page
-post_title: Security and Authentication
-menu_order: 0
+post_title: Security
+menu_order: 3
 ---
+You can enable authentication in your datacenter with DC/OS [oauth](https://github.com/dcos/dcos-oauth). Authentication is managed through the DC/OS web interface. The Admin Router enforces access control.
 
+Out of the box DC/OS has an OpenID Connect 1.0 endpoint at [dcos.auth0.com](https://dcos.auth0.com/.well-known/openid-configuration) (in cooperation with [Auth0](https://auth0.com/)) with connections to Google, GitHub, and Microsoft to provide basic authentication for DC/OS installations. DC/OS automatically adds the first user that logs in to the DC/OS cluster.
 
-You can enable authorization and authentication in your datacenter with DC/OS Enterprise Edition. Authentication is managed through the DC/OS web interface. Authorization is defined by access control lists (ACLs). The Admin Router enforces access control.
+DC/OS uses the JSON Web Token (JWT) format for its authentication tokens. JWT is an open, industry standard ([RFC
+7519](https://tools.ietf.org/html/rfc7519)) method for securely representing claims between two parties. JWTs are obtained using
+[OpenID Connect 1.0](https://openid.net/specs/openid-connect-core-1_0.html), which is a simple identity layer built on top of the
+[OAuth 2.0](http://oauth.net/2/) protocol.
 
-Users must be authorized in the ACL and then authenticated to access DC/OS services. DC/OS services are resources that are protected by an ACL. The ACL defines the individual users, user groups, and their list of accessible DC/OS services. There is only one level of authorization: authorized or not.
+DC/OS oauth provides an HTTP API for managing local user in a RESTful fashion.
 
-The access control service provides an HTTP API for managing local users, groups and ACLs in a RESTful fashion. The Bootstrap superuser manages the ACL through the DC/OS web interface.
-
-You can validate remote user credentials against an external LDAP service.

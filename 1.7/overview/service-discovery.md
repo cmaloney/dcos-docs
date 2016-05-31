@@ -1,40 +1,41 @@
 ---
-layout: page
 post_title: Service Discovery
-menu_order: 0
+menu_order: 8
 ---
 
-<p>There are two levels of service discovery in DC/OS: Mesos-DNS and VIPs. Mesos-DNS provides the namespace to all cluster hosts. VIPs enable clients to have a single configuration value.</p>
+There are two levels of service discovery in DC/OS. Along with every task that runs on DC/OS being provided a well known DNS name, anyone can request a well known VIP that enables clients to have a single configuration value.
 
-<h1>Mesos-DNS</h1>
+# VIP
 
-<p>Every task started by DC/OS is assigned a well known DNS name. You can even enumerate every <a href="/usage/service-discovery/dns-naming/">DNS name</a> in your cluster. For a Marathon service named "testing", you can find where it is running via:</p>
+You can assign a VIP to one of your services by following these steps. For some more in depth instructions, check out [service discovery][1].
 
-<pre><code>    dig testing.marathon.mesos
-</code></pre>
+1.  From the DC/OS web interface, click on the **Services** tab and select **Marathon**.
 
-<p>Take a look at the <a href="/usage/service-discovery/Mesos-DNS/">Mesos-DNS documentation</a> for a more in-depth look at how Mesos-DNS is working and what it is doing for you.</p>
+    *   To create a new application, click **Create Application** and select the **Ports and Service Discovery** menu option.
+    *   To edit an existing application, select your application and click the **Configuration** tab, then click **Edit**. You can then select the **Ports and Service Discovery** menu option.
 
-<h1>VIP</h1>
+    ![Marathon Ports](../img/ui-marathon-ports.gif)
 
-<p>You can assign a VIP to one of your services by following these steps. For some more in depth instructions, check out <a href="/usage/service-discovery/">service discovery</a>.</p>
+2.  Enter the Port, Protocol, Name, and VIP address. Remember that a VIP includes the port, like `1.1.1.1:5000`.
 
-<ol>
-<li><p>From the DC/OS web interface, click on the <strong>Services</strong> tab and select <strong>Marathon</strong>.</p>
+    **Tip:** Select **JSON Mode** to edit your application directly in JSON.
 
-<ul>
-<li>To create a new application, click <strong>Create Application</strong> and select the <strong>Ports and Service Discovery</strong> menu option.</li>
-<li>To edit an existing application, select your application and click the <strong>Configuration</strong> tab, then click <strong>Edit</strong>. You can then select the <strong>Ports and Service Discovery</strong> menu option.</li>
-</ul>
+    For more information on port configuration, see the [ports documentation][1].
 
-<p><img src="/assets/image/ui-marathon-ports.gif" alt="Marathon Ports" /></p></li>
-<li><p>Enter the Port, Protocol, Name, and VIP address. Remember that a VIP includes the port, like <code>1.1.1.1:5000</code>.</p>
+3.  From inside the cluster, you will be able to use your VIP directly. You can [SSH][3] into the cluster and run this command to see it work:
 
-<p><strong>Tip:</strong> Select <strong>JSON Mode</strong> to edit your application directly in JSON.</p>
+        curl 1.1.1.1:5000
 
-<p>For more information on port configuration, see the <a href="/usage/service-discovery/">ports documentation</a>.</p></li>
-<li><p>From inside the cluster, you will be able to use your VIP directly. You can <a href="/administration/sshcluster/">SSH</a> into the cluster and run this command to see it work:</p>
+# Mesos-DNS
 
-<pre><code>curl 1.1.1.1:5000
-</code></pre></li>
-</ol>
+Every task started by DC/OS gets a well known DNS name. You can even enumerate every [DNS name][5] in your cluster. For a Marathon service named "testing", you can find where it is running via:
+
+        dig testing.marathon.mesos
+
+Take a look at the [mesos-dns documentation][4] for a more in-depth look at how Mesos-DNS is working and what it is doing for you.
+
+[1]: /docs/1.7/usage/service-discovery/
+[2]: https://mesosphere.github.io/marathon/docs/ports.html
+[3]: /docs/1.7/administration/sshcluster/
+[4]: /docs/1.7/usage/service-discovery/mesos-dns/
+[5]: /docs/1.7/usage/service-discovery/dns-naming/
